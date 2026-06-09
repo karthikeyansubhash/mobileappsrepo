@@ -1,0 +1,236 @@
+{
+    "root": {
+        "associated_context": {
+            "raw_code": [
+                {
+                    "file_identity": "__init__.py",
+                    "source_system_path": "__init__.py",
+                    "kb_id": "11574",
+                    "kb_name": "root_batch1_rc_20260609210716kb"
+                }
+            ],
+            "code_doc": [],
+            "metrics": {}
+        },
+        "file_purposes": {},
+        "generated_doc_filepath": null
+    },
+    "libs": {
+        "associated_context": {
+            "raw_code": [
+                {
+                    "file_identity": "__init__.py",
+                    "source_system_path": "libs/__init__.py",
+                    "kb_id": "11575",
+                    "kb_name": "libs_batch1_rc_20260609210728kb"
+                }
+            ],
+            "code_doc": [],
+            "metrics": {}
+        },
+        "file_purposes": {},
+        "generated_doc_filepath": null,
+        "flows": {
+            "associated_context": {
+                "raw_code": [
+                    {
+                        "file_identity": "__init__.py",
+                        "source_system_path": "libs/flows/__init__.py",
+                        "kb_id": "11576",
+                        "kb_name": "flows_batch1_rc_20260609210740kb"
+                    },
+                    {
+                        "file_identity": "base_flow.py",
+                        "source_system_path": "libs/flows/base_flow.py",
+                        "kb_id": "11577",
+                        "kb_name": "flows_batch2_rc_20260609210753kb"
+                    }
+                ],
+                "code_doc": [],
+                "metrics": {}
+            },
+            "file_purposes": {},
+            "generated_doc_filepath": null,
+            "windows": {
+                "hpx_rebranding": {
+                    "associated_context": {
+                        "raw_code": [
+                            {
+                                "file_identity": "accessibility.py",
+                                "source_system_path": "libs/flows/windows/hpx_rebranding/accessibility.py",
+                                "kb_id": "11578",
+                                "kb_name": "hpx_rebranding_batch1_rc_20260609210805kb"
+                            },
+                            {
+                                "file_identity": "add_device.py",
+                                "source_system_path": "libs/flows/windows/hpx_rebranding/add_device.py",
+                                "kb_id": "11579",
+                                "kb_name": "hpx_rebranding_batch2_rc_20260609210815kb"
+                            },
+                            {
+                                "file_identity": "bell_icon.py",
+                                "source_system_path": "libs/flows/windows/hpx_rebranding/bell_icon.py",
+                                "kb_id": "11580",
+                                "kb_name": "hpx_rebranding_batch3_rc_20260609210826kb"
+                            },
+                            {
+                                "file_identity": "flow_container.py",
+                                "source_system_path": "libs/flows/windows/hpx_rebranding/flow_container.py",
+                                "kb_id": "11581",
+                                "kb_name": "hpx_rebranding_batch4_rc_20260609210838kb"
+                            }
+                        ],
+                        "code_doc": [],
+                        "metrics": {}
+                    },
+                    "file_purposes": {},
+                    "generated_doc_filepath": null
+                }
+            }
+        }
+    },
+    "tests": {
+        "associated_context": {
+            "raw_code": [
+                {
+                    "file_identity": "__init__.py",
+                    "source_system_path": "tests/__init__.py",
+                    "kb_id": "11582",
+                    "kb_name": "tests_batch1_rc_20260609210855kb"
+                }
+            ],
+            "code_doc": [],
+            "metrics": {}
+        },
+        "file_purposes": {},
+        "generated_doc_filepath": null,
+        "windows": {
+            "hpx_rebranding": {
+                "Framework": {
+                    "associated_context": {
+                        "raw_code": [
+                            {
+                                "file_identity": "conftest.py",
+                                "source_system_path": "tests/windows/hpx_rebranding/Framework/conftest.py",
+                                "kb_id": "11583",
+                                "kb_name": "framework_batch1_rc_20260609210906kb"
+                            }
+                        ],
+                        "code_doc": [],
+                        "metrics": {}
+                    },
+                    "file_purposes": {},
+                    "generated_doc_filepath": null,
+                    "accessibility": {
+                        "associated_context": {
+                            "raw_code": [
+                                {
+                                    "file_identity": "test_suite_01_accessibility.py",
+                                    "source_system_path": "tests/windows/hpx_rebranding/Framework/accessibility/test_suite_01_accessibility.py",
+                                    "kb_id": "11584",
+                                    "kb_name": "accessibility_batch1_rc_20260609210917kb"
+                                },
+                                {
+                                    "file_identity": "test_suite_02_accessibility.py",
+                                    "source_system_path": "tests/windows/hpx_rebranding/Framework/accessibility/test_suite_02_accessibility.py",
+                                    "kb_id": "11585",
+                                    "kb_name": "accessibility_batch2_rc_20260609210929kb"
+                                },
+                                {
+                                    "file_identity": "test_suite_03_accessibility.py",
+                                    "source_system_path": "tests/windows/hpx_rebranding/Framework/accessibility/test_suite_03_accessibility.py",
+                                    "kb_id": "11586",
+                                    "kb_name": "accessibility_batch3_rc_20260609210939kb"
+                                }
+                            ],
+                            "code_doc": [],
+                            "metrics": {}
+                        },
+                        "file_purposes": {},
+                        "generated_doc_filepath": null
+                    },
+                    "add_device": {
+                        "associated_context": {
+                            "raw_code": [
+                                {
+                                    "file_identity": "test_suite_01_add_device.py",
+                                    "source_system_path": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py",
+                                    "kb_id": "11587",
+                                    "kb_name": "add_device_batch1_rc_20260609210951kb"
+                                },
+                                {
+                                    "file_identity": "test_suite_02_add_device.py",
+                                    "source_system_path": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_02_add_device.py",
+                                    "kb_id": "11588",
+                                    "kb_name": "add_device_batch2_rc_20260609211001kb"
+                                }
+                            ],
+                            "code_doc": [],
+                            "metrics": {}
+                        },
+                        "file_purposes": {},
+                        "generated_doc_filepath": null
+                    },
+                    "bell_notifications": {
+                        "associated_context": {
+                            "raw_code": [
+                                {
+                                    "file_identity": "test_suite_01_bell_notifications.py",
+                                    "source_system_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_01_bell_notifications.py",
+                                    "kb_id": "11589",
+                                    "kb_name": "bell_notifications_batch1_rc_20260609211012kb"
+                                },
+                                {
+                                    "file_identity": "test_suite_02_bell_notifications.py",
+                                    "source_system_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_02_bell_notifications.py",
+                                    "kb_id": "11590",
+                                    "kb_name": "bell_notifications_batch2_rc_20260609211023kb"
+                                },
+                                {
+                                    "file_identity": "test_suite_03_bell_notifications.py",
+                                    "source_system_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_03_bell_notifications.py",
+                                    "kb_id": "11591",
+                                    "kb_name": "bell_notifications_batch3_rc_20260609211035kb"
+                                },
+                                {
+                                    "file_identity": "test_suite_04_bell_notifications.py",
+                                    "source_system_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_04_bell_notifications.py",
+                                    "kb_id": "11592",
+                                    "kb_name": "bell_notifications_batch4_rc_20260609211046kb"
+                                },
+                                {
+                                    "file_identity": "test_suite_05_bell_notifications.py",
+                                    "source_system_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_05_bell_notifications.py",
+                                    "kb_id": "11593",
+                                    "kb_name": "bell_notifications_batch5_rc_20260609211057kb"
+                                },
+                                {
+                                    "file_identity": "test_suite_06_bell_notifcations.py",
+                                    "source_system_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_06_bell_notifcations.py",
+                                    "kb_id": "11594",
+                                    "kb_name": "bell_notifications_batch6_rc_20260609211117kb"
+                                },
+                                {
+                                    "file_identity": "test_suite_07_bell_notifcations.py",
+                                    "source_system_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_07_bell_notifcations.py",
+                                    "kb_id": "11595",
+                                    "kb_name": "bell_notifications_batch7_rc_20260609211128kb"
+                                },
+                                {
+                                    "file_identity": "test_suite_08_bell_notifcations.py",
+                                    "source_system_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_08_bell_notifcations.py",
+                                    "kb_id": "11596",
+                                    "kb_name": "bell_notifications_batch8_rc_20260609211140kb"
+                                }
+                            ],
+                            "code_doc": [],
+                            "metrics": {}
+                        },
+                        "file_purposes": {},
+                        "generated_doc_filepath": null
+                    }
+                }
+            }
+        }
+    }
+}
