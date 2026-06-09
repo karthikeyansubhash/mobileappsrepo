@@ -1,0 +1,1147 @@
+{
+    "tests": {
+        "generated_doc_filepath": "",
+        "purpose": "",
+        "associated_knowledge_bases": {
+            "raw_code": [
+                {
+                    "file_identity": "__init__.py",
+                    "tests/__init__.py": [
+                        {
+                            "endLine": 2,
+                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                            "filePath": "tests/__init__.py",
+                            "startLine": 1,
+                            "blobSha": "49d91fd8ea74e7d5d6f0ecf321b6a360d36d7276",
+                            "name": "",
+                            "language": "python",
+                            "id": "44e7b6ef35b0618c4849ba16274756c8a4f7cf4545e8e0f30da11431c7b7bf24",
+                            "chunkType": "fallback",
+                            "isTestFile": false
+                        }
+                    ]
+                }
+            ],
+            "code_doc": [
+                {
+                    "kb_id": "",
+                    "kb_name": ""
+                }
+            ]
+        },
+        "windows": {
+            "hpx_rebranding": {
+                "Framework": {
+                    "accessibility": {
+                        "generated_doc_filepath": "",
+                        "purpose": "",
+                        "associated_knowledge_bases": {
+                            "raw_code": [
+                                {
+                                    "file_identity": "test_suite_01_accessibility.py",
+                                    "tests/windows/hpx_rebranding/Framework/accessibility/test_suite_01_accessibility.py": [
+                                        {
+                                            "endLine": 23,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/accessibility/test_suite_01_accessibility.py",
+                                            "startLine": 10,
+                                            "blobSha": "1bf07763f1f04c8ffa69fc0196180db7ccaac2b4",
+                                            "name": "class_setup",
+                                            "language": "python",
+                                            "id": "bf1f07ae9d53790329ba4c2aae05e3859a69f5487a1764f91079d0cfd45751fe",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 31,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/accessibility/test_suite_01_accessibility.py",
+                                            "startLine": 25,
+                                            "blobSha": "1bf07763f1f04c8ffa69fc0196180db7ccaac2b4",
+                                            "name": "function_setup_myhp_launch",
+                                            "language": "python",
+                                            "id": "62352130357c6821bf7b576e9dd8bad0e48b09deec078506bd5bff5695631e04",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 38,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/accessibility/test_suite_01_accessibility.py",
+                                            "startLine": 33,
+                                            "blobSha": "1bf07763f1f04c8ffa69fc0196180db7ccaac2b4",
+                                            "name": "test_01_open_app_from_start_menu_C67872389",
+                                            "language": "python",
+                                            "id": "50b56bac227d7271b078abad3e49dcadec849082b017c3b9bed87c0f4a06df9b",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 47,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/accessibility/test_suite_01_accessibility.py",
+                                            "startLine": 40,
+                                            "blobSha": "1bf07763f1f04c8ffa69fc0196180db7ccaac2b4",
+                                            "name": "BaseFlow.test_02_pin_myhp_to_start_menu_C67872391",
+                                            "language": "python",
+                                            "id": "266b8b75107a989f81c11be4ea6e986ae21c7947f1c13c4e4db2e1772f79ba88",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 55,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/accessibility/test_suite_01_accessibility.py",
+                                            "startLine": 49,
+                                            "blobSha": "1bf07763f1f04c8ffa69fc0196180db7ccaac2b4",
+                                            "name": "test_03_verify_scroll_bar_functionality_C67872392",
+                                            "language": "python",
+                                            "id": "bba1177ca3cc55b4437bd933d96d4cad99523e971c114562d1c380cfa89a2f78",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 66,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/accessibility/test_suite_01_accessibility.py",
+                                            "startLine": 57,
+                                            "blobSha": "1bf07763f1f04c8ffa69fc0196180db7ccaac2b4",
+                                            "name": "test_04_verify_app_invoke_C53304175",
+                                            "language": "python",
+                                            "id": "86df11a393aa6227bb32bbedbbefb82800a3b06c634c6bbc1cabaaf6f2d5b896",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 72,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/accessibility/test_suite_01_accessibility.py",
+                                            "startLine": 68,
+                                            "blobSha": "1bf07763f1f04c8ffa69fc0196180db7ccaac2b4",
+                                            "name": "test_05_app_window_operations_C53304174",
+                                            "language": "python",
+                                            "id": "102d4fcb4b7ae15a376f6414b63c67c4237943f79dd4133f6be15146b7bb97be",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 80,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/accessibility/test_suite_01_accessibility.py",
+                                            "startLine": 74,
+                                            "blobSha": "1bf07763f1f04c8ffa69fc0196180db7ccaac2b4",
+                                            "name": "test_06_pin_myhp_to_taskbar_C67872390",
+                                            "language": "python",
+                                            "id": "4730a333188571390987ec3ce557bf000f28e3bd134635b4697a00d62fe5dea5",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 93,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/accessibility/test_suite_01_accessibility.py",
+                                            "startLine": 82,
+                                            "blobSha": "1bf07763f1f04c8ffa69fc0196180db7ccaac2b4",
+                                            "name": "test_07_verify_app_resize_scenarios_C53304178",
+                                            "language": "python",
+                                            "id": "8f85baebbdd4a67fb16bfce0dafdc70900ca271e2b2b4f61a6dc5547dbe63648",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 102,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/accessibility/test_suite_01_accessibility.py",
+                                            "startLine": 95,
+                                            "blobSha": "1bf07763f1f04c8ffa69fc0196180db7ccaac2b4",
+                                            "name": "test_08_hp_app_appears_in_windows_programs_and_feature_C60030522",
+                                            "language": "python",
+                                            "id": "ea94c665e129e7a047d855ea265d9bcfb6d69a3a206bb13e18c3d42d95596662",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 109,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/accessibility/test_suite_01_accessibility.py",
+                                            "startLine": 104,
+                                            "blobSha": "1bf07763f1f04c8ffa69fc0196180db7ccaac2b4",
+                                            "name": "test_09_hp_app_appears_in_windows_task_manager_C60030617",
+                                            "language": "python",
+                                            "id": "d96a01e46216669f30ea0e84ce2ddf23a87ba5e5cef2f75a7e6fc6efd7a129e4",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 115,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/accessibility/test_suite_01_accessibility.py",
+                                            "startLine": 111,
+                                            "blobSha": "1bf07763f1f04c8ffa69fc0196180db7ccaac2b4",
+                                            "name": "test_10_hp_app_appears_in_windows_start_menu_C61082852",
+                                            "language": "python",
+                                            "id": "282fb01149809076c895e5f87919b88cb4206613c3d214008000bf63bb1e1b0f",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 125,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/accessibility/test_suite_01_accessibility.py",
+                                            "startLine": 117,
+                                            "blobSha": "1bf07763f1f04c8ffa69fc0196180db7ccaac2b4",
+                                            "name": "test_11_hp_app_appears_in_windows_programs_C61082932",
+                                            "language": "python",
+                                            "id": "1113144390916a4e287b8a29a93a525b99b295072d136367a48be8529e1805c2",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 131,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/accessibility/test_suite_01_accessibility.py",
+                                            "startLine": 127,
+                                            "blobSha": "1bf07763f1f04c8ffa69fc0196180db7ccaac2b4",
+                                            "name": "test_12_hp_app_appears_in_ms_store_C61083738",
+                                            "language": "python",
+                                            "id": "2a25d2c919b1e45614ba20b6a4e833b4bb5465fb6d284eed5a4eb6db2f96a819",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 137,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/accessibility/test_suite_01_accessibility.py",
+                                            "startLine": 133,
+                                            "blobSha": "1bf07763f1f04c8ffa69fc0196180db7ccaac2b4",
+                                            "name": "test_13_hp_app_appears_title_bar_C61085157",
+                                            "language": "python",
+                                            "id": "b14ea40663dcca3293f6bcf92a8b9bd1a02bcf416b16f7f5dab1073ab45a41d8",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 144,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/accessibility/test_suite_01_accessibility.py",
+                                            "startLine": 139,
+                                            "blobSha": "1bf07763f1f04c8ffa69fc0196180db7ccaac2b4",
+                                            "name": "test_14_hp_app_appears_in_windows_task_bar_C61082893",
+                                            "language": "python",
+                                            "id": "b645218927ce9654c4b1a77c3f0b765655fb19d18cb0057cac974801533fb535",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "file_identity": "test_suite_02_accessibility.py",
+                                    "tests/windows/hpx_rebranding/Framework/accessibility/test_suite_02_accessibility.py": [
+                                        {
+                                            "endLine": 15,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/accessibility/test_suite_02_accessibility.py",
+                                            "startLine": 10,
+                                            "blobSha": "e46b84f02b049dc77bfe13a0dac7acc36ffad4be",
+                                            "name": "class_setup",
+                                            "language": "python",
+                                            "id": "7dae6a967e529a3d8826c6d11b30cd0791ccf4e40668b94454dc90e20ff3d324",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 20,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/accessibility/test_suite_02_accessibility.py",
+                                            "startLine": 17,
+                                            "blobSha": "e46b84f02b049dc77bfe13a0dac7acc36ffad4be",
+                                            "name": "test_01_verify_app_name_displays_as_hp_C53533726",
+                                            "language": "python",
+                                            "id": "3fff959dbd57542093912f00c2d169f6daddbeb216ac80cc4783c0280706edac",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "file_identity": "test_suite_03_accessibility.py",
+                                    "tests/windows/hpx_rebranding/Framework/accessibility/test_suite_03_accessibility.py": [
+                                        {
+                                            "endLine": 21,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/accessibility/test_suite_03_accessibility.py",
+                                            "startLine": 10,
+                                            "blobSha": "65431b06a90b37bbd0811d9418c01b85431c62ad",
+                                            "name": "class_setup",
+                                            "language": "python",
+                                            "id": "46b7439107f110d2a409e55746120f4893f1ced0c96ccafbb1c2122b9f36c080",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 28,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/accessibility/test_suite_03_accessibility.py",
+                                            "startLine": 23,
+                                            "blobSha": "65431b06a90b37bbd0811d9418c01b85431c62ad",
+                                            "name": "test_01_hp_app_appears_in_windows_task_manager_C61083683",
+                                            "language": "python",
+                                            "id": "5d55e3188e5402a701ab15cd47f0c94765d3aec72e03c41e549f4f568f0cb3f1",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 35,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/accessibility/test_suite_03_accessibility.py",
+                                            "startLine": 30,
+                                            "blobSha": "65431b06a90b37bbd0811d9418c01b85431c62ad",
+                                            "name": "test_02_hp_app_name_in_windows_taskbar_C60030453",
+                                            "language": "python",
+                                            "id": "dbc5c171942de32d408ec3511b5d1e0031bab3cf55983e587c3b7222e7bb1c61",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        }
+                                    ]
+                                }
+                            ],
+                            "code_doc": [
+                                {
+                                    "kb_id": "",
+                                    "kb_name": ""
+                                }
+                            ]
+                        }
+                    },
+                    "add_device": {
+                        "generated_doc_filepath": "",
+                        "purpose": "",
+                        "associated_knowledge_bases": {
+                            "raw_code": [
+                                {
+                                    "file_identity": "test_suite_01_add_device.py",
+                                    "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py": [
+                                        {
+                                            "endLine": 20,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py",
+                                            "startLine": 10,
+                                            "blobSha": "2c11c15d083bf013a3809de848e8de6585a3e043",
+                                            "name": "class_setup",
+                                            "language": "python",
+                                            "id": "7de50fe0bc92746c3ac7fe49d51f6fa0e190cfa9a35b40171b8d1c21f794e2e5",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 27,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py",
+                                            "startLine": 22,
+                                            "blobSha": "2c11c15d083bf013a3809de848e8de6585a3e043",
+                                            "name": "test_01_verify_add_device_button_clickable_and_opens_sidebar_page_C55687256",
+                                            "language": "python",
+                                            "id": "b66315b84edde45b94b40fc069c4cdcbabace58c9faca12aabb966796633974f",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 40,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py",
+                                            "startLine": 29,
+                                            "blobSha": "2c11c15d083bf013a3809de848e8de6585a3e043",
+                                            "name": "test_02_verify_navigation_of_need_help_finding_serial_number_link_C61716550",
+                                            "language": "python",
+                                            "id": "9b67acf591133bca1801a6a80f716a4b92715a7c9b46d1b96097d684e4162fa4",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 53,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py",
+                                            "startLine": 42,
+                                            "blobSha": "2c11c15d083bf013a3809de848e8de6585a3e043",
+                                            "name": "test_03_verify_the_back_button_for_the_add_device_C61716558",
+                                            "language": "python",
+                                            "id": "0fd032f7484b1fb343603d73dde52ffc40f69208020a8459a34ce8dbd00dba66",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 63,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py",
+                                            "startLine": 55,
+                                            "blobSha": "2c11c15d083bf013a3809de848e8de6585a3e043",
+                                            "name": "test_04_verify_the_close_button_for_the_add_device_C61716559",
+                                            "language": "python",
+                                            "id": "eb88f2854b4177da88e6b64b5010ede6dd0ddc695f61065ee9f72b55260ce811",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 76,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py",
+                                            "startLine": 65,
+                                            "blobSha": "2c11c15d083bf013a3809de848e8de6585a3e043",
+                                            "name": "test_05_verify_entered_serial_number_is_accepted_and_displayed_correctly_C63813594",
+                                            "language": "python",
+                                            "id": "c6c269eb832e069cee810382ac96596fe510eff33a792f0d45d586127e7e526a",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 84,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py",
+                                            "startLine": 78,
+                                            "blobSha": "2c11c15d083bf013a3809de848e8de6585a3e043",
+                                            "name": "test_06_verify_the_content_in_add_a_printer_C63813978",
+                                            "language": "python",
+                                            "id": "3831874b0aadf1039581b5f6fe3dd7bca85c1fa53602e716af9b4bc73227e288",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 92,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py",
+                                            "startLine": 86,
+                                            "blobSha": "2c11c15d083bf013a3809de848e8de6585a3e043",
+                                            "name": "test_07_verify_the_content_in_missing_a_device_C63815104",
+                                            "language": "python",
+                                            "id": "9d2eaae8d494de7f72ea563483500e839dd26804739b3a06e0977ace5ca3da1d",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "file_identity": "test_suite_02_add_device.py",
+                                    "tests/windows/hpx_rebranding/Framework/add_device/test_suite_02_add_device.py": [
+                                        {
+                                            "endLine": 27,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_02_add_device.py",
+                                            "startLine": 14,
+                                            "blobSha": "e34d09626cd070ba415f1fe44270afb0a066b699",
+                                            "name": "class_setup",
+                                            "language": "python",
+                                            "id": "2778b4234ef47a7566d557558df08b52af898b45acdd665dfbe4636f0efc3d8f",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 48,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_02_add_device.py",
+                                            "startLine": 29,
+                                            "blobSha": "e34d09626cd070ba415f1fe44270afb0a066b699",
+                                            "name": "test_01_verify_device_add_via_product_number_C55687272",
+                                            "language": "python",
+                                            "id": "26266a97fff69802e82fb088165e85a87944c13c317aee80b64d07833f5471ff",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 70,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_02_add_device.py",
+                                            "startLine": 50,
+                                            "blobSha": "e34d09626cd070ba415f1fe44270afb0a066b699",
+                                            "name": "test_02_verify_device_addition_via_serial_number_C55687266",
+                                            "language": "python",
+                                            "id": "b8b5dd9cf408c324791b53b90e2060cb488e178c0c2f60bc60f32bc5c7fee715",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        }
+                                    ]
+                                }
+                            ],
+                            "code_doc": [
+                                {
+                                    "kb_id": "",
+                                    "kb_name": ""
+                                }
+                            ]
+                        }
+                    },
+                    "bell_notifications": {
+                        "generated_doc_filepath": "",
+                        "purpose": "",
+                        "associated_knowledge_bases": {
+                            "raw_code": [
+                                {
+                                    "file_identity": "test_suite_01_bell_notifications.py",
+                                    "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_01_bell_notifications.py": [
+                                        {
+                                            "endLine": 21,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_01_bell_notifications.py",
+                                            "startLine": 11,
+                                            "blobSha": "6137f764ef4908a99bfbbf4783d722c3d2a2b919",
+                                            "name": "class_setup",
+                                            "language": "python",
+                                            "id": "190846b936e601e1e5797fd3fc2631786ea3f31650b0dbd48dd03a7429e12365",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 27,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_01_bell_notifications.py",
+                                            "startLine": 23,
+                                            "blobSha": "6137f764ef4908a99bfbbf4783d722c3d2a2b919",
+                                            "name": "test_01_verify_global_header_navigation_C60336078",
+                                            "language": "python",
+                                            "id": "da86bfcc36d86684fcb59df6a65f0535e50fcaf2696b507ab8466da87ddd0176",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 36,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_01_bell_notifications.py",
+                                            "startLine": 29,
+                                            "blobSha": "6137f764ef4908a99bfbbf4783d722c3d2a2b919",
+                                            "name": "test_02_verify_global_header_navigation_includes_bellicon_C53303694",
+                                            "language": "python",
+                                            "id": "c2f1ef246df55483a972742fcefeb05b0253536dc35dcdcad895760cda8d4a9b",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 47,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_01_bell_notifications.py",
+                                            "startLine": 38,
+                                            "blobSha": "6137f764ef4908a99bfbbf4783d722c3d2a2b919",
+                                            "name": "BaseFlow.test_03_verify_bellicon_can_be_clicked_C53303695",
+                                            "language": "python",
+                                            "id": "6f744b564c02ca247584fa5e223ff529565a22cddf3f501dd1208c8aab581433",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 59,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_01_bell_notifications.py",
+                                            "startLine": 49,
+                                            "blobSha": "6137f764ef4908a99bfbbf4783d722c3d2a2b919",
+                                            "name": "test_04_verify_notifications_sidepanel_opened_upon_clicking_bellicon_C53303696",
+                                            "language": "python",
+                                            "id": "696c8c9527e9edf70ed6221161ab58dac6e82b86d5efba8a2a9804ca75f37a8e",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 71,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_01_bell_notifications.py",
+                                            "startLine": 61,
+                                            "blobSha": "6137f764ef4908a99bfbbf4783d722c3d2a2b919",
+                                            "name": "test_05_verify_empty_bell_state_when_user_not_logged_in_C53303697",
+                                            "language": "python",
+                                            "id": "f4ff61b853dc2cbcdbb27942ca3e9ab9a0509e79e20d5fc31e81a4393fc2726d",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "file_identity": "test_suite_02_bell_notifications.py",
+                                    "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_02_bell_notifications.py": [
+                                        {
+                                            "endLine": 27,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_02_bell_notifications.py",
+                                            "startLine": 13,
+                                            "blobSha": "07e6c2c7630bf904ae5f5ade639a4e4ebd63296b",
+                                            "name": "class_setup",
+                                            "language": "python",
+                                            "id": "8609205565f6cc4c86db8f8782318c8c4b239a13af1c0ac2fe15f597ef938822",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 36,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_02_bell_notifications.py",
+                                            "startLine": 29,
+                                            "blobSha": "07e6c2c7630bf904ae5f5ade639a4e4ebd63296b",
+                                            "name": "test_01_verify_back_button_visible_on_navigation_side_panel_C42631068",
+                                            "language": "python",
+                                            "id": "d3a4fe2c99728922cc288bb71e4c602e8abd1f2a84b72524c66a60923d5ec1fd",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 48,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_02_bell_notifications.py",
+                                            "startLine": 38,
+                                            "blobSha": "07e6c2c7630bf904ae5f5ade639a4e4ebd63296b",
+                                            "name": "BaseFlow.test_02_verify_back_button_named_as_close_can_be_clicked_C42631069",
+                                            "language": "python",
+                                            "id": "4d941b256f5e176c052ae4a4519cc6f6f5af5b7d0c0c949dd8d84179079dcf02",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "file_identity": "test_suite_03_bell_notifications.py",
+                                    "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_03_bell_notifications.py": [
+                                        {
+                                            "endLine": 29,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_03_bell_notifications.py",
+                                            "startLine": 14,
+                                            "blobSha": "300fb32df8f61babae43fad95c8b122c6e80f4d4",
+                                            "name": "class_setup",
+                                            "language": "python",
+                                            "id": "d774cd3100528c413a8141753430954faceede254c75df5ff0bbcf282acd093c",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 42,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_03_bell_notifications.py",
+                                            "startLine": 33,
+                                            "blobSha": "300fb32df8f61babae43fad95c8b122c6e80f4d4",
+                                            "name": "test_01_verify_the_color_of_the_urgent_messages_C60336080",
+                                            "language": "python",
+                                            "id": "4f8c9ea441e801b3cbe8a00ec3ba7850ec6230ca4a0de26b791ca65bcccefb2b",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 54,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_03_bell_notifications.py",
+                                            "startLine": 46,
+                                            "blobSha": "300fb32df8f61babae43fad95c8b122c6e80f4d4",
+                                            "name": "test_02_verify_the_color_of_the_warning_messages_C60336081",
+                                            "language": "python",
+                                            "id": "184eb2f9f8d39ccdd8a1db81e6f417201efa48f3f3cebdda092eef9ccb88d4a5",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 66,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_03_bell_notifications.py",
+                                            "startLine": 58,
+                                            "blobSha": "300fb32df8f61babae43fad95c8b122c6e80f4d4",
+                                            "name": "test_03_verify_the_color_of_the_informative_messages_C60336082",
+                                            "language": "python",
+                                            "id": "05c7dde0a6b64b1ebcc87c89a36accaddc5b17bab3d072ee70a97014e814b7b7",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 79,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_03_bell_notifications.py",
+                                            "startLine": 70,
+                                            "blobSha": "300fb32df8f61babae43fad95c8b122c6e80f4d4",
+                                            "name": "test_04_notifications_panel_opens_on_bell_click_C67874087",
+                                            "language": "python",
+                                            "id": "02316b0ef18d3d0f86a27d103646e7ffec0d8cd3e321af8de4cd8fe13d9e87fa",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 90,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_03_bell_notifications.py",
+                                            "startLine": 83,
+                                            "blobSha": "300fb32df8f61babae43fad95c8b122c6e80f4d4",
+                                            "name": "test_05_no_notifications_when_logged_out_C60336139",
+                                            "language": "python",
+                                            "id": "c86ee948eb0278491e2c989a6c8f8996789239271a657beceab68aaec2af6527",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 102,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_03_bell_notifications.py",
+                                            "startLine": 94,
+                                            "blobSha": "300fb32df8f61babae43fad95c8b122c6e80f4d4",
+                                            "name": "test_06_only_account_messages_displayed_C58684361",
+                                            "language": "python",
+                                            "id": "9bb5120335ffe5b24e42e6424bb125459f641c5a2aab50b25e52b50c877ac239",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 112,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_03_bell_notifications.py",
+                                            "startLine": 106,
+                                            "blobSha": "300fb32df8f61babae43fad95c8b122c6e80f4d4",
+                                            "name": "test_07_sort_order_of_messages_C58684367",
+                                            "language": "python",
+                                            "id": "868f2cbc4d08d8b37ce23a1ebc20064a2447827bddfffb0309e591c1b5388118",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "file_identity": "test_suite_04_bell_notifications.py",
+                                    "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_04_bell_notifications.py": [
+                                        {
+                                            "endLine": 31,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_04_bell_notifications.py",
+                                            "startLine": 15,
+                                            "blobSha": "83674258b322a6e9be430458e16b21149b6bd712",
+                                            "name": "class_setup",
+                                            "language": "python",
+                                            "id": "b0dedf05b410cbedbb00bec0694644cb8030636b574ca1bf7b67541651014f95",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 55,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_04_bell_notifications.py",
+                                            "startLine": 35,
+                                            "blobSha": "83674258b322a6e9be430458e16b21149b6bd712",
+                                            "name": "test_01_verify_bell_notifications_displayed_when_logged_in_C60339087",
+                                            "language": "python",
+                                            "id": "09e4dfe18eb75c17a90b890374aa99f1a9c82bf7080161b10b0a949338263737",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 78,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_04_bell_notifications.py",
+                                            "startLine": 59,
+                                            "blobSha": "83674258b322a6e9be430458e16b21149b6bd712",
+                                            "name": "test_02_verify_transition_from_empty_bell_to_notification_bell_on_login_C60339089",
+                                            "language": "python",
+                                            "id": "ea370cc23c5400bd96475a6dfe52ade14af9960952c0ad25f3cb1588c1545b63",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 90,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_04_bell_notifications.py",
+                                            "startLine": 82,
+                                            "blobSha": "83674258b322a6e9be430458e16b21149b6bd712",
+                                            "name": "test_03_verify_login_using_sign_in_option_in_bell_flyout_C60372196",
+                                            "language": "python",
+                                            "id": "7398785c1580248394e31746cc33999c1b2705f753d50ebbd53ffcf4212aaaf3",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 103,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_04_bell_notifications.py",
+                                            "startLine": 94,
+                                            "blobSha": "83674258b322a6e9be430458e16b21149b6bd712",
+                                            "name": "test_04_verify_delete_option_for_urgent_unread_msg_is_disabled_C60336470",
+                                            "language": "python",
+                                            "id": "16461bcbc2d8b919074a8e693b8076c399b71d1bca037c248fc4c5613c539d90",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 120,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_04_bell_notifications.py",
+                                            "startLine": 107,
+                                            "blobSha": "83674258b322a6e9be430458e16b21149b6bd712",
+                                            "name": "test_05_verify_delete_option_for_warning_unread_msg_is_enabled_C60336471",
+                                            "language": "python",
+                                            "id": "61ff3380a4eb5e2520f2653ac1569c3ded2e0c3822f43fea1c7df4f04f5ae8a2",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 133,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_04_bell_notifications.py",
+                                            "startLine": 124,
+                                            "blobSha": "83674258b322a6e9be430458e16b21149b6bd712",
+                                            "name": "test_06_verify_delete_option_for_informative_unread_msg_is_enabled_C60336472",
+                                            "language": "python",
+                                            "id": "40e60a8c54b99147de8c77fca520366dc71a0b812777fe0c6732f838a726ff1d",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 150,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_04_bell_notifications.py",
+                                            "startLine": 137,
+                                            "blobSha": "83674258b322a6e9be430458e16b21149b6bd712",
+                                            "name": "test_07_verify_user_can_navigate_back_to_navigation_side_panel_C60370254",
+                                            "language": "python",
+                                            "id": "bc1bb20f0db338824ab18944d9c62cb70c0da927d4682affebb948885e2658e9",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "file_identity": "test_suite_05_bell_notifications.py",
+                                    "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_05_bell_notifications.py": [
+                                        {
+                                            "endLine": 30,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_05_bell_notifications.py",
+                                            "startLine": 14,
+                                            "blobSha": "da825691abdfa30973324eb731573b1b5727abf2",
+                                            "name": "class_setup",
+                                            "language": "python",
+                                            "id": "b0dcfdc42f0e188b4da1be96cca4c30d22af6c374e5f52dd56242e20cb98ee7d",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 49,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_05_bell_notifications.py",
+                                            "startLine": 34,
+                                            "blobSha": "da825691abdfa30973324eb731573b1b5727abf2",
+                                            "name": "test_01_verify_notification_tile_ellipsis_clickable_C60339095",
+                                            "language": "python",
+                                            "id": "324da5d461dcd5fd92900a4346cdd3eaa71442adb77b7cb7c15ce04ce5d3ec51",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 100,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_05_bell_notifications.py",
+                                            "startLine": 53,
+                                            "blobSha": "da825691abdfa30973324eb731573b1b5727abf2",
+                                            "name": "test_02_verify_mark_as_read_option_enabled_for_all_notification_types_C60339094",
+                                            "language": "python",
+                                            "id": "2bf5051982e6f8520ffc60b284787bd942a5915bbfb7cb6ad28c581311a26724",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 128,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_05_bell_notifications.py",
+                                            "startLine": 104,
+                                            "blobSha": "da825691abdfa30973324eb731573b1b5727abf2",
+                                            "name": "test_03_verify_unread_read_notifications_C53303701",
+                                            "language": "python",
+                                            "id": "ba7524ba2950ddfd8d3cde977c36e959a451bbda77ecda81d56d6e1f1b462530",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 176,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_05_bell_notifications.py",
+                                            "startLine": 132,
+                                            "blobSha": "da825691abdfa30973324eb731573b1b5727abf2",
+                                            "name": "test_04_verify_elements_in_notifs_title_C60339091",
+                                            "language": "python",
+                                            "id": "366aee126d9c3838d3187557785b5a18c547a7923e99785efa571ce934592983",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "file_identity": "test_suite_06_bell_notifcations.py",
+                                    "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_06_bell_notifcations.py": [
+                                        {
+                                            "endLine": 29,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_06_bell_notifcations.py",
+                                            "startLine": 14,
+                                            "blobSha": "8f1b9acb72c9eab8e28861f2122431f363f46b7e",
+                                            "name": "class_setup",
+                                            "language": "python",
+                                            "id": "058e2e582c95e04b261066d73072bd8150fa1d9e568876d9f3be5ffe302c563c",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 42,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_06_bell_notifcations.py",
+                                            "startLine": 33,
+                                            "blobSha": "8f1b9acb72c9eab8e28861f2122431f363f46b7e",
+                                            "name": "test_01_open_detailed_view_from_message_C58684404",
+                                            "language": "python",
+                                            "id": "f70607e27f7029d16020c9464f051c2d26dbe4dda482f44d81932dfa0c926d6f",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 62,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_06_bell_notifcations.py",
+                                            "startLine": 46,
+                                            "blobSha": "8f1b9acb72c9eab8e28861f2122431f363f46b7e",
+                                            "name": "test_02_mark_message_as_read_by_opening_C58684406",
+                                            "language": "python",
+                                            "id": "d00181a224f380ebda2f93430e1b32b625fa25e3337506957cf7d5a5ac3c031f",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 95,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_06_bell_notifcations.py",
+                                            "startLine": 66,
+                                            "blobSha": "8f1b9acb72c9eab8e28861f2122431f363f46b7e",
+                                            "name": "test_03_verify_unread_notifs_description_C60336160",
+                                            "language": "python",
+                                            "id": "0f82b7535e66c98c9fee47f1deeaddba468bf1eae859367ae98e529d4cea7ccf",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 123,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_06_bell_notifcations.py",
+                                            "startLine": 99,
+                                            "blobSha": "8f1b9acb72c9eab8e28861f2122431f363f46b7e",
+                                            "name": "test_04_verify_read_notifs_description_C60336161",
+                                            "language": "python",
+                                            "id": "fac33addf9c48286a8cb8af3b207744c665488f9dda484faf46768572c639ff1",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "file_identity": "test_suite_07_bell_notifcations.py",
+                                    "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_07_bell_notifcations.py": [
+                                        {
+                                            "endLine": 29,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_07_bell_notifcations.py",
+                                            "startLine": 14,
+                                            "blobSha": "426860980a2a171839ef28e3c8ae4730d8ea2d8c",
+                                            "name": "class_setup",
+                                            "language": "python",
+                                            "id": "8940c012a52ff3dc6aa92460b3c5951b289a5267ddbe41b9a4a86159f7fb6b58",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 43,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_07_bell_notifcations.py",
+                                            "startLine": 31,
+                                            "blobSha": "426860980a2a171839ef28e3c8ae4730d8ea2d8c",
+                                            "name": "test_01_verify_close_button_functionality_in_bell_notification_flyout_C60339090",
+                                            "language": "python",
+                                            "id": "425803c82f11622e1e1925ad5fbe40926f7dcfcc5c1aab49f50bdec51b39ba90",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 58,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_07_bell_notifcations.py",
+                                            "startLine": 45,
+                                            "blobSha": "426860980a2a171839ef28e3c8ae4730d8ea2d8c",
+                                            "name": "test_02_verify_users_can_view_unread_messages_C60339083",
+                                            "language": "python",
+                                            "id": "96b48182c93ff86d8cfafb43726a9b3ad0113ee12996af765e78b1808255ffd6",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 77,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_07_bell_notifcations.py",
+                                            "startLine": 60,
+                                            "blobSha": "426860980a2a171839ef28e3c8ae4730d8ea2d8c",
+                                            "name": "test_03_verify_users_can_view_messages_under_read_section_C60339084",
+                                            "language": "python",
+                                            "id": "34ca1d7cb1252f42a85083da8ce93ad5ab12899c09f4742da7e76580fb09ff15",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 94,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_07_bell_notifcations.py",
+                                            "startLine": 79,
+                                            "blobSha": "426860980a2a171839ef28e3c8ae4730d8ea2d8c",
+                                            "name": "test_04_verify_notifications_after_relaunching_app_C66254937",
+                                            "language": "python",
+                                            "id": "20c3d3f533459d432ee82817619aa04059b34d2f19d3861cece1b71667ef2de2",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "file_identity": "test_suite_08_bell_notifcations.py",
+                                    "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_08_bell_notifcations.py": [
+                                        {
+                                            "endLine": 28,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_08_bell_notifcations.py",
+                                            "startLine": 14,
+                                            "blobSha": "ef5d62f30c9aabab3cb34d40b8158aa8a97842ca",
+                                            "name": "class_setup",
+                                            "language": "python",
+                                            "id": "09fca5d852449e6fa39f03c342ed1c428292f69b5a91a01827c5a989f2a2398e",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 36,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_08_bell_notifcations.py",
+                                            "startLine": 30,
+                                            "blobSha": "ef5d62f30c9aabab3cb34d40b8158aa8a97842ca",
+                                            "name": "test_01_verify_bell_notifications_device_details_screen_blur_displayed_C60336359",
+                                            "language": "python",
+                                            "id": "ea505227870a56def6035fe73a49469c8af001d48949d915e21ed2fd68fb82d6",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 48,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_08_bell_notifcations.py",
+                                            "startLine": 38,
+                                            "blobSha": "ef5d62f30c9aabab3cb34d40b8158aa8a97842ca",
+                                            "name": "BaseFlow.test_02_verify_support_on_urgent_info_warning_unread_notifications_C60369962",
+                                            "language": "python",
+                                            "id": "4cb03a81a482c7d1b1fccf20ef42e3e43a1301a9e17c4bb7b8c655cc14b21c20",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 60,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_08_bell_notifcations.py",
+                                            "startLine": 50,
+                                            "blobSha": "ef5d62f30c9aabab3cb34d40b8158aa8a97842ca",
+                                            "name": "test_03_verify_support_on_urgent_unread_notifications_C60370064",
+                                            "language": "python",
+                                            "id": "19226f2aab484a0a43f6418c7be8e0352bdaa657299e6609bebd7d0bdbf98c3b",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 73,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_08_bell_notifcations.py",
+                                            "startLine": 62,
+                                            "blobSha": "ef5d62f30c9aabab3cb34d40b8158aa8a97842ca",
+                                            "name": "test_04_verify_support_on_important_unread_notifications_C60370065",
+                                            "language": "python",
+                                            "id": "a6c3416802ad507dfffd8e52dee89115c259a64fda8e6ed020da75f1cc4aaa94",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        },
+                                        {
+                                            "endLine": 86,
+                                            "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                            "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_08_bell_notifcations.py",
+                                            "startLine": 75,
+                                            "blobSha": "ef5d62f30c9aabab3cb34d40b8158aa8a97842ca",
+                                            "name": "test_05_verify_bell_good_to_know_notifications_C60370067",
+                                            "language": "python",
+                                            "id": "542d4ae9b741c4bdbcc4f099cc11e0867f83c9eca60df7f8a736e77cf49a04b0",
+                                            "chunkType": "function",
+                                            "isTestFile": true
+                                        }
+                                    ]
+                                }
+                            ],
+                            "code_doc": [
+                                {
+                                    "kb_id": "",
+                                    "kb_name": ""
+                                }
+                            ]
+                        }
+                    },
+                    "generated_doc_filepath": "",
+                    "purpose": "",
+                    "associated_knowledge_bases": {
+                        "raw_code": [
+                            {
+                                "file_identity": "conftest.py",
+                                "tests/windows/hpx_rebranding/Framework/conftest.py": [
+                                    {
+                                        "endLine": 33,
+                                        "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                        "filePath": "tests/windows/hpx_rebranding/Framework/conftest.py",
+                                        "startLine": 5,
+                                        "blobSha": "080a30373f2868556f8cfbc6ec6d242058febcad",
+                                        "name": "function_setup_clear_sign_out",
+                                        "language": "python",
+                                        "id": "f738a07c4f0c9cfc2355f62e25d3362733b58bdd43ee48e4606774db52cd47f1",
+                                        "chunkType": "function",
+                                        "isTestFile": false
+                                    },
+                                    {
+                                        "endLine": 62,
+                                        "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                        "filePath": "tests/windows/hpx_rebranding/Framework/conftest.py",
+                                        "startLine": 35,
+                                        "blobSha": "080a30373f2868556f8cfbc6ec6d242058febcad",
+                                        "name": "function_setup_myhp_launch",
+                                        "language": "python",
+                                        "id": "3ba84584df6309a502e4f86e87681c67ebe6375d2922113f864c4313e4223316",
+                                        "chunkType": "function",
+                                        "isTestFile": false
+                                    },
+                                    {
+                                        "endLine": 86,
+                                        "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                        "filePath": "tests/windows/hpx_rebranding/Framework/conftest.py",
+                                        "startLine": 64,
+                                        "blobSha": "080a30373f2868556f8cfbc6ec6d242058febcad",
+                                        "name": "function_setup_to_reset_and_launch_myhp",
+                                        "language": "python",
+                                        "id": "11b3aff3f9a6a368cd3f5ce0376923ba349576c4224d2da2d358ed28ca5f6bf9",
+                                        "chunkType": "function",
+                                        "isTestFile": false
+                                    },
+                                    {
+                                        "endLine": 108,
+                                        "indexedAt": "2026-06-09T15:47:18.989185031Z",
+                                        "filePath": "tests/windows/hpx_rebranding/Framework/conftest.py",
+                                        "startLine": 87,
+                                        "blobSha": "080a30373f2868556f8cfbc6ec6d242058febcad",
+                                        "name": "pytest_collection_modifyitems",
+                                        "language": "python",
+                                        "id": "4b1a682116aa8a82a098b9fdf0907eeabc556085982717d4c4afecaca44db2bd",
+                                        "chunkType": "function",
+                                        "isTestFile": false
+                                    }
+                                ]
+                            }
+                        ],
+                        "code_doc": [
+                            {
+                                "kb_id": "",
+                                "kb_name": ""
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}
