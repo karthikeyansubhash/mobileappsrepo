@@ -1,0 +1,13 @@
+{
+    "Index/root/root_index.json": [
+        {
+            "type": "file_node",
+            "name": "root_index.json",
+            "filepath": "Index/root/root_index.json",
+            "start_line": 1,
+            "end_line": 13,
+            "depends_on": [],
+            "content": "{\n    \"__init__.py\": [\n        {\n            \"type\": \"file_node\",\n            \"name\": \"__init__.py\",\n            \"filepath\": \"__init__.py\",\n            \"start_line\": 1,\n            \"end_line\": 2,\n            \"depends_on\": [],\n            \"content\": \"__author__ = 'trex'\\n\"\n        }\n    ]\n}"
+        }
+    ]
+}
