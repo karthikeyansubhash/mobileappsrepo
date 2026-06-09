@@ -188760,8 +188760,8 @@
                     }
                 },
                 "print": {
-                    "generated_doc_filepath": "",
-                    "purpose": "",
+                    "generated_doc_filepath": "Index/Docs/tests/windows/smart/print/print.md",
+                    "purpose": "Encapsulates printer-related test scenarios requiring pre-configured printer state, providing class-level setup fixture to establish printer connections and application state before test execution.",
                     "associated_knowledge_bases": {
                         "raw_code": [
                             {
@@ -189287,12 +189287,12 @@
                         ],
                         "code_doc": [
                             {
-                                "kb_id": "",
-                                "kb_name": ""
+                                "kb_id": "11513",
+                                "kb_name": "printdoc20260609173211kb"
                             }
                         ]
                     },
-                    "processing_status": "FAILED_AAVA_WORKFLOW"
+                    "processing_status": "SUCCESS"
                 },
                 "print_anywhere": {
                     "generated_doc_filepath": "",
