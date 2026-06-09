@@ -1,1 +1,0 @@
- c:\Users\exec\Desktop\wmicmd\wmicmd /cmd=1 /cmdtype=0x4c /size=0

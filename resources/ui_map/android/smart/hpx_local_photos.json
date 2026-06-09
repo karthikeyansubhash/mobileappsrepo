@@ -1,9 +1,0 @@
-{
- "album_name":
-    {
-    "locator": {
-        "xpath": ["//android.view.View[@content-desc='Albums']","//android.widget.TextView[@text='Albums']"]
-        }
-
-    }
-}

@@ -1,9 +1,0 @@
-{
-  "@hp-af-jarvis-auth/forceLogsAuth": "true",
-  "@hp-af/logging/transports": "fileAsyncTransport",
-  "@hp-af/logging/severity": "debug",
-  "@hp-af/feature-switch/overrides": 
-  {
-    
-  }
-}

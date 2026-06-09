@@ -1,7 +1,0 @@
-{
-    "sign_in_btn": {
-        "locator": {
-            "id": "SignIn"
-        }
-    }
-}

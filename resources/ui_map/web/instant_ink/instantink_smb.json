@@ -1,7 +1,0 @@
-{
-    "instantink_vulcan_banner":{
-        "locator": {
-            "css selector": "#instantink-vulcan"
-        }
-    }
-}
