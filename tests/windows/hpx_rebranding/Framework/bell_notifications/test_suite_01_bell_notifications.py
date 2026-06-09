@@ -24,6 +24,7 @@ class Test_Suite_01_Bell_Notifications(object):
         assert self.devicesMFE.verify_profile_icon_show_up(), "profile icon invisible"
         assert self.devicesMFE.verify_sign_in_button_show_up(), "sign-in button invisible"
         assert self.devicesMFE.verify_bell_icon_show_up(), "bell icon invisible"
+        assert self.devicesMFE.verify_bell_icon(), "bell icon invisible"
 
     @pytest.mark.regression
     def test_02_verify_global_header_navigation_includes_bellicon_C53303694(self):
