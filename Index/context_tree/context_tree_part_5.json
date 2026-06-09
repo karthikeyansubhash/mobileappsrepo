@@ -188760,7 +188760,7 @@
                     }
                 },
                 "print": {
-                    "generated_doc_filepath": "",
+                    "generated_doc_filepath": "Index/Docs/tests/windows/smart/print/print.md",
                     "purpose": "",
                     "associated_knowledge_bases": {
                         "raw_code": [
@@ -189287,11 +189287,12 @@
                         ],
                         "code_doc": [
                             {
-                                "kb_id": "",
-                                "kb_name": ""
+                                "kb_id": "11365",
+                                "kb_name": "printdoc20260609151321kb"
                             }
                         ]
-                    }
+                    },
+                    "processing_status": "SUCCESS"
                 },
                 "print_anywhere": {
                     "generated_doc_filepath": "",
