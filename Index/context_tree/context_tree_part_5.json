@@ -108964,8 +108964,8 @@
                         }
                     },
                     "bell_notifications": {
-                        "generated_doc_filepath": "",
-                        "purpose": "",
+                        "generated_doc_filepath": "Index/Docs/tests/windows/hpx_rebranding/Framework/bell_notifications/bell_notifications.md",
+                        "purpose": "MODULE SUMMARY DETAILS:\nThis test suite module validates the bell notification icon functionality within the HPX rebranding framework, focusing on global header navigation verification, bell icon presence and clickability, notification side panel behavior, and empty state handling for non-authenticated users. The module implements automated UI test cases using a pytest-based testing framework to ensure proper rendering and interaction patterns of the notification bell component across different user authentication states.\n\nMODULE SUMMARY DETAILS:\nThis test suite module validates the navigation and interaction controls within the bell notifications side panel, specifically focusing on the back/close button functionality. The module implements automated UI test cases to verify the presence, labeling, and clickability of the close button component, ensuring users can properly dismiss the notifications panel and return to the main application view.\n\nMODULE SUMMARY DETAILS:\nThis test suite module validates the visual styling, message categorization, and content management functionality of the bell notifications system within the HPX rebranding framework. The module implements automated UI test cases to verify color coding for different message severity levels (urgent, warning, informative), notification panel behavior across authentication states, message filtering by account context, and chronological sorting order of displayed notifications.\n\nMODULE SUMMARY DETAILS:\nThis test module validates the bell notification system functionality within the HPX rebranding framework, specifically testing notification display behavior, user authentication flows through notification interfaces, message type handling (urgent, warning, informative), and navigation interactions. The module executes automated UI verification tests ensuring proper notification state transitions, permission controls for delete operations based on message urgency levels, and seamless integration between notification flyouts and authentication mechanisms.\n\nMODULE SUMMARY DETAILS:\nThis test module validates advanced bell notification interaction patterns including notification tile action menus, mark-as-read functionality across different message types, read/unread state management, and notification title element composition. The module executes comprehensive UI interaction tests ensuring proper ellipsis menu behavior, state transition accuracy for notification read status, and structural validation of notification interface components within the HPX Windows application framework.\n\nMODULE SUMMARY DETAILS:\nThis test module validates detailed notification view interactions, automatic read-state marking through message opening, and notification description content verification for both unread and read message states. The module executes focused tests on notification detail navigation, state transition automation triggered by user viewing actions, and content accuracy validation ensuring proper message description display within the HPX Windows application framework.\n\nMODULE SUMMARY DETAILS:\nThis test suite module validates the bell notification system functionality within the HP Smart application framework, specifically targeting notification flyout interactions, message visibility states (unread/read), and notification persistence across application lifecycle events. The module implements automated UI verification tests for notification center features including close button operations, message categorization, and state retention after application relaunch scenarios.\n\nMODULE SUMMARY DETAILS:\nThis test suite module validates advanced bell notification system features within the HP Smart application framework, focusing on notification priority categorization (urgent, important, good-to-know), support link functionality, and UI blur effects during notification display. The module implements automated verification tests for notification severity indicators, support resource accessibility, and visual presentation behaviors across different notification types.",
                         "associated_knowledge_bases": {
                             "raw_code": [
                                 {
@@ -109563,11 +109563,12 @@
                             ],
                             "code_doc": [
                                 {
-                                    "kb_id": "",
-                                    "kb_name": ""
+                                    "kb_id": "11570",
+                                    "kb_name": "bell_notificationsdoc20260609185951kb"
                                 }
                             ]
-                        }
+                        },
+                        "processing_status": "SUCCESS"
                     },
                     "generated_doc_filepath": "",
                     "purpose": "",
