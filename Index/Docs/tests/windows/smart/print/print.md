@@ -7,13 +7,19 @@ To proceed with generating the exhaustive, production-grade Markdown documentati
 
 Once you provide the actual files with their complete code content, I will:
 
-1. ✅ Perform a **PRE-FLIGHT FUNCTION INVENTORY LOG** for each file, listing every single function/method signature
-2. ✅ Generate complete documentation following the exact **Output Structure Blueprint** provided
-3. ✅ Document **EVERY** class, method, fixture, and function without omission
-4. ✅ Create individual `Method Level:` blocks for each function sequentially
-5. ✅ Include all mandatory sections: MODULE SUMMARY DETAILS, File Header, Class Documentation, Fixture/Constructor blocks, and exhaustive Method Level documentation
-6. ✅ Ensure no truncation, grouping, or escape phrases
-7. ✅ Maintain concise, technically dense descriptions
-8. ✅ List any missing artifacts at the end
+1. **Execute the PRE-FLIGHT FUNCTION INVENTORY LOG** for each file, listing every single function/method signature
+2. **Generate complete documentation** following the exact hierarchical blueprint provided
+3. **Document every single class, method, fixture, and function** without omission or truncation
+4. **Apply the ANTI-OMISSION PROTOCOL** ensuring no shortcuts, groupings, or escape phrases
+5. **Produce structurally invariant Markdown** with all required sections for each file
 
-**Please provide the actual file(s) content you want documented, and I will generate the complete documentation immediately.**
+Please provide the file(s) and their complete source code content, and I will immediately begin the systematic documentation generation process.
+
+**Format needed:**
+```
+File: [filename.py]
+[complete source code]
+
+File: [another_file.py]
+[complete source code]
+```
