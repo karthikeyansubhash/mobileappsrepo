@@ -1,0 +1,49 @@
+graph TB
+    subgraph "Test Execution Layer"
+        A[test_suite_01_bell_notifications.py<br/>Validates bell icon visibility, clickability,<br/>and side panel behavior for authenticated<br/>and unauthenticated user states]
+        B[test_suite_02_bell_notifications.py<br/>Validates notification panel UI layout,<br/>sign-in button display, close button<br/>functionality, and panel state transitions]
+    end
+    
+    subgraph "Framework Infrastructure"
+        C[Pytest Test Runner<br/>Orchestrates test discovery,<br/>execution, and reporting]
+        D[Windows Automation Infrastructure<br/>Provides UI element interaction<br/>and application control capabilities]
+        E[Authentication State Manager<br/>Controls user session states<br/>for test scenario partitioning]
+    end
+    
+    subgraph "Target Application"
+        F[HPX Desktop Application<br/>Global Header Navigation<br/>Bell Notification Icon]
+        G[Notification Side Panel<br/>UI Layout & Controls<br/>Sign-in Enforcement]
+    end
+    
+    subgraph "Knowledge Base Tracking"
+        H[KB ID: 11589<br/>bell_notifications_batch1]
+        I[KB ID: 11590<br/>bell_notifications_batch2]
+        J[Code Documentation<br/>KB IDs: 11613, 11616, 11617]
+    end
+    
+    A --> C
+    B --> C
+    A --> D
+    B --> D
+    A --> E
+    B --> E
+    
+    A -.-> F
+    A -.-> G
+    B -.-> G
+    
+    A -.-> H
+    B -.-> I
+    A -.-> J
+    B -.-> J
+    
+    style A fill:#e1f5ff,stroke:#0066cc,stroke-width:2px
+    style B fill:#e1f5ff,stroke:#0066cc,stroke-width:2px
+    style C fill:#fff4e6,stroke:#ff9800,stroke-width:2px
+    style D fill:#fff4e6,stroke:#ff9800,stroke-width:2px
+    style E fill:#fff4e6,stroke:#ff9800,stroke-width:2px
+    style F fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px
+    style G fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px
+    style H fill:#e8f5e9,stroke:#4caf50,stroke-width:2px
+    style I fill:#e8f5e9,stroke:#4caf50,stroke-width:2px
+    style J fill:#e8f5e9,stroke:#4caf50,stroke-width:2px
