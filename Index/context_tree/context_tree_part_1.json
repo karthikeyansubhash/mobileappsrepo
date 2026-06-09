@@ -185,42 +185,6 @@
                                     "source_system_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_02_bell_notifications.py",
                                     "kb_id": "11590",
                                     "kb_name": "bell_notifications_batch2_rc_20260609211023kb"
-                                },
-                                {
-                                    "file_identity": "test_suite_03_bell_notifications.py",
-                                    "source_system_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_03_bell_notifications.py",
-                                    "kb_id": "11591",
-                                    "kb_name": "bell_notifications_batch3_rc_20260609211035kb"
-                                },
-                                {
-                                    "file_identity": "test_suite_04_bell_notifications.py",
-                                    "source_system_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_04_bell_notifications.py",
-                                    "kb_id": "11592",
-                                    "kb_name": "bell_notifications_batch4_rc_20260609211046kb"
-                                },
-                                {
-                                    "file_identity": "test_suite_05_bell_notifications.py",
-                                    "source_system_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_05_bell_notifications.py",
-                                    "kb_id": "11593",
-                                    "kb_name": "bell_notifications_batch5_rc_20260609211057kb"
-                                },
-                                {
-                                    "file_identity": "test_suite_06_bell_notifcations.py",
-                                    "source_system_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_06_bell_notifcations.py",
-                                    "kb_id": "11594",
-                                    "kb_name": "bell_notifications_batch6_rc_20260609211117kb"
-                                },
-                                {
-                                    "file_identity": "test_suite_07_bell_notifcations.py",
-                                    "source_system_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_07_bell_notifcations.py",
-                                    "kb_id": "11595",
-                                    "kb_name": "bell_notifications_batch7_rc_20260609211128kb"
-                                },
-                                {
-                                    "file_identity": "test_suite_08_bell_notifcations.py",
-                                    "source_system_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_08_bell_notifcations.py",
-                                    "kb_id": "11596",
-                                    "kb_name": "bell_notifications_batch8_rc_20260609211140kb"
                                 }
                             ],
                             "code_doc": [
@@ -228,83 +192,11 @@
                                     "kb_id": "11613",
                                     "kb_name": "bell_notificationscodedoc20260609234904kb"
                                 }
-                            ],
-                            "metrics": {
-                                "bell_notifications_batch1_rc_20260609211012kb": {
-                                    "trace_id": "dcc1be90-f255-4d0a-8b14-3b554cafab5b",
-                                    "total_tokens": 20222,
-                                    "input_tokens": 14890,
-                                    "output_tokens": 5332,
-                                    "total_cost_usd": 0.15443,
-                                    "time_taken_seconds": 73.719
-                                },
-                                "bell_notifications_batch2_rc_20260609211023kb": {
-                                    "trace_id": "6d758fb3-bb1a-4821-80e1-97f57b398fed",
-                                    "total_tokens": 18978,
-                                    "input_tokens": 14950,
-                                    "output_tokens": 4028,
-                                    "total_cost_usd": 0.13517,
-                                    "time_taken_seconds": 63.528
-                                },
-                                "bell_notifications_batch3_rc_20260609211035kb": {
-                                    "trace_id": "892daff5-2589-42ce-87cb-29a382c36cab",
-                                    "total_tokens": 23712,
-                                    "input_tokens": 17781,
-                                    "output_tokens": 5931,
-                                    "total_cost_usd": 0.17787,
-                                    "time_taken_seconds": 73.954
-                                },
-                                "bell_notifications_batch4_rc_20260609211046kb": {
-                                    "trace_id": "7999d06a-2000-4d1d-9106-3b1635b50f61",
-                                    "total_tokens": 30301,
-                                    "input_tokens": 23444,
-                                    "output_tokens": 6857,
-                                    "total_cost_usd": 0.220075,
-                                    "time_taken_seconds": 88.108
-                                },
-                                "bell_notifications_batch5_rc_20260609211057kb": {
-                                    "trace_id": "f786d884-2bdc-453e-a6f9-f9b82b95fce4",
-                                    "total_tokens": 0,
-                                    "input_tokens": 0,
-                                    "output_tokens": 0,
-                                    "total_cost_usd": 0.0,
-                                    "time_taken_seconds": 0.0
-                                },
-                                "bell_notifications_batch6_rc_20260609211117kb": {
-                                    "trace_id": "7215d8bd-204e-4e3a-bd95-a2d3659f0311",
-                                    "total_tokens": 0,
-                                    "input_tokens": 0,
-                                    "output_tokens": 0,
-                                    "total_cost_usd": 0.0,
-                                    "time_taken_seconds": 0.0
-                                },
-                                "bell_notifications_batch7_rc_20260609211128kb": {
-                                    "trace_id": "fc9e13e2-e5a9-4c1e-9010-67434fc8625d",
-                                    "total_tokens": 49565,
-                                    "input_tokens": 20221,
-                                    "output_tokens": 4943,
-                                    "total_cost_usd": 0.331245,
-                                    "time_taken_seconds": 68.198
-                                },
-                                "bell_notifications_batch8_rc_20260609211140kb": {
-                                    "trace_id": "84855f0e-e7fe-434b-a86e-d0e9bbcfd5da",
-                                    "total_tokens": 20541,
-                                    "input_tokens": 15704,
-                                    "output_tokens": 4837,
-                                    "total_cost_usd": 0.151075,
-                                    "time_taken_seconds": 65.623
-                                }
-                            }
+                            ]
                         },
                         "file_purposes": {
                             "test_suite_01_bell_notifications.py": "This test module implements automated regression test cases for the Bell Notifications feature within the HPX Desktop application's global header navigation system. It validates the visibility, interactivity, and state management of the bell icon notification component across authenticated and unauthenticated user states, ensuring proper UI element rendering and side panel behavior through pytest-driven Windows automation testing.",
-                            "test_suite_02_bell_notifications.py": "This test module implements automated regression test cases for the Bell Notifications feature within the HPX Desktop application. It validates the visibility, interaction, and navigation behavior of the notification bell icon and its associated panel UI components, ensuring proper sign-in button display, close button functionality, and panel navigation controls in a Windows desktop environment.",
-                            "test_suite_03_bell_notifications.py": "This pytest test suite validates the bell notification system functionality within the HPX Desktop application, specifically testing notification panel UI behavior, message categorization by severity (urgent, warning, informative), authentication-dependent notification visibility, and message sorting/filtering capabilities across production and staging environment exclusions.",
-                            "test_suite_04_bell_notifications.py": "This module implements a comprehensive automated test suite for validating bell notification functionality within the HP Experience (HPX) desktop application. It systematically verifies notification panel behavior, user authentication workflows through notification flyouts, notification categorization (urgent, warning, informative), deletion capabilities, and navigation patterns within the notification system across production and staging environment exclusions.",
-                            "test_suite_05_bell_notifications.py": "This test suite validates the bell notification system functionality within the HP Smart Desktop application (HPX). It verifies notification UI elements, interaction behaviors, read/unread state transitions, notification type categorization (informative, warning, urgent), and detailed notification view components across production and staging environment exclusions.",
-                            "test_suite_06_bell_notifcations.py": "This test suite module validates the bell notification system functionality within the HP Experience (HPX) desktop application, specifically testing notification display, categorization (informative, urgent, warning), read/unread state transitions, and detailed notification view navigation. The module executes automated UI interaction tests using pytest framework with Windows driver integration and page object model architecture.",
-                            "test_suite_07_bell_notifcations.py": "This test suite validates the bell notification flyout functionality within the HP Experience (HPX) desktop application for Windows. It verifies user interactions with notification categories, message viewing capabilities in read/unread sections, close button functionality, and notification persistence across application relaunches. The module executes regression-level automated UI tests using the pytest framework integrated with Windows automation drivers and page object models.",
-                            "test_suite_08_bell_notifcations.py": "This test suite module implements automated regression testing for the bell notification system within the HPX Desktop application. It validates notification UI behaviors including visibility, categorization, interaction patterns, and visual effects across urgent, informative, and warning notification types. The module leverages pytest framework with class-scoped fixtures to orchestrate Windows desktop automation and web session management for comprehensive notification feature verification."
+                            "test_suite_02_bell_notifications.py": "This test module implements automated regression test cases for the Bell Notifications feature within the HPX Desktop application. It validates the visibility, interaction, and navigation behavior of the notification bell icon and its associated panel UI components, ensuring proper sign-in button display, close button functionality, and panel navigation controls in a Windows desktop environment."                           
                         },
                         "generated_doc_filepath": "tests/windows/hpx_rebranding/Framework/bell_notifications/bell_notifications.md"
                     }
