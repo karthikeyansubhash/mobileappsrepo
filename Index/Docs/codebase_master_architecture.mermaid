@@ -1,0 +1,107 @@
+graph TB
+    subgraph Test_Execution_Layer["Test Execution Layer"]
+        PYTEST["Pytest Framework<br/>Test discovery, fixture injection,<br/>execution orchestration"]
+        CONFTEST_ROOT["Root conftest.py<br/>Global fixtures, session setup,<br/>shared utilities"]
+        CONFTEST_PLATFORM["Platform conftest.py<br/>Platform-specific drivers,<br/>test environment config"]
+    end
+
+    subgraph Platform_Automation_Android["Platform Automation - Android"]
+        ANDROID_FLOWS["Android Flows<br/>Smart app, HPX, JWeb plugins,<br/>cloud integrations"]
+        ANDROID_TESTS["Android Test Suites<br/>Smart, HPX, JWeb, HPBridge,<br/>InOS print services"]
+        ANDROID_APP["Android App Package<br/>Build management, deployment,<br/>version control"]
+    end
+
+    subgraph Platform_Automation_iOS["Platform Automation - iOS"]
+        IOS_FLOWS["iOS Flows<br/>Smart app, HPX, JWeb plugins,<br/>camera workflows"]
+        IOS_TESTS["iOS Test Suites<br/>Smart, HPX, JWeb, MOOBE,<br/>print anywhere"]
+        IOS_APP["iOS App Package<br/>Build management, deployment,<br/>version control"]
+    end
+
+    subgraph Platform_Automation_Mac["Platform Automation - Mac"]
+        MAC_FLOWS["Mac Flows<br/>Smart app, JWeb plugins,<br/>OOBE, system integration"]
+        MAC_TESTS["Mac Test Suites<br/>Smart, JWeb functionality"]
+        MAC_APP["Mac App Package<br/>Build management, deployment,<br/>version control"]
+    end
+
+    subgraph Platform_Automation_Windows["Platform Automation - Windows"]
+        WIN_FLOWS["Windows Flows<br/>HPX, Gotham, JWeb plugins,<br/>hardware integrations"]
+        WIN_TESTS["Windows Test Suites<br/>HPX, HPX Rebranding, Print,<br/>Support, Analytics"]
+        WIN_APP["Windows App Package<br/>Build management, deployment,<br/>version control"]
+    end
+
+    subgraph Platform_Automation_Web["Platform Automation - Web"]
+        WEB_FLOWS["Web Flows<br/>OWS, ECP, SMB, WEX,<br/>cloud services"]
+        WEB_TESTS["Web Test Suites<br/>OWS, ECP, SMB, WEX,<br/>instant ink, shortcuts"]
+    end
+
+    subgraph Cross_Platform_Services["Cross-Platform Services"]
+        JWEB_ARCH["JWeb Plugin Architecture<br/>Auth, device, eventing, data collection,<br/>doc provider, value store"]
+        COMMON_FLOWS["Common Flows<br/>Gotham UI, MOOBE,<br/>shared Smart features"]
+    end
+
+    subgraph Test_Infrastructure["Test Infrastructure"]
+        RESOURCES["Test Resources<br/>UI maps, test data,<br/>localization datasets"]
+        UTILITIES["Test Utilities<br/>Log collection, printer simulation,<br/>localization, TestRail integration"]
+        SCRIPTS["Automation Scripts<br/>Build management, analytics,<br/>environment maintenance"]
+    end
+
+    subgraph External_Systems["External Systems"]
+        TESTRAIL["TestRail API<br/>Test case management,<br/>result reporting"]
+        PRINTER_SIM["Printer Simulator<br/>CDM/LEDM alert simulation,<br/>status emulation"]
+        APP_FACTORY["App Class Factory<br/>Platform-agnostic build<br/>deployment orchestration"]
+    end
+
+    PYTEST --> CONFTEST_ROOT
+    CONFTEST_ROOT --> CONFTEST_PLATFORM
+    
+    CONFTEST_PLATFORM --> ANDROID_TESTS
+    CONFTEST_PLATFORM --> IOS_TESTS
+    CONFTEST_PLATFORM --> MAC_TESTS
+    CONFTEST_PLATFORM --> WIN_TESTS
+    CONFTEST_PLATFORM --> WEB_TESTS
+    
+    ANDROID_TESTS --> ANDROID_FLOWS
+    IOS_TESTS --> IOS_FLOWS
+    MAC_TESTS --> MAC_FLOWS
+    WIN_TESTS --> WIN_FLOWS
+    WEB_TESTS --> WEB_FLOWS
+    
+    ANDROID_FLOWS --> JWEB_ARCH
+    IOS_FLOWS --> JWEB_ARCH
+    MAC_FLOWS --> JWEB_ARCH
+    WIN_FLOWS --> JWEB_ARCH
+    WEB_FLOWS --> JWEB_ARCH
+    
+    ANDROID_FLOWS --> COMMON_FLOWS
+    IOS_FLOWS --> COMMON_FLOWS
+    MAC_FLOWS --> COMMON_FLOWS
+    WIN_FLOWS --> COMMON_FLOWS
+    
+    ANDROID_FLOWS --> RESOURCES
+    IOS_FLOWS --> RESOURCES
+    MAC_FLOWS --> RESOURCES
+    WIN_FLOWS --> RESOURCES
+    WEB_FLOWS --> RESOURCES
+    
+    ANDROID_TESTS --> ANDROID_APP
+    IOS_TESTS --> IOS_APP
+    MAC_TESTS --> MAC_APP
+    WIN_TESTS --> WIN_APP
+    
+    ANDROID_APP --> APP_FACTORY
+    IOS_APP --> APP_FACTORY
+    MAC_APP --> APP_FACTORY
+    WIN_APP --> APP_FACTORY
+    
+    CONFTEST_ROOT --> UTILITIES
+    UTILITIES --> PRINTER_SIM
+    UTILITIES --> TESTRAIL
+    
+    CONFTEST_ROOT --> SCRIPTS
+    
+    style PYTEST fill:#2c3e50,stroke:#ecf0f1,stroke-width:3px,color:#ecf0f1
+    style JWEB_ARCH fill:#8e44ad,stroke:#ecf0f1,stroke-width:2px,color:#ecf0f1
+    style COMMON_FLOWS fill:#16a085,stroke:#ecf0f1,stroke-width:2px,color:#ecf0f1
+    style APP_FACTORY fill:#e74c3c,stroke:#ecf0f1,stroke-width:2px,color:#ecf0f1
+    style RESOURCES fill:#f39c12,stroke:#2c3e50,stroke-width:2px,color:#2c3e50
+    style UTILITIES fill:#3498db,stroke:#ecf0f1,stroke-width:2px,color:#ecf0f1
