@@ -1,0 +1,1995 @@
+{
+    "scripts": {
+        "PrintAnalytics_DataOS": {
+            "generated_doc_filepath": "",
+            "purpose": "",
+            "associated_knowledge_bases": {
+                "raw_code": [
+                    {
+                        "file_identity": "main.py",
+                        "scripts/PrintAnalytics_DataOS/main.py": [
+                            {
+                                "endLine": 50,
+                                "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                                "filePath": "scripts/PrintAnalytics_DataOS/main.py",
+                                "startLine": 16,
+                                "blobSha": "6533d1a4b1c4986ca53c8e0908eb77175932828a",
+                                "name": "Scan.main",
+                                "language": "python",
+                                "id": "a25b5c0f2cf0aec7e090c0925c81c26e6b9e83811f5db2fcccb04693a4ea047f",
+                                "chunkType": "function",
+                                "isTestFile": false
+                            }
+                        ]
+                    }
+                ],
+                "code_doc": [
+                    {
+                        "kb_id": "",
+                        "kb_name": ""
+                    }
+                ]
+            },
+            "utils": {
+                "generated_doc_filepath": "",
+                "purpose": "",
+                "associated_knowledge_bases": {
+                    "raw_code": [
+                        {
+                            "file_identity": "__init__.py",
+                            "scripts/PrintAnalytics_DataOS/utils/__init__.py": [
+                                {
+                                    "endLine": 1,
+                                    "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                                    "filePath": "scripts/PrintAnalytics_DataOS/utils/__init__.py",
+                                    "startLine": 1,
+                                    "blobSha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+                                    "name": "",
+                                    "language": "python",
+                                    "id": "6e87313c0c9eab27d3b6c317d0770a20bf4952e07909de63463bed4c303a6293",
+                                    "chunkType": "fallback",
+                                    "isTestFile": false
+                                }
+                            ]
+                        },
+                        {
+                            "file_identity": "comparators.py",
+                            "scripts/PrintAnalytics_DataOS/utils/comparators.py": [
+                                {
+                                    "endLine": 20,
+                                    "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                                    "filePath": "scripts/PrintAnalytics_DataOS/utils/comparators.py",
+                                    "startLine": 1,
+                                    "blobSha": "864ef7b0d69770387b0fa07ac04279502b2bb82f",
+                                    "name": "compare_dataframes",
+                                    "language": "python",
+                                    "id": "9508f462d45b493c5fc5e646725cbcf17b707321634a61ab87015689b649f0fc",
+                                    "chunkType": "function",
+                                    "isTestFile": false
+                                }
+                            ]
+                        },
+                        {
+                            "file_identity": "file_operations.py",
+                            "scripts/PrintAnalytics_DataOS/utils/file_operations.py": [
+                                {
+                                    "endLine": 10,
+                                    "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                                    "filePath": "scripts/PrintAnalytics_DataOS/utils/file_operations.py",
+                                    "startLine": 3,
+                                    "blobSha": "f018c396d317e890979db742ad276fe3437d3c85",
+                                    "name": "JobNotification.load_csv",
+                                    "language": "python",
+                                    "id": "4887933e4e715668c86f6d4d8e8d05358d47a6bfeaa06e15db302ad4b02875a1",
+                                    "chunkType": "function",
+                                    "isTestFile": false
+                                },
+                                {
+                                    "endLine": 18,
+                                    "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                                    "filePath": "scripts/PrintAnalytics_DataOS/utils/file_operations.py",
+                                    "startLine": 11,
+                                    "blobSha": "f018c396d317e890979db742ad276fe3437d3c85",
+                                    "name": "Test_01_ES_Policies.save_csv",
+                                    "language": "python",
+                                    "id": "67add640f7d86f513e57c51263d12ddea5bcbd3f617e90709ccdcbbddece9cec",
+                                    "chunkType": "function",
+                                    "isTestFile": false
+                                }
+                            ]
+                        },
+                        {
+                            "file_identity": "filters.py",
+                            "scripts/PrintAnalytics_DataOS/utils/filters.py": [
+                                {
+                                    "endLine": 9,
+                                    "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                                    "filePath": "scripts/PrintAnalytics_DataOS/utils/filters.py",
+                                    "startLine": 3,
+                                    "blobSha": "0080a58a3599f75b25118693fabe83260f802b52",
+                                    "name": "HPCloudScan.filter_by_uuid",
+                                    "language": "python",
+                                    "id": "ac0ed60b965033f419217291bfc7815d67d57fffbff79f7ca401bb6b3ad9c818",
+                                    "chunkType": "function",
+                                    "isTestFile": false
+                                }
+                            ]
+                        },
+                        {
+                            "file_identity": "transformations.py",
+                            "scripts/PrintAnalytics_DataOS/utils/transformations.py": [
+                                {
+                                    "endLine": 21,
+                                    "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                                    "filePath": "scripts/PrintAnalytics_DataOS/utils/transformations.py",
+                                    "startLine": 3,
+                                    "blobSha": "bdbfe678ac0078b2e21d3b252d3ec1b2f505f7dc",
+                                    "name": "Copy.rename_columns",
+                                    "language": "python",
+                                    "id": "87dfe48192965caf56cf72ee3d968fdab623d168ea8bca788f69249b4af707eb",
+                                    "chunkType": "function",
+                                    "isTestFile": false
+                                },
+                                {
+                                    "endLine": 36,
+                                    "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                                    "filePath": "scripts/PrintAnalytics_DataOS/utils/transformations.py",
+                                    "startLine": 22,
+                                    "blobSha": "bdbfe678ac0078b2e21d3b252d3ec1b2f505f7dc",
+                                    "name": "CameraScan.split_and_duplicate_rows",
+                                    "language": "python",
+                                    "id": "d145ceccbfc1ba17992c74eb53d791d2170774c436faf54f26764de6a3e21cb4",
+                                    "chunkType": "function",
+                                    "isTestFile": false
+                                }
+                            ]
+                        }
+                    ],
+                    "code_doc": [
+                        {
+                            "kb_id": "",
+                            "kb_name": ""
+                        }
+                    ]
+                }
+            }
+        },
+        "generated_doc_filepath": "",
+        "purpose": "",
+        "associated_knowledge_bases": {
+            "raw_code": [
+                {
+                    "file_identity": "__init__.py",
+                    "scripts/__init__.py": [
+                        {
+                            "endLine": 1,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/__init__.py",
+                            "startLine": 1,
+                            "blobSha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+                            "name": "",
+                            "language": "python",
+                            "id": "c8ebb297d7c6d35120e86bc60515c7daed3da741e3e5874d97d49402180ebec5",
+                            "chunkType": "fallback",
+                            "isTestFile": false
+                        }
+                    ]
+                },
+                {
+                    "file_identity": "android_st.sh",
+                    "scripts/android_st.sh": [
+                        {
+                            "endLine": 80,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/android_st.sh",
+                            "startLine": 1,
+                            "blobSha": "b695898663d2a1eff328dd5a87b4550023f9e834",
+                            "name": "",
+                            "language": "unknown",
+                            "id": "43ff4d42e754a3722a3f286733b924dd8540b278c3961fd978e19a0d0bdb8c36",
+                            "chunkType": "fallback",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 100,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/android_st.sh",
+                            "startLine": 66,
+                            "blobSha": "b695898663d2a1eff328dd5a87b4550023f9e834",
+                            "name": "",
+                            "language": "unknown",
+                            "id": "461def0af18121407eaa7219bc064de7563e3146faa6785856fcf9528ddc0d62",
+                            "chunkType": "fallback",
+                            "isTestFile": false
+                        }
+                    ]
+                },
+                {
+                    "file_identity": "close_testrail_runs_by_name.py",
+                    "scripts/close_testrail_runs_by_name.py": [
+                        {
+                            "endLine": 18,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/close_testrail_runs_by_name.py",
+                            "startLine": 1,
+                            "blobSha": "8d12d97e4841a3c1fa59f803fe89f01120230d0e",
+                            "name": "",
+                            "language": "python",
+                            "id": "2bd2c37e6e71e78e9dcafab389161e4ae7af4f8baa6b6871e34a11f27182683d",
+                            "chunkType": "fallback",
+                            "isTestFile": false
+                        }
+                    ]
+                },
+                {
+                    "file_identity": "combine_all_ips.py",
+                    "scripts/combine_all_ips.py": [
+                        {
+                            "endLine": 53,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/combine_all_ips.py",
+                            "startLine": 9,
+                            "blobSha": "3b2ab12d7bedac6221c3d9ebb9ab6de9d5713229",
+                            "name": "Scan.whitelist_ips",
+                            "language": "python",
+                            "id": "7de64e091e9428db4f3db5cfcd4e62cdd94b6f6f2b0456c110bf3682b5f1c16e",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        }
+                    ]
+                },
+                {
+                    "file_identity": "copy_build.py",
+                    "scripts/copy_build.py": [
+                        {
+                            "endLine": 12,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/copy_build.py",
+                            "startLine": 8,
+                            "blobSha": "c2fe0f4add045e555cc92bf27db61330aab62a91",
+                            "name": "StratusUtility.scp_file",
+                            "language": "python",
+                            "id": "84bdb2697f248a4a7165297aba5506df4de8266de1d042bc66da56c1d75dff4a",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        }
+                    ]
+                },
+                {
+                    "file_identity": "data_patcher.py",
+                    "scripts/data_patcher.py": [
+                        {
+                            "endLine": 7,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/data_patcher.py",
+                            "startLine": 5,
+                            "blobSha": "0fdd6a80123ceb4cef5f4ad4d19aab20100cd774",
+                            "name": "BaiduPrint.__init__",
+                            "language": "python",
+                            "id": "79c9be0fc43b6d1938f52443c11f2ce780a74776f99367345c6a99d1b9e554a9",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 14,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/data_patcher.py",
+                            "startLine": 8,
+                            "blobSha": "0fdd6a80123ceb4cef5f4ad4d19aab20100cd774",
+                            "name": "PersonalizeTiles.get_record_list",
+                            "language": "python",
+                            "id": "eea1149b9862952e58bbb7290729b4ecd0ce6dcd4f069e48ccd73ec2c54b8f78",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 22,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/data_patcher.py",
+                            "startLine": 15,
+                            "blobSha": "0fdd6a80123ceb4cef5f4ad4d19aab20100cd774",
+                            "name": "Test_Suite_01_Install_App_From_HP_Com.get_record",
+                            "language": "python",
+                            "id": "616008a684ca6877b0c95e741986c0e6e39b02d28c6db3662e54440ed96a686f",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 28,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/data_patcher.py",
+                            "startLine": 23,
+                            "blobSha": "0fdd6a80123ceb4cef5f4ad4d19aab20100cd774",
+                            "name": "Users.save_record",
+                            "language": "python",
+                            "id": "10d2ce74d2e59f23465c855a9c9beb094d74361cbc03fbcc944585038e3195d3",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        }
+                    ]
+                },
+                {
+                    "file_identity": "database_purger.py",
+                    "scripts/database_purger.py": [
+                        {
+                            "endLine": 10,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/database_purger.py",
+                            "startLine": 1,
+                            "blobSha": "9b9cc702466ae8e00bc275516612540e59e9b6b4",
+                            "name": "",
+                            "language": "python",
+                            "id": "a5858bec2d88e174fc201cf63280a94518a74e49cd249e9a7a00dae09ca203fc",
+                            "chunkType": "fallback",
+                            "isTestFile": false
+                        }
+                    ]
+                },
+                {
+                    "file_identity": "download_build.py",
+                    "scripts/download_build.py": [
+                        {
+                            "endLine": 152,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/download_build.py",
+                            "startLine": 37,
+                            "blobSha": "0f312c6411c390d269f3736750a3582de8ffd879",
+                            "name": "AlertTypeCDM.download_build",
+                            "language": "python",
+                            "id": "30a4f8c9eaa94488b53066b7f12613dbb4b26f7a6a810a41b3dad392a38c999d",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 166,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/download_build.py",
+                            "startLine": 153,
+                            "blobSha": "0f312c6411c390d269f3736750a3582de8ffd879",
+                            "name": "TEST_DATA.main",
+                            "language": "python",
+                            "id": "a5288bdac4b4fa560ca9f12fdb21520c1f22e67c799fb4b14747f68809fe5c47",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        }
+                    ]
+                },
+                {
+                    "file_identity": "language_detect.py",
+                    "scripts/language_detect.py": [
+                        {
+                            "endLine": 44,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/language_detect.py",
+                            "startLine": 39,
+                            "blobSha": "87c8c47d37b2de28acc07db41bb5b7cbf1dc47fb",
+                            "name": "PROCESS_NAME.process_dl",
+                            "language": "python",
+                            "id": "bd654327970b5dc8c1a3ab5753c09624c191cf87f9ec6466d7fdcf7b695f2188",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 80,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/language_detect.py",
+                            "startLine": 45,
+                            "blobSha": "87c8c47d37b2de28acc07db41bb5b7cbf1dc47fb",
+                            "name": "PrinterSettings.get_lang",
+                            "language": "python",
+                            "id": "956c7964d61418574412e2ebb81d25fedefa0e52d420fd45099baf3253b3c705",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 94,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/language_detect.py",
+                            "startLine": 81,
+                            "blobSha": "87c8c47d37b2de28acc07db41bb5b7cbf1dc47fb",
+                            "name": "SIM_API_URLS.write_to_excel",
+                            "language": "python",
+                            "id": "31a27548ced8a6b60464257b7160c9d80a085f38befc830adb8a1018ced2e845",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 99,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/language_detect.py",
+                            "startLine": 95,
+                            "blobSha": "87c8c47d37b2de28acc07db41bb5b7cbf1dc47fb",
+                            "name": "HARDWARE_PORT_STATUS.write_json",
+                            "language": "python",
+                            "id": "ed4b595c855e378acf35087c20a9dea18cc7b05510dc770940789afe4f8d55b0",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        }
+                    ]
+                },
+                {
+                    "file_identity": "localization_gui.py",
+                    "scripts/localization_gui.py": [
+                        {
+                            "endLine": 22,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 20,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "DevicesGroupNotFoundException._fromUtf8",
+                            "language": "python",
+                            "id": "6a00ae75868d4f4d83b975d5d0c4ace3473dc88c91cabf936f44d0b2bda56725",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 30,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 28,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "UnexpectedItemPresentException._translate",
+                            "language": "python",
+                            "id": "6d3e6128336b9fe1e8469687727b1fe1abe26314922da5f17a745c0c395031d6",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 43,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 37,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "PRINT_SETTINGS.centerForm",
+                            "language": "python",
+                            "id": "b72acf4d54dd57b22710d72f767ba2a3c345ef658840a8d39c161729d66460a3",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 50,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 48,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "AndroidHPPS.__init__",
+                            "language": "python",
+                            "id": "5330d6fcba6149121905afc2ee6d49bf333d671d34da332adf3902a732ed90b7",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 57,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 51,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "EXTRA_INSTALLER_PATH.get_record_list",
+                            "language": "python",
+                            "id": "e244b0d9b7565f89390f14f7610586653f81423c19e774e7afcb737bfbe815bb",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 73,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 58,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "HPBridgeFlow.get_record",
+                            "language": "python",
+                            "id": "7b199c354a2de3a5b859e243e94f44dbca35078eb6c367408b92e8e5aec17cc3",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 76,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 74,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "PREVIEW_SAVE_FILE_SIZES.save_record",
+                            "language": "python",
+                            "id": "0bf8a2c975611192cebc0872e25d6cb3080e89ba11db2c101992db81f384866c",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 81,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 78,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "AndroidJweb.__init__",
+                            "language": "python",
+                            "id": "b3261d65dd845f88bd4d75bcb01a46a9aa5e823002240d607fd17ea60c274bf8",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 119,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 82,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "TEST_DATA.setupUi",
+                            "language": "python",
+                            "id": "0453e76288cfa2ab3055a158ded2873e91d12227ff1cfb0ab8f32b443a4f16cf",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 123,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 120,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "PRINT_EDIT_RESIZE_AND_MOVE.retranslateUi",
+                            "language": "python",
+                            "id": "b1230abeaf418f338758d0e9bd0ea6281b2a572f4f2199f1e7f6ccba67f1b508",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 129,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 124,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "TEST_DATA.updateColor",
+                            "language": "python",
+                            "id": "b42a9690abc0b909e79b2d778ade62c4096647c3f069345f1d8f65666d349ce9",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 136,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 130,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "BUNDLE_ID.accept",
+                            "language": "python",
+                            "id": "57118eb2aaf3cd825e6892c115774d555a654b7c8133566495011a61e17efdcc",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 142,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 138,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "TEST_DATA.__init__",
+                            "language": "python",
+                            "id": "86b65fb1b2cbe464dee4801e2464c4a446510b956005e599a2833edf434eb70a",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 230,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 143,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "setupUi",
+                            "language": "python",
+                            "id": "a4ba8757e384a1552ff9162a299f62b404dea02055a0d120487d42e11546ee17",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 256,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 231,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "retranslateUi",
+                            "language": "python",
+                            "id": "282381a9e63172db9182a286972019116da1449bfa3a81ac66cd582a0046a96f",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 265,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 257,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "setupConnection",
+                            "language": "python",
+                            "id": "d613ffa1fab127721c953e0edd310a82cf63bcb321ceaf12a3f2dd101e6e3011",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 268,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 266,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "exitProgram",
+                            "language": "python",
+                            "id": "ddfdd9788e04369d79b5c37d7cb16ddf752c23d41e1d4d8d59fbd70d62aa874b",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 277,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 269,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "openReviewForm",
+                            "language": "python",
+                            "id": "356daf3ac4115b6ef221d98e173a3f467786dc8670b5ca0d1fba8d47c8a8a947",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 287,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 278,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "establishDBConnection",
+                            "language": "python",
+                            "id": "4abda12869939971558dcbf13620282c94a0a90080f5cbe70f3d1aa9b00173ae",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 301,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 288,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "reloadTreeWidget",
+                            "language": "python",
+                            "id": "e2e308eb18f32d0d2e659a5371032c88a148dab5c3e52ec99a5156793a2c521b",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 307,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 302,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "toggleReviewRunBtn",
+                            "language": "python",
+                            "id": "2aa55cf311eabfa692cef166b29625a061f9309a0b32de11a7923a364e4ab577",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 312,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 308,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "openNewAndroidRunWindow",
+                            "language": "python",
+                            "id": "f5f65f333b1e4d02edd28d08e491d5fcabee57e28b908bb3fa22ba2866eda2f2",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 316,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 313,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "CheckableComboBox",
+                            "language": "python",
+                            "id": "88c5ac3eee752171d20d1daafbf89e7029814b5cdd8d2d0286f6bd82cc9b4802",
+                            "chunkType": "class",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 320,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 317,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "__init__",
+                            "language": "python",
+                            "id": "72b7f00c2191b22f3732593dc579752a8f84bb3a1a3591221da5fe342d1a5bc9",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 329,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 321,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "addItem",
+                            "language": "python",
+                            "id": "643e1b015048d29996700f7f758bf36e15b355f057de66c000775a901eb175d5",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 333,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 330,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "itemChecked",
+                            "language": "python",
+                            "id": "74212774d5253139ce66959a485b8ae75ab6973b9e4a4c3fb1b292343ef43ce9",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 340,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 334,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "checkedItems",
+                            "language": "python",
+                            "id": "a5ba43d56939a3160fd080f5b6e62d0c67164e11fe919da3f4ad9be70dfd556b",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 350,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 342,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "__init__",
+                            "language": "python",
+                            "id": "79c78388feadfe05096f29b5d5166f6dc51bd8c084c00cc6f74d4fc02762b5fd",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 495,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 351,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "setupUi",
+                            "language": "python",
+                            "id": "7dc52145ae26c54b998ef01e87beb78138940105509f078ff45c5f13fffee7e9",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 510,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 496,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "AndroidEdit.retranslateUi",
+                            "language": "python",
+                            "id": "2faf3785d4ab66f9c593ea4470ed06a7ce439b2b2c3fbd6c37ac7390cfc1c763",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 518,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 511,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "AndroidEdit.setupConnection",
+                            "language": "python",
+                            "id": "ac434a9c289d91a83f53a1eea40d16ce3fa483fbf9b5195a7d2338c3226b341b",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 534,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 519,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "AndroidEdit.update_mfe_button_state",
+                            "language": "python",
+                            "id": "bccb6d3e5beaf135edb0b2142f6e9c0dc3acef639a5e10e35be454c89f7962dc",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 539,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 535,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "update_project_cbb",
+                            "language": "python",
+                            "id": "00943d96a955c38c77551a0ea4affb308b7d03b41ca6e5946f9124c589a4ef57",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 552,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 540,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "newRunFormChange",
+                            "language": "python",
+                            "id": "66a8dc1525e746f1b4b84fd509cd84626d68c36b3acee185845ed1db2a8d135c",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 557,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 553,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "openPkgDirBtnClicked",
+                            "language": "python",
+                            "id": "39faae8c9d0418063178fb95fbf45e8b9011e1baf2325db6dd1640785aec1822",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 562,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 558,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "openMFESpecDirBtnClicked",
+                            "language": "python",
+                            "id": "a2e11efb03580616f15f6b4f907f22802e895a9de2866f78681dfbaacf62b15f",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 570,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 563,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "openSpecDirBtnClicked",
+                            "language": "python",
+                            "id": "8085b6e50be6644bb26e1210a51a3d157b7f099150c0028bce1b5094aa8f43ce",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 625,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 571,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "dropdown",
+                            "language": "python",
+                            "id": "dad5aa387f2b7c0bf79b2e357ca23bff708792e9dbad311890f116bd18b44b6d",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 631,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 626,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "retranslateUi_mfe",
+                            "language": "python",
+                            "id": "93c17e6d7d3b8a4b64950d785dae99fd4ca4323474a1d057d9c49c4914a73f9b",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 664,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 632,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "runTest",
+                            "language": "python",
+                            "id": "78d5bd563d4ff862c496b3e25d6ae7656f37a487808508c49533236d922cf5b6",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 669,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 666,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "__init__",
+                            "language": "python",
+                            "id": "c8f06f40ca0b035ce20a1c8bf7c17569ad6b59a630ac835563fa65a4d71f7222",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 803,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 670,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "setupUi",
+                            "language": "python",
+                            "id": "76f5f4c95d895c4b29cce3024738a594af1071bfd0f7ebac6bb724f0e7ddc189",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 806,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 804,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "retranslateUi",
+                            "language": "python",
+                            "id": "afb9b789e4a9dd6d80337bb4ce346c61304080ebe1b2778602524e98fed6d992",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 860,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 807,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "setupFormData",
+                            "language": "python",
+                            "id": "ea9fee8ad0dd5ee5221ab083c67e7def29a0eb91a011b69bc638472bfdf59e02",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 871,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 862,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "__init__",
+                            "language": "python",
+                            "id": "659708d2d73e2f6dcfd9f0bd85924b62a8a1798356a023139d7394845d367edb",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 80,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 1,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "",
+                            "language": "python",
+                            "id": "a5d90337ddf03914dffe60015223f2098b4212907993a5b68411ab116efc03d9",
+                            "chunkType": "fallback",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 145,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 66,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "",
+                            "language": "python",
+                            "id": "8149fc2f5c168c1ee47b9468d9db6d43e3a480be72141ca6f900aca4ebe1d48d",
+                            "chunkType": "fallback",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 210,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 131,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "",
+                            "language": "python",
+                            "id": "2ce1045843abde91c6cc29f32cf818aa2fb300c8ea547df88c6115d223cf446c",
+                            "chunkType": "fallback",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 256,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 196,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "",
+                            "language": "python",
+                            "id": "56c0b5943df10629c1f7469484176a64d2f5ae1e52c02c9802ab9e82160790a7",
+                            "chunkType": "fallback",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 1148,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 1128,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "retranslateUi",
+                            "language": "python",
+                            "id": "1d98157f3c58421bcd69d382a6d526e58c0ef9476a381dedb0bfc7162e216bf9",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 1152,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 1149,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "closeEvent",
+                            "language": "python",
+                            "id": "5cf2f3e3aa951a5c504b8b953dd876dfd6c6cc7fddcb6fa368c9de50a3b196ea",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 1161,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 1153,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "setupConnection",
+                            "language": "python",
+                            "id": "e6a416f48cf41a0a71d8b2c1c2a0131354c2fcb319926af6dd607650cb891e61",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 1164,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 1162,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "closeWindow",
+                            "language": "python",
+                            "id": "d7781dd021fe513b3cd26013aadc2586b1006fbd914b9a128f54f3a8e77ee7c8",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 1168,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 1165,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "filterReviewed",
+                            "language": "python",
+                            "id": "a97ca89e6eb62cce397a02dc3fc0f8ae07ecd64900b495626696d07a51d094e2",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 1178,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 1169,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "filterList",
+                            "language": "python",
+                            "id": "832856718cde8b059d15375daef5d494d782f9f098ce65a66bfbfe5947fddd10",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 1187,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 1179,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "saveDataToDB",
+                            "language": "python",
+                            "id": "fc3b1267398ea81197a2aeedfbbeff0a1d3f17d68cdf3c8805902c3939c2329c",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 1192,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 1188,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "submitDataToDB",
+                            "language": "python",
+                            "id": "f5c109cc82a5f2a77c303eb6e9b46ea1b2327e622f05fed0d5ff45135d628566",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 1197,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 1193,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "refreshTabCount",
+                            "language": "python",
+                            "id": "d7603f9c45ece0eccbed6217b8c03f41a171c5ebde6d97e6c72855e8f3f209e6",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 1202,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 1198,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "refreshListIndex",
+                            "language": "python",
+                            "id": "9b0c9b8f457ad60468c98e984e63638e3cade93a9336b39428b7fab8ea221018",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 1238,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 1203,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "populateLists",
+                            "language": "python",
+                            "id": "f8ac413b44bc39480fc3dd4099dc756cbd93ddf45845761b190c87b98fea5a30",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 1272,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 1239,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "createListWidget",
+                            "language": "python",
+                            "id": "201e668c188d6399bdfa3cd580273e69d680204a7ba7f5821738a7f68e82f684",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 1278,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 1273,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "openStrIDView",
+                            "language": "python",
+                            "id": "b881b763077d7eb5eb97d78dfe9fc6b21d24213395bb87387654ab1f3175d0ab",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 1310,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 1279,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "updateUI",
+                            "language": "python",
+                            "id": "d4fc139211e8d745e095b36a33ac30779665b4afbbee9fd3476f391eb6dad870",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 1324,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 1312,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "__init__",
+                            "language": "python",
+                            "id": "300429461b65f7f87a5be2b66eaf969a7a37e57ec839e9f02b1703e36b530125",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 80,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 1,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "",
+                            "language": "python",
+                            "id": "6778d876a74f8d178e4ac03a69e71f5224c0a34b5c244c411477bee09f80598c",
+                            "chunkType": "fallback",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 145,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 66,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "",
+                            "language": "python",
+                            "id": "163e1ec1d6a016e600b7e8e1b9636528bf209f5bb83376e77032da77e9d7fed0",
+                            "chunkType": "fallback",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 181,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 131,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "",
+                            "language": "python",
+                            "id": "934d7f0c42ccad3919471b3f837c040a447f213201c0d532599b12c536219779",
+                            "chunkType": "fallback",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 1515,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 1506,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "retranslateUi",
+                            "language": "python",
+                            "id": "c9170d68a175f64b3f83edd591892c7b6f7be907c09992b777407175a5e2dc54",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 1519,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 1516,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "closeEvent",
+                            "language": "python",
+                            "id": "ebf8475c850fe08d4e905bdbbe3200f66fd38140944fd9d07a5548d920d67b0d",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 1525,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 1520,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "setupConnection",
+                            "language": "python",
+                            "id": "4e6d202a84aeb7751e7e84ef47c918c2c4a3ed7d5aeef1b1c9552530d48c0105",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 1530,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 1526,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "openComment",
+                            "language": "python",
+                            "id": "f71bc5699f5896ac13c52863594738428f3618da1fe161fdeb33c967774e7f36",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 1535,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 1531,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "openEdit",
+                            "language": "python",
+                            "id": "d6ee8d81bf65276e22ace0717a57394bdca695efe5f7a59ca22d67618f83854e",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 1543,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 1536,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "changeDisplayNewLine",
+                            "language": "python",
+                            "id": "28517b1b9f6431ce967745df5e58a0e3270f3151662e53ac18dd611e12d84272",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 1563,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 1544,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "redrawLabels",
+                            "language": "python",
+                            "id": "40236ec416dfc5466482790d5d317137e4c13ee42af5b4abfe9ed7b4476809ce",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 1580,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 1564,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "submitChange",
+                            "language": "python",
+                            "id": "83e542bd3339342d6c9b67b143f6a3da70ea6f42ce669987f42b082ea0ad926e",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 1615,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 1581,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "refreshText",
+                            "language": "python",
+                            "id": "83f9281af528240836d006c4984785712109a00058de8408796c5d213de88aa8",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 1624,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 1617,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "__init__",
+                            "language": "python",
+                            "id": "ced25daa6d2e7acf2f606d98c57df316c4a04198aa45f5f1d5f074c3adc939f5",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 1647,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 1625,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "setupUi",
+                            "language": "python",
+                            "id": "59b97c6f5a0d825dc64fea261b74aca3cb53fc3d1c25d2b32c19a35d67fae17b",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 1650,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 1648,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "retranslateUi",
+                            "language": "python",
+                            "id": "4a1fe82a494538063448368f9d56383d917925d85313ec7190ac46217aae78eb",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 1653,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 1651,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "setupConnection",
+                            "language": "python",
+                            "id": "d8f0342b97b113700330f0bd93449226900b3c2e0553aca8ebdc1713882198be",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 1658,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 1654,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "saveChange",
+                            "language": "python",
+                            "id": "0ce8ada22446b23dfe44cb471baf6978f2908f2d489ac0c7f6955cbfcdb4b464",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 1669,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 1660,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "__init__",
+                            "language": "python",
+                            "id": "2567517eaa3574e40b56e84ba07a092667867be2613132e4ebe9e8cac2e9d3f7",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 1692,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 1670,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "setupUi",
+                            "language": "python",
+                            "id": "1346af8226060e44720d7e6d4d4bc17e7c515af78ecbf6129c304bb6b3039ec8",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 1695,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 1693,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "retranslateUi",
+                            "language": "python",
+                            "id": "7de700496bc5fce8a4b72bcf8b19be1245b3d41ab3c905d2552659ac26f52d33",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 1698,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 1696,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "setupConnection",
+                            "language": "python",
+                            "id": "cfddfb8f9b5d30f71fba31cbcc8380e8f09dc89b6e7dd750218085424a1c9234",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 1708,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/localization_gui.py",
+                            "startLine": 1699,
+                            "blobSha": "3a35b0b17807545bcc1bff239352b190eb47d547",
+                            "name": "saveChange",
+                            "language": "python",
+                            "id": "ef8eac217886052656246fd7e684622744185af20facbd0dead58c5135ea8512",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        }
+                    ]
+                },
+                {
+                    "file_identity": "pc_health_checker.py",
+                    "scripts/pc_health_checker.py": [
+                        {
+                            "endLine": 88,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/pc_health_checker.py",
+                            "startLine": 80,
+                            "blobSha": "d8a04cedb2c5ccc0666871704281c2615da18add",
+                            "name": "SIM_API_URLS.get_jenkins_nodes",
+                            "language": "python",
+                            "id": "8642f41fdcaed4df6997519ee761d99f2faa47c79eb3597c8a5b1021d16621ee",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 96,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/pc_health_checker.py",
+                            "startLine": 89,
+                            "blobSha": "d8a04cedb2c5ccc0666871704281c2615da18add",
+                            "name": "LAUNCH_ACTIVITY.check_node_status",
+                            "language": "python",
+                            "id": "52e844367039d3a40f1d64819041251b6b12ef0eea2b34e0b4c8e4618bee32dc",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 159,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/pc_health_checker.py",
+                            "startLine": 117,
+                            "blobSha": "d8a04cedb2c5ccc0666871704281c2615da18add",
+                            "name": "FLOW_NAMES.node_health_check",
+                            "language": "python",
+                            "id": "08789f8219a6916ba3895fd0d4a55c4cc6a8076bb23b41c62cfcea731b6756f4",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        }
+                    ]
+                },
+                {
+                    "file_identity": "send_email.py",
+                    "scripts/send_email.py": [
+                        {
+                            "endLine": 16,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/send_email.py",
+                            "startLine": 11,
+                            "blobSha": "88daca3f0b6d45cc571f069a27d6a983a889b0f9",
+                            "name": "Gather_Screenshots",
+                            "language": "python",
+                            "id": "50509ff53850691e890345f0ee502b88cb42ec9d28821e788e0a1687bfcb3aba",
+                            "chunkType": "class",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 19,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/send_email.py",
+                            "startLine": 17,
+                            "blobSha": "88daca3f0b6d45cc571f069a27d6a983a889b0f9",
+                            "name": "BaseClass.list_of_recipients",
+                            "language": "python",
+                            "id": "e1c8409b45c92ca5c11b6c392567e0eb0d06d9108c543e7f8b5ba6a369353153",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 24,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/send_email.py",
+                            "startLine": 20,
+                            "blobSha": "88daca3f0b6d45cc571f069a27d6a983a889b0f9",
+                            "name": "PrivacySettings.zip_screenshots",
+                            "language": "python",
+                            "id": "aa1ee8d43a77e83c4078a7be7a0d2436727510db411e4d7a0dafdbcb2fc92156",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 39,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/send_email.py",
+                            "startLine": 25,
+                            "blobSha": "88daca3f0b6d45cc571f069a27d6a983a889b0f9",
+                            "name": "Test_Perform_AIC.send_message",
+                            "language": "python",
+                            "id": "8ec1c750d9aba0e6b7f42cef13e4b8de93148c4a60e11634c0c8fd5c17c8252c",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        }
+                    ]
+                },
+                {
+                    "file_identity": "test_package_cache_purge.py",
+                    "scripts/test_package_cache_purge.py": [
+                        {
+                            "endLine": 23,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/test_package_cache_purge.py",
+                            "startLine": 1,
+                            "blobSha": "5946fbe11b326379ff0c61cb177930ebb8beb8bc",
+                            "name": "",
+                            "language": "python",
+                            "id": "3b3b393a6680c1570d024c8cd5782d6afcd95d804a703b9c485eba12407dbdba",
+                            "chunkType": "fallback",
+                            "isTestFile": true
+                        }
+                    ]
+                },
+                {
+                    "file_identity": "windows_chrome_driver_updater.py",
+                    "scripts/windows_chrome_driver_updater.py": [
+                        {
+                            "endLine": 24,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/windows_chrome_driver_updater.py",
+                            "startLine": 13,
+                            "blobSha": "525d01f0a90a20a1669307415d5c5be81219027b",
+                            "name": "Job_Notification.extract_version_registry",
+                            "language": "python",
+                            "id": "7a1ea98d42ad4c5beade356c400ef3560b953f2d6728e0560b6a2359fde002b1",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 28,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/windows_chrome_driver_updater.py",
+                            "startLine": 25,
+                            "blobSha": "525d01f0a90a20a1669307415d5c5be81219027b",
+                            "name": "IOSNexusApp.get_chrome_version",
+                            "language": "python",
+                            "id": "35d611fb1819087756cddff471cdb5a5854206269144d3ee5d4c282fb13b74de",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 70,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/windows_chrome_driver_updater.py",
+                            "startLine": 29,
+                            "blobSha": "525d01f0a90a20a1669307415d5c5be81219027b",
+                            "name": "PrinterSettings.download_chromedriver",
+                            "language": "python",
+                            "id": "7f42dfceb0c6abc0c9a3d8fb30deec5f9eae25a2a28e1af5c4763472afa03bae",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 81,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/windows_chrome_driver_updater.py",
+                            "startLine": 71,
+                            "blobSha": "525d01f0a90a20a1669307415d5c5be81219027b",
+                            "name": "HPBridgeFlow.clear_desktop_package",
+                            "language": "python",
+                            "id": "67c9a2e8b12d3fe38de57a3a218ff47651a945e5bcda43c244c3f8964a086427",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        }
+                    ]
+                },
+                {
+                    "file_identity": "xml_to_json.py",
+                    "scripts/xml_to_json.py": [
+                        {
+                            "endLine": 12,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/xml_to_json.py",
+                            "startLine": 10,
+                            "blobSha": "776a0658a0711844ddedfbf62129a2c05706e522",
+                            "name": "SuiteFailedException",
+                            "language": "python",
+                            "id": "6a4f0519f244548368954ec0342bb9495198701ecb8d2d41e07dc5e12a5360dd",
+                            "chunkType": "class",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 15,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/xml_to_json.py",
+                            "startLine": 13,
+                            "blobSha": "776a0658a0711844ddedfbf62129a2c05706e522",
+                            "name": "MissingRequiredProperty",
+                            "language": "python",
+                            "id": "62ac65e8ab95fdef919a90f4fdea0bb09dc08459a769d2a58a54382ec8000f87",
+                            "chunkType": "class",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 35,
+                            "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                            "filePath": "scripts/xml_to_json.py",
+                            "startLine": 24,
+                            "blobSha": "776a0658a0711844ddedfbf62129a2c05706e522",
+                            "name": "CameraScan.send_payload",
+                            "language": "python",
+                            "id": "32ebbefa3d62d53d7cb0ef392f0fd6123b77a77ba864789d494d2beebabb4902",
+                            "chunkType": "function",
+                            "isTestFile": false
+                        }
+                    ]
+                }
+            ],
+            "code_doc": [
+                {
+                    "kb_id": "",
+                    "kb_name": ""
+                }
+            ]
+        },
+        "ga_api": {
+            "generated_doc_filepath": "",
+            "purpose": "",
+            "associated_knowledge_bases": {
+                "raw_code": [
+                    {
+                        "file_identity": "ga_comparison.py",
+                        "scripts/ga_api/ga_comparison.py": [
+                            {
+                                "endLine": 17,
+                                "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                                "filePath": "scripts/ga_api/ga_comparison.py",
+                                "startLine": 15,
+                                "blobSha": "0c7a8a46623a3fe232acc28d5a604cee2e383783",
+                                "name": "BadFilterException",
+                                "language": "python",
+                                "id": "169a88c3396b82a732f3c1e0a1e470a8ce5f827c5693e2de952ebe855d87d86c",
+                                "chunkType": "class",
+                                "isTestFile": false
+                            },
+                            {
+                                "endLine": 28,
+                                "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                                "filePath": "scripts/ga_api/ga_comparison.py",
+                                "startLine": 18,
+                                "blobSha": "0c7a8a46623a3fe232acc28d5a604cee2e383783",
+                                "name": "GAComparison",
+                                "language": "python",
+                                "id": "9358b3aabb98526b690092dac6b302a58640c11674ead343bc63efbce7cdfb69",
+                                "chunkType": "class",
+                                "isTestFile": false
+                            },
+                            {
+                                "endLine": 64,
+                                "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                                "filePath": "scripts/ga_api/ga_comparison.py",
+                                "startLine": 29,
+                                "blobSha": "0c7a8a46623a3fe232acc28d5a604cee2e383783",
+                                "name": "Scan.__init__",
+                                "language": "python",
+                                "id": "efe223c4d83296e4579cabf627bbbd3b3fb123333fe8708ea398c2343d463191",
+                                "chunkType": "function",
+                                "isTestFile": false
+                            },
+                            {
+                                "endLine": 93,
+                                "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                                "filePath": "scripts/ga_api/ga_comparison.py",
+                                "startLine": 65,
+                                "blobSha": "0c7a8a46623a3fe232acc28d5a604cee2e383783",
+                                "name": "Preview.load_filter",
+                                "language": "python",
+                                "id": "a42bceb496ad63c55ab0d1aae822da8455300cc223c648480f5b18521a51c676",
+                                "chunkType": "function",
+                                "isTestFile": false
+                            },
+                            {
+                                "endLine": 139,
+                                "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                                "filePath": "scripts/ga_api/ga_comparison.py",
+                                "startLine": 94,
+                                "blobSha": "0c7a8a46623a3fe232acc28d5a604cee2e383783",
+                                "name": "AlertTypeCDM.queue_ga_data",
+                                "language": "python",
+                                "id": "600b9004f5d68cacbdb6682de237fa7cc716338efa2d7383ea1ec7f010b25b29",
+                                "chunkType": "function",
+                                "isTestFile": false
+                            },
+                            {
+                                "endLine": 198,
+                                "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                                "filePath": "scripts/ga_api/ga_comparison.py",
+                                "startLine": 140,
+                                "blobSha": "0c7a8a46623a3fe232acc28d5a604cee2e383783",
+                                "name": "compare_ga_data",
+                                "language": "python",
+                                "id": "ae8091446756b225c644b5ac8f6666e26936e4867054a1fd683cd8f598c62033",
+                                "chunkType": "function",
+                                "isTestFile": false
+                            },
+                            {
+                                "endLine": 260,
+                                "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                                "filePath": "scripts/ga_api/ga_comparison.py",
+                                "startLine": 199,
+                                "blobSha": "0c7a8a46623a3fe232acc28d5a604cee2e383783",
+                                "name": "build_filter_from_info",
+                                "language": "python",
+                                "id": "4d638033c12c36db160f8d3965be80e085f077425fbe74d6f150d420f9902b15",
+                                "chunkType": "function",
+                                "isTestFile": false
+                            },
+                            {
+                                "endLine": 268,
+                                "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                                "filePath": "scripts/ga_api/ga_comparison.py",
+                                "startLine": 261,
+                                "blobSha": "0c7a8a46623a3fe232acc28d5a604cee2e383783",
+                                "name": "validate_ga",
+                                "language": "python",
+                                "id": "e98babc2de3ee293e663ba0c6c08880af9a5075cf70dc3bc26fa7fbfd6ae8a53",
+                                "chunkType": "function",
+                                "isTestFile": false
+                            },
+                            {
+                                "endLine": 316,
+                                "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                                "filePath": "scripts/ga_api/ga_comparison.py",
+                                "startLine": 269,
+                                "blobSha": "0c7a8a46623a3fe232acc28d5a604cee2e383783",
+                                "name": "__parse_data",
+                                "language": "python",
+                                "id": "b9a9577b7f965fcf24b5cd053a5b284156bec7e328f025701477e9c8f2876e85",
+                                "chunkType": "function",
+                                "isTestFile": false
+                            }
+                        ]
+                    }
+                ],
+                "code_doc": [
+                    {
+                        "kb_id": "",
+                        "kb_name": ""
+                    }
+                ]
+            }
+        }
+    },
+    "test_suite_01_application_privacy_py_170326_181007": {
+        "functions": {
+            "generated_doc_filepath": "",
+            "purpose": "",
+            "associated_knowledge_bases": {
+                "raw_code": [
+                    {
+                        "file_identity": "functions_output.json",
+                        "test_suite_01_application_privacy_py_170326_181007/functions/functions_output.json": [
+                            {
+                                "endLine": 1,
+                                "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                                "filePath": "test_suite_01_application_privacy_py_170326_181007/functions/functions_output.json",
+                                "startLine": 1,
+                                "blobSha": "a8a026e6b94a5d1536337f5786066243d70ad782",
+                                "name": "functions",
+                                "language": "json",
+                                "id": "3be5080d011cb9e3c5edcfe23c28db25cccfc56384a212be149cb23634a90598",
+                                "chunkType": "config",
+                                "isTestFile": false
+                            },
+                            {
+                                "endLine": 1,
+                                "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                                "filePath": "test_suite_01_application_privacy_py_170326_181007/functions/functions_output.json",
+                                "startLine": 1,
+                                "blobSha": "a8a026e6b94a5d1536337f5786066243d70ad782",
+                                "name": "functions_output.json",
+                                "language": "json",
+                                "id": "dcc07f02eda2785502b5c17443f2d2282fca5ed54336d3b0c28b0e83c5bc3f0b",
+                                "chunkType": "module",
+                                "isTestFile": false
+                            }
+                        ]
+                    }
+                ],
+                "code_doc": [
+                    {
+                        "kb_id": "",
+                        "kb_name": ""
+                    }
+                ]
+            }
+        }
+    },
+    "test_suite_01_application_privacy_py_170326_181729": {
+        "fixture": {
+            "generated_doc_filepath": "",
+            "purpose": "",
+            "associated_knowledge_bases": {
+                "raw_code": [
+                    {
+                        "file_identity": "fixtures_output.json",
+                        "test_suite_01_application_privacy_py_170326_181729/fixture/fixtures_output.json": [
+                            {
+                                "endLine": 1,
+                                "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                                "filePath": "test_suite_01_application_privacy_py_170326_181729/fixture/fixtures_output.json",
+                                "startLine": 1,
+                                "blobSha": "e0afdb5973992063b105ec9f399473670b0b02a4",
+                                "name": "fixtures",
+                                "language": "json",
+                                "id": "cd69c20111c966deda2552184f825ad73db23c64c4194ccdcf94a51ef4815496",
+                                "chunkType": "config",
+                                "isTestFile": false
+                            },
+                            {
+                                "endLine": 1,
+                                "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                                "filePath": "test_suite_01_application_privacy_py_170326_181729/fixture/fixtures_output.json",
+                                "startLine": 1,
+                                "blobSha": "e0afdb5973992063b105ec9f399473670b0b02a4",
+                                "name": "fixtures_output.json",
+                                "language": "json",
+                                "id": "b37d2b9ec877483c8c66a8158d6acb323465a5f2d9905183b2cc095b0ebab71b",
+                                "chunkType": "module",
+                                "isTestFile": false
+                            }
+                        ]
+                    }
+                ],
+                "code_doc": [
+                    {
+                        "kb_id": "",
+                        "kb_name": ""
+                    }
+                ]
+            }
+        },
+        "functions": {
+            "C_id": {
+                "generated_doc_filepath": "",
+                "purpose": "",
+                "associated_knowledge_bases": {
+                    "raw_code": [
+                        {
+                            "file_identity": "c_ids_output.json",
+                            "test_suite_01_application_privacy_py_170326_181729/functions/C_id/c_ids_output.json": [
+                                {
+                                    "endLine": 1,
+                                    "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                                    "filePath": "test_suite_01_application_privacy_py_170326_181729/functions/C_id/c_ids_output.json",
+                                    "startLine": 1,
+                                    "blobSha": "34b2d97ace6a442fc668295ff60a654903a41cc7",
+                                    "name": "CIDs",
+                                    "language": "json",
+                                    "id": "81ab3a4c8f097ec99bd4f3f4178d79da4c3c7f0a34248d171f045256d75b5701",
+                                    "chunkType": "config",
+                                    "isTestFile": false
+                                },
+                                {
+                                    "endLine": 1,
+                                    "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                                    "filePath": "test_suite_01_application_privacy_py_170326_181729/functions/C_id/c_ids_output.json",
+                                    "startLine": 1,
+                                    "blobSha": "34b2d97ace6a442fc668295ff60a654903a41cc7",
+                                    "name": "c_ids_output.json",
+                                    "language": "json",
+                                    "id": "91fdd5af99b9f5ed9e76d2bd0a7f109ff47be1cda2ae0f3a74537fc51a9bf7f9",
+                                    "chunkType": "module",
+                                    "isTestFile": false
+                                }
+                            ]
+                        }
+                    ],
+                    "code_doc": [
+                        {
+                            "kb_id": "",
+                            "kb_name": ""
+                        }
+                    ]
+                }
+            },
+            "generated_doc_filepath": "",
+            "purpose": "",
+            "associated_knowledge_bases": {
+                "raw_code": [
+                    {
+                        "file_identity": "functions_output.json",
+                        "test_suite_01_application_privacy_py_170326_181729/functions/functions_output.json": [
+                            {
+                                "endLine": 1,
+                                "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                                "filePath": "test_suite_01_application_privacy_py_170326_181729/functions/functions_output.json",
+                                "startLine": 1,
+                                "blobSha": "a8a026e6b94a5d1536337f5786066243d70ad782",
+                                "name": "functions",
+                                "language": "json",
+                                "id": "a105964710a81e82183219dba4245b5db77412a1cbb06396cbc18b1bcabfc128",
+                                "chunkType": "config",
+                                "isTestFile": false
+                            },
+                            {
+                                "endLine": 1,
+                                "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                                "filePath": "test_suite_01_application_privacy_py_170326_181729/functions/functions_output.json",
+                                "startLine": 1,
+                                "blobSha": "a8a026e6b94a5d1536337f5786066243d70ad782",
+                                "name": "functions_output.json",
+                                "language": "json",
+                                "id": "8510b92eaa78bc2f6171b4350a31304bb47ae265a836a9c8677116652a669ac5",
+                                "chunkType": "module",
+                                "isTestFile": false
+                            }
+                        ]
+                    }
+                ],
+                "code_doc": [
+                    {
+                        "kb_id": "",
+                        "kb_name": ""
+                    }
+                ]
+            },
+            "testrail_mapping": {
+                "generated_doc_filepath": "",
+                "purpose": "",
+                "associated_knowledge_bases": {
+                    "raw_code": [
+                        {
+                            "file_identity": "testrail_output.json",
+                            "test_suite_01_application_privacy_py_170326_181729/functions/testrail_mapping/testrail_output.json": [
+                                {
+                                    "endLine": 26,
+                                    "indexedAt": "2026-06-08T12:36:43.665098260Z",
+                                    "filePath": "test_suite_01_application_privacy_py_170326_181729/functions/testrail_mapping/testrail_output.json",
+                                    "startLine": 1,
+                                    "blobSha": "fbe473b076f7680d7f88ee8fdc312abe41f52997",
+                                    "name": "",
+                                    "language": "unknown",
+                                    "id": "164d01ecf47e1bb349f9c65f4876cbda2f97ee86709cceda3f096c875e7ba0d2",
+                                    "chunkType": "fallback",
+                                    "isTestFile": false
+                                }
+                            ]
+                        }
+                    ],
+                    "code_doc": [
+                        {
+                            "kb_id": "",
+                            "kb_name": ""
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}
