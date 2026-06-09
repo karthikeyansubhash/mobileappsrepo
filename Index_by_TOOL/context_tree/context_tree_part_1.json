@@ -1,0 +1,72 @@
+{
+    ".code_index": {
+        "associated_context": {
+            "raw_code": [
+                {
+                    "file_identity": "index_manifest.json",
+                    "source_system_path": ".code_index/index_manifest.json",
+                    "kb_id": "11597",
+                    "kb_name": "mod_.code_index_batch1_rc_20260609211954kb"
+                }
+            ],
+            "code_doc": [],
+            "metrics": {}
+        },
+        "file_purposes": {},
+        "generated_doc_filepath": null,
+        "shards": {
+            "associated_context": {
+                "raw_code": [
+                    {
+                        "file_identity": "shard_000.json",
+                        "source_system_path": ".code_index/shards/shard_000.json",
+                        "kb_id": "11598",
+                        "kb_name": "shards_batch1_rc_20260609212006kb"
+                    }
+                ],
+                "code_doc": [],
+                "metrics": {}
+            },
+            "file_purposes": {},
+            "generated_doc_filepath": null
+        }
+    },
+    "Index": {
+        "associated_context": {
+            "raw_code": [
+                {
+                    "file_identity": "dependency_tree.json",
+                    "source_system_path": "Index/dependency_tree.json",
+                    "kb_id": "11599",
+                    "kb_name": "index_batch1_rc_20260609212023kb"
+                },
+                {
+                    "file_identity": "directory_tree.json",
+                    "source_system_path": "Index/directory_tree.json",
+                    "kb_id": "11600",
+                    "kb_name": "index_batch2_rc_20260609212035kb"
+                }
+            ],
+            "code_doc": [],
+            "metrics": {}
+        },
+        "file_purposes": {},
+        "generated_doc_filepath": null,
+        "context_tree": {
+            "associated_context": {
+                "raw_code": [
+                    {
+                        "file_identity": "context_tree_part_1.json",
+                        "source_system_path": "Index/context_tree/context_tree_part_1.json",
+                        "kb_id": "11601",
+                        "kb_name": "context_tree_batch1_rc_20260609212046kb"
+                    }
+                ],
+                "code_doc": [],
+                "metrics": {}
+            },
+            "file_purposes": {},
+            "generated_doc_filepath": null
+        }
+    }
+}
