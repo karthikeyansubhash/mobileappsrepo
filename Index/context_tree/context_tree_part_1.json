@@ -1,0 +1,275 @@
+{
+    "Context": {
+        "conftest_py_190326_193718": {
+            "pageclass": {
+                "generated_doc_filepath": "",
+                "purpose": "",
+                "associated_knowledge_bases": {
+                    "raw_code": [
+                        {
+                            "file_identity": "pageclasses_output.json",
+                            "Context/conftest_py_190326_193718/pageclass/pageclasses_output.json": [
+                                {
+                                    "endLine": 1,
+                                    "indexedAt": "2026-06-09T13:04:22.317549058Z",
+                                    "filePath": "Context/conftest_py_190326_193718/pageclass/pageclasses_output.json",
+                                    "startLine": 1,
+                                    "blobSha": "cda230425123ab11ecb2af67fc2cb58346888dbe",
+                                    "name": "page_classes",
+                                    "language": "json",
+                                    "id": "fe20124fca8f8b6a5a71deb550397566dea75c78288590a272a4c86783611541",
+                                    "chunkType": "config",
+                                    "isTestFile": false
+                                },
+                                {
+                                    "endLine": 1,
+                                    "indexedAt": "2026-06-09T13:04:22.317549058Z",
+                                    "filePath": "Context/conftest_py_190326_193718/pageclass/pageclasses_output.json",
+                                    "startLine": 1,
+                                    "blobSha": "cda230425123ab11ecb2af67fc2cb58346888dbe",
+                                    "name": "message",
+                                    "language": "json",
+                                    "id": "36b7ae9c7bd404d5f7b1f6d3e4457712b39d26b1962ab6740cfba2f562ea6b93",
+                                    "chunkType": "config",
+                                    "isTestFile": false
+                                },
+                                {
+                                    "endLine": 1,
+                                    "indexedAt": "2026-06-09T13:04:22.317549058Z",
+                                    "filePath": "Context/conftest_py_190326_193718/pageclass/pageclasses_output.json",
+                                    "startLine": 1,
+                                    "blobSha": "cda230425123ab11ecb2af67fc2cb58346888dbe",
+                                    "name": "status",
+                                    "language": "json",
+                                    "id": "92a4c1d954a9c2fc10beed6dbb597bd353f89ef1d977f5e4810e0abd0e20ca53",
+                                    "chunkType": "config",
+                                    "isTestFile": false
+                                },
+                                {
+                                    "endLine": 1,
+                                    "indexedAt": "2026-06-09T13:04:22.317549058Z",
+                                    "filePath": "Context/conftest_py_190326_193718/pageclass/pageclasses_output.json",
+                                    "startLine": 1,
+                                    "blobSha": "cda230425123ab11ecb2af67fc2cb58346888dbe",
+                                    "name": "pageclasses_output.json",
+                                    "language": "json",
+                                    "id": "a32cf6a2e4651f22ec6114fdca6b111707720e7ddded99da10300d238576a8ff",
+                                    "chunkType": "module",
+                                    "isTestFile": false
+                                }
+                            ]
+                        }
+                    ],
+                    "code_doc": [
+                        {
+                            "kb_id": "",
+                            "kb_name": ""
+                        }
+                    ]
+                }
+            }
+        },
+        "test_application_privacy_py_180326_175326": {
+            "generated_doc_filepath": "",
+            "purpose": "",
+            "associated_knowledge_bases": {
+                "raw_code": [
+                    {
+                        "file_identity": "testscript_to_testrail_mapping.json",
+                        "Context/test_application_privacy_py_180326_175326/testscript_to_testrail_mapping.json": [
+                            {
+                                "endLine": 1,
+                                "indexedAt": "2026-06-09T13:04:22.317549058Z",
+                                "filePath": "Context/test_application_privacy_py_180326_175326/testscript_to_testrail_mapping.json",
+                                "startLine": 1,
+                                "blobSha": "9e26dfeeb6e641a33dae4961196235bdb965b21b",
+                                "name": "testscript_to_testrail_mapping.json",
+                                "language": "json",
+                                "id": "75631a3abff4e86db506689cd7ba79e73cd60fc70ec8f79dfd005406ed204bae",
+                                "chunkType": "module",
+                                "isTestFile": false
+                            }
+                        ]
+                    }
+                ],
+                "code_doc": [
+                    {
+                        "kb_id": "",
+                        "kb_name": ""
+                    }
+                ]
+            }
+        }
+    },
+    "generated_doc_filepath": "",
+    "purpose": "",
+    "associated_knowledge_bases": {
+        "raw_code": [
+            {
+                "file_identity": "README.md",
+                "README.md": [
+                    {
+                        "endLine": 1,
+                        "indexedAt": "2026-06-09T13:04:22.317549058Z",
+                        "filePath": "README.md",
+                        "startLine": 1,
+                        "blobSha": "b8b550e81f4c1a2b4b962a7c12d2ac04f450fc7d",
+                        "name": "README.md",
+                        "language": "markdown",
+                        "id": "4fb09eca18da44577b6c64acc5950c5e89c9109a148826c94db58801413ebdbb",
+                        "chunkType": "module",
+                        "isTestFile": false
+                    }
+                ]
+            },
+            {
+                "file_identity": "__init__.py",
+                "__init__.py": [
+                    {
+                        "endLine": 2,
+                        "indexedAt": "2026-06-09T13:04:22.317549058Z",
+                        "filePath": "__init__.py",
+                        "startLine": 1,
+                        "blobSha": "49d91fd8ea74e7d5d6f0ecf321b6a360d36d7276",
+                        "name": "",
+                        "language": "python",
+                        "id": "677a5af114f4ae7caae88c3d69c9dcfee0eb997118415aa1e78b13e8a25e7313",
+                        "chunkType": "fallback",
+                        "isTestFile": false
+                    }
+                ]
+            },
+            {
+                "file_identity": "pull_request_template.md",
+                "pull_request_template.md": [
+                    {
+                        "endLine": 1,
+                        "indexedAt": "2026-06-09T13:04:22.317549058Z",
+                        "filePath": "pull_request_template.md",
+                        "startLine": 1,
+                        "blobSha": "2109b0a08d47eca8ab5476253795fdc15d4697d5",
+                        "name": "Description",
+                        "language": "markdown",
+                        "id": "d697dcbe9cbf5e17ac1ef1ebe9d61327c65e612bf5cc111835cef99216a87526",
+                        "chunkType": "section",
+                        "isTestFile": false
+                    },
+                    {
+                        "endLine": 1,
+                        "indexedAt": "2026-06-09T13:04:22.317549058Z",
+                        "filePath": "pull_request_template.md",
+                        "startLine": 1,
+                        "blobSha": "2109b0a08d47eca8ab5476253795fdc15d4697d5",
+                        "name": "Self Check list",
+                        "language": "markdown",
+                        "id": "4206af80fcc160ab8386844ede1528d4f9690142d810159fb0f338f3f0fbee40",
+                        "chunkType": "section",
+                        "isTestFile": false
+                    },
+                    {
+                        "endLine": 1,
+                        "indexedAt": "2026-06-09T13:04:22.317549058Z",
+                        "filePath": "pull_request_template.md",
+                        "startLine": 1,
+                        "blobSha": "2109b0a08d47eca8ab5476253795fdc15d4697d5",
+                        "name": "pull_request_template.md",
+                        "language": "markdown",
+                        "id": "00630ae7db75d76ec7aae519d86660cb24c913ec6a132182eb8daa8ccf523ede",
+                        "chunkType": "module",
+                        "isTestFile": false
+                    }
+                ]
+            }
+        ],
+        "code_doc": [
+            {
+                "kb_id": "",
+                "kb_name": ""
+            }
+        ]
+    },
+    "config": {
+        "generated_doc_filepath": "",
+        "purpose": "",
+        "associated_knowledge_bases": {
+            "raw_code": [
+                {
+                    "file_identity": "config_template.json",
+                    "config/config_template.json": [
+                        {
+                            "endLine": 14,
+                            "indexedAt": "2026-06-09T13:04:22.317549058Z",
+                            "filePath": "config/config_template.json",
+                            "startLine": 1,
+                            "blobSha": "5db3c249add592b9e38f07eab41c5b04a1476a32",
+                            "name": "",
+                            "language": "unknown",
+                            "id": "c2f18e9f99b036bfccf53cffd738f8f43b7b0a70ef3e35fc93140ce272e553b2",
+                            "chunkType": "fallback",
+                            "isTestFile": false
+                        }
+                    ]
+                },
+                {
+                    "file_identity": "printers_discovery_info_template.json",
+                    "config/printers_discovery_info_template.json": [
+                        {
+                            "endLine": 1,
+                            "indexedAt": "2026-06-09T13:04:22.317549058Z",
+                            "filePath": "config/printers_discovery_info_template.json",
+                            "startLine": 1,
+                            "blobSha": "f69e5884202f48045f3a6bf28702701b1700858a",
+                            "name": "[0]",
+                            "language": "json",
+                            "id": "c9e864ff16e079f3cd81c669bd0cb02f4b52e790e21e65765440bed78f4f39fe",
+                            "chunkType": "config",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 1,
+                            "indexedAt": "2026-06-09T13:04:22.317549058Z",
+                            "filePath": "config/printers_discovery_info_template.json",
+                            "startLine": 1,
+                            "blobSha": "f69e5884202f48045f3a6bf28702701b1700858a",
+                            "name": "[1]",
+                            "language": "json",
+                            "id": "b732cd450acab854a78dd2428d334f8eda43fa85db0966d86ed61ac2f25ebf36",
+                            "chunkType": "config",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 1,
+                            "indexedAt": "2026-06-09T13:04:22.317549058Z",
+                            "filePath": "config/printers_discovery_info_template.json",
+                            "startLine": 1,
+                            "blobSha": "f69e5884202f48045f3a6bf28702701b1700858a",
+                            "name": "[2]",
+                            "language": "json",
+                            "id": "01d7869465ec59004d78029177cd9c91b5aa06544cdd0c109ffc431b816fb0a7",
+                            "chunkType": "config",
+                            "isTestFile": false
+                        },
+                        {
+                            "endLine": 1,
+                            "indexedAt": "2026-06-09T13:04:22.317549058Z",
+                            "filePath": "config/printers_discovery_info_template.json",
+                            "startLine": 1,
+                            "blobSha": "f69e5884202f48045f3a6bf28702701b1700858a",
+                            "name": "printers_discovery_info_template.json",
+                            "language": "json",
+                            "id": "292f116694478921a6a8c5668709ebda27cd3b28e80d4bffccee5e977d6227c0",
+                            "chunkType": "module",
+                            "isTestFile": false
+                        }
+                    ]
+                }
+            ],
+            "code_doc": [
+                {
+                    "kb_id": "",
+                    "kb_name": ""
+                }
+            ]
+        }
+    }
+}
