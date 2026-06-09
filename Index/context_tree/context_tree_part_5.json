@@ -188760,7 +188760,7 @@
                     }
                 },
                 "print": {
-                    "generated_doc_filepath": "Index/Docs/tests/windows/smart/print/print.md",
+                    "generated_doc_filepath": "",
                     "purpose": "",
                     "associated_knowledge_bases": {
                         "raw_code": [
@@ -189287,12 +189287,12 @@
                         ],
                         "code_doc": [
                             {
-                                "kb_id": "11366",
-                                "kb_name": "printdoc20260609151800kb"
+                                "kb_id": "",
+                                "kb_name": ""
                             }
                         ]
                     },
-                    "processing_status": "SUCCESS"
+                    "processing_status": "FAILED_AAVA_WORKFLOW"
                 },
                 "print_anywhere": {
                     "generated_doc_filepath": "",
