@@ -34,6 +34,7 @@ class Test_Suite_01_Bell_Notifications(object):
         assert self.device_card.verify_pc_devices_back_button(), "device back button invisible"
         self.device_card.click_pc_devices_back_button()
         assert self.devicesMFE.verify_bell_icon_show_up(), "bell icon invisible"
+        assert self.devicesMFE.verify_bell_icon(), "bell icon invisible"
 
     @pytest.mark.regression
     def test_03_verify_bellicon_can_be_clicked_C53303695(self):
