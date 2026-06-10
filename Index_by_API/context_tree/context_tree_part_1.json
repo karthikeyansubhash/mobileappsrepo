@@ -1916,7 +1916,11 @@
                                         "chunkType": "function",
                                         "isTestFile": false
                                     }
-                                ]
+                                ],
+                                "old_kb_id": "",
+                                "old_kb_name": "",
+                                "kb_id": "11646",
+                                "kb_name": "retrofit_accessibility_py_1781078850_kb"
                             },
                             {
                                 "file_identity": "add_device.py",
