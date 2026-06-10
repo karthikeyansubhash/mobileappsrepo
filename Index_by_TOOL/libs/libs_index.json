@@ -1,0 +1,13 @@
+{
+    "libs/__init__.py": [
+        {
+            "type": "file_node",
+            "name": "__init__.py",
+            "filepath": "libs/__init__.py",
+            "start_line": 1,
+            "end_line": 1,
+            "depends_on": [],
+            "content": ""
+        }
+    ]
+}
