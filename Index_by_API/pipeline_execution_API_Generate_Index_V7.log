@@ -1,0 +1,19 @@
+----------------------------------------
+Starting Indexing Automation (Remote Dev Environment)
+----------------------------------------
+
+Triggering Indexer via POST request to https://aava-dev.avateam.io/api/index...
+SUCCESS: Indexer successfully triggered.
+
+Polling indexer progress at https://aava-dev.avateam.io/api/index/progress?owner=NavneetBN47&repo=MobileApps&branch=feature_framework3...
+Status: RUNNING | Step: 2/9 (Loading existing index) | Progress: 0%
+Status: COMPLETED | Step: 9/9 (Complete) | Progress: 100%
+
+SUCCESS: Indexer is done!
+
+Starting post-processing (Shards parsing & Tree building)...
+
+Fetching shards list from GitHub: https://api.github.com/repos/NavneetBN47/MobileApps/contents/.code_index/shards?ref=feature_framework3
+ERROR: Failed to fetch shards list from GitHub: 404 Client Error: Not Found for url: https://api.github.com/repos/NavneetBN47/MobileApps/contents/.code_index/shards?ref=feature_framework3
+Response: {"message":"Not Found","documentation_url":"https://docs.github.com/rest/repos/contents#get-repository-content","status":"404"}
+----------------------------------------
