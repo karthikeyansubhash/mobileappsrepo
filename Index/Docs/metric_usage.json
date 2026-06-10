@@ -1,0 +1,25 @@
+{
+    "summary": {
+        "total_tokens_consumed": 416380,
+        "total_cost_incurred_usd": 2.4214,
+        "total_time_spent_seconds": 186.87
+    },
+    "details": {
+        "retrofit_test_suite_01_bell_notifications_py_1781056844_kb": {
+            "trace_id": "f2d1ed3d-09e4-496a-9ef7-f30a159392f7",
+            "total_tokens": 33148,
+            "input_tokens": 27899,
+            "output_tokens": 5249,
+            "total_cost_usd": 0.21823,
+            "time_taken_seconds": 85.5
+        },
+        "bell_notifications_batch2_rc_20260609211023kb": {
+            "trace_id": "97e4892d-e2b3-4402-8dbf-4274944fe8ff",
+            "total_tokens": 383232,
+            "input_tokens": 41937,
+            "output_tokens": 3910,
+            "total_cost_usd": 2.20314,
+            "time_taken_seconds": 101.37
+        }
+    }
+}
