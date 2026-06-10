@@ -549,7 +549,11 @@
                                             "chunkType": "function",
                                             "isTestFile": true
                                         }
-                                    ]
+                                    ],
+                                    "old_kb_id": "",
+                                    "old_kb_name": "",
+                                    "kb_id": "11624",
+                                    "kb_name": "retrofit_test_suite_01_bell_notifications_py_1781057419_kb"
                                 },
                                 {
                                     "file_identity": "test_suite_02_bell_notifications.py",
@@ -590,7 +594,11 @@
                                             "chunkType": "function",
                                             "isTestFile": true
                                         }
-                                    ]
+                                    ],
+                                    "old_kb_id": "",
+                                    "old_kb_name": "",
+                                    "kb_id": "11625",
+                                    "kb_name": "retrofit_test_suite_02_bell_notifications_py_1781057432_kb"
                                 },
                                 {
                                     "file_identity": "test_suite_03_bell_notifications.py",
