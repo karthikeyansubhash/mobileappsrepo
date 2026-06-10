@@ -1,29 +1,23 @@
-2026-06-10 07:54:05 ----------------------------------------
-2026-06-10 07:54:05 Starting Indexing Automation (Remote Dev Environment)
-2026-06-10 07:54:05 ----------------------------------------
-2026-06-10 07:54:05 
+2026-06-10 08:06:15 ----------------------------------------
+2026-06-10 08:06:15 Starting Indexing Automation (Remote Dev Environment)
+2026-06-10 08:06:15 ----------------------------------------
+2026-06-10 08:06:15 
 Triggering Indexer via POST request to https://aava-dev.avateam.io/api/index...
-2026-06-10 07:54:09 SUCCESS: Indexer successfully triggered.
-2026-06-10 07:54:09 
-Polling indexer progress at https://aava-dev.avateam.io/api/index/progress?owner=NavneetBN47&repo=MobileApps&branch=feature_framework3...
-2026-06-10 07:54:10 Status: COMPLETED | Step: 9/9 (Complete) | Progress: 100%
-2026-06-10 07:54:10 
-SUCCESS: Indexer is done!
-2026-06-10 07:54:10 Waiting 20 seconds for remote repository synchronization stability...
-2026-06-10 07:54:30 
+2026-06-10 08:06:17 SKIP: Index is fresh. Skipping polling and moving directly to post-processing.
+2026-06-10 08:06:17 
 Starting post-processing (Shards parsing & Tree building)...
-2026-06-10 07:54:30 
+2026-06-10 08:06:17 
 Fetching shards list from GitHub (Attempt 1/3): https://api.github.com/repos/NavneetBN47/MobileApps/contents/.code_index/shards?ref=feature_framework3
-2026-06-10 07:54:31 Found 1 shard files on GitHub branch 'feature_framework3'.
-2026-06-10 07:54:31 Downloading and parsing shard 1/1...
-2026-06-10 07:54:32 Parsed shards successfully.
-2026-06-10 07:54:32 Building Context Tree structure...
-2026-06-10 07:54:32 [BLUE] Flushing current Directory Tree & Context Tree state to GitHub (Safety Save)...
-2026-06-10 07:54:33 Uploading Index_by_API/directory_tree.json to GitHub branch 'feature_framework3'...
-2026-06-10 07:54:34 SUCCESS: Successfully uploaded Index_by_API/directory_tree.json to GitHub.
-2026-06-10 07:54:34 SUCCESS: Saved and uploaded directory_tree.json in Index_by_API
-2026-06-10 07:54:34 Segmented context_tree into 1 parts.
-2026-06-10 07:54:35 Uploading Index_by_API/context_tree/context_tree_part_1.json to GitHub branch 'feature_framework3'...
-2026-06-10 07:54:37 SUCCESS: Successfully uploaded Index_by_API/context_tree/context_tree_part_1.json to GitHub.
-2026-06-10 07:54:37 SUCCESS: Saved and uploaded context_tree segments in Index_by_API/context_tree
-2026-06-10 07:54:37 ----------------------------------------
+2026-06-10 08:06:18 Found 1 shard files on GitHub branch 'feature_framework3'.
+2026-06-10 08:06:18 Downloading and parsing shard 1/1...
+2026-06-10 08:06:19 Parsed shards successfully.
+2026-06-10 08:06:19 Building Context Tree structure...
+2026-06-10 08:06:19 [BLUE] Flushing current Directory Tree & Context Tree state to GitHub (Safety Save)...
+2026-06-10 08:06:20 Uploading Index_by_API/directory_tree.json to GitHub branch 'feature_framework3'...
+2026-06-10 08:06:21 SUCCESS: Successfully uploaded Index_by_API/directory_tree.json to GitHub.
+2026-06-10 08:06:21 SUCCESS: Saved and uploaded directory_tree.json in Index_by_API
+2026-06-10 08:06:21 Segmented context_tree into 1 parts.
+2026-06-10 08:06:22 Uploading Index_by_API/context_tree/context_tree_part_1.json to GitHub branch 'feature_framework3'...
+2026-06-10 08:06:24 SUCCESS: Successfully uploaded Index_by_API/context_tree/context_tree_part_1.json to GitHub.
+2026-06-10 08:06:24 SUCCESS: Saved and uploaded context_tree segments in Index_by_API/context_tree
+2026-06-10 08:06:24 ----------------------------------------
