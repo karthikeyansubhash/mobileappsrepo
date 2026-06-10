@@ -550,10 +550,10 @@
                                             "isTestFile": true
                                         }
                                     ],
-                                    "old_kb_id": "11643",
-                                    "old_kb_name": "retrofit_test_suite_01_bell_notifications_py_1781077586_kb",
-                                    "kb_id": "11645",
-                                    "kb_name": "retrofit_test_suite_01_bell_notifications_py_1781078836_kb"
+                                    "old_kb_id": "11645",
+                                    "old_kb_name": "retrofit_test_suite_01_bell_notifications_py_1781078836_kb",
+                                    "kb_id": "11659",
+                                    "kb_name": "retrofit_test_suite_01_bell_notifications_py_1781085552_kb"
                                 },
                                 {
                                     "file_identity": "test_suite_02_bell_notifications.py",
@@ -595,10 +595,10 @@
                                             "isTestFile": true
                                         }
                                     ],
-                                    "old_kb_id": "",
-                                    "old_kb_name": "",
-                                    "kb_id": "11644",
-                                    "kb_name": "retrofit_test_suite_02_bell_notifications_py_1781077602_kb"
+                                    "old_kb_id": "11644",
+                                    "old_kb_name": "retrofit_test_suite_02_bell_notifications_py_1781077602_kb",
+                                    "kb_id": "11660",
+                                    "kb_name": "retrofit_test_suite_02_bell_notifications_py_1781085567_kb"
                                 },
                                 {
                                     "file_identity": "test_suite_03_bell_notifications.py",
