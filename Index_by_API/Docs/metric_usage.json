@@ -1,29 +1,29 @@
 {
     "summary": {
-        "total_tokens_consumed": 53021,
-        "total_cost_incurred_usd": 1.0078,
-        "total_time_spent_seconds": 643.96
+        "total_tokens_consumed": 189558,
+        "total_cost_incurred_usd": 2.1815,
+        "total_time_spent_seconds": 666.45
     },
     "details": {
-        "6a477d42-97f2-495b-a3b5-b0a775aa29f8": {
-            "tokens": 16570,
-            "cost": 0.38516,
-            "time": 198.4916296005249
+        "b9bfa766-6a49-4dc9-a570-1cafb58a5a3a": {
+            "tokens": 16998,
+            "cost": 0.398,
+            "time": 199.46675491333008
         },
-        "1dfbd459-c340-4a1b-b554-da0ccca1085a": {
-            "tokens": 0,
-            "cost": 0.0,
-            "time": 199.09106183052063
+        "eb52466d-04e6-45f5-8515-964007ee06df": {
+            "tokens": 16878,
+            "cost": 0.39064,
+            "time": 199.3557620048523
         },
-        "e553214e-f635-43dc-a907-df855dd790b2": {
-            "tokens": 13144,
-            "cost": 0.3087,
-            "time": 156.25081610679626
+        "fbc5bbcd-0632-41d9-96a6-6d2ef14535dc": {
+            "tokens": 12746,
+            "cost": 0.29676,
+            "time": 155.20025444030762
         },
-        "9ec14a72-e29b-487d-83ef-bcc5b20d02c7": {
-            "tokens": 23307,
-            "cost": 0.31393,
-            "time": 90.12189030647278
+        "61f6b008-0e8b-482a-8d25-a6f011422e69": {
+            "tokens": 142936,
+            "cost": 1.09608,
+            "time": 112.42684030532837
         }
     }
 }
