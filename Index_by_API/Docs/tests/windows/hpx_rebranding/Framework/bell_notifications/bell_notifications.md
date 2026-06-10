@@ -36,347 +36,371 @@ Found 8 total functions:
 
 [MODULE_PURPOSE_START]
 
-This test module validates the core functionality of the bell notification system within the HPX rebranding framework, focusing on global header navigation elements, bell icon visibility, clickability, and side panel behavior. It verifies that the notification bell icon is properly integrated into the global header, can be interacted with, and displays appropriate empty states for non-authenticated users. The module executes automated UI validation tests using pytest framework with class-based test organization and fixture-driven setup patterns.
+This test module validates the core functionality of the bell notification system within the HPX rebranding framework, focusing on global header navigation elements, bell icon visibility, clickability, and side panel behavior. It verifies that the notification bell icon is properly integrated into the global header, responds to user interactions, and displays appropriate empty states for non-authenticated users. The module executes automated UI validation tests using pytest framework with class-level setup fixtures to initialize browser sessions and page object models.
 
 [MODULE_PURPOSE_END]
 
 ### 1. File Header (Module-Level Documentation)
 
-- **Primary Responsibility:** Automated end-to-end testing of bell notification UI components and interaction workflows within the HPX rebranding framework, ensuring proper rendering, accessibility, and behavioral consistency of notification features across authenticated and non-authenticated user states.
+- **Primary Responsibility:** Automated end-to-end testing of bell notification UI components and user interaction workflows within the HPX rebranding framework, ensuring proper rendering, accessibility, and functional behavior of notification system elements in the global navigation header.
 
 - **Dependencies:** 
   - pytest framework for test execution and fixture management
-  - BaseFlow class for test inheritance and common test utilities
-  - Page object models for bell notification UI element interactions
-  - WebDriver or browser automation framework for UI interaction simulation
+  - BaseFlow class for test orchestration and browser session management
+  - Page object models for bell notification UI element interaction
+  - Browser automation driver utilities for web element manipulation
   - Test configuration modules for environment setup and test data management
 
-- **Module Configuration:**
+- **Module Configuration:** 
   - Test suite identifier: test_suite_01_bell_notifications
-  - Test execution scope: Windows platform, HPX rebranding framework
-  - Test category: Framework-level bell notifications validation
-  - Test file classification: isTestFile=true
+  - Test execution scope: Class-level fixture initialization
+  - Target platform: Windows environment
+  - Application context: HPX rebranding framework
+  - Test category: Bell notifications functional validation
 
-### 2. Class Documentation: [Implicit Test Class]
+### 2. Class Documentation: [Implicit Test Class Container]
 
-- **Role:** Container class organizing related bell notification test cases into a cohesive test suite with shared setup procedures and common test execution context.
+- **Role:** Serves as the organizational container for bell notification test cases, providing shared setup logic and test execution context through pytest's class-based test structure.
 
-- **Purpose:** Groups functional validation tests for bell notification features, manages test lifecycle through class-scoped fixtures, and provides isolated test execution environment for notification-related UI verification scenarios.
+- **Purpose:** Groups related bell notification test scenarios under a unified execution context with shared initialization logic, enabling efficient resource management and consistent test environment preparation across all test methods within the suite.
 
 #### Fixture: class_setup
 
 - **Scope:** Class
 
-- **Purpose:** Initializes the test execution environment for all test methods within the class, establishing browser session, navigation context, authentication state, and page object instances required for bell notification testing workflows.
+- **Purpose:** Initializes the test execution environment by instantiating browser session, configuring page object models, and preparing the application state for bell notification testing scenarios. This fixture ensures all test methods within the class have access to properly configured browser instances and page interaction utilities.
 
 - **Annotation or Markers:** 
-  - @pytest.fixture(scope="class") - Class-level fixture ensuring single execution per test class
-  - Implicit fixture decorator based on pytest naming convention
+  - @pytest.fixture(scope="class")
+  - Implicit class-level setup fixture pattern
 
-- **Dependencies:**
+- **Dependencies:** 
+  - pytest fixture framework
   - Browser driver initialization utilities
-  - Page object factory or page model instantiation services
-  - Authentication service or login workflow utilities
-  - Configuration management for base URL and environment settings
+  - Page object model factory classes
+  - Configuration management modules for environment variables
+  - Session management utilities
 
 - **Parameter:** 
-  - Implicit `self` or `cls` parameter for class context binding
-  - Potential `request` fixture parameter for pytest context access
+  - request: pytest fixture request object providing access to test context and class-level state management
 
-- **Set-up Action:**
+- **Set-up Action:** 
   1. Initialize browser driver instance with configured capabilities
-  2. Navigate to application base URL or landing page
-  3. Instantiate page object models for global header and notification components
-  4. Configure implicit waits and timeout thresholds
-  5. Establish baseline application state for test execution
-  6. Store initialized objects in class-level attributes for test method access
+  2. Instantiate page object models for bell notification components
+  3. Configure implicit wait timeouts for element discovery
+  4. Navigate to application base URL or landing page
+  5. Establish session state and authentication context
+  6. Register teardown handlers for resource cleanup
+  7. Inject initialized objects into class namespace for test method access
 
-- **State Management:**
-  - Browser driver instance stored as class attribute
-  - Page object references maintained for test method consumption
-  - Session state tracking for authentication context
-  - Cleanup handlers registered for teardown operations
+- **State Management:** 
+  - Browser driver instance stored in class-level attribute
+  - Page object model references maintained for test method access
+  - Session configuration parameters cached for test execution
+  - Cleanup handlers registered for post-test resource deallocation
 
 #### Method Level: test_01_verify_global_header_navigation_C60336078
 
 - **Scope:** Instance Method
 
-- **Purpose:** Validates that the global header navigation component is properly rendered and visible on the application interface, ensuring foundational UI structure exists before testing specific notification elements.
+- **Purpose:** Validates that the global header navigation component is properly rendered and visible on the application interface, ensuring the foundational UI structure required for bell notification display is present and accessible.
 
-- **Annotation or Markers:**
+- **Annotation or Markers:** 
   - Test case identifier: C60336078
-  - Implicit pytest test method marker (function name prefix: test_)
-  - Potential regression or smoke test markers
+  - Implicit pytest test method marker (test_ prefix)
+  - Regression test category (inferred from test suite context)
 
-- **Dependencies:**
-  - Global header page object model
-  - Element visibility verification utilities
-  - WebDriver wait conditions for element presence
-  - Assertion libraries for validation
+- **Dependencies:** 
+  - class_setup fixture for browser and page object initialization
+  - Page object model for global header navigation elements
+  - Web element locator strategies for header component identification
+  - Assertion utilities for visibility validation
 
-- **Module Configurations:**
-  - Element locator strategies for global header identification
-  - Timeout thresholds for element visibility checks
-  - Screenshot capture settings for failure documentation
+- **Module Configurations:** 
+  - Global header element locator definitions
+  - Visibility timeout thresholds
+  - Test execution retry policies
 
-- **Input Parameters:**
-  - `self`: Instance reference providing access to class-level fixtures and page objects
+- **Input Parameters:** 
+  - self: Instance reference to access class-level fixtures and shared state
 
-- **Return Parameter:**
-  - None (pytest test methods return void, assertions determine pass/fail)
+- **Return Parameter:** 
+  - None (pytest test methods return void; assertions determine pass/fail status)
 
-- **Functional Flow:**
-  1. Access global header page object from class setup context
-  2. Invoke element visibility check method on global header container
-  3. Apply explicit wait condition for header element presence in DOM
-  4. Verify element display property indicates visible state
-  5. Assert header element exists and is displayed to user
-  6. Log verification result for test reporting
+- **Functional Flow:** 
+  1. Access browser instance from class_setup fixture
+  2. Retrieve page object model for global header navigation
+  3. Locate global header container element using predefined selector strategy
+  4. Verify element is present in DOM structure
+  5. Assert element visibility state using is_displayed() or equivalent method
+  6. Log validation result for test reporting
 
-- **Assertions:**
-  - Global header navigation element is present in DOM structure
-  - Global header element visibility property evaluates to true
-  - Header component renders within acceptable timeout threshold
+- **Assertions:** 
+  - Global header navigation element is present in page DOM
+  - Global header navigation element is visible to end users
+  - Element rendering completes within acceptable timeout threshold
 
-- **Boundary Conditions:**
-  - Maximum wait time for element appearance (typically 10-30 seconds)
-  - Viewport size requirements for header visibility
-  - Page load completion state before verification
+- **Boundary Conditions:** 
+  - Page load completion before element query execution
+  - Implicit wait timeout for dynamic element rendering
+  - Browser viewport dimensions affecting element visibility
+  - CSS display properties determining visibility state
 
-- **Exception Handling:**
-  - TimeoutException caught if header fails to appear within wait threshold
-  - NoSuchElementException handled if locator strategy fails to identify element
+- **Exception Handling:** 
+  - NoSuchElementException caught if header element not found in DOM
+  - TimeoutException handled for delayed element rendering scenarios
+  - StaleElementReferenceException managed for dynamic DOM updates
   - AssertionError raised on validation failure with descriptive message
 
 #### Method Level: test_02_verify_global_header_navigation_includes_bellicon_C53303694
 
 - **Scope:** Instance Method
 
-- **Purpose:** Confirms that the bell notification icon is present within the global header navigation structure, validating proper integration of notification UI component into the header layout.
+- **Purpose:** Confirms that the bell notification icon is properly integrated within the global header navigation structure, verifying the presence and correct positioning of the notification bell UI element as part of the header component hierarchy.
 
-- **Annotation or Markers:**
+- **Annotation or Markers:** 
   - Test case identifier: C53303694
-  - Implicit pytest test method marker
-  - Potential UI component integration test marker
+  - Implicit pytest test method marker (test_ prefix)
+  - UI component integration test category
 
-- **Dependencies:**
-  - Global header page object with bell icon locator definitions
-  - Bell notification icon element identification utilities
-  - Element presence verification methods
-  - DOM query execution capabilities
+- **Dependencies:** 
+  - class_setup fixture for initialized browser session
+  - Global header page object model
+  - Bell icon element locator definitions
+  - Element presence validation utilities
 
-- **Module Configurations:**
-  - Bell icon CSS selector or XPath locator configuration
-  - Icon element attribute identifiers (class, id, data attributes)
-  - Visual regression baseline references if applicable
+- **Module Configurations:** 
+  - Bell icon CSS selector or XPath locator
+  - Parent-child element relationship validation rules
+  - Element hierarchy traversal strategies
 
-- **Input Parameters:**
-  - `self`: Instance reference for accessing initialized page objects and driver
+- **Input Parameters:** 
+  - self: Instance reference providing access to shared test fixtures
 
-- **Return Parameter:**
-  - None (validation outcome determined by assertion results)
+- **Return Parameter:** 
+  - None (test outcome determined by assertion results)
 
-- **Functional Flow:**
-  1. Retrieve global header page object instance from setup context
-  2. Query DOM for bell icon element within header container scope
-  3. Execute element presence check using configured locator strategy
-  4. Verify bell icon element exists in header navigation structure
-  5. Optionally validate icon visual properties (size, position, styling)
-  6. Assert bell icon is successfully integrated into header component
-  7. Document verification outcome in test execution log
+- **Functional Flow:** 
+  1. Retrieve global header page object from class fixture
+  2. Query for bell icon element within header container scope
+  3. Validate bell icon element exists in DOM structure
+  4. Verify bell icon is child element of global header navigation
+  5. Confirm bell icon positioning within header layout
+  6. Assert element attributes match expected configuration
+  7. Document validation results in test execution log
 
-- **Assertions:**
-  - Bell notification icon element exists within global header DOM structure
-  - Icon element is child or descendant of header navigation container
-  - Element matches expected locator pattern and attribute signatures
+- **Assertions:** 
+  - Bell icon element is present within global header navigation container
+  - Bell icon element locator successfully identifies unique UI component
+  - Element hierarchy confirms bell icon as direct or nested child of header
+  - Bell icon attributes (class, id, data attributes) match specification
 
-- **Boundary Conditions:**
-  - Header must be fully rendered before icon search execution
-  - Icon element must be present regardless of notification count state
-  - Locator strategy must uniquely identify bell icon among header elements
+- **Boundary Conditions:** 
+  - Dynamic header rendering completion before element query
+  - Multiple bell icon instances requiring unique identification
+  - Responsive layout variations affecting element positioning
+  - Shadow DOM encapsulation requiring specialized locator strategies
 
-- **Exception Handling:**
-  - NoSuchElementException captured if bell icon locator fails to match element
-  - StaleElementReferenceException handled for dynamic DOM updates
-  - AssertionError raised with diagnostic information on validation failure
+- **Exception Handling:** 
+  - NoSuchElementException captured when bell icon not found in header
+  - InvalidSelectorException handled for malformed locator expressions
+  - WebDriverException managed for browser communication failures
+  - AssertionError raised with detailed failure context for debugging
 
 #### Method Level: test_03_verify_bellicon_can_be_clicked_C53303695
 
 - **Scope:** Instance Method
 
-- **Purpose:** Validates the interactive functionality of the bell notification icon by verifying it accepts click events and responds to user interaction, ensuring the element is not merely decorative but functionally operational.
+- **Purpose:** Validates the interactive functionality of the bell notification icon by verifying it responds to click events, ensuring users can successfully trigger notification panel display through standard mouse interaction with the bell UI element.
 
-- **Annotation or Markers:**
+- **Annotation or Markers:** 
   - Test case identifier: C53303695
-  - Implicit pytest test method marker
-  - Potential interaction or functional test classification marker
-  - May include BaseFlow inheritance marker based on naming pattern
+  - Implicit pytest test method marker (test_ prefix)
+  - Interaction validation test category
+  - BaseFlow method reference indicating shared test utility usage
 
-- **Dependencies:**
-  - Bell notification page object with click action methods
-  - WebDriver click interaction capabilities
-  - Element interactability verification utilities
-  - JavaScript executor for alternative click strategies if needed
+- **Dependencies:** 
+  - class_setup fixture for browser and page object initialization
+  - Bell icon page object model with click action methods
+  - WebDriver action chains for click event simulation
+  - Element interactability validation utilities
+  - BaseFlow utility class for common test operations
 
-- **Module Configurations:**
+- **Module Configurations:** 
   - Click action timeout thresholds
   - Element interactability wait conditions
-  - Retry logic configuration for click failures
-  - Event listener verification settings
+  - JavaScript click fallback configuration
+  - Event propagation validation settings
 
-- **Input Parameters:**
-  - `self`: Instance reference providing access to page objects and driver context
+- **Input Parameters:** 
+  - self: Instance reference for accessing class-level test context
 
-- **Return Parameter:**
-  - None (success determined by absence of exceptions and assertion validation)
+- **Return Parameter:** 
+  - None (test success determined by assertion validation)
 
-- **Functional Flow:**
-  1. Locate bell notification icon element using page object locator
-  2. Verify element is in clickable state (visible, enabled, not obscured)
-  3. Scroll element into viewport if necessary for interaction
-  4. Execute click action on bell icon element
-  5. Wait for click event processing and potential UI state changes
-  6. Verify click action completed without throwing interaction exceptions
-  7. Optionally validate post-click state changes (panel opening, focus shift)
-  8. Assert successful click interaction on bell notification icon
+- **Functional Flow:** 
+  1. Locate bell icon element using page object model locator
+  2. Verify element is visible and enabled for interaction
+  3. Scroll element into viewport if necessary for clickability
+  4. Wait for element to reach clickable state (no overlays, animations complete)
+  5. Execute click action on bell icon element
+  6. Verify click event registration through DOM event listeners or state change
+  7. Confirm no JavaScript errors occurred during interaction
+  8. Validate expected UI response to click action (panel visibility change)
+  9. Log interaction success and state transition details
 
-- **Assertions:**
-  - Bell icon element accepts click interaction without exception
-  - Element is in enabled and interactable state before click attempt
-  - Click action executes within acceptable timeout threshold
-  - No ElementNotInteractableException or similar errors occur
+- **Assertions:** 
+  - Bell icon element is clickable (enabled, visible, not obscured)
+  - Click action executes without throwing WebDriver exceptions
+  - Click event successfully triggers expected application behavior
+  - No console errors or JavaScript exceptions occur during interaction
+  - UI state changes appropriately in response to click event
 
-- **Boundary Conditions:**
-  - Element must be within viewport or scrollable into view
-  - No overlay elements obscuring bell icon during click attempt
-  - Browser focus must allow interaction with target element
-  - Sufficient wait time for any animations or transitions to complete
+- **Boundary Conditions:** 
+  - Element must be within viewport bounds for native click execution
+  - Overlaying elements or modals may block click target
+  - Animation states affecting element interactability timing
+  - Double-click prevention mechanisms requiring timing coordination
+  - Touch vs. mouse event handling in responsive designs
 
-- **Exception Handling:**
-  - ElementNotInteractableException caught if icon is obscured or disabled
-  - ElementClickInterceptedException handled for overlay interference scenarios
-  - TimeoutException captured if click action exceeds configured threshold
-  - StaleElementReferenceException managed for dynamic DOM updates during interaction
+- **Exception Handling:** 
+  - ElementNotInteractableException caught when element cannot receive click
+  - ElementClickInterceptedException handled for overlay blocking scenarios
+  - TimeoutException managed for delayed element readiness
+  - JavascriptException captured for script execution failures during click
+  - AssertionError raised with interaction context for test failure analysis
 
 #### Method Level: test_04_verify_notifications_sidepanel_opened_upon_clicking_bellicon_C53303696
 
 - **Scope:** Instance Method
 
-- **Purpose:** Validates the complete interaction workflow where clicking the bell notification icon triggers the opening of the notifications side panel, verifying the cause-and-effect relationship between user action and UI response.
+- **Purpose:** Validates the complete user interaction workflow by confirming that clicking the bell notification icon successfully triggers the opening of the notifications side panel, verifying both the click action execution and the resulting UI state transition to display notification content.
 
-- **Annotation or Markers:**
+- **Annotation or Markers:** 
   - Test case identifier: C53303696
-  - Implicit pytest test method marker
-  - Potential end-to-end workflow or integration test marker
+  - Implicit pytest test method marker (test_ prefix)
+  - End-to-end workflow validation test
+  - UI state transition verification category
 
-- **Dependencies:**
-  - Bell notification page object with click and panel verification methods
-  - Side panel page object or component model
-  - Element visibility and state transition verification utilities
-  - Animation completion detection mechanisms
+- **Dependencies:** 
+  - class_setup fixture for test environment initialization
+  - Bell icon page object with click interaction methods
+  - Notifications side panel page object for panel state validation
+  - Explicit wait utilities for panel animation completion
+  - Element visibility assertion helpers
 
-- **Module Configurations:**
-  - Side panel appearance timeout configuration
-  - Panel visibility detection criteria (CSS properties, DOM presence)
-  - Animation duration allowances
+- **Module Configurations:** 
+  - Side panel animation duration timeout
+  - Panel visibility detection strategies
+  - State transition validation rules
   - Panel element locator definitions
 
-- **Input Parameters:**
-  - `self`: Instance reference for accessing test context and page objects
+- **Input Parameters:** 
+  - self: Instance reference providing access to shared fixtures and state
 
-- **Return Parameter:**
-  - None (test outcome determined by assertion validation)
+- **Return Parameter:** 
+  - None (test outcome based on assertion validation results)
 
-- **Functional Flow:**
-  1. Verify initial state with notifications panel closed or not visible
-  2. Locate and interact with bell notification icon element
-  3. Execute click action on bell icon
-  4. Wait for side panel opening animation or transition to complete
-  5. Query DOM for notifications side panel element presence
-  6. Verify side panel element visibility state transitions to displayed
-  7. Validate panel positioning and layout properties indicate open state
-  8. Assert notifications side panel successfully opened in response to click
-  9. Log panel opening verification result with timing metrics
+- **Functional Flow:** 
+  1. Verify initial state with notifications panel closed/hidden
+  2. Locate bell icon element using page object locator strategy
+  3. Execute click action on bell icon element
+  4. Wait for side panel opening animation to complete
+  5. Query for notifications side panel container element
+  6. Verify side panel element is present in DOM
+  7. Assert side panel visibility state is true (displayed to user)
+  8. Validate panel positioning and layout properties
+  9. Confirm panel content area is accessible for interaction
+  10. Log successful state transition and panel display validation
 
-- **Assertions:**
-  - Notifications side panel element becomes present in DOM after click
-  - Panel visibility property changes from hidden to visible state
-  - Panel opening occurs within acceptable timeout threshold
-  - Panel displays in expected screen position (typically right-side overlay)
+- **Assertions:** 
+  - Bell icon click action executes successfully without exceptions
+  - Notifications side panel element appears in DOM after click
+  - Side panel visibility state transitions from hidden to visible
+  - Panel display completes within expected animation timeout
+  - Panel container has correct CSS classes indicating open state
+  - Panel content area is rendered and accessible
 
-- **Boundary Conditions:**
-  - Initial state must have panel closed before test execution
-  - Click action must complete before panel state verification
-  - Animation duration must not exceed configured wait timeout
-  - Panel must be uniquely identifiable in DOM structure
+- **Boundary Conditions:** 
+  - Initial panel state must be closed before test execution
+  - Animation timing variations affecting visibility detection
+  - Asynchronous panel content loading requiring additional wait
+  - Multiple panel instances requiring unique identification
+  - Browser window size affecting panel rendering and positioning
 
-- **Exception Handling:**
-  - TimeoutException caught if panel fails to appear within wait period
-  - NoSuchElementException handled if panel locator fails after click
-  - AssertionError raised if panel state does not transition to open
-  - StaleElementReferenceException managed for dynamic panel rendering
+- **Exception Handling:** 
+  - NoSuchElementException handled when panel element not found after click
+  - TimeoutException caught for delayed panel animation or rendering
+  - ElementNotInteractableException managed for bell icon click failures
+  - StaleElementReferenceException handled for DOM updates during transition
+  - AssertionError raised with detailed state information for debugging
 
 #### Method Level: test_05_verify_empty_bell_state_when_user_not_logged_in_C53303697
 
 - **Scope:** Instance Method
 
-- **Purpose:** Validates that the bell notification system displays an appropriate empty state when accessed by non-authenticated users, ensuring the application handles unauthenticated access scenarios correctly and provides meaningful feedback about the absence of notifications.
+- **Purpose:** Validates the notification system's behavior for unauthenticated users by confirming that the bell notification panel displays an appropriate empty state message when accessed by users who are not logged into the application, ensuring proper handling of non-authenticated session contexts.
 
-- **Annotation or Markers:**
+- **Annotation or Markers:** 
   - Test case identifier: C53303697
-  - Implicit pytest test method marker
-  - Potential authentication state test marker
-  - Negative test case or boundary condition marker
+  - Implicit pytest test method marker (test_ prefix)
+  - Authentication state validation test
+  - Empty state UI verification category
 
-- **Dependencies:**
+- **Dependencies:** 
+  - class_setup fixture for browser session initialization
   - Authentication state management utilities
-  - Bell notification page object with empty state verification methods
-  - Session management or logout functionality
-  - Empty state message or UI element locators
+  - Bell icon and notification panel page objects
+  - Empty state message element locators
+  - Session management utilities for logout operations
 
-- **Module Configurations:**
-  - Unauthenticated user session configuration
-  - Empty state message text or element identifiers
-  - Default notification count for logged-out users (expected: 0)
-  - Empty state UI component locator strategies
+- **Module Configurations:** 
+  - Empty state message text content expectations
+  - Non-authenticated user session configuration
+  - Panel empty state element locator definitions
+  - Authentication state validation rules
 
-- **Input Parameters:**
-  - `self`: Instance reference providing access to test fixtures and page objects
+- **Input Parameters:** 
+  - self: Instance reference for accessing test fixtures and shared context
 
-- **Return Parameter:**
-  - None (validation outcome expressed through assertions)
+- **Return Parameter:** 
+  - None (test validation through assertion checks)
 
-- **Functional Flow:**
-  1. Ensure user is in logged-out or unauthenticated state
+- **Functional Flow:** 
+  1. Ensure user is in logged-out state (clear session, cookies, tokens)
   2. Navigate to application page with bell notification component
   3. Verify bell icon is visible in global header
-  4. Click bell notification icon to open side panel
-  5. Wait for notifications panel to display
-  6. Query panel content for empty state indicators
-  7. Verify presence of empty state message or placeholder content
-  8. Validate notification count displays zero or empty indicator
-  9. Assert no notification items are rendered in panel list
-  10. Confirm appropriate messaging for unauthenticated state
-  11. Log empty state verification results
+  4. Click bell icon to open notifications side panel
+  5. Wait for panel to fully render and display content
+  6. Query for empty state message container element
+  7. Verify empty state message element is present and visible
+  8. Extract and validate empty state message text content
+  9. Confirm no notification items are displayed in panel
+  10. Assert panel displays appropriate messaging for non-authenticated users
+  11. Log validation results and empty state content details
 
-- **Assertions:**
-  - Notifications panel displays empty state UI when user not logged in
-  - No notification items appear in panel content area
-  - Empty state message or placeholder is visible to user
-  - Notification count indicator shows zero or empty value
-  - Panel does not display authenticated-user-only notification content
+- **Assertions:** 
+  - User session is in unauthenticated state before test execution
+  - Bell icon click successfully opens notifications panel
+  - Empty state message element is present in panel DOM
+  - Empty state message is visible to user
+  - Message text content matches expected non-authenticated user messaging
+  - No notification list items are rendered in panel
+  - Panel does not display loading indicators or error states
 
-- **Boundary Conditions:**
-  - User must be in confirmed logged-out state before verification
-  - Panel must open successfully even for unauthenticated users
-  - Empty state must be distinguishable from loading or error states
-  - Test must not depend on presence of actual notification data
+- **Boundary Conditions:** 
+  - Session state must be completely cleared before validation
+  - Cached authentication tokens requiring explicit invalidation
+  - Cookie persistence affecting authentication state detection
+  - Asynchronous authentication checks delaying empty state rendering
+  - Localization variations in empty state message text
 
-- **Exception Handling:**
-  - AssertionError raised if notification items appear for logged-out user
-  - TimeoutException handled if empty state elements fail to render
-  - NoSuchElementException caught if expected empty state indicators missing
-  - Authentication state verification failures logged with diagnostic context
+- **Exception Handling:** 
+  - NoSuchElementException caught when empty state element not found
+  - TimeoutException handled for delayed panel or message rendering
+  - AssertionError raised for incorrect message content or missing elements
+  - WebDriverException managed for session state manipulation failures
+  - StaleElementReferenceException handled for dynamic content updates
 
 ---
 
@@ -386,192 +410,195 @@ This test module validates the core functionality of the bell notification syste
 
 [MODULE_PURPOSE_START]
 
-This test module focuses on validating the navigation and control elements within the bell notifications side panel, specifically testing the back/close button functionality and visibility. It ensures users can properly dismiss or close the notifications panel through the provided UI controls, verifying both the presence and operational behavior of panel navigation elements. The module executes focused interaction tests for panel dismissal workflows within the HPX rebranding framework.
+This test module focuses on validating the navigation and interaction controls within the bell notifications side panel, specifically testing the back/close button functionality that allows users to dismiss the notification panel. It verifies the presence, labeling, and clickability of the panel's close mechanism, ensuring users can successfully exit the notification view and return to the main application interface. The module executes UI component validation and interaction workflow tests using pytest framework with class-level fixture initialization.
 
 [MODULE_PURPOSE_END]
 
 ### 1. File Header (Module-Level Documentation)
 
-- **Primary Responsibility:** Automated validation of notifications side panel navigation controls, specifically the back/close button component, ensuring proper visibility, labeling, and functional behavior for panel dismissal operations within the bell notification system.
+- **Primary Responsibility:** Automated testing of notification side panel navigation controls, specifically validating the back/close button's visibility, accessibility, and functional behavior to ensure users can properly dismiss the notification panel interface.
 
-- **Dependencies:**
-  - pytest framework for test structure and execution
-  - BaseFlow class for test inheritance and shared utilities
-  - Notifications side panel page object models
-  - Button interaction and verification utilities
-  - WebDriver automation framework for UI manipulation
+- **Dependencies:** 
+  - pytest framework for test execution and fixture management
+  - BaseFlow class for shared test utilities and browser session orchestration
+  - Notification side panel page object models
+  - Browser automation driver for UI element interaction
+  - Element locator strategies for navigation control identification
 
-- **Module Configuration:**
+- **Module Configuration:** 
   - Test suite identifier: test_suite_02_bell_notifications
-  - Test execution scope: Windows platform, HPX rebranding framework
-  - Test category: Framework-level bell notifications navigation controls
-  - Test file classification: isTestFile=true
+  - Test execution scope: Class-level fixture initialization
+  - Target platform: Windows environment
+  - Application context: HPX rebranding framework
+  - Test category: Navigation control validation for bell notifications
 
-### 2. Class Documentation: [Implicit Test Class]
+### 2. Class Documentation: [Implicit Test Class Container]
 
-- **Role:** Organizes related test cases for notifications panel navigation controls into a cohesive test suite with shared initialization and execution context.
+- **Role:** Organizational container for notification panel navigation control test cases, providing shared setup logic and execution context for back/close button validation scenarios.
 
-- **Purpose:** Groups functional validation tests for panel dismissal mechanisms, manages test lifecycle through class-scoped fixtures, and provides isolated environment for testing back/close button behavior and visibility.
+- **Purpose:** Groups related navigation control test methods under unified execution context with shared initialization, enabling consistent test environment preparation and efficient resource management for panel interaction testing.
 
 #### Fixture: class_setup
 
 - **Scope:** Class
 
-- **Purpose:** Establishes the test execution environment for all test methods within the class, initializing browser session, navigating to application context, authenticating user if required, opening notifications panel, and preparing page objects for back button interaction testing.
+- **Purpose:** Initializes the test execution environment by configuring browser session, instantiating page object models for notification panel components, and preparing the application state with the notification panel opened to enable navigation control testing scenarios.
 
-- **Annotation or Markers:**
-  - @pytest.fixture(scope="class") - Class-level fixture for single execution per test class
-  - Implicit fixture decorator following pytest naming conventions
+- **Annotation or Markers:** 
+  - @pytest.fixture(scope="class")
+  - Class-level setup fixture pattern
 
-- **Dependencies:**
-  - Browser driver initialization and configuration services
-  - Page object factory for notifications panel components
-  - Authentication workflow utilities for user login
-  - Bell notification interaction methods for panel opening
-  - Navigation state management utilities
+- **Dependencies:** 
+  - pytest fixture framework
+  - Browser driver initialization utilities
+  - Notification panel page object models
+  - Bell icon interaction utilities for panel opening
+  - Configuration management for test environment setup
+  - Session state management utilities
 
-- **Parameter:**
-  - Implicit `self` or `cls` parameter for class context binding
-  - Potential `request` fixture parameter for pytest metadata access
+- **Parameter:** 
+  - request: pytest fixture request object providing test context and class-level state access
 
-- **Set-up Action:**
-  1. Initialize browser driver with required capabilities and configuration
-  2. Navigate to application base URL or target page
-  3. Execute user authentication workflow if required for notification access
-  4. Locate and click bell notification icon to open side panel
-  5. Wait for notifications panel to fully render and display
-  6. Instantiate page object models for panel navigation controls
+- **Set-up Action:** 
+  1. Initialize browser driver instance with configured capabilities
+  2. Navigate to application URL containing bell notification component
+  3. Instantiate page object models for bell icon and notification panel
+  4. Configure implicit and explicit wait timeouts
+  5. Click bell icon to open notifications side panel
+  6. Wait for panel animation and rendering completion
   7. Verify panel is in open state before test execution
-  8. Store initialized objects and state in class attributes
-  9. Register cleanup handlers for teardown operations
+  8. Inject initialized objects into class namespace
+  9. Register teardown handlers for browser cleanup
 
-- **State Management:**
-  - Browser driver instance maintained as class attribute
-  - Notifications panel page object stored for test method access
-  - Panel open state tracked for test precondition validation
-  - Authentication session state preserved across test methods
-  - Cleanup handlers registered for browser and session teardown
+- **State Management:** 
+  - Browser driver instance stored as class attribute
+  - Page object model references maintained for test method access
+  - Notification panel open state tracked for test preconditions
+  - Session configuration cached for test execution
+  - Cleanup handlers registered for resource deallocation
 
 #### Method Level: test_01_verify_back_button_visible_on_navigation_side_panel_C42631068
 
 - **Scope:** Instance Method
 
-- **Purpose:** Validates that the back button (or close button) is visible and properly rendered within the notifications side panel navigation area, ensuring users have a clear visual affordance for dismissing the panel.
+- **Purpose:** Validates that the back/close button control is properly rendered and visible within the notifications side panel navigation area, ensuring users have a clear visual indicator for dismissing the panel interface.
 
-- **Annotation or Markers:**
+- **Annotation or Markers:** 
   - Test case identifier: C42631068
-  - Implicit pytest test method marker
-  - Potential UI visibility or accessibility test marker
+  - Implicit pytest test method marker (test_ prefix)
+  - UI component visibility validation test
 
-- **Dependencies:**
-  - Notifications side panel page object with back button locators
-  - Element visibility verification utilities
-  - WebDriver wait conditions for element presence
-  - Button element identification methods
+- **Dependencies:** 
+  - class_setup fixture for initialized panel state
+  - Notification panel page object model
+  - Back button element locator definitions
+  - Element visibility validation utilities
 
-- **Module Configurations:**
-  - Back button element locator strategy (CSS selector, XPath, or accessibility identifier)
-  - Button visibility detection criteria
-  - Element rendering timeout thresholds
-  - Expected button label or text content
+- **Module Configurations:** 
+  - Back button element locator strategy (CSS selector or XPath)
+  - Visibility detection timeout thresholds
+  - Panel navigation area element hierarchy
 
-- **Input Parameters:**
-  - `self`: Instance reference providing access to class-level fixtures and page objects
+- **Input Parameters:** 
+  - self: Instance reference for accessing class-level fixtures
 
-- **Return Parameter:**
+- **Return Parameter:** 
   - None (test outcome determined by assertion results)
 
-- **Functional Flow:**
-  1. Access notifications side panel page object from class setup
-  2. Locate back button element within panel navigation area
-  3. Apply explicit wait for button element presence in DOM
-  4. Verify button element display property indicates visible state
-  5. Optionally validate button positioning within panel header
-  6. Assert back button is visible and accessible to user
-  7. Log visibility verification result for test reporting
+- **Functional Flow:** 
+  1. Access notification panel page object from class fixture
+  2. Query for back/close button element within panel navigation area
+  3. Verify button element is present in DOM structure
+  4. Assert button element visibility state using is_displayed() method
+  5. Validate button positioning within panel header or navigation section
+  6. Confirm button is not obscured by other UI elements
+  7. Log validation results for test reporting
 
-- **Assertions:**
-  - Back button element is present in notifications panel DOM structure
-  - Button visibility property evaluates to true
-  - Button renders within acceptable timeout threshold
-  - Button is positioned in expected navigation area of panel
+- **Assertions:** 
+  - Back/close button element is present in notification panel DOM
+  - Button element is visible to end users
+  - Button renders within expected panel navigation area
+  - Element visibility completes within timeout threshold
 
-- **Boundary Conditions:**
-  - Notifications panel must be in open state before button verification
-  - Button must be visible regardless of notification content state
-  - Element must be within viewport or scrollable area
-  - Maximum wait time for button appearance (typically 10-30 seconds)
+- **Boundary Conditions:** 
+  - Panel must be in fully opened state before button query
+  - Panel animation completion affecting button visibility timing
+  - Responsive layout variations affecting button positioning
+  - CSS display properties determining visibility state
 
-- **Exception Handling:**
-  - TimeoutException caught if button fails to appear within wait threshold
-  - NoSuchElementException handled if locator strategy fails to identify button
-  - AssertionError raised on visibility validation failure with diagnostic message
-  - StaleElementReferenceException managed for dynamic panel rendering
+- **Exception Handling:** 
+  - NoSuchElementException caught when button element not found
+  - TimeoutException handled for delayed button rendering
+  - StaleElementReferenceException managed for dynamic DOM updates
+  - AssertionError raised with descriptive failure context
 
 #### Method Level: test_02_verify_back_button_named_as_close_can_be_clicked_C42631069
 
 - **Scope:** Instance Method
 
-- **Purpose:** Validates that the back button is properly labeled as "Close" and accepts click interactions, verifying both the semantic correctness of the button label and its functional clickability for panel dismissal operations.
+- **Purpose:** Validates the complete interaction workflow for the back/close button by confirming it is properly labeled as "Close" and responds to click events, verifying both the button's text content and its functional behavior to dismiss the notification panel.
 
-- **Annotation or Markers:**
+- **Annotation or Markers:** 
   - Test case identifier: C42631069
-  - Implicit pytest test method marker
-  - Potential BaseFlow inheritance marker based on naming pattern
-  - Interaction and labeling validation test marker
+  - Implicit pytest test method marker (test_ prefix)
+  - BaseFlow method reference indicating shared utility usage
+  - Interaction and labeling validation test
 
-- **Dependencies:**
-  - Notifications side panel page object with button interaction methods
-  - Button text content verification utilities
-  - WebDriver click interaction capabilities
-  - Element interactability verification methods
-  - Panel state transition detection utilities
+- **Dependencies:** 
+  - class_setup fixture for initialized panel state
+  - Notification panel page object with close button methods
+  - WebDriver action chains for click event simulation
+  - Element text content extraction utilities
+  - BaseFlow utility class for common test operations
+  - Panel state validation utilities
 
-- **Module Configurations:**
-  - Expected button label text: "Close"
-  - Button click timeout thresholds
-  - Panel closing animation duration allowances
+- **Module Configurations:** 
+  - Expected button text content ("Close")
+  - Click action timeout thresholds
+  - Panel close animation duration
   - Element interactability wait conditions
 
-- **Input Parameters:**
-  - `self`: Instance reference for accessing page objects and driver context
+- **Input Parameters:** 
+  - self: Instance reference for accessing test context and fixtures
 
-- **Return Parameter:**
-  - None (success determined by assertion validation and absence of exceptions)
+- **Return Parameter:** 
+  - None (test success determined by assertion validation)
 
-- **Functional Flow:**
-  1. Locate back button element within notifications side panel
-  2. Retrieve button text content or accessible label
-  3. Verify button label matches expected "Close" text
-  4. Assert button is properly named for user understanding
-  5. Verify button is in clickable state (visible, enabled, not obscured)
-  6. Scroll button into viewport if necessary for interaction
+- **Functional Flow:** 
+  1. Locate back/close button element using page object locator
+  2. Extract button text content or label attribute
+  3. Verify button text matches expected "Close" label
+  4. Confirm button is visible and enabled for interaction
+  5. Scroll button into viewport if necessary
+  6. Wait for button to reach clickable state
   7. Execute click action on close button element
-  8. Wait for click event processing and panel closing animation
-  9. Verify panel state transitions to closed or hidden
-  10. Assert successful click interaction and panel dismissal
-  11. Log button label verification and click interaction results
+  8. Wait for panel closing animation to complete
+  9. Verify notification panel is no longer visible
+  10. Confirm panel element removed from DOM or hidden via CSS
+  11. Log interaction success and state transition details
 
-- **Assertions:**
-  - Back button label text equals "Close" or equivalent localized string
-  - Button element accepts click interaction without exception
-  - Button is in enabled and interactable state before click
-  - Click action executes within acceptable timeout threshold
-  - Notifications panel closes or becomes hidden after button click
+- **Assertions:** 
+  - Back button text content equals "Close" (case-sensitive or normalized)
+  - Button element is clickable (enabled, visible, not obscured)
+  - Click action executes without WebDriver exceptions
+  - Notification panel visibility transitions from visible to hidden
+  - Panel close animation completes within timeout threshold
+  - Panel element state indicates closed/dismissed status
 
-- **Boundary Conditions:**
-  - Button must be within viewport or scrollable into view for interaction
-  - No overlay elements obscuring button during click attempt
-  - Panel must be in open state before close button interaction
-  - Sufficient wait time for panel closing animation to complete
-  - Button label must match expected text exactly or case-insensitively
+- **Boundary Conditions:** 
+  - Button text localization variations requiring flexible matching
+  - Element must be within viewport for native click execution
+  - Animation timing affecting panel visibility detection
+  - Multiple close mechanisms requiring specific button identification
+  - Touch vs. mouse event handling in responsive designs
 
-- **Exception Handling:**
-  - AssertionError raised if button label does not match "Close"
-  - ElementNotInteractableException caught if button is obscured or disabled
-  - ElementClickInterceptedException handled for overlay interference
-  - TimeoutException captured if click action or panel closing exceeds threshold
-  - StaleElementReferenceException managed for dynamic DOM updates during interaction
+- **Exception Handling:** 
+  - AssertionError raised for incorrect button text content
+  - ElementNotInteractableException caught when button cannot receive click
+  - ElementClickInterceptedException handled for overlay blocking
+  - TimeoutException managed for delayed panel close animation
+  - NoSuchElementException handled for panel element query after close
+  - StaleElementReferenceException managed for DOM updates during transition
 
 ---
 
@@ -581,512 +608,548 @@ This test module focuses on validating the navigation and control elements withi
 
 [MODULE_PURPOSE_START]
 
-This test module provides comprehensive validation of bell notification message types, visual styling, and content filtering within the HPX rebranding framework. It verifies that different notification severity levels (urgent, warning, informative) display with correct color coding, validates notification panel behavior for authenticated and unauthenticated users, ensures proper message filtering by account context, and confirms correct chronological sorting of notification items. The module executes detailed UI and content validation tests covering the complete notification display and organization logic.
+This test module provides comprehensive validation of the bell notification system's visual styling, message categorization, and content filtering logic within the HPX rebranding framework. It verifies that notification messages are properly color-coded based on urgency levels (urgent, warning, informative), validates panel behavior for authenticated and non-authenticated users, and confirms that message filtering and sorting mechanisms function correctly. The module executes UI styling validation, authentication state testing, and data filtering verification using pytest framework with class-level setup fixtures.
 
 [MODULE_PURPOSE_END]
 
 ### 1. File Header (Module-Level Documentation)
 
-- **Primary Responsibility:** Automated end-to-end validation of bell notification message presentation, including severity-based color coding, authentication-dependent content display, account-specific message filtering, and chronological sorting logic within the notifications side panel.
+- **Primary Responsibility:** Automated end-to-end testing of notification message styling, categorization, authentication-based filtering, and sort order logic, ensuring the notification system properly displays color-coded messages, respects user authentication state, and presents notifications in correct priority sequence.
 
-- **Dependencies:**
+- **Dependencies:** 
   - pytest framework for test execution and fixture management
-  - BaseFlow class for test inheritance and common utilities
-  - Bell notifications page object models with message element locators
-  - Color verification utilities for CSS property validation
-  - Authentication and session management services
-  - Message filtering and sorting validation utilities
-  - WebDriver automation framework for UI interaction
+  - BaseFlow class for test orchestration and shared utilities
+  - Notification panel page object models
+  - Bell icon interaction page objects
+  - CSS color validation utilities
+  - Authentication state management utilities
+  - Message filtering and sorting validation helpers
+  - Browser automation driver for UI interaction
 
-- **Module Configuration:**
+- **Module Configuration:** 
   - Test suite identifier: test_suite_03_bell_notifications
-  - Test execution scope: Windows platform, HPX rebranding framework
-  - Test category: Framework-level bell notifications content and styling validation
-  - Test file classification: isTestFile=true
-  - Notification severity types: urgent, warning, informative
-  - Expected color codes for each severity level
+  - Test execution scope: Class-level fixture initialization
+  - Target platform: Windows environment
+  - Application context: HPX rebranding framework
+  - Test category: Notification styling, filtering, and sorting validation
+  - Message urgency levels: Urgent, Warning, Informative
+  - Expected color codes for message categories
 
-### 2. Class Documentation: [Implicit Test Class]
+### 2. Class Documentation: [Implicit Test Class Container]
 
-- **Role:** Organizes comprehensive notification content and styling validation tests into a cohesive suite with shared setup procedures and common execution context.
+- **Role:** Organizational container for comprehensive notification system validation test cases, providing shared setup logic for message styling, authentication state, and content filtering test scenarios.
 
-- **Purpose:** Groups functional and visual validation tests for notification message display, manages test lifecycle through class-scoped fixtures, and provides isolated environment for testing message styling, filtering, and sorting behaviors.
+- **Purpose:** Groups related notification system validation tests under unified execution context with shared initialization, enabling consistent test environment preparation for color validation, authentication testing, and message filtering verification.
 
 #### Fixture: class_setup
 
 - **Scope:** Class
 
-- **Purpose:** Initializes the test execution environment for all test methods within the class, establishing browser session, authenticating user, navigating to application context, opening notifications panel, and preparing page objects for message content and styling validation workflows.
+- **Purpose:** Initializes the test execution environment by configuring browser session, instantiating page object models for notification components, preparing test data with multiple message types (urgent, warning, informative), and establishing authentication state contexts for comprehensive notification system testing.
 
-- **Annotation or Markers:**
-  - @pytest.fixture(scope="class") - Class-level fixture for single execution per test class
-  - Implicit fixture decorator following pytest naming conventions
+- **Annotation or Markers:** 
+  - @pytest.fixture(scope="class")
+  - Class-level setup fixture pattern
 
-- **Dependencies:**
-  - Browser driver initialization and configuration services
-  - Page object factory for bell notifications and message components
-  - Authentication workflow utilities for user login
-  - Test data management for notification message creation or seeding
-  - Bell notification interaction methods for panel opening
-  - Color extraction and CSS property verification utilities
+- **Dependencies:** 
+  - pytest fixture framework
+  - Browser driver initialization utilities
+  - Notification panel and bell icon page object models
+  - Test data generation utilities for message creation
+  - Authentication service mocks or test account credentials
+  - Configuration management for environment setup
+  - Session state management utilities
 
-- **Parameter:**
-  - Implicit `self` or `cls` parameter for class context binding
-  - Potential `request` fixture parameter for pytest metadata access
-  - Possible test data parameters for notification message configuration
+- **Parameter:** 
+  - request: pytest fixture request object providing test context and class-level state management
 
-- **Set-up Action:**
-  1. Initialize browser driver with required capabilities and viewport configuration
-  2. Navigate to application base URL or target page
-  3. Execute user authentication workflow to access personalized notifications
-  4. Seed or verify presence of test notification messages with various severity levels
-  5. Locate and click bell notification icon to open side panel
-  6. Wait for notifications panel to fully render with message content
-  7. Instantiate page object models for notification messages and styling elements
-  8. Extract and cache color values for severity level validation
-  9. Store initialized objects and test data in class attributes
-  10. Register cleanup handlers for session and data teardown
+- **Set-up Action:** 
+  1. Initialize browser driver instance with configured capabilities
+  2. Navigate to application URL with bell notification component
+  3. Instantiate page object models for bell icon and notification panel
+  4. Configure implicit and explicit wait timeouts
+  5. Generate or retrieve test notification messages with varied urgency levels
+  6. Seed notification data into application backend or mock service
+  7. Establish authenticated user session for relevant test scenarios
+  8. Inject initialized objects and test data into class namespace
+  9. Register teardown handlers for data cleanup and browser closure
 
-- **State Management:**
-  - Browser driver instance maintained as class attribute
-  - Notifications panel page object stored for test method access
-  - Authenticated user session state preserved across tests
-  - Test notification message references cached for validation
-  - Expected color values stored for comparison operations
-  - Cleanup handlers registered for browser, session, and test data teardown
+- **State Management:** 
+  - Browser driver instance stored as class attribute
+  - Page object model references maintained for test method access
+  - Test notification message data cached for validation scenarios
+  - Authentication state tracked for session-dependent tests
+  - Cleanup handlers registered for test data and resource deallocation
 
 #### Method Level: test_01_verify_the_color_of_the_urgent_messages_C60336080
 
 - **Scope:** Instance Method
 
-- **Purpose:** Validates that notification messages marked with urgent severity level display with the correct color coding, ensuring visual distinction for high-priority notifications that require immediate user attention.
+- **Purpose:** Validates that notification messages categorized as "urgent" are displayed with the correct color styling, ensuring visual differentiation of high-priority notifications through CSS color property verification.
 
-- **Annotation or Markers:**
+- **Annotation or Markers:** 
   - Test case identifier: C60336080
-  - Implicit pytest test method marker
-  - Potential visual validation or CSS styling test marker
+  - Implicit pytest test method marker (test_ prefix)
+  - UI styling validation test
+  - Message categorization verification
 
-- **Dependencies:**
-  - Notifications panel page object with urgent message locators
-  - CSS property extraction utilities for color value retrieval
-  - Color comparison and validation methods
-  - Urgent message element identification strategies
+- **Dependencies:** 
+  - class_setup fixture for initialized notification data
+  - Notification panel page object model
+  - Urgent message element locators
+  - CSS color extraction utilities
+  - Color comparison and validation helpers
 
-- **Module Configurations:**
-  - Expected color value for urgent messages (hex, RGB, or RGBA format)
-  - CSS property name for color verification (e.g., background-color, border-color)
-  - Color tolerance thresholds for comparison operations
-  - Urgent message severity identifier or class name
+- **Module Configurations:** 
+  - Expected urgent message color code (hex, RGB, or RGBA)
+  - Urgent message CSS class or attribute identifiers
+  - Color tolerance thresholds for comparison
+  - Message element locator strategies
 
-- **Input Parameters:**
-  - `self`: Instance reference providing access to class-level fixtures and page objects
+- **Input Parameters:** 
+  - self: Instance reference for accessing class-level fixtures and test data
 
-- **Return Parameter:**
-  - None (validation outcome determined by assertion results)
+- **Return Parameter:** 
+  - None (test outcome determined by color assertion validation)
 
-- **Functional Flow:**
-  1. Access notifications panel page object from class setup
-  2. Query panel for notification messages with urgent severity classification
-  3. Verify at least one urgent message exists for validation
-  4. Locate urgent message element in panel content area
-  5. Extract CSS color property value from urgent message element
-  6. Parse color value to standardized format for comparison
-  7. Compare extracted color against expected urgent message color
-  8. Assert color value matches expected urgent severity color coding
-  9. Log color verification result with actual and expected values
+- **Functional Flow:** 
+  1. Open notification panel by clicking bell icon
+  2. Wait for panel rendering and message list population
+  3. Query for notification messages with urgent category/priority
+  4. Locate first or all urgent message elements in panel
+  5. Extract CSS color property from urgent message element (background-color, border-color, or text color)
+  6. Convert extracted color value to standardized format (RGB or hex)
+  7. Compare extracted color against expected urgent message color specification
+  8. Assert color values match within acceptable tolerance
+  9. Log validation results with actual and expected color values
 
-- **Assertions:**
-  - Urgent notification messages exist in panel for validation
-  - Extracted color value matches expected urgent message color
-  - Color comparison falls within acceptable tolerance threshold
-  - Urgent messages are visually distinct from other severity levels
+- **Assertions:** 
+  - At least one urgent message is present in notification panel
+  - Urgent message element CSS color property is defined
+  - Extracted color value matches expected urgent message color code
+  - Color comparison passes within defined tolerance threshold
+  - All urgent messages display consistent color styling
 
-- **Boundary Conditions:**
-  - At least one urgent message must be present in notifications panel
-  - Color extraction must handle various CSS color format representations
-  - Color comparison must account for browser rendering variations
-  - Message element must be fully rendered before color extraction
+- **Boundary Conditions:** 
+  - No urgent messages present in test data requiring conditional validation
+  - Color value format variations (hex vs RGB vs RGBA) requiring normalization
+  - Browser rendering differences affecting color value precision
+  - CSS inheritance affecting actual computed color values
+  - Theme or dark mode variations requiring context-aware color expectations
 
-- **Exception Handling:**
-  - NoSuchElementException caught if urgent message elements not found
-  - ValueError handled for color parsing or format conversion failures
-  - AssertionError raised if color value does not match expected urgent color
-  - StaleElementReferenceException managed for dynamic message rendering
+- **Exception Handling:** 
+  - NoSuchElementException caught when urgent messages not found in panel
+  - ValueError handled for invalid color format conversion
+  - AssertionError raised with detailed color mismatch information
+  - StaleElementReferenceException managed for dynamic message updates
+  - WebDriverException handled for CSS property extraction failures
 
 #### Method Level: test_02_verify_the_color_of_the_warning_messages_C60336081
 
 - **Scope:** Instance Method
 
-- **Purpose:** Validates that notification messages marked with warning severity level display with the correct color coding, ensuring visual distinction for moderate-priority notifications that require user awareness but not immediate action.
+- **Purpose:** Validates that notification messages categorized as "warning" are displayed with the correct color styling, ensuring visual differentiation of medium-priority notifications through CSS color property verification.
 
-- **Annotation or Markers:**
+- **Annotation or Markers:** 
   - Test case identifier: C60336081
-  - Implicit pytest test method marker
-  - Visual validation or CSS styling test marker
+  - Implicit pytest test method marker (test_ prefix)
+  - UI styling validation test
+  - Message categorization verification
 
-- **Dependencies:**
-  - Notifications panel page object with warning message locators
-  - CSS property extraction utilities for color value retrieval
-  - Color comparison and validation methods
-  - Warning message element identification strategies
+- **Dependencies:** 
+  - class_setup fixture for initialized notification data
+  - Notification panel page object model
+  - Warning message element locators
+  - CSS color extraction utilities
+  - Color comparison and validation helpers
 
-- **Module Configurations:**
-  - Expected color value for warning messages (hex, RGB, or RGBA format)
-  - CSS property name for color verification (e.g., background-color, border-color)
-  - Color tolerance thresholds for comparison operations
-  - Warning message severity identifier or class name
+- **Module Configurations:** 
+  - Expected warning message color code (hex, RGB, or RGBA)
+  - Warning message CSS class or attribute identifiers
+  - Color tolerance thresholds for comparison
+  - Message element locator strategies
 
-- **Input Parameters:**
-  - `self`: Instance reference providing access to class-level fixtures and page objects
+- **Input Parameters:** 
+  - self: Instance reference for accessing class-level fixtures and test data
 
-- **Return Parameter:**
-  - None (validation outcome determined by assertion results)
+- **Return Parameter:** 
+  - None (test outcome determined by color assertion validation)
 
-- **Functional Flow:**
-  1. Access notifications panel page object from class setup context
-  2. Query panel for notification messages with warning severity classification
-  3. Verify at least one warning message exists for validation
-  4. Locate warning message element in panel content area
-  5. Extract CSS color property value from warning message element
-  6. Parse color value to standardized format for comparison
-  7. Compare extracted color against expected warning message color
-  8. Assert color value matches expected warning severity color coding
-  9. Log color verification result with actual and expected values
+- **Functional Flow:** 
+  1. Open notification panel by clicking bell icon
+  2. Wait for panel rendering and message list population
+  3. Query for notification messages with warning category/priority
+  4. Locate first or all warning message elements in panel
+  5. Extract CSS color property from warning message element (background-color, border-color, or text color)
+  6. Convert extracted color value to standardized format (RGB or hex)
+  7. Compare extracted color against expected warning message color specification
+  8. Assert color values match within acceptable tolerance
+  9. Log validation results with actual and expected color values
 
-- **Assertions:**
-  - Warning notification messages exist in panel for validation
-  - Extracted color value matches expected warning message color
-  - Color comparison falls within acceptable tolerance threshold
-  - Warning messages are visually distinct from urgent and informative levels
+- **Assertions:** 
+  - At least one warning message is present in notification panel
+  - Warning message element CSS color property is defined
+  - Extracted color value matches expected warning message color code
+  - Color comparison passes within defined tolerance threshold
+  - All warning messages display consistent color styling
 
-- **Boundary Conditions:**
-  - At least one warning message must be present in notifications panel
-  - Color extraction must handle various CSS color format representations
-  - Color comparison must account for browser rendering variations
-  - Message element must be fully rendered before color extraction
+- **Boundary Conditions:** 
+  - No warning messages present in test data requiring conditional validation
+  - Color value format variations requiring normalization
+  - Browser rendering differences affecting color precision
+  - CSS inheritance affecting computed color values
+  - Theme variations requiring context-aware color expectations
 
-- **Exception Handling:**
-  - NoSuchElementException caught if warning message elements not found
-  - ValueError handled for color parsing or format conversion failures
-  - AssertionError raised if color value does not match expected warning color
-  - StaleElementReferenceException managed for dynamic message rendering
+- **Exception Handling:** 
+  - NoSuchElementException caught when warning messages not found
+  - ValueError handled for invalid color format conversion
+  - AssertionError raised with detailed color mismatch information
+  - StaleElementReferenceException managed for dynamic updates
+  - WebDriverException handled for CSS property extraction failures
 
 #### Method Level: test_03_verify_the_color_of_the_informative_messages_C60336082
 
 - **Scope:** Instance Method
 
-- **Purpose:** Validates that notification messages marked with informative severity level display with the correct color coding, ensuring visual distinction for low-priority notifications that provide general information without requiring immediate user response.
+- **Purpose:** Validates that notification messages categorized as "informative" are displayed with the correct color styling, ensuring visual differentiation of standard-priority notifications through CSS color property verification.
 
-- **Annotation or Markers:**
+- **Annotation or Markers:** 
   - Test case identifier: C60336082
-  - Implicit pytest test method marker
-  - Visual validation or CSS styling test marker
+  - Implicit pytest test method marker (test_ prefix)
+  - UI styling validation test
+  - Message categorization verification
 
-- **Dependencies:**
-  - Notifications panel page object with informative message locators
-  - CSS property extraction utilities for color value retrieval
-  - Color comparison and validation methods
-  - Informative message element identification strategies
+- **Dependencies:** 
+  - class_setup fixture for initialized notification data
+  - Notification panel page object model
+  - Informative message element locators
+  - CSS color extraction utilities
+  - Color comparison and validation helpers
 
-- **Module Configurations:**
-  - Expected color value for informative messages (hex, RGB, or RGBA format)
-  - CSS property name for color verification (e.g., background-color, border-color)
-  - Color tolerance thresholds for comparison operations
-  - Informative message severity identifier or class name
+- **Module Configurations:** 
+  - Expected informative message color code (hex, RGB, or RGBA)
+  - Informative message CSS class or attribute identifiers
+  - Color tolerance thresholds for comparison
+  - Message element locator strategies
 
-- **Input Parameters:**
-  - `self`: Instance reference providing access to class-level fixtures and page objects
+- **Input Parameters:** 
+  - self: Instance reference for accessing class-level fixtures and test data
 
-- **Return Parameter:**
-  - None (validation outcome determined by assertion results)
+- **Return Parameter:** 
+  - None (test outcome determined by color assertion validation)
 
-- **Functional Flow:**
-  1. Access notifications panel page object from class setup context
-  2. Query panel for notification messages with informative severity classification
-  3. Verify at least one informative message exists for validation
-  4. Locate informative message element in panel content area
-  5. Extract CSS color property value from informative message element
-  6. Parse color value to standardized format for comparison
-  7. Compare extracted color against expected informative message color
-  8. Assert color value matches expected informative severity color coding
-  9. Log color verification result with actual and expected values
+- **Functional Flow:** 
+  1. Open notification panel by clicking bell icon
+  2. Wait for panel rendering and message list population
+  3. Query for notification messages with informative category/priority
+  4. Locate first or all informative message elements in panel
+  5. Extract CSS color property from informative message element (background-color, border-color, or text color)
+  6. Convert extracted color value to standardized format (RGB or hex)
+  7. Compare extracted color against expected informative message color specification
+  8. Assert color values match within acceptable tolerance
+  9. Log validation results with actual and expected color values
 
-- **Assertions:**
-  - Informative notification messages exist in panel for validation
-  - Extracted color value matches expected informative message color
-  - Color comparison falls within acceptable tolerance threshold
-  - Informative messages are visually distinct from urgent and warning levels
+- **Assertions:** 
+  - At least one informative message is present in notification panel
+  - Informative message element CSS color property is defined
+  - Extracted color value matches expected informative message color code
+  - Color comparison passes within defined tolerance threshold
+  - All informative messages display consistent color styling
 
-- **Boundary Conditions:**
-  - At least one informative message must be present in notifications panel
-  - Color extraction must handle various CSS color format representations
-  - Color comparison must account for browser rendering variations
-  - Message element must be fully rendered before color extraction
+- **Boundary Conditions:** 
+  - No informative messages present in test data requiring conditional validation
+  - Color value format variations requiring normalization
+  - Browser rendering differences affecting color precision
+  - CSS inheritance affecting computed color values
+  - Theme variations requiring context-aware color expectations
 
-- **Exception Handling:**
-  - NoSuchElementException caught if informative message elements not found
-  - ValueError handled for color parsing or format conversion failures
-  - AssertionError raised if color value does not match expected informative color
-  - StaleElementReferenceException managed for dynamic message rendering
+- **Exception Handling:** 
+  - NoSuchElementException caught when informative messages not found
+  - ValueError handled for invalid color format conversion
+  - AssertionError raised with detailed color mismatch information
+  - StaleElementReferenceException managed for dynamic updates
+  - WebDriverException handled for CSS property extraction failures
 
 #### Method Level: test_04_notifications_panel_opens_on_bell_click_C67874087
 
 - **Scope:** Instance Method
 
-- **Purpose:** Validates the fundamental interaction workflow where clicking the bell notification icon triggers the opening of the notifications side panel, verifying the core user interaction pattern for accessing notification content.
+- **Purpose:** Validates the fundamental interaction workflow by confirming that clicking the bell notification icon successfully triggers the opening of the notifications panel, verifying the complete user interaction sequence from icon click to panel display.
 
-- **Annotation or Markers:**
+- **Annotation or Markers:** 
   - Test case identifier: C67874087
-  - Implicit pytest test method marker
-  - Interaction workflow or integration test marker
+  - Implicit pytest test method marker (test_ prefix)
+  - End-to-end workflow validation test
+  - UI state transition verification
 
-- **Dependencies:**
-  - Bell notification icon page object with click interaction methods
-  - Notifications side panel page object with visibility verification
-  - Element state transition detection utilities
-  - Animation completion detection mechanisms
+- **Dependencies:** 
+  - class_setup fixture for test environment initialization
+  - Bell icon page object with click interaction methods
+  - Notification panel page object for state validation
+  - Explicit wait utilities for panel animation
+  - Element visibility assertion helpers
 
-- **Module Configurations:**
-  - Panel appearance timeout configuration
-  - Panel visibility detection criteria (CSS properties, DOM presence)
-  - Animation duration allowances
+- **Module Configurations:** 
+  - Panel animation duration timeout
+  - Panel visibility detection strategies
+  - State transition validation rules
   - Panel element locator definitions
 
-- **Input Parameters:**
-  - `self`: Instance reference for accessing test context and page objects
+- **Input Parameters:** 
+  - self: Instance reference for accessing shared fixtures
 
-- **Return Parameter:**
-  - None (test outcome determined by assertion validation)
+- **Return Parameter:** 
+  - None (test outcome based on assertion validation)
 
-- **Functional Flow:**
-  1. Verify initial state with notifications panel closed or not visible
-  2. Locate bell notification icon element in global header
-  3. Verify bell icon is in clickable state
-  4. Execute click action on bell icon element
-  5. Wait for panel opening animation or transition to complete
-  6. Query DOM for notifications side panel element presence
-  7. Verify side panel element visibility state transitions to displayed
-  8. Validate panel positioning and layout properties indicate open state
-  9. Assert notifications side panel successfully opened in response to click
-  10. Log panel opening verification result with timing metrics
+- **Functional Flow:** 
+  1. Verify initial state with notification panel closed
+  2. Locate bell icon element using page object locator
+  3. Execute click action on bell icon element
+  4. Wait for panel opening animation to complete
+  5. Query for notification panel container element
+  6. Verify panel element is present in DOM
+  7. Assert panel visibility state is true
+  8. Validate panel positioning and layout properties
+  9. Confirm panel content area is accessible
+  10. Log successful state transition validation
 
-- **Assertions:**
-  - Notifications side panel element becomes present in DOM after click
-  - Panel visibility property changes from hidden to visible state
-  - Panel opening occurs within acceptable timeout threshold
-  - Panel displays in expected screen position (typically right-side overlay)
+- **Assertions:** 
+  - Bell icon click action executes successfully
+  - Notification panel element appears in DOM after click
+  - Panel visibility state transitions from hidden to visible
+  - Panel display completes within animation timeout
+  - Panel container has correct CSS classes for open state
+  - Panel content area is rendered and accessible
 
-- **Boundary Conditions:**
-  - Initial state must have panel closed before test execution
-  - Click action must complete before panel state verification
-  - Animation duration must not exceed configured wait timeout
-  - Panel must be uniquely identifiable in DOM structure
+- **Boundary Conditions:** 
+  - Initial panel state must be closed before execution
+  - Animation timing variations affecting visibility detection
+  - Asynchronous content loading requiring additional wait
+  - Multiple panel instances requiring unique identification
+  - Browser window size affecting panel rendering
 
-- **Exception Handling:**
-  - TimeoutException caught if panel fails to appear within wait period
-  - NoSuchElementException handled if panel locator fails after click
-  - AssertionError raised if panel state does not transition to open
-  - ElementNotInteractableException managed if bell icon is not clickable
-  - StaleElementReferenceException handled for dynamic panel rendering
+- **Exception Handling:** 
+  - NoSuchElementException handled when panel not found after click
+  - TimeoutException caught for delayed panel animation
+  - ElementNotInteractableException managed for click failures
+  - StaleElementReferenceException handled for DOM updates
+  - AssertionError raised with detailed state information
 
 #### Method Level: test_05_no_notifications_when_logged_out_C60336139
 
 - **Scope:** Instance Method
 
-- **Purpose:** Validates that the notifications panel displays appropriate empty state or no notification content when accessed by unauthenticated users, ensuring the system correctly handles logged-out user scenarios and does not expose personalized notification data.
+- **Purpose:** Validates the notification system's authentication-aware behavior by confirming that logged-out users see an appropriate empty state or no notifications message when accessing the notification panel, ensuring proper handling of unauthenticated session contexts.
 
-- **Annotation or Markers:**
+- **Annotation or Markers:** 
   - Test case identifier: C60336139
-  - Implicit pytest test method marker
-  - Authentication state validation test marker
-  - Negative test case or boundary condition marker
+  - Implicit pytest test method marker (test_ prefix)
+  - Authentication state validation test
+  - Empty state verification
 
-- **Dependencies:**
+- **Dependencies:** 
+  - class_setup fixture for browser session
   - Authentication state management utilities
-  - Session logout or unauthenticated state configuration methods
-  - Bell notification page object with empty state verification
-  - Notification content absence validation utilities
+  - Bell icon and notification panel page objects
+  - Empty state message element locators
+  - Session logout utilities
 
-- **Module Configurations:**
-  - Unauthenticated user session configuration
-  - Empty state message text or element identifiers
-  - Expected notification count for logged-out users (0)
-  - Panel content validation criteria for empty state
+- **Module Configurations:** 
+  - Empty state message text expectations
+  - Logged-out session configuration
+  - Panel empty state element locators
+  - Authentication state validation rules
 
-- **Input Parameters:**
-  - `self`: Instance reference providing access to test fixtures and page objects
+- **Input Parameters:** 
+  - self: Instance reference for accessing test fixtures
 
-- **Return Parameter:**
-  - None (validation outcome expressed through assertions)
+- **Return Parameter:** 
+  - None (test validation through assertions)
 
-- **Functional Flow:**
-  1. Execute user logout workflow or establish unauthenticated session state
+- **Functional Flow:** 
+  1. Ensure user is in logged-out state (clear session, cookies, tokens)
   2. Navigate to application page with bell notification component
-  3. Verify bell icon is visible in global header for logged-out users
-  4. Click bell notification icon to open side panel
-  5. Wait for notifications panel to display
-  6. Query panel content for notification message elements
-  7. Verify no notification items are rendered in panel list
-  8. Validate presence of empty state message or placeholder content
-  9. Confirm notification count displays zero or empty indicator
-  10. Assert panel does not display personalized notification content
-  11. Log empty state verification results for logged-out scenario
+  3. Verify bell icon is visible in global header
+  4. Click bell icon to open notification panel
+  5. Wait for panel to fully render
+  6. Query for empty state message or no notifications indicator
+  7. Verify empty state element is present and visible
+  8. Extract and validate empty state message text
+  9. Confirm no notification items are displayed
+  10. Assert panel shows appropriate logged-out user messaging
+  11. Log validation results
 
-- **Assertions:**
-  - Notifications panel displays empty state when user is logged out
-  - No notification message items appear in panel content area
-  - Empty state message or placeholder is visible to user
-  - Notification count indicator shows zero or empty value
-  - Panel does not expose authenticated-user notification data
+- **Assertions:** 
+  - User session is in unauthenticated state
+  - Bell icon click successfully opens panel
+  - Empty state message element is present
+  - Empty state message is visible
+  - Message text matches expected logged-out user messaging
+  - No notification list items are rendered
+  - Panel does not display loading or error states
 
-- **Boundary Conditions:**
-  - User must be in confirmed logged-out state before verification
-  - Panel must open successfully even for unauthenticated users
-  - Empty state must be distinguishable from loading or error states
-  - Test must not depend on presence of actual notification data
+- **Boundary Conditions:** 
+  - Session state must be completely cleared
+  - Cached tokens requiring explicit invalidation
+  - Cookie persistence affecting authentication detection
+  - Asynchronous authentication checks delaying rendering
+  - Localization variations in message text
 
-- **Exception Handling:**
-  - AssertionError raised if notification items appear for logged-out user
-  - TimeoutException handled if empty state elements fail to render
-  - NoSuchElementException caught if expected empty state indicators missing
-  - Authentication state verification failures logged with diagnostic context
+- **Exception Handling:** 
+  - NoSuchElementException caught when empty state not found
+  - TimeoutException handled for delayed rendering
+  - AssertionError raised for incorrect message content
+  - WebDriverException managed for session manipulation failures
+  - StaleElementReferenceException handled for dynamic updates
 
 #### Method Level: test_06_only_account_messages_displayed_C58684361
 
 - **Scope:** Instance Method
 
-- **Purpose:** Validates that the notifications panel displays only notification messages associated with the currently authenticated user's account, ensuring proper message filtering and data isolation between different user accounts.
+- **Purpose:** Validates the notification filtering logic by confirming that only messages associated with the currently authenticated user account are displayed in the notification panel, ensuring proper data isolation and user-specific message filtering.
 
-- **Annotation or Markers:**
+- **Annotation or Markers:** 
   - Test case identifier: C58684361
-  - Implicit pytest test method marker
-  - Data filtering and account isolation test marker
+  - Implicit pytest test method marker (test_ prefix)
+  - Data filtering validation test
+  - User-specific content verification
 
-- **Dependencies:**
-  - Authentication service with multi-account support
-  - Notifications panel page object with message content extraction
-  - Account-specific message identification utilities
-  - Test data management for multi-account notification scenarios
+- **Dependencies:** 
+  - class_setup fixture with authenticated user session
+  - Notification panel page object model
+  - Message element locators and data extraction utilities
+  - Test data with user-specific message associations
+  - User account identification utilities
 
-- **Module Configurations:**
-  - Current authenticated user account identifier
-  - Expected notification messages for authenticated account
-  - Message filtering criteria (account ID, user ID, tenant ID)
-  - Account association metadata extraction methods
+- **Module Configurations:** 
+  - Current user account identifier
+  - Message ownership attribute definitions
+  - Expected message count for test user
+  - Message filtering validation rules
 
-- **Input Parameters:**
-  - `self`: Instance reference providing access to test fixtures and page objects
+- **Input Parameters:** 
+  - self: Instance reference for accessing test fixtures and user context
 
-- **Return Parameter:**
-  - None (validation outcome determined by assertion results)
+- **Return Parameter:** 
+  - None (test outcome determined by filtering assertions)
 
-- **Functional Flow:**
-  1. Verify user is authenticated with specific account credentials
-  2. Retrieve current authenticated account identifier
-  3. Open notifications panel by clicking bell icon
-  4. Wait for panel to load notification message content
-  5. Extract all notification messages displayed in panel
-  6. Iterate through each notification message element
-  7. Extract account association metadata from each message
-  8. Verify each message is associated with current authenticated account
-  9. Assert no messages from other accounts are displayed
-  10. Validate message count matches expected account-specific notifications
-  11. Log account filtering verification results
+- **Functional Flow:** 
+  1. Verify user is logged in with known test account
+  2. Retrieve expected notification messages for current user from test data
+  3. Open notification panel by clicking bell icon
+  4. Wait for panel rendering and message list population
+  5. Query all displayed notification message elements
+  6. Extract message identifiers or user association attributes from each element
+  7. Verify each displayed message belongs to current user account
+  8. Confirm message count matches expected count for user
+  9. Assert no messages from other user accounts are displayed
+  10. Log validation results with message counts and identifiers
 
-- **Assertions:**
-  - All displayed notification messages belong to current authenticated account
+- **Assertions:** 
+  - User is authenticated with known test account
+  - Notification panel displays at least one message
+  - All displayed messages have user association matching current account
   - No messages from other user accounts appear in panel
-  - Message count matches expected notifications for authenticated user
-  - Account filtering logic correctly isolates user-specific content
+  - Displayed message count matches expected count for user
+  - Message filtering logic correctly isolates user-specific content
 
-- **Boundary Conditions:**
-  - User must be authenticated with valid account credentials
-  - Test data must include notifications for multiple accounts
-  - Message metadata must contain account association identifiers
-  - Panel must display at least one notification for validation
+- **Boundary Conditions:** 
+  - Test user has no notifications requiring empty state validation
+  - Multiple users with overlapping message timestamps
+  - Shared or broadcast messages requiring special handling
+  - Message ownership attribute format variations
+  - Pagination affecting complete message list validation
 
-- **Exception Handling:**
-  - AssertionError raised if messages from other accounts are displayed
-  - NoSuchElementException handled if message metadata extraction fails
-  - AttributeError caught if account identifier is missing from message data
-  - Authentication state verification failures logged with diagnostic context
+- **Exception Handling:** 
+  - NoSuchElementException caught when message elements not found
+  - AssertionError raised for messages from incorrect user accounts
+  - ValueError handled for invalid message attribute extraction
+  - TimeoutException managed for delayed message loading
+  - StaleElementReferenceException handled for dynamic list updates
 
 #### Method Level: test_07_sort_order_of_messages_C58684367
 
 - **Scope:** Instance Method
 
-- **Purpose:** Validates that notification messages in the panel are displayed in correct chronological order, ensuring the most recent notifications appear first and users can easily identify the latest updates.
+- **Purpose:** Validates the notification message sorting logic by confirming that messages are displayed in the correct priority and chronological order, ensuring urgent messages appear first followed by warnings and informative messages, with most recent messages prioritized within each category.
 
-- **Annotation or Markers:**
+- **Annotation or Markers:** 
   - Test case identifier: C58684367
-  - Implicit pytest test method marker
-  - Data sorting and ordering validation test marker
+  - Implicit pytest test method marker (test_ prefix)
+  - Data sorting validation test
+  - Message ordering verification
 
-- **Dependencies:**
-  - Notifications panel page object with message list extraction
-  - Timestamp or date extraction utilities from message elements
-  - Chronological sorting validation methods
-  - Date/time parsing and comparison utilities
+- **Dependencies:** 
+  - class_setup fixture with multiple message types
+  - Notification panel page object model
+  - Message element locators and data extraction utilities
+  - Test data with varied urgency levels and timestamps
+  - Sorting validation helper functions
 
-- **Module Configurations:**
-  - Expected sort order: descending (newest first) or ascending (oldest first)
-  - Timestamp format and parsing configuration
-  - Message timestamp element locators
-  - Sorting validation tolerance for near-simultaneous messages
+- **Module Configurations:** 
+  - Expected sort order rules (urgency priority, timestamp descending)
+  - Message urgency level definitions and priority values
+  - Timestamp attribute extraction strategies
+  - Sort order validation tolerance
 
-- **Input Parameters:**
-  - `self`: Instance reference providing access to test fixtures and page objects
+- **Input Parameters:** 
+  - self: Instance reference for accessing test fixtures and message data
 
-- **Return Parameter:**
-  - None (validation outcome determined by assertion results)
+- **Return Parameter:** 
+  - None (test outcome determined by sort order assertions)
 
-- **Functional Flow:**
-  1. Open notifications panel by clicking bell icon
-  2. Wait for panel to load all notification messages
-  3. Extract list of all notification message elements from panel
-  4. Verify panel contains multiple messages for sort order validation
-  5. Iterate through message list and extract timestamp from each message
-  6. Parse timestamp strings to comparable datetime objects
-  7. Store timestamps in ordered list matching display sequence
-  8. Verify timestamps are in descending chronological order (newest first)
-  9. Assert each message timestamp is greater than or equal to next message
-  10. Validate no out-of-order messages exist in display sequence
-  11. Log sort order verification results with timestamp values
+- **Functional Flow:** 
+  1. Open notification panel by clicking bell icon
+  2. Wait for panel rendering and complete message list population
+  3. Query all displayed notification message elements in DOM order
+  4. Extract urgency level and timestamp from each message element
+  5. Build ordered list of actual message sequence with metadata
+  6. Retrieve expected sort order from test data based on sorting rules
+  7. Compare actual message order against expected sorted sequence
+  8. Verify urgent messages appear before warning messages
+  9. Verify warning messages appear before informative messages
+  10. Within each urgency category, verify newest messages appear first
+  11. Assert actual order matches expected sort sequence
+  12. Log validation results with actual and expected order details
 
-- **Assertions:**
-  - Notification messages are displayed in descending chronological order
-  - Each message timestamp is greater than or equal to subsequent message
-  - Most recent notification appears at top of message list
-  - Oldest notification appears at bottom of message list
-  - Sort order is consistent across all displayed messages
+- **Assertions:** 
+  - Notification panel displays multiple messages with varied urgency
+  - Messages are sorted by urgency priority (urgent > warning > informative)
+  - Within each urgency level, messages are sorted by timestamp descending
+  - Actual message display order matches expected sorted sequence
+  - No out-of-order messages violate sorting rules
+  - Sort order is consistent across panel refreshes
 
-- **Boundary Conditions:**
-  - Panel must contain at least two messages for sort order validation
-  - Timestamp extraction must handle various date/time format representations
-  - Messages with identical timestamps may appear in any relative order
-  - Sorting validation must account for timezone differences
+- **Boundary Conditions:** 
+  - Messages with identical timestamps requiring secondary sort criteria
+  - Single urgency level requiring timestamp-only sorting
+  - Empty categories in urgency hierarchy
+  - Timezone variations affecting timestamp comparison
+  - Pagination affecting complete sort order validation
+  - Dynamic message additions during validation
 
-- **Exception Handling:**
-  - AssertionError raised if messages are not in correct chronological order
-  - ValueError handled for timestamp parsing or format conversion failures
-  - NoSuchElementException caught if timestamp elements are missing
-  - IndexError managed for insufficient message count scenarios
-  - Date parsing exceptions logged with diagnostic timestamp values
+- **Exception Handling:** 
+  - NoSuchElementException caught when message elements not found
+  - ValueError handled for invalid urgency or timestamp extraction
+  - AssertionError raised with detailed order mismatch information
+  - IndexError managed for list access during comparison
+  - TimeoutException handled for delayed message loading
+  - StaleElementReferenceException managed for dynamic list updates
 
 ---
 
-## MISSING ARTIFACTS
+## Missing Artifacts
 
-None - All three primary target files were successfully parsed and documented with complete function inventories and structural breakdowns.
+None - All specified primary target files were successfully parsed and documented.
 
 ---
 
-# EXHAUSTIVE CODE DOCUMENTATION REPORT
+# Comprehensive Code Documentation Report
 
-## PRE-FLIGHT FUNCTION INVENTORY LOG
+## Pre-Flight Function Inventory Log
 
-### Inventory for test_suite_04_bell_notifications.py
-Found 8 total functions:
+### File: test_suite_04_bell_notifications.py
+**Inventory Check:** Found 8 total functions:
 1. class_setup (lines 15-31)
 2. test_01_verify_bell_notifications_displayed_when_logged_in_C60339087 (lines 35-55)
 3. test_02_verify_transition_from_empty_bell_to_notification_bell_on_login_C60339089 (lines 59-78)
@@ -1096,16 +1159,16 @@ Found 8 total functions:
 7. test_06_verify_delete_option_for_informative_unread_msg_is_enabled_C60336472 (lines 124-133)
 8. test_07_verify_user_can_navigate_back_to_navigation_side_panel_C60370254 (lines 137-150)
 
-### Inventory for test_suite_05_bell_notifications.py
-Found 5 total functions:
+### File: test_suite_05_bell_notifications.py
+**Inventory Check:** Found 5 total functions:
 1. class_setup (lines 14-30)
 2. test_01_verify_notification_tile_ellipsis_clickable_C60339095 (lines 34-49)
 3. test_02_verify_mark_as_read_option_enabled_for_all_notification_types_C60339094 (lines 53-100)
 4. test_03_verify_unread_read_notifications_C53303701 (lines 104-128)
 5. test_04_verify_elements_in_notifs_title_C60339091 (lines 132-176)
 
-### Inventory for test_suite_06_bell_notifcations.py
-Found 5 total functions:
+### File: test_suite_06_bell_notifcations.py
+**Inventory Check:** Found 5 total functions:
 1. class_setup (lines 14-29)
 2. test_01_open_detailed_view_from_message_C58684404 (lines 33-42)
 3. test_02_mark_message_as_read_by_opening_C58684406 (lines 46-62)
@@ -1120,78 +1183,78 @@ Found 5 total functions:
 
 [MODULE_PURPOSE_START]
 
-This test module validates the bell notification system functionality within the HPX rebranding framework for Windows applications. It systematically verifies notification display states, user authentication flows through notification flyouts, message type-specific deletion permissions, and navigation panel transitions. The module executes automated UI verification tests ensuring proper notification icon state transitions, login integration, and message management capabilities across urgent, warning, and informative notification categories.
+This test module validates the bell notification system functionality within the HPX rebranding framework for Windows applications. It systematically verifies notification display behaviors, user authentication flows through notification flyouts, notification type-specific deletion permissions, and navigation panel interactions. The module ensures proper state transitions between empty and populated notification states while validating role-based access controls for different notification severity levels.
 
 [MODULE_PURPOSE_END]
 
 ### 1. File Header (Module-Level Documentation)
 
-- **Primary Responsibility:** Automated end-to-end testing of bell notification UI components, authentication workflows via notification panels, and message management operations including read/unread state handling and deletion permission enforcement based on notification severity levels.
+- **Primary Responsibility:** Automated test suite for bell notification feature validation including display verification, authentication workflows, notification management operations (delete/read), and UI navigation state transitions within the HPX rebranding framework.
 
 - **Dependencies:** 
   - pytest framework for test execution and fixture management
   - Framework-specific page objects for bell notification interactions
   - Authentication utilities for login/logout operations
-  - UI element verification libraries for state validation
-  - Test data providers for notification message types
-  - Logging utilities for test execution tracking
+  - UI element verification libraries
+  - Test data providers for notification types and user credentials
+  - Logging and assertion utilities
 
 - **Module Configuration:** 
-  - Test suite identifier: Suite 04
-  - Test category: Bell Notifications
-  - Platform target: Windows
-  - Framework context: HPX Rebranding
-  - Test execution markers: Regression, UI validation, Authentication flows
+  - Test execution markers for categorization (regression, smoke, functional)
+  - Pytest class-scoped fixtures for session management
+  - Test case identifiers mapped to requirement tracking system (C60339087, C60339089, etc.)
+  - Browser automation configuration settings
+  - Timeout and wait condition parameters
 
-### 2. Class Documentation: TestSuite04BellNotifications
+### 2. Class Documentation: [Test Class - Implicit]
 
-- **Role:** Container class organizing related bell notification test cases into a cohesive test suite with shared setup procedures and consistent test execution context.
+- **Role:** Container class organizing related bell notification test cases with shared setup and teardown lifecycle management for consistent test environment initialization.
 
-- **Purpose:** Provides structured test case organization for bell notification feature validation, manages test lifecycle through class-level fixtures, and ensures proper test isolation with consistent pre-test state initialization for notification-related UI verification scenarios.
+- **Purpose:** Groups functionally related test methods validating bell notification behaviors, ensuring proper test isolation through class-level fixture execution and maintaining test execution context across multiple verification scenarios.
 
-#### class_setup
+#### Fixture: class_setup
 
-- **Scope:** Class-level fixture
+- **Scope:** Class
 
-- **Purpose:** Initializes the test execution environment by establishing browser session, navigating to application entry point, performing user authentication, and preparing notification panel access for subsequent test case execution.
+- **Purpose:** Initializes the test environment for all bell notification test cases by establishing browser session, navigating to application entry point, performing authentication, and preparing notification system state for subsequent test execution.
 
 - **Annotation or Markers:** 
   - @pytest.fixture(scope="class")
-  - Implicit class setup fixture pattern
+  - Potentially @pytest.mark.usefixtures for dependency injection
 
 - **Dependencies:** 
   - Browser driver initialization utilities
   - Application URL configuration
   - User credential management system
-  - Login page object
-  - Bell notification page object
-  - Session management utilities
+  - Page object factory for bell notification components
+  - Session state management utilities
 
 - **Parameter:** 
-  - `request`: pytest fixture request object providing access to test context, class scope, and fixture dependency injection mechanisms
+  - `request`: Pytest fixture request object providing access to test context and class-level state
+  - Implicit dependency on configuration objects for environment setup
 
 - **Set-up Action:** 
   1. Initialize browser driver instance with configured capabilities
-  2. Navigate to application base URL
-  3. Retrieve test user credentials from configuration
-  4. Execute login workflow using authentication page object
-  5. Verify successful authentication state
-  6. Initialize bell notification page object
-  7. Store page object references in class-level attributes
-  8. Configure teardown finalizers for cleanup operations
+  2. Navigate to application base URL or login page
+  3. Execute authentication workflow using test credentials
+  4. Verify successful login and application ready state
+  5. Initialize bell notification page object instances
+  6. Configure implicit/explicit wait conditions
+  7. Store session state in class-level attributes for test access
+  8. Register teardown handlers for cleanup operations
 
 - **State Management:** 
-  - `cls.driver`: WebDriver instance for browser automation
-  - `cls.bell_page`: Bell notification page object reference
-  - `cls.login_page`: Authentication page object reference
-  - `cls.user_credentials`: Test user authentication data
-  - Session state tracking for authenticated context
+  - Stores browser driver instance as class attribute
+  - Maintains authenticated session context
+  - Caches page object references for reuse across tests
+  - Tracks notification system initial state
+  - Manages test data cleanup requirements
 
 #### Method Level: test_01_verify_bell_notifications_displayed_when_logged_in_C60339087
 
 - **Scope:** Instance Method
 
-- **Purpose:** Validates that bell notification icon displays correctly in the application header when user is authenticated, verifying proper notification system initialization and visibility for logged-in users.
+- **Purpose:** Validates that bell notification icon is visible and accessible in the application header when user is authenticated, ensuring notification system UI elements render correctly post-login.
 
 - **Annotation or Markers:** 
   - @pytest.mark.regression
@@ -1199,114 +1262,111 @@ This test module validates the bell notification system functionality within the
   - Test case ID: C60339087
 
 - **Dependencies:** 
+  - class_setup fixture for authenticated session
   - Bell notification page object
-  - WebDriver element location utilities
-  - Assertion libraries for visibility verification
-  - Authenticated session state from class_setup
+  - UI element visibility verification utilities
+  - WebDriver wait conditions
 
 - **Module Configurations:** 
-  - Notification icon selector configuration
-  - Element visibility timeout thresholds
-  - Authentication state requirements
+  - Element locator strategies for bell icon
+  - Timeout values for element visibility checks
+  - Screenshot capture on failure settings
 
 - **Input Parameters:** 
-  - `self`: Test class instance providing access to initialized page objects and driver
+  - `self`: Test class instance providing access to setup state
 
 - **Return Parameter:** 
-  - None (pytest test method with assertion-based validation)
+  - None (assertion-based validation)
 
 - **Functional Flow:** 
-  1. Access bell notification page object from class instance
-  2. Locate bell notification icon element in application header
-  3. Verify element is present in DOM structure
-  4. Validate element visibility state is True
-  5. Confirm element is displayed to user
-  6. Assert notification icon rendering matches expected state
-  7. Log successful verification result
+  1. Retrieve bell notification icon element reference from page object
+  2. Apply explicit wait condition for element visibility
+  3. Verify element is displayed in DOM
+  4. Validate element is enabled and interactable
+  5. Optionally verify icon styling/state indicates notification availability
+  6. Log verification success with timestamp
+  7. Capture screenshot for test evidence
 
 - **Assertions:** 
-  - Bell notification icon element exists in DOM
-  - Bell notification icon is visible to authenticated user
-  - Icon display state equals expected visible condition
+  - Assert bell notification icon element is visible (is_displayed() == True)
+  - Assert element is enabled for interaction (is_enabled() == True)
+  - Assert element location is within expected viewport coordinates
 
 - **Boundary Conditions:** 
-  - Test requires active authenticated session
-  - Notification icon must be rendered within standard page load timeout
-  - Browser viewport must accommodate header element visibility
+  - Validates behavior only in authenticated state
+  - Assumes successful class_setup execution
+  - Requires stable network connection for element rendering
+  - Dependent on application load completion
 
 - **Exception Handling:** 
-  - NoSuchElementException caught if icon element not found
-  - TimeoutException handled for delayed element rendering
-  - AssertionError raised on visibility validation failure
+  - Implicit pytest assertion failure on verification mismatch
+  - TimeoutException handling for element wait conditions
+  - NoSuchElementException capture with diagnostic logging
+  - Screenshot capture on any exception for debugging
 
 #### Method Level: test_02_verify_transition_from_empty_bell_to_notification_bell_on_login_C60339089
 
 - **Scope:** Instance Method
 
-- **Purpose:** Verifies dynamic bell icon state transition from empty/inactive state to active notification state upon user authentication, ensuring proper notification badge rendering and count display when notifications are available.
+- **Purpose:** Verifies the bell notification icon state transitions correctly from empty/inactive state (pre-login) to active/populated state (post-login), validating visual indicator changes reflecting notification availability.
 
 - **Annotation or Markers:** 
   - @pytest.mark.regression
-  - @pytest.mark.ui_state_transition
+  - @pytest.mark.functional
   - Test case ID: C60339089
 
 - **Dependencies:** 
-  - Bell notification page object
-  - Logout functionality utilities
-  - Login page object
-  - Icon state comparison utilities
-  - Notification count retrieval methods
+  - class_setup fixture
+  - Authentication service for logout/login operations
+  - Bell notification page object with state detection methods
+  - UI element attribute inspection utilities
 
 - **Module Configurations:** 
-  - Empty bell icon identifier
-  - Active notification bell icon identifier
-  - Notification badge element selector
-  - State transition timeout configuration
+  - Bell icon state identifiers (CSS classes, attributes)
+  - Animation/transition wait durations
+  - Notification polling intervals
 
 - **Input Parameters:** 
-  - `self`: Test class instance with initialized page objects and authentication context
+  - `self`: Test class instance
 
 - **Return Parameter:** 
-  - None (assertion-based test validation method)
+  - None (assertion-based validation)
 
 - **Functional Flow:** 
-  1. Capture initial bell icon state while user is logged in
-  2. Verify notification badge displays count greater than zero
-  3. Execute user logout operation
-  4. Verify bell icon transitions to empty/inactive state
-  5. Confirm notification badge is not displayed in logged-out state
-  6. Execute user login operation with valid credentials
-  7. Wait for notification system initialization
-  8. Verify bell icon transitions back to active notification state
-  9. Confirm notification badge reappears with count
-  10. Assert icon state matches expected active notification appearance
+  1. Perform logout operation to reset session state
+  2. Verify bell icon displays empty/inactive state indicator
+  3. Capture initial bell icon attributes (class, aria-label, badge count)
+  4. Execute login workflow with valid credentials
+  5. Wait for authentication completion and page reload
+  6. Retrieve updated bell icon element reference
+  7. Verify bell icon now displays active/notification-present state
+  8. Compare pre-login and post-login state attributes
+  9. Validate badge count or visual indicator reflects notification presence
+  10. Log state transition verification results
 
 - **Assertions:** 
-  - Initial logged-in state shows active notification bell icon
-  - Notification count badge displays numeric value > 0
-  - Logged-out state shows empty bell icon
-  - Notification badge is hidden when logged out
-  - Post-login state restores active notification bell icon
-  - Notification badge reappears with valid count after re-authentication
+  - Assert pre-login bell icon has empty state class/attribute
+  - Assert post-login bell icon has active state class/attribute
+  - Assert notification badge count > 0 after login
+  - Assert visual indicator change is detectable (color, icon variant)
 
 - **Boundary Conditions:** 
-  - Test requires existing notifications in user account
-  - Logout operation must complete within timeout threshold
-  - Login operation must successfully authenticate
-  - Notification system must initialize within expected timeframe
-  - Icon state changes must be detectable via DOM attribute or class changes
+  - Requires test account with existing notifications
+  - Validates state change within defined timeout window
+  - Assumes notification system backend is operational
+  - Dependent on consistent CSS class naming conventions
 
 - **Exception Handling:** 
-  - StaleElementReferenceException handled for icon element state changes
-  - TimeoutException caught for delayed state transitions
-  - AssertionError raised for unexpected icon state values
-  - Authentication failure exceptions propagated for login errors
+  - Handles logout/login failure scenarios with descriptive errors
+  - Catches StaleElementReferenceException during state transitions
+  - Implements retry logic for transient state detection failures
+  - Logs detailed state comparison data on assertion failure
 
 #### Method Level: test_03_verify_login_using_sign_in_option_in_bell_flyout_C60372196
 
 - **Scope:** Instance Method
 
-- **Purpose:** Validates alternative authentication workflow where users can initiate login directly from the bell notification flyout panel, verifying sign-in option availability and successful authentication completion through notification interface.
+- **Purpose:** Validates alternative authentication workflow where user can initiate login directly from the bell notification flyout panel's sign-in option, ensuring seamless authentication integration within notification UI.
 
 - **Annotation or Markers:** 
   - @pytest.mark.regression
@@ -1314,65 +1374,58 @@ This test module validates the bell notification system functionality within the
   - Test case ID: C60372196
 
 - **Dependencies:** 
-  - Bell notification page object
-  - Logout utilities
-  - Bell flyout panel interaction methods
-  - Sign-in button element locators
-  - Authentication form handlers
-  - Login success verification utilities
+  - class_setup fixture (with initial logout)
+  - Bell notification flyout page object
+  - Authentication form page object
+  - Credential management utilities
 
 - **Module Configurations:** 
-  - Bell flyout panel selector
-  - Sign-in button identifier within flyout
-  - Authentication form field selectors
-  - Login success indicator configuration
+  - Flyout panel element locators
+  - Sign-in button identifiers
+  - Authentication form field mappings
 
 - **Input Parameters:** 
-  - `self`: Test class instance providing access to page objects and driver context
+  - `self`: Test class instance
 
 - **Return Parameter:** 
-  - None (assertion-based validation method)
+  - None (assertion-based validation)
 
 - **Functional Flow:** 
-  1. Execute user logout to establish unauthenticated state
+  1. Ensure user is logged out (unauthenticated state)
   2. Click bell notification icon to open flyout panel
-  3. Verify flyout panel displays in logged-out state
-  4. Locate "Sign In" option within bell flyout
-  5. Verify sign-in button is visible and enabled
-  6. Click sign-in button to initiate authentication flow
-  7. Wait for authentication form or redirect
-  8. Enter user credentials in authentication fields
-  9. Submit authentication form
-  10. Verify successful login completion
-  11. Confirm user is redirected back to application
-  12. Assert authenticated state is established
+  3. Verify flyout displays sign-in option/button
+  4. Click sign-in option within flyout
+  5. Verify authentication form/modal appears
+  6. Enter valid user credentials in form fields
+  7. Submit authentication form
+  8. Wait for login completion and flyout state update
+  9. Verify user is now authenticated (check user profile indicator)
+  10. Verify bell notification flyout now shows authenticated content
 
 - **Assertions:** 
-  - Bell flyout panel opens successfully when logged out
-  - Sign-in option is present in flyout panel
-  - Sign-in button is clickable and enabled
-  - Authentication form accepts credential input
-  - Login operation completes successfully
-  - User achieves authenticated state via flyout login path
+  - Assert sign-in option is visible in unauthenticated flyout
+  - Assert authentication form appears after clicking sign-in
+  - Assert login completes successfully (no error messages)
+  - Assert post-login flyout displays user-specific notifications
+  - Assert user profile/avatar indicates authenticated state
 
 - **Boundary Conditions:** 
-  - Test requires initial authenticated state for logout
-  - Flyout panel must render within timeout threshold
-  - Sign-in button must be interactable
-  - Authentication form must accept valid credentials
-  - Login success must be verifiable via UI state change
+  - Validates behavior only from unauthenticated starting state
+  - Requires valid test credentials
+  - Assumes flyout panel renders within timeout period
+  - Dependent on authentication service availability
 
 - **Exception Handling:** 
-  - ElementNotInteractableException handled for disabled sign-in button
-  - TimeoutException caught for delayed flyout rendering
-  - AuthenticationException raised for invalid credentials
-  - AssertionError raised for failed login verification
+  - Handles flyout panel open failures with retry logic
+  - Catches authentication form submission errors
+  - Validates error message display for invalid credentials (negative path)
+  - Implements explicit waits for modal transitions
 
 #### Method Level: test_04_verify_delete_option_for_urgent_unread_msg_is_disabled_C60336470
 
 - **Scope:** Instance Method
 
-- **Purpose:** Validates business rule enforcement that urgent priority unread notification messages cannot be deleted by users, verifying delete option is disabled or unavailable for urgent message types to prevent accidental removal of critical notifications.
+- **Purpose:** Validates business rule enforcement that urgent/critical unread notifications cannot be deleted by users, ensuring high-priority messages remain visible until explicitly acknowledged through reading.
 
 - **Annotation or Markers:** 
   - @pytest.mark.regression
@@ -1380,60 +1433,58 @@ This test module validates the bell notification system functionality within the
   - Test case ID: C60336470
 
 - **Dependencies:** 
-  - Bell notification page object
-  - Notification list retrieval methods
-  - Message type filtering utilities
-  - Context menu interaction handlers
-  - Delete option state verification methods
+  - class_setup fixture with authenticated session
+  - Bell notification flyout page object
+  - Notification tile interaction utilities
+  - Test data provider for urgent notification identification
 
 - **Module Configurations:** 
-  - Urgent message type identifier
-  - Unread message state filter
-  - Context menu selector
-  - Delete option element identifier
-  - Disabled state attribute configuration
+  - Notification severity level identifiers
+  - Context menu/ellipsis locator strategies
+  - Delete option element selectors
 
 - **Input Parameters:** 
-  - `self`: Test class instance with authenticated session and notification access
+  - `self`: Test class instance
 
 - **Return Parameter:** 
-  - None (assertion-based validation method)
+  - None (assertion-based validation)
 
 - **Functional Flow:** 
   1. Open bell notification flyout panel
-  2. Retrieve list of all notifications
-  3. Filter notifications by urgent priority type
-  4. Filter urgent notifications by unread state
-  5. Select first urgent unread notification
-  6. Right-click or access context menu for selected notification
-  7. Locate delete option in context menu
-  8. Verify delete option element state
-  9. Assert delete option is disabled or not interactable
-  10. Confirm disabled state prevents deletion action
+  2. Identify urgent/critical unread notification tile
+  3. Hover over or focus on urgent notification tile
+  4. Click ellipsis/context menu icon on notification
+  5. Verify context menu options appear
+  6. Locate delete option element in context menu
+  7. Verify delete option is disabled (not clickable)
+  8. Optionally verify disabled state styling (grayed out, cursor style)
+  9. Attempt click on disabled delete option (should have no effect)
+  10. Verify notification remains in unread list
 
 - **Assertions:** 
-  - Urgent unread notification exists in notification list
-  - Context menu displays for urgent notification
-  - Delete option is present in context menu
-  - Delete option disabled attribute is True
-  - Delete option is not clickable or interactable
+  - Assert urgent notification is identified correctly by severity indicator
+  - Assert context menu opens successfully
+  - Assert delete option element exists in menu
+  - Assert delete option is disabled (is_enabled() == False)
+  - Assert notification count remains unchanged after attempted delete
 
 - **Boundary Conditions:** 
-  - Test requires at least one urgent unread notification
-  - Context menu must render within timeout
-  - Delete option element must be locatable
-  - Disabled state must be verifiable via element attributes
+  - Requires at least one urgent unread notification in test data
+  - Validates only unread urgent notifications (not read ones)
+  - Assumes consistent notification severity classification
+  - Dependent on context menu rendering correctly
 
 - **Exception Handling:** 
-  - NoSuchElementException handled if no urgent notifications exist
-  - TimeoutException caught for delayed context menu rendering
-  - AssertionError raised if delete option is unexpectedly enabled
+  - Handles missing urgent notification scenario with skip or setup error
+  - Catches element interaction exceptions for disabled elements
+  - Validates no unintended side effects from disabled button clicks
+  - Logs notification state before and after interaction
 
 #### Method Level: test_05_verify_delete_option_for_warning_unread_msg_is_enabled_C60336471
 
 - **Scope:** Instance Method
 
-- **Purpose:** Validates that warning priority unread notification messages can be deleted by users, verifying delete option is enabled and functional for warning message types, allowing users to manage non-critical notifications.
+- **Purpose:** Validates that warning-level unread notifications can be deleted by users, confirming appropriate permission levels for medium-priority message management.
 
 - **Annotation or Markers:** 
   - @pytest.mark.regression
@@ -1441,68 +1492,60 @@ This test module validates the bell notification system functionality within the
   - Test case ID: C60336471
 
 - **Dependencies:** 
-  - Bell notification page object
-  - Notification list retrieval methods
-  - Message type filtering utilities
-  - Context menu interaction handlers
-  - Delete option state verification methods
-  - Notification deletion confirmation handlers
+  - class_setup fixture with authenticated session
+  - Bell notification flyout page object
+  - Notification deletion confirmation utilities
+  - Test data provider for warning notification identification
 
 - **Module Configurations:** 
-  - Warning message type identifier
-  - Unread message state filter
-  - Context menu selector
-  - Delete option element identifier
-  - Enabled state attribute configuration
-  - Deletion confirmation dialog configuration
+  - Warning notification severity identifiers
+  - Delete confirmation dialog locators
+  - Notification list refresh mechanisms
 
 - **Input Parameters:** 
-  - `self`: Test class instance with authenticated session and notification access
+  - `self`: Test class instance
 
 - **Return Parameter:** 
-  - None (assertion-based validation method)
+  - None (assertion-based validation)
 
 - **Functional Flow:** 
   1. Open bell notification flyout panel
-  2. Retrieve list of all notifications
-  3. Filter notifications by warning priority type
-  4. Filter warning notifications by unread state
-  5. Select first warning unread notification
-  6. Right-click or access context menu for selected notification
-  7. Locate delete option in context menu
-  8. Verify delete option element state
-  9. Assert delete option is enabled and interactable
-  10. Click delete option to initiate deletion
-  11. Handle confirmation dialog if present
-  12. Verify notification is removed from list
-  13. Confirm deletion operation completed successfully
+  2. Capture initial notification count
+  3. Identify warning-level unread notification tile
+  4. Click ellipsis/context menu icon on warning notification
+  5. Verify context menu displays with options
+  6. Locate delete option in context menu
+  7. Verify delete option is enabled (clickable)
+  8. Click delete option
+  9. Handle confirmation dialog if present (confirm deletion)
+  10. Wait for notification list to refresh
+  11. Verify warning notification is removed from list
+  12. Verify notification count decremented by 1
 
 - **Assertions:** 
-  - Warning unread notification exists in notification list
-  - Context menu displays for warning notification
-  - Delete option is present in context menu
-  - Delete option enabled attribute is True
-  - Delete option is clickable and interactable
-  - Notification is successfully removed after deletion
+  - Assert warning notification is identified by severity indicator
+  - Assert delete option is enabled (is_enabled() == True)
+  - Assert delete option is clickable without errors
+  - Assert notification is removed from DOM after deletion
+  - Assert total notification count decreases appropriately
 
 - **Boundary Conditions:** 
-  - Test requires at least one warning unread notification
-  - Context menu must render within timeout
-  - Delete option element must be locatable and clickable
-  - Deletion operation must complete within timeout threshold
-  - Notification list must update to reflect deletion
+  - Requires at least one warning unread notification
+  - Validates deletion completes within timeout period
+  - Assumes notification list updates reflect backend state
+  - Dependent on delete operation success response
 
 - **Exception Handling:** 
-  - NoSuchElementException handled if no warning notifications exist
-  - TimeoutException caught for delayed context menu or deletion confirmation
-  - ElementNotInteractableException handled for disabled delete option
-  - AssertionError raised if deletion fails or notification persists
+  - Handles missing warning notification with test skip
+  - Catches deletion failure scenarios with error logging
+  - Validates confirmation dialog appearance and interaction
+  - Implements wait conditions for list refresh after deletion
 
 #### Method Level: test_06_verify_delete_option_for_informative_unread_msg_is_enabled_C60336472
 
 - **Scope:** Instance Method
 
-- **Purpose:** Validates that informative priority unread notification messages can be deleted by users, verifying delete option is enabled and functional for informative message types, allowing users to manage low-priority notifications.
+- **Purpose:** Validates that informative/low-priority unread notifications can be deleted by users, ensuring users have full control over non-critical message management.
 
 - **Annotation or Markers:** 
   - @pytest.mark.regression
@@ -1510,68 +1553,60 @@ This test module validates the bell notification system functionality within the
   - Test case ID: C60336472
 
 - **Dependencies:** 
-  - Bell notification page object
-  - Notification list retrieval methods
-  - Message type filtering utilities
-  - Context menu interaction handlers
-  - Delete option state verification methods
-  - Notification deletion confirmation handlers
+  - class_setup fixture with authenticated session
+  - Bell notification flyout page object
+  - Notification deletion workflow utilities
+  - Test data provider for informative notification identification
 
 - **Module Configurations:** 
-  - Informative message type identifier
-  - Unread message state filter
-  - Context menu selector
-  - Delete option element identifier
-  - Enabled state attribute configuration
-  - Deletion confirmation dialog configuration
+  - Informative notification severity identifiers
+  - Context menu interaction parameters
+  - List update polling intervals
 
 - **Input Parameters:** 
-  - `self`: Test class instance with authenticated session and notification access
+  - `self`: Test class instance
 
 - **Return Parameter:** 
-  - None (assertion-based validation method)
+  - None (assertion-based validation)
 
 - **Functional Flow:** 
   1. Open bell notification flyout panel
-  2. Retrieve list of all notifications
-  3. Filter notifications by informative priority type
-  4. Filter informative notifications by unread state
-  5. Select first informative unread notification
-  6. Right-click or access context menu for selected notification
-  7. Locate delete option in context menu
-  8. Verify delete option element state
-  9. Assert delete option is enabled and interactable
-  10. Click delete option to initiate deletion
-  11. Handle confirmation dialog if present
-  12. Verify notification is removed from list
-  13. Confirm deletion operation completed successfully
+  2. Record initial notification count and list state
+  3. Identify informative-level unread notification tile
+  4. Interact with notification tile to reveal context menu
+  5. Click ellipsis icon to open action menu
+  6. Verify delete option is present and enabled
+  7. Execute delete action by clicking delete option
+  8. Confirm deletion in dialog if prompted
+  9. Wait for UI update reflecting deletion
+  10. Verify informative notification no longer appears in list
+  11. Validate notification count updated correctly
+  12. Optionally verify deletion persists after flyout close/reopen
 
 - **Assertions:** 
-  - Informative unread notification exists in notification list
-  - Context menu displays for informative notification
-  - Delete option is present in context menu
-  - Delete option enabled attribute is True
-  - Delete option is clickable and interactable
-  - Notification is successfully removed after deletion
+  - Assert informative notification identified by severity class/icon
+  - Assert delete option is enabled for interaction
+  - Assert deletion executes without error
+  - Assert notification removed from visible list
+  - Assert notification count reflects deletion
 
 - **Boundary Conditions:** 
-  - Test requires at least one informative unread notification
-  - Context menu must render within timeout
-  - Delete option element must be locatable and clickable
-  - Deletion operation must complete within timeout threshold
-  - Notification list must update to reflect deletion
+  - Requires at least one informative unread notification
+  - Validates deletion within expected response time
+  - Assumes backend deletion API responds successfully
+  - Dependent on UI refresh mechanisms working correctly
 
 - **Exception Handling:** 
-  - NoSuchElementException handled if no informative notifications exist
-  - TimeoutException caught for delayed context menu or deletion confirmation
-  - ElementNotInteractableException handled for disabled delete option
-  - AssertionError raised if deletion fails or notification persists
+  - Handles absence of informative notifications gracefully
+  - Catches API failure responses during deletion
+  - Validates error message display for failed deletions
+  - Implements retry logic for transient deletion failures
 
 #### Method Level: test_07_verify_user_can_navigate_back_to_navigation_side_panel_C60370254
 
 - **Scope:** Instance Method
 
-- **Purpose:** Validates navigation flow allowing users to return from bell notification panel to main navigation side panel, verifying back navigation controls function correctly and restore previous navigation context.
+- **Purpose:** Validates navigation flow allowing users to return from bell notification flyout view back to the main navigation side panel, ensuring proper UI state management and panel transitions.
 
 - **Annotation or Markers:** 
   - @pytest.mark.regression
@@ -1579,59 +1614,55 @@ This test module validates the bell notification system functionality within the
   - Test case ID: C60370254
 
 - **Dependencies:** 
-  - Bell notification page object
-  - Navigation panel page object
-  - Back button interaction handlers
-  - Panel state verification utilities
-  - Navigation context tracking methods
+  - class_setup fixture with authenticated session
+  - Bell notification flyout page object
+  - Navigation side panel page object
+  - UI panel state detection utilities
 
 - **Module Configurations:** 
-  - Bell notification panel identifier
-  - Navigation side panel identifier
-  - Back button selector
-  - Panel visibility state configuration
-  - Navigation transition timeout
+  - Navigation panel element identifiers
+  - Back button/close button locators
+  - Panel transition animation durations
 
 - **Input Parameters:** 
-  - `self`: Test class instance with initialized page objects and navigation context
+  - `self`: Test class instance
 
 - **Return Parameter:** 
-  - None (assertion-based validation method)
+  - None (assertion-based validation)
 
 - **Functional Flow:** 
-  1. Verify initial state shows navigation side panel
-  2. Click bell notification icon to open notification panel
-  3. Verify notification panel displays and navigation panel is hidden
-  4. Locate back navigation button in notification panel
-  5. Verify back button is visible and enabled
-  6. Click back button to initiate navigation
-  7. Wait for panel transition animation
-  8. Verify notification panel is hidden
-  9. Verify navigation side panel is restored and visible
-  10. Confirm navigation context matches pre-notification state
-  11. Assert successful navigation back to side panel
+  1. Verify navigation side panel is initially visible
+  2. Click bell notification icon to open flyout
+  3. Verify bell notification flyout panel opens and overlays/replaces navigation panel
+  4. Verify navigation panel is hidden or minimized
+  5. Locate back button or close control in notification flyout
+  6. Click back/close button to dismiss notification flyout
+  7. Wait for panel transition animation to complete
+  8. Verify bell notification flyout is closed/hidden
+  9. Verify navigation side panel is restored to visible state
+  10. Validate navigation panel contents are accessible
+  11. Optionally verify panel state persistence (selected items remain)
 
 - **Assertions:** 
-  - Navigation side panel is initially visible
-  - Bell notification panel opens successfully
-  - Navigation side panel is hidden when notification panel is active
-  - Back button is present and clickable in notification panel
-  - Back button click triggers panel transition
-  - Notification panel closes after back navigation
-  - Navigation side panel is restored to visible state
-  - Navigation context is preserved after return
+  - Assert navigation panel visible before opening notifications
+  - Assert notification flyout opens successfully
+  - Assert navigation panel hidden when flyout is open
+  - Assert back/close button is present and clickable
+  - Assert notification flyout closes after back action
+  - Assert navigation panel restored to visible state
+  - Assert navigation panel functionality remains intact
 
 - **Boundary Conditions:** 
-  - Panel transition must complete within timeout threshold
-  - Back button must be interactable during notification panel display
-  - Panel visibility states must be mutually exclusive
-  - Navigation context must persist across panel transitions
+  - Validates panel transitions complete within timeout
+  - Assumes single-panel display model (one panel visible at a time)
+  - Requires consistent panel z-index and visibility management
+  - Dependent on animation/transition completion detection
 
 - **Exception Handling:** 
-  - ElementNotInteractableException handled for disabled back button
-  - TimeoutException caught for delayed panel transitions
-  - StaleElementReferenceException handled for panel DOM updates
-  - AssertionError raised for failed navigation restoration
+  - Handles panel transition timing issues with explicit waits
+  - Catches element not found exceptions during state changes
+  - Validates panel state consistency after rapid open/close actions
+  - Logs panel visibility states at each transition step
 
 ---
 
@@ -1641,82 +1672,78 @@ This test module validates the bell notification system functionality within the
 
 [MODULE_PURPOSE_START]
 
-This test module validates advanced bell notification interaction patterns and notification state management within the HPX rebranding framework. It systematically verifies notification tile context menu operations, mark-as-read functionality across all notification priority types, read/unread state transitions, and notification panel header element composition. The module ensures proper notification lifecycle management and UI element consistency for notification management workflows.
+This test module focuses on advanced bell notification interaction patterns including context menu operations, notification state management (read/unread transitions), and notification panel UI component validation. It systematically verifies ellipsis menu functionality, mark-as-read operations across different notification types, read/unread filtering behaviors, and comprehensive title bar element presence within the HPX rebranding framework notification system.
 
 [MODULE_PURPOSE_END]
 
 ### 1. File Header (Module-Level Documentation)
 
-- **Primary Responsibility:** Automated testing of notification tile interaction mechanisms, context menu operations, notification state transitions between read and unread states, and verification of notification panel UI component structure and element presence.
+- **Primary Responsibility:** Automated test suite validating advanced notification interaction workflows including context menu accessibility, read/unread state transitions, notification filtering mechanisms, and notification panel header component verification.
 
 - **Dependencies:** 
-  - pytest framework for test execution and fixture management
-  - Bell notification page objects for UI interaction
+  - pytest framework for test orchestration
+  - Bell notification page objects with advanced interaction methods
   - Notification state management utilities
-  - Context menu interaction handlers
-  - Element visibility verification libraries
-  - Notification type enumeration constants
-  - Test data providers for multiple notification types
+  - UI element inspection and attribute validation libraries
+  - Test data generators for multiple notification types
+  - Explicit wait condition handlers
 
 - **Module Configuration:** 
-  - Test suite identifier: Suite 05
-  - Test category: Bell Notifications - Advanced Interactions
-  - Platform target: Windows
-  - Framework context: HPX Rebranding
-  - Test execution markers: Regression, UI interaction, State management
+  - Test execution markers for feature categorization
+  - Class-scoped fixture configuration
+  - Test case requirement mappings (C60339095, C60339094, C53303701, C60339091)
+  - Notification type enumeration constants
+  - UI element timeout configurations
 
-### 2. Class Documentation: TestSuite05BellNotifications
+### 2. Class Documentation: [Test Class - Implicit]
 
-- **Role:** Container class organizing advanced bell notification interaction test cases with focus on notification state management, context menu operations, and UI element verification.
+- **Role:** Organizes notification interaction and state management test cases with shared environment setup ensuring consistent notification data availability and UI state initialization.
 
-- **Purpose:** Provides structured test case organization for complex notification interaction scenarios, manages test lifecycle through class-level fixtures, and ensures consistent test execution context for notification state transition and UI element validation tests.
+- **Purpose:** Groups test methods validating complex notification behaviors including multi-step interactions, state transitions, and comprehensive UI component verification while maintaining test isolation through proper fixture management.
 
-#### class_setup
+#### Fixture: class_setup
 
-- **Scope:** Class-level fixture
+- **Scope:** Class
 
-- **Purpose:** Initializes test execution environment by establishing browser session, performing user authentication, navigating to notification panel, and preparing notification interaction context for subsequent test case execution.
+- **Purpose:** Establishes test environment with authenticated session, pre-populated notification data across multiple severity types, and initialized page object references for notification interaction testing.
 
 - **Annotation or Markers:** 
   - @pytest.fixture(scope="class")
-  - Implicit class setup fixture pattern
+  - Potentially @pytest.mark.usefixtures for dependency chains
 
 - **Dependencies:** 
-  - Browser driver initialization utilities
-  - Application URL configuration
-  - User credential management system
-  - Login page object
-  - Bell notification page object
-  - Session management utilities
-  - Notification panel navigation methods
+  - Browser driver initialization
+  - Authentication service
+  - Notification data seeding utilities
+  - Bell notification page object factory
+  - Test data configuration for notification types
 
 - **Parameter:** 
-  - `request`: pytest fixture request object providing access to test context, class scope, and fixture dependency injection mechanisms
+  - `request`: Pytest fixture request object for context access
 
 - **Set-up Action:** 
-  1. Initialize browser driver instance with configured capabilities
-  2. Navigate to application base URL
-  3. Retrieve test user credentials from configuration
-  4. Execute login workflow using authentication page object
-  5. Verify successful authentication state
-  6. Navigate to bell notification panel
-  7. Initialize bell notification page object
-  8. Store page object references in class-level attributes
-  9. Configure teardown finalizers for cleanup operations
+  1. Initialize browser driver with required capabilities
+  2. Navigate to application URL
+  3. Execute authentication workflow
+  4. Seed test notification data (urgent, warning, informative types)
+  5. Verify notification data creation success
+  6. Initialize bell notification page object
+  7. Open notification flyout to verify data availability
+  8. Store session state and page objects as class attributes
+  9. Configure cleanup handlers for test data removal
 
 - **State Management:** 
-  - `cls.driver`: WebDriver instance for browser automation
-  - `cls.bell_page`: Bell notification page object reference
-  - `cls.login_page`: Authentication page object reference
-  - `cls.user_credentials`: Test user authentication data
-  - `cls.notification_panel_state`: Current notification panel context
-  - Session state tracking for authenticated notification access
+  - Stores authenticated browser session
+  - Maintains notification data identifiers for test reference
+  - Caches page object instances
+  - Tracks notification initial counts by type
+  - Manages test data lifecycle for cleanup
 
 #### Method Level: test_01_verify_notification_tile_ellipsis_clickable_C60339095
 
 - **Scope:** Instance Method
 
-- **Purpose:** Validates that ellipsis menu button on notification tiles is clickable and triggers context menu display, verifying proper notification tile interaction mechanism for accessing notification management options.
+- **Purpose:** Validates that ellipsis (three-dot menu) icon on notification tiles is interactive and successfully opens context menu with available actions, ensuring users can access notification management options.
 
 - **Annotation or Markers:** 
   - @pytest.mark.regression
@@ -1724,278 +1751,257 @@ This test module validates advanced bell notification interaction patterns and n
   - Test case ID: C60339095
 
 - **Dependencies:** 
-  - Bell notification page object
-  - Notification tile element locators
-  - Ellipsis button interaction handlers
-  - Context menu visibility verification utilities
-  - Element clickability validation methods
+  - class_setup fixture
+  - Bell notification flyout page object
+  - Context menu interaction utilities
+  - Element clickability verification methods
 
 - **Module Configurations:** 
-  - Notification tile selector
-  - Ellipsis button identifier
-  - Context menu selector
-  - Click interaction timeout
-  - Menu display timeout threshold
+  - Ellipsis icon locator strategies
+  - Context menu appearance timeout
+  - Menu option element identifiers
 
 - **Input Parameters:** 
-  - `self`: Test class instance with initialized notification panel context
+  - `self`: Test class instance
 
 - **Return Parameter:** 
-  - None (assertion-based validation method)
+  - None (assertion-based validation)
 
 - **Functional Flow:** 
-  1. Retrieve list of notification tiles from notification panel
-  2. Select first available notification tile
-  3. Locate ellipsis menu button on notification tile
-  4. Verify ellipsis button is visible and enabled
-  5. Hover over ellipsis button to ensure interactability
-  6. Click ellipsis button to trigger context menu
-  7. Wait for context menu animation and rendering
+  1. Open bell notification flyout panel
+  2. Identify first notification tile in list
+  3. Locate ellipsis icon element on notification tile
+  4. Verify ellipsis icon is visible and enabled
+  5. Hover over notification tile to ensure ellipsis visibility
+  6. Click ellipsis icon
+  7. Wait for context menu to appear
   8. Verify context menu is displayed
-  9. Confirm context menu contains expected options
-  10. Assert ellipsis button successfully triggers menu display
+  9. Verify context menu contains expected options (mark as read, delete)
+  10. Click outside menu or press escape to close
+  11. Verify menu closes successfully
 
 - **Assertions:** 
-  - Notification tile exists in notification panel
-  - Ellipsis button is present on notification tile
-  - Ellipsis button is visible and enabled
-  - Ellipsis button is clickable
-  - Context menu displays after ellipsis button click
-  - Context menu contains notification management options
+  - Assert ellipsis icon is visible on notification tile
+  - Assert ellipsis icon is clickable (is_enabled() == True)
+  - Assert context menu appears after click
+  - Assert context menu contains minimum expected options
+  - Assert menu positioning is correct relative to tile
 
 - **Boundary Conditions:** 
-  - Test requires at least one notification in panel
-  - Ellipsis button must be rendered within tile bounds
-  - Context menu must display within timeout threshold
-  - Button click must register and trigger menu event
+  - Requires at least one notification in flyout
+  - Validates ellipsis interaction within hover timeout
+  - Assumes consistent menu rendering across notification types
+  - Dependent on z-index layering for menu display
 
 - **Exception Handling:** 
-  - NoSuchElementException handled if no notifications exist
-  - ElementNotInteractableException caught for disabled ellipsis button
-  - TimeoutException handled for delayed context menu rendering
-  - AssertionError raised for failed menu display verification
+  - Handles missing notifications with test skip
+  - Catches element not interactable exceptions
+  - Implements retry logic for hover-dependent visibility
+  - Logs menu state and options on assertion failure
 
 #### Method Level: test_02_verify_mark_as_read_option_enabled_for_all_notification_types_C60339094
 
 - **Scope:** Instance Method
 
-- **Purpose:** Validates that "Mark as Read" option is available and enabled in context menu for all notification priority types (urgent, warning, informative), ensuring consistent state management functionality across notification categories.
+- **Purpose:** Validates that "Mark as Read" option is available and enabled in context menu for all notification severity types (urgent, warning, informative), ensuring consistent state management capabilities across notification categories.
 
 - **Annotation or Markers:** 
   - @pytest.mark.regression
   - @pytest.mark.notification_management
-  - @pytest.mark.parametrized
   - Test case ID: C60339094
 
 - **Dependencies:** 
-  - Bell notification page object
-  - Notification type enumeration constants
-  - Notification filtering utilities
-  - Context menu interaction handlers
-  - Mark as read option verification methods
-  - Notification state validation utilities
+  - class_setup fixture with multi-type notification data
+  - Bell notification flyout page object
+  - Context menu interaction utilities
+  - Notification type identification methods
 
 - **Module Configurations:** 
-  - Notification type identifiers: urgent, warning, informative
-  - Unread notification filter
-  - Context menu selector
-  - Mark as read option identifier
-  - Option enabled state attribute configuration
+  - Notification type identifiers (urgent, warning, informative)
+  - Mark as read option locator
+  - Notification state attribute selectors
 
 - **Input Parameters:** 
-  - `self`: Test class instance with authenticated notification panel access
+  - `self`: Test class instance
 
 - **Return Parameter:** 
-  - None (assertion-based validation method)
+  - None (assertion-based validation)
 
 - **Functional Flow:** 
-  1. Define notification type list: [urgent, warning, informative]
-  2. Iterate through each notification type
-  3. Filter notifications by current type and unread state
-  4. Select first unread notification of current type
-  5. Open context menu for selected notification
-  6. Locate "Mark as Read" option in context menu
-  7. Verify option is visible and enabled
-  8. Assert option enabled state is True
-  9. Close context menu
-  10. Repeat for next notification type
-  11. Confirm all notification types support mark as read functionality
+  1. Open bell notification flyout panel
+  2. Retrieve list of all unread notifications
+  3. Iterate through each notification type (urgent, warning, informative):
+     a. Identify notification tile of current type
+     b. Verify notification is in unread state
+     c. Click ellipsis icon on notification tile
+     d. Wait for context menu to appear
+     e. Locate "Mark as Read" option in menu
+     f. Verify option is enabled (not disabled/grayed out)
+     g. Verify option text matches expected label
+     h. Close context menu
+  4. Log verification results for each notification type
+  5. Assert all notification types have enabled mark as read option
 
 - **Assertions:** 
-  - Unread notification exists for each notification type
-  - Context menu displays for each notification type
-  - "Mark as Read" option is present in context menu for all types
-  - "Mark as Read" option is enabled for urgent notifications
-  - "Mark as Read" option is enabled for warning notifications
-  - "Mark as Read" option is enabled for informative notifications
-  - Option enabled state is consistent across all notification types
+  - Assert urgent notification has enabled "Mark as Read" option
+  - Assert warning notification has enabled "Mark as Read" option
+  - Assert informative notification has enabled "Mark as Read" option
+  - Assert option text is consistent across types
+  - Assert option is clickable for all types
 
 - **Boundary Conditions:** 
-  - Test requires at least one unread notification of each type
-  - Context menu must render for each notification type
-  - Mark as read option must be locatable in menu
-  - Option enabled state must be verifiable via element attributes
-  - Iteration must complete for all notification types
+  - Requires at least one notification of each type
+  - Validates only unread notifications
+  - Assumes notification type classification is accurate
+  - Dependent on context menu rendering consistently
 
 - **Exception Handling:** 
-  - NoSuchElementException handled if notification type not found
-  - TimeoutException caught for delayed context menu rendering
-  - ElementNotInteractableException handled for disabled option
-  - AssertionError raised if option is disabled for any notification type
-  - Loop continues to next type if current type has no unread notifications
+  - Handles missing notification types with descriptive errors
+  - Catches menu interaction failures per notification type
+  - Implements per-type verification with individual assertions
+  - Logs which notification types pass/fail verification
 
 #### Method Level: test_03_verify_unread_read_notifications_C53303701
 
 - **Scope:** Instance Method
 
-- **Purpose:** Validates complete notification state transition workflow from unread to read state, verifying mark as read operation updates notification visual state, removes unread indicator, and properly categorizes notification in read section.
+- **Purpose:** Validates complete read/unread notification workflow including marking notifications as read, verifying state transitions, and confirming notifications move between unread and read sections with accurate count updates.
 
 - **Annotation or Markers:** 
   - @pytest.mark.regression
-  - @pytest.mark.state_transition
+  - @pytest.mark.state_management
   - Test case ID: C53303701
 
 - **Dependencies:** 
-  - Bell notification page object
-  - Notification state verification utilities
-  - Mark as read operation handlers
-  - Unread indicator element locators
-  - Read notification section verification methods
-  - Notification count tracking utilities
+  - class_setup fixture
+  - Bell notification flyout page object
+  - Notification state transition utilities
+  - Count verification methods
 
 - **Module Configurations:** 
-  - Unread notification section identifier
-  - Read notification section identifier
-  - Unread indicator element selector
-  - Mark as read option identifier
-  - State transition timeout configuration
+  - Unread section locator
+  - Read section locator
+  - Notification count badge selectors
+  - State transition wait durations
 
 - **Input Parameters:** 
-  - `self`: Test class instance with authenticated notification panel access
+  - `self`: Test class instance
 
 - **Return Parameter:** 
-  - None (assertion-based validation method)
+  - None (assertion-based validation)
 
 - **Functional Flow:** 
-  1. Retrieve initial unread notification count
-  2. Retrieve initial read notification count
-  3. Select first unread notification from unread section
-  4. Capture notification identifier for tracking
-  5. Verify unread indicator is present on notification
-  6. Open context menu for selected notification
-  7. Click "Mark as Read" option
-  8. Wait for state transition to complete
-  9. Verify unread indicator is removed from notification
-  10. Verify notification moves to read section
-  11. Retrieve updated unread notification count
-  12. Verify unread count decreased by 1
-  13. Retrieve updated read notification count
-  14. Verify read count increased by 1
-  15. Assert notification state transition completed successfully
+  1. Open bell notification flyout panel
+  2. Capture initial unread notification count
+  3. Capture initial read notification count
+  4. Select first unread notification
+  5. Open context menu via ellipsis
+  6. Click "Mark as Read" option
+  7. Wait for state transition to complete
+  8. Verify notification moves from unread to read section
+  9. Verify unread count decremented by 1
+  10. Verify read count incremented by 1
+  11. Verify notification styling changes (opacity, background)
+  12. Verify notification appears in read section with correct timestamp
+  13. Optionally verify state persists after flyout close/reopen
 
 - **Assertions:** 
-  - Initial unread notification exists
-  - Unread indicator is present before mark as read operation
-  - Mark as read operation executes successfully
-  - Unread indicator is removed after operation
-  - Notification appears in read section after operation
-  - Unread notification count decreases by 1
-  - Read notification count increases by 1
-  - Notification identifier matches in read section
+  - Assert initial unread count > 0
+  - Assert mark as read action executes successfully
+  - Assert notification removed from unread section
+  - Assert notification appears in read section
+  - Assert unread count = initial_count - 1
+  - Assert read count = initial_count + 1
+  - Assert notification visual state reflects read status
 
 - **Boundary Conditions:** 
-  - Test requires at least one unread notification
-  - State transition must complete within timeout threshold
-  - Notification counts must update synchronously
-  - Notification must be locatable in read section after transition
-  - Visual state changes must be detectable via DOM updates
+  - Requires at least one unread notification
+  - Validates state transition within timeout period
+  - Assumes backend state update completes successfully
+  - Dependent on UI refresh mechanisms
 
 - **Exception Handling:** 
-  - NoSuchElementException handled if no unread notifications exist
-  - TimeoutException caught for delayed state transition
-  - StaleElementReferenceException handled for notification DOM updates
-  - AssertionError raised for incorrect count updates
-  - AssertionError raised if notification not found in read section
+  - Handles missing unread notifications with test skip
+  - Catches state transition failures with retry logic
+  - Validates count consistency after state change
+  - Logs before/after state snapshots on failure
 
 #### Method Level: test_04_verify_elements_in_notifs_title_C60339091
 
 - **Scope:** Instance Method
 
-- **Purpose:** Validates comprehensive notification panel header structure by verifying presence and correct positioning of all required UI elements including title text, notification count badge, filter controls, and action buttons.
+- **Purpose:** Validates comprehensive presence and functionality of all UI components in notification panel title bar including title text, filter controls, settings icon, close button, and notification count badge.
 
 - **Annotation or Markers:** 
   - @pytest.mark.regression
-  - @pytest.mark.ui_structure
+  - @pytest.mark.ui_validation
   - Test case ID: C60339091
 
 - **Dependencies:** 
-  - Bell notification page object
-  - Header element locators
-  - Element visibility verification utilities
-  - Text content validation methods
-  - Element positioning verification utilities
-  - UI component structure validators
+  - class_setup fixture
+  - Bell notification flyout page object
+  - UI element inspection utilities
+  - Element attribute validation methods
 
 - **Module Configurations:** 
-  - Notification panel header selector
-  - Title text element identifier
-  - Notification count badge selector
-  - Filter dropdown selector
-  - Mark all as read button identifier
-  - Settings button identifier
-  - Close button identifier
+  - Title bar element locators
+  - Expected title text constant
+  - Filter control identifiers
+  - Icon element selectors
 
 - **Input Parameters:** 
-  - `self`: Test class instance with initialized notification panel context
+  - `self`: Test class instance
 
 - **Return Parameter:** 
-  - None (assertion-based validation method)
+  - None (assertion-based validation)
 
 - **Functional Flow:** 
-  1. Locate notification panel header container
-  2. Verify header container is visible
-  3. Locate title text element within header
-  4. Verify title text displays "Notifications"
-  5. Locate notification count badge element
-  6. Verify count badge displays numeric value
-  7. Verify count badge is positioned adjacent to title
-  8. Locate filter dropdown control
-  9. Verify filter dropdown is visible and enabled
-  10. Locate "Mark All as Read" button
-  11. Verify button is visible and enabled
-  12. Locate settings/gear icon button
-  13. Verify settings button is visible and clickable
-  14. Locate close/dismiss button
-  15. Verify close button is visible and clickable
-  16. Assert all required header elements are present
-  17. Verify element layout matches design specification
+  1. Open bell notification flyout panel
+  2. Locate notification panel title bar container
+  3. Verify title bar is visible
+  4. Locate and verify title text element:
+     a. Verify element exists
+     b. Verify text content matches expected value
+     c. Verify text styling (font, size, color)
+  5. Locate and verify notification count badge:
+     a. Verify badge is visible
+     b. Verify count value is numeric
+     c. Verify count matches actual notification count
+  6. Locate and verify filter/sort controls:
+     a. Verify filter dropdown/button exists
+     b. Verify filter is clickable
+     c. Verify filter options are accessible
+  7. Locate and verify settings icon:
+     a. Verify icon is visible
+     b. Verify icon is clickable
+     c. Verify icon opens settings panel
+  8. Locate and verify close button:
+     a. Verify button is visible
+     b. Verify button is clickable
+     c. Verify button closes flyout
+  9. Verify element positioning and alignment
+  10. Log all element verification results
 
 - **Assertions:** 
-  - Notification panel header is visible
-  - Title text element exists and displays "Notifications"
-  - Notification count badge is present
-  - Count badge displays valid numeric value
-  - Count badge is positioned correctly relative to title
-  - Filter dropdown control is present and enabled
-  - "Mark All as Read" button is present and enabled
-  - Settings button is present and clickable
-  - Close button is present and clickable
-  - All elements are contained within header bounds
-  - Element positioning matches expected layout
+  - Assert title text element exists and displays correct text
+  - Assert notification count badge displays accurate count
+  - Assert filter controls are present and functional
+  - Assert settings icon is visible and clickable
+  - Assert close button is visible and functional
+  - Assert all elements are properly aligned in title bar
+  - Assert no overlapping or hidden elements
 
 - **Boundary Conditions:** 
-  - All header elements must be rendered within header container
-  - Text content must match expected string values
-  - Count badge must display valid integer value
-  - Interactive elements must be enabled and clickable
-  - Element visibility must be verifiable within timeout
+  - Validates title bar in default state
+  - Assumes standard notification count range
+  - Requires all title bar features to be enabled
+  - Dependent on consistent UI component rendering
 
 - **Exception Handling:** 
-  - NoSuchElementException handled for missing header elements
-  - TimeoutException caught for delayed element rendering
-  - AssertionError raised for incorrect text content
-  - AssertionError raised for missing or disabled interactive elements
-  - AssertionError raised for incorrect element positioning
+  - Handles missing elements with specific assertion failures
+  - Catches element interaction exceptions per component
+  - Validates element visibility with explicit waits
+  - Logs element attributes and states on verification failure
 
 ---
 
@@ -2005,215 +2011,198 @@ This test module validates advanced bell notification interaction patterns and n
 
 [MODULE_PURPOSE_START]
 
-This test module validates notification detail view functionality and notification state management through message interaction within the HPX rebranding framework. It systematically verifies detailed notification view access, automatic read state marking upon message opening, and notification description content validation for both unread and read notification states. The module ensures proper notification detail rendering and state synchronization between list view and detail view contexts.
+This test module validates detailed notification view interactions and notification description content verification within the HPX rebranding framework. It focuses on testing notification expansion workflows, automatic read state transitions upon opening detailed views, and comprehensive validation of notification description content for both unread and read notification states, ensuring proper information display and state management.
 
 [MODULE_PURPOSE_END]
 
 ### 1. File Header (Module-Level Documentation)
 
-- **Primary Responsibility:** Automated testing of notification detail view navigation, automatic state transition from unread to read upon message opening, and comprehensive validation of notification description content rendering in both unread and read states.
+- **Primary Responsibility:** Automated test suite for notification detailed view functionality including expansion interactions, read state auto-marking, and description content validation across different notification states.
 
 - **Dependencies:** 
-  - pytest framework for test execution and fixture management
-  - Bell notification page objects for UI interaction
-  - Notification detail view page objects
-  - Notification state tracking utilities
-  - Message content verification libraries
-  - Element visibility validation utilities
-  - Notification list navigation handlers
+  - pytest framework for test execution
+  - Bell notification page objects with detailed view methods
+  - Notification content validation utilities
+  - State transition verification libraries
+  - Text content comparison utilities
+  - WebDriver wait conditions
 
 - **Module Configuration:** 
-  - Test suite identifier: Suite 06
-  - Test category: Bell Notifications - Detail View
-  - Platform target: Windows
-  - Framework context: HPX Rebranding
-  - Test execution markers: Regression, Detail view, State management
+  - Test execution markers for categorization
+  - Class-scoped fixture setup
+  - Test case requirement identifiers (C58684404, C58684406, C60336160, C60336161)
+  - Detailed view element locators
+  - Content validation timeout settings
 
-### 2. Class Documentation: TestSuite06BellNotifications
+### 2. Class Documentation: [Test Class - Implicit]
 
-- **Role:** Container class organizing notification detail view and message interaction test cases with focus on detail view navigation, automatic state updates, and content validation.
+- **Role:** Organizes notification detailed view and content validation test cases with shared setup ensuring notification data availability and consistent UI state initialization.
 
-- **Purpose:** Provides structured test case organization for notification detail view scenarios, manages test lifecycle through class-level fixtures, and ensures consistent test execution context for notification detail rendering and state transition validation tests.
+- **Purpose:** Groups test methods validating notification expansion behaviors, automatic state transitions, and content accuracy verification while maintaining test isolation through proper fixture lifecycle management.
 
-#### class_setup
+#### Fixture: class_setup
 
-- **Scope:** Class-level fixture
+- **Scope:** Class
 
-- **Purpose:** Initializes test execution environment by establishing browser session, performing user authentication, navigating to notification panel, and preparing notification detail view interaction context for subsequent test case execution.
+- **Purpose:** Initializes test environment with authenticated session, pre-seeded notification data in various states, and configured page objects for detailed view interaction testing.
 
 - **Annotation or Markers:** 
   - @pytest.fixture(scope="class")
-  - Implicit class setup fixture pattern
+  - Potentially @pytest.mark.usefixtures
 
 - **Dependencies:** 
   - Browser driver initialization utilities
-  - Application URL configuration
-  - User credential management system
-  - Login page object
-  - Bell notification page object
-  - Notification detail view page object
-  - Session management utilities
+  - Authentication service
+  - Notification data seeding service
+  - Bell notification page object factory
+  - Test data configuration
 
 - **Parameter:** 
-  - `request`: pytest fixture request object providing access to test context, class scope, and fixture dependency injection mechanisms
+  - `request`: Pytest fixture request object
 
 - **Set-up Action:** 
-  1. Initialize browser driver instance with configured capabilities
+  1. Initialize browser driver instance
   2. Navigate to application base URL
-  3. Retrieve test user credentials from configuration
-  4. Execute login workflow using authentication page object
-  5. Verify successful authentication state
-  6. Navigate to bell notification panel
-  7. Initialize bell notification page object
-  8. Initialize notification detail view page object
-  9. Store page object references in class-level attributes
-  10. Configure teardown finalizers for cleanup operations
+  3. Execute user authentication
+  4. Seed test notification data with varied content
+  5. Verify notification data availability
+  6. Initialize bell notification page objects
+  7. Configure explicit wait conditions
+  8. Store session and page object references
+  9. Register teardown for data cleanup
 
 - **State Management:** 
-  - `cls.driver`: WebDriver instance for browser automation
-  - `cls.bell_page`: Bell notification page object reference
-  - `cls.detail_view_page`: Notification detail view page object reference
-  - `cls.login_page`: Authentication page object reference
-  - `cls.user_credentials`: Test user authentication data
-  - Session state tracking for authenticated notification detail access
+  - Stores browser driver instance
+  - Maintains notification data references
+  - Caches page object instances
+  - Tracks notification state for verification
+  - Manages test data cleanup requirements
 
 #### Method Level: test_01_open_detailed_view_from_message_C58684404
 
 - **Scope:** Instance Method
 
-- **Purpose:** Validates navigation from notification list view to detailed notification view by clicking notification tile, verifying detail view opens correctly and displays comprehensive notification information.
+- **Purpose:** Validates that clicking on a notification tile successfully opens the detailed view panel displaying complete notification information including full message content, metadata, and action buttons.
 
 - **Annotation or Markers:** 
   - @pytest.mark.regression
-  - @pytest.mark.navigation
+  - @pytest.mark.detailed_view
   - Test case ID: C58684404
 
 - **Dependencies:** 
-  - Bell notification page object
-  - Notification detail view page object
-  - Notification tile click handlers
-  - Detail view visibility verification utilities
-  - Navigation transition tracking methods
+  - class_setup fixture
+  - Bell notification flyout page object
+  - Notification detailed view page object
+  - Element visibility verification utilities
 
 - **Module Configurations:** 
-  - Notification tile selector
-  - Detail view container identifier
-  - Navigation transition timeout
-  - Detail view load timeout threshold
+  - Notification tile click target selectors
+  - Detailed view panel locators
+  - Panel transition animation durations
 
 - **Input Parameters:** 
-  - `self`: Test class instance with initialized notification panel and detail view contexts
+  - `self`: Test class instance
 
 - **Return Parameter:** 
-  - None (assertion-based validation method)
+  - None (assertion-based validation)
 
 - **Functional Flow:** 
-  1. Retrieve list of notifications from notification panel
-  2. Select first available notification tile
-  3. Capture notification identifier for tracking
-  4. Click notification tile to initiate detail view navigation
-  5. Wait for navigation transition to complete
-  6. Verify detail view container is displayed
-  7. Verify detail view contains notification content
-  8. Confirm notification identifier matches selected notification
-  9. Assert successful navigation to detail view
+  1. Open bell notification flyout panel
+  2. Identify target notification tile
+  3. Verify notification tile is clickable
+  4. Click notification tile body (not ellipsis)
+  5. Wait for detailed view panel to appear
+  6. Verify detailed view panel is visible
+  7. Verify panel displays notification title
+  8. Verify panel displays full message content
+  9. Verify panel displays timestamp/metadata
+  10. Verify action buttons are present (close, mark as read, etc.)
 
 - **Assertions:** 
-  - Notification tile exists in notification list
-  - Notification tile is clickable
-  - Detail view opens after tile click
-  - Detail view container is visible
-  - Detail view displays notification content
-  - Notification identifier matches in detail view
+  - Assert notification tile is clickable
+  - Assert detailed view panel opens after click
+  - Assert panel displays complete notification content
+  - Assert panel title matches notification title
+  - Assert panel contains expected UI components
 
 - **Boundary Conditions:** 
-  - Test requires at least one notification in panel
-  - Navigation transition must complete within timeout
-  - Detail view must render within timeout threshold
-  - Notification content must be accessible in detail view
+  - Requires at least one notification available
+  - Validates panel opens within timeout period
+  - Assumes detailed view feature is enabled
+  - Dependent on panel rendering completion
 
 - **Exception Handling:** 
-  - NoSuchElementException handled if no notifications exist
-  - ElementNotInteractableException caught for non-clickable tile
-  - TimeoutException handled for delayed detail view rendering
-  - AssertionError raised for failed navigation verification
+  - Handles missing notifications with test skip
+  - Catches panel open failures with retry logic
+  - Validates panel transition with explicit waits
+  - Logs panel state on assertion failure
 
 #### Method Level: test_02_mark_message_as_read_by_opening_C58684406
 
 - **Scope:** Instance Method
 
-- **Purpose:** Validates automatic notification state transition from unread to read when user opens notification detail view, verifying state update occurs without explicit mark as read action and persists after returning to list view.
+- **Purpose:** Validates automatic read state transition when user opens notification detailed view, ensuring unread notifications are automatically marked as read upon expansion without requiring explicit mark-as-read action.
 
 - **Annotation or Markers:** 
   - @pytest.mark.regression
-  - @pytest.mark.state_transition
+  - @pytest.mark.state_management
   - Test case ID: C58684406
 
 - **Dependencies:** 
-  - Bell notification page object
-  - Notification detail view page object
+  - class_setup fixture
+  - Bell notification flyout page object
   - Notification state verification utilities
-  - Unread indicator element locators
-  - Navigation back handlers
-  - State persistence validation methods
+  - Count tracking methods
 
 - **Module Configurations:** 
-  - Unread notification filter
-  - Unread indicator element selector
-  - Detail view container identifier
-  - Back navigation button selector
-  - State transition timeout configuration
+  - Unread state indicators
+  - Read state indicators
+  - State transition wait durations
 
 - **Input Parameters:** 
-  - `self`: Test class instance with authenticated notification panel access
+  - `self`: Test class instance
 
 - **Return Parameter:** 
-  - None (assertion-based validation method)
+  - None (assertion-based validation)
 
 - **Functional Flow:** 
-  1. Filter notifications to show only unread messages
-  2. Select first unread notification from list
-  3. Capture notification identifier for tracking
-  4. Verify unread indicator is present on notification tile
-  5. Retrieve initial unread notification count
-  6. Click notification tile to open detail view
-  7. Wait for detail view to load completely
-  8. Verify detail view displays notification content
-  9. Navigate back to notification list view
-  10. Locate previously opened notification in list
-  11. Verify unread indicator is removed from notification
-  12. Retrieve updated unread notification count
-  13. Verify unread count decreased by 1
-  14. Assert automatic state transition to read occurred
+  1. Open bell notification flyout panel
+  2. Capture initial unread notification count
+  3. Identify unread notification tile
+  4. Verify notification is in unread state (visual indicator)
+  5. Click notification tile to open detailed view
+  6. Wait for detailed view to fully load
+  7. Close detailed view panel
+  8. Return to notification list
+  9. Verify notification now displays read state indicator
+  10. Verify unread count decremented by 1
+  11. Verify notification moved to read section or updated styling
+  12. Verify state change persists after flyout close/reopen
 
 - **Assertions:** 
-  - Initial notification has unread state indicator
-  - Detail view opens successfully for unread notification
-  - Navigation back to list view completes
-  - Unread indicator is removed after opening detail view
-  - Notification displays read state in list view
-  - Unread notification count decreases by 1
-  - State change persists after navigation
+  - Assert notification initially in unread state
+  - Assert detailed view opens successfully
+  - Assert notification transitions to read state after opening
+  - Assert unread count decreases by 1
+  - Assert read state persists across UI interactions
 
 - **Boundary Conditions:** 
-  - Test requires at least one unread notification
-  - Detail view must load within timeout threshold
-  - State transition must occur during detail view display
-  - State change must persist after navigation back
-  - Notification count must update synchronously
+  - Requires at least one unread notification
+  - Validates automatic state transition (no manual mark action)
+  - Assumes backend state update on view open
+  - Dependent on state synchronization timing
 
 - **Exception Handling:** 
-  - NoSuchElementException handled if no unread notifications exist
-  - TimeoutException caught for delayed detail view loading
-  - StaleElementReferenceException handled for notification DOM updates
-  - AssertionError raised for failed state transition
-  - AssertionError raised for incorrect count update
+  - Handles missing unread notifications with test skip
+  - Catches state transition failures with detailed logging
+  - Validates count consistency with retry logic
+  - Logs state snapshots before/after interaction
 
 #### Method Level: test_03_verify_unread_notifs_description_C60336160
 
 - **Scope:** Instance Method
 
-- **Purpose:** Validates comprehensive notification description content rendering in detail view for unread notifications, verifying all required description elements including title, timestamp, message body, sender information, and action buttons are present and correctly formatted.
+- **Purpose:** Validates comprehensive content accuracy of unread notification descriptions including message text, formatting, metadata display, severity indicators, and timestamp information in the notification list view.
 
 - **Annotation or Markers:** 
   - @pytest.mark.regression
@@ -2221,78 +2210,65 @@ This test module validates notification detail view functionality and notificati
   - Test case ID: C60336160
 
 - **Dependencies:** 
-  - Bell notification page object
-  - Notification detail view page object
-  - Content element locators
-  - Text content validation utilities
-  - Timestamp format verification methods
-  - Action button verification utilities
+  - class_setup fixture with known notification content
+  - Bell notification flyout page object
+  - Text content extraction utilities
+  - Content comparison methods
 
 - **Module Configurations:** 
-  - Unread notification filter
-  - Detail view title selector
-  - Timestamp element identifier
-  - Message body container selector
-  - Sender information element identifier
-  - Action button selectors
-  - Content format validation rules
+  - Expected notification content data
+  - Description field locators
+  - Metadata field selectors
 
 - **Input Parameters:** 
-  - `self`: Test class instance with initialized notification detail view context
+  - `self`: Test class instance
 
 - **Return Parameter:** 
-  - None (assertion-based validation method)
+  - None (assertion-based validation)
 
 - **Functional Flow:** 
-  1. Filter notifications to show only unread messages
-  2. Select first unread notification from list
-  3. Click notification to open detail view
-  4. Wait for detail view content to load
-  5. Locate notification title element in detail view
-  6. Verify title text is present and non-empty
-  7. Locate timestamp element
-  8. Verify timestamp displays valid date/time format
-  9. Locate message body container
-  10. Verify message body contains notification description text
-  11. Verify message body text is properly formatted
-  12. Locate sender information element
-  13. Verify sender name or system identifier is displayed
-  14. Locate action buttons (if applicable)
-  15. Verify action buttons are visible and enabled
-  16. Assert all required description elements are present
-  17. Verify content formatting matches specification
+  1. Open bell notification flyout panel
+  2. Navigate to unread notifications section
+  3. Retrieve list of unread notification tiles
+  4. For each unread notification:
+     a. Extract notification title text
+     b. Extract notification description/preview text
+     c. Extract timestamp information
+     d. Extract severity indicator (icon, color)
+     e. Verify title matches expected content
+     f. Verify description contains expected keywords/phrases
+     g. Verify description length is appropriate (truncated if needed)
+     h. Verify timestamp format is correct
+     i. Verify severity indicator matches notification type
+  5. Validate description text encoding and special characters
+  6. Verify no HTML tags or malformed content in descriptions
+  7. Log content verification results per notification
 
 - **Assertions:** 
-  - Detail view opens for unread notification
-  - Notification title is present and displays text
-  - Timestamp element exists and displays valid format
-  - Message body container is visible
-  - Message body contains notification description text
-  - Message body text is properly formatted and readable
-  - Sender information is displayed
-  - Action buttons are present and enabled (if applicable)
-  - All content elements are contained within detail view
-  - Content formatting matches design specification
+  - Assert each unread notification has non-empty description
+  - Assert description text matches expected content patterns
+  - Assert description formatting is correct (no HTML tags)
+  - Assert timestamp is present and properly formatted
+  - Assert severity indicators are accurate
+  - Assert special characters render correctly
 
 - **Boundary Conditions:** 
-  - Test requires at least one unread notification
-  - All content elements must render within timeout
-  - Text content must be non-empty and valid
-  - Timestamp must match expected date/time format
-  - Action buttons must be interactable if present
+  - Requires multiple unread notifications with varied content
+  - Validates description truncation for long messages
+  - Assumes consistent content encoding (UTF-8)
+  - Dependent on notification data quality
 
 - **Exception Handling:** 
-  - NoSuchElementException handled for missing content elements
-  - TimeoutException caught for delayed content rendering
-  - AssertionError raised for empty or invalid text content
-  - AssertionError raised for incorrect timestamp format
-  - AssertionError raised for missing required elements
+  - Handles missing description fields with assertion failures
+  - Catches text extraction errors per notification
+  - Validates content encoding with error handling
+  - Logs actual vs expected content on mismatch
 
 #### Method Level: test_04_verify_read_notifs_description_C60336161
 
 - **Scope:** Instance Method
 
-- **Purpose:** Validates comprehensive notification description content rendering in detail view for read notifications, verifying all required description elements including title, timestamp, message body, sender information, and action buttons are present and correctly formatted for previously read messages.
+- **Purpose:** Validates comprehensive content accuracy of read notification descriptions including message text, formatting, metadata display, and visual state indicators in the read notifications section.
 
 - **Annotation or Markers:** 
   - @pytest.mark.regression
@@ -2300,83 +2276,66 @@ This test module validates notification detail view functionality and notificati
   - Test case ID: C60336161
 
 - **Dependencies:** 
-  - Bell notification page object
-  - Notification detail view page object
-  - Content element locators
-  - Text content validation utilities
-  - Timestamp format verification methods
-  - Action button verification utilities
-  - Read notification filter utilities
+  - class_setup fixture with read notification data
+  - Bell notification flyout page object
+  - Content extraction and validation utilities
+  - Visual state verification methods
 
 - **Module Configurations:** 
-  - Read notification filter
-  - Detail view title selector
-  - Timestamp element identifier
-  - Message body container selector
-  - Sender information element identifier
-  - Action button selectors
-  - Content format validation rules
+  - Read notification section locators
+  - Description field selectors
+  - Read state styling identifiers
 
 - **Input Parameters:** 
-  - `self`: Test class instance with initialized notification detail view context
+  - `self`: Test class instance
 
 - **Return Parameter:** 
-  - None (assertion-based validation method)
+  - None (assertion-based validation)
 
 - **Functional Flow:** 
-  1. Filter notifications to show only read messages
-  2. Select first read notification from list
-  3. Click notification to open detail view
-  4. Wait for detail view content to load
-  5. Locate notification title element in detail view
-  6. Verify title text is present and non-empty
-  7. Locate timestamp element
-  8. Verify timestamp displays valid date/time format
-  9. Locate message body container
-  10. Verify message body contains notification description text
-  11. Verify message body text is properly formatted
-  12. Locate sender information element
-  13. Verify sender name or system identifier is displayed
-  14. Locate action buttons (if applicable)
-  15. Verify action buttons are visible and enabled
-  16. Assert all required description elements are present
-  17. Verify content formatting matches specification
-  18. Confirm read notification content matches unread content structure
+  1. Open bell notification flyout panel
+  2. Navigate to read notifications section
+  3. Verify read section is accessible
+  4. Retrieve list of read notification tiles
+  5. For each read notification:
+     a. Extract notification title text
+     b. Extract notification description text
+     c. Extract read timestamp/metadata
+     d. Verify title matches expected content
+     e. Verify description content is complete and accurate
+     f. Verify description maintains formatting
+     g. Verify read state visual indicators (opacity, styling)
+     h. Verify timestamp shows when notification was read
+  6. Compare read notification content with original unread content
+  7. Verify content integrity maintained after state transition
+  8. Validate no content truncation or data loss in read state
+  9. Log content verification results
 
 - **Assertions:** 
-  - Detail view opens for read notification
-  - Notification title is present and displays text
-  - Timestamp element exists and displays valid format
-  - Message body container is visible
-  - Message body contains notification description text
-  - Message body text is properly formatted and readable
-  - Sender information is displayed
-  - Action buttons are present and enabled (if applicable)
-  - All content elements are contained within detail view
-  - Content formatting matches design specification
-  - Read notification content structure matches unread structure
+  - Assert each read notification has complete description
+  - Assert description text matches expected content
+  - Assert description formatting preserved from unread state
+  - Assert read state visual indicators are present
+  - Assert read timestamp is accurate
+  - Assert content integrity maintained across state transition
 
 - **Boundary Conditions:** 
-  - Test requires at least one read notification
-  - All content elements must render within timeout
-  - Text content must be non-empty and valid
-  - Timestamp must match expected date/time format
-  - Action buttons must be interactable if present
-  - Content structure must be consistent with unread notifications
+  - Requires multiple read notifications for validation
+  - Validates content consistency between states
+  - Assumes read notifications retain full content
+  - Dependent on state transition data integrity
 
 - **Exception Handling:** 
-  - NoSuchElementException handled for missing content elements
-  - TimeoutException caught for delayed content rendering
-  - AssertionError raised for empty or invalid text content
-  - AssertionError raised for incorrect timestamp format
-  - AssertionError raised for missing required elements
-  - AssertionError raised for content structure inconsistencies
+  - Handles missing read notifications with test skip
+  - Catches content extraction failures per notification
+  - Validates content comparison with detailed error messages
+  - Logs content differences on assertion failure
 
 ---
 
 ## Missing Artifacts
 
-None - All primary target files were successfully parsed and documented.
+None - All three primary target files (test_suite_04_bell_notifications.py, test_suite_05_bell_notifications.py, test_suite_06_bell_notifcations.py) were successfully documented with complete function inventory coverage.
 
 ---
 
@@ -2384,22 +2343,22 @@ None - All primary target files were successfully parsed and documented.
 
 ## Pre-Flight Function Inventory Log
 
-### Inventory for test_suite_07_bell_notifcations.py
-Found 5 total functions:
-1. class_setup (lines 14-29)
-2. test_01_verify_close_button_functionality_in_bell_notification_flyout_C60339090 (lines 31-43)
-3. test_02_verify_users_can_view_unread_messages_C60339083 (lines 45-58)
-4. test_03_verify_users_can_view_messages_under_read_section_C60339084 (lines 60-77)
-5. test_04_verify_notifications_after_relaunching_app_C66254937 (lines 79-94)
+### File: test_suite_07_bell_notifcations.py
+**Inventory Check:** Found 5 total functions/methods:
+1. `class_setup` (lines 14-29)
+2. `test_01_verify_close_button_functionality_in_bell_notification_flyout_C60339090` (lines 31-43)
+3. `test_02_verify_users_can_view_unread_messages_C60339083` (lines 45-58)
+4. `test_03_verify_users_can_view_messages_under_read_section_C60339084` (lines 60-77)
+5. `test_04_verify_notifications_after_relaunching_app_C66254937` (lines 79-94)
 
-### Inventory for test_suite_08_bell_notifcations.py
-Found 6 total functions:
-1. class_setup (lines 14-28)
-2. test_01_verify_bell_notifications_device_details_screen_blur_displayed_C60336359 (lines 30-36)
-3. BaseFlow.test_02_verify_support_on_urgent_info_warning_unread_notifications_C60369962 (lines 38-48)
-4. test_03_verify_support_on_urgent_unread_notifications_C60370064 (lines 50-60)
-5. test_04_verify_support_on_important_unread_notifications_C60370065 (lines 62-73)
-6. test_05_verify_bell_good_to_know_notifications_C60370067 (lines 75-86)
+### File: test_suite_08_bell_notifcations.py
+**Inventory Check:** Found 6 total functions/methods:
+1. `class_setup` (lines 14-28)
+2. `test_01_verify_bell_notifications_device_details_screen_blur_displayed_C60336359` (lines 30-36)
+3. `BaseFlow.test_02_verify_support_on_urgent_info_warning_unread_notifications_C60369962` (lines 38-48)
+4. `test_03_verify_support_on_urgent_unread_notifications_C60370064` (lines 50-60)
+5. `test_04_verify_support_on_important_unread_notifications_C60370065` (lines 62-73)
+6. `test_05_verify_bell_good_to_know_notifications_C60370067` (lines 75-86)
 
 ---
 
@@ -2409,346 +2368,355 @@ Found 6 total functions:
 
 [MODULE_PURPOSE_START]
 
-This test module validates the bell notification system functionality within the HPX rebranding framework for Windows applications. It systematically verifies user interactions with notification flyouts, message categorization between unread and read sections, and notification persistence across application lifecycle events. The module executes automated UI validation tests using pytest framework with class-based test organization and fixture-driven setup patterns.
+This test module validates the bell notification system functionality within the HPX rebranding framework for Windows applications. It systematically verifies user interactions with notification flyouts, message categorization between unread and read sections, close button operations, and notification persistence across application relaunch cycles. The module leverages pytest fixtures for test class initialization and implements comprehensive UI validation workflows for notification management features.
 
 [MODULE_PURPOSE_END]
 
 ### 1. File Header (Module-Level Documentation)
 
-- **Primary Responsibility:** Automated end-to-end testing of bell notification features including flyout controls, message visibility states, read/unread categorization, and notification persistence after application relaunch events within the HPX Windows application framework.
+- **Primary Responsibility:** Automated test suite for bell notification feature validation including flyout interactions, message state management, and notification persistence verification across application lifecycle events.
 
 - **Dependencies:** 
-  - pytest framework for test execution and fixture management
+  - `pytest` - Test framework for fixture management and test execution
   - Framework-specific page objects and utilities for bell notification interactions
   - Application driver interfaces for UI automation
-  - Test data management utilities for notification content validation
-  - Logging and assertion libraries for test verification
+  - Notification state management utilities
+  - Application lifecycle control mechanisms (launch/relaunch)
 
 - **Module Configuration:** 
   - Test execution markers for categorization and filtering
-  - Class-level fixture scope for shared setup across test methods
+  - Pytest class-scoped fixture configuration
   - Test case identifiers embedded in function names (C60339090, C60339083, C60339084, C66254937)
-  - Framework-specific configuration for Windows platform testing
+  - Windows platform-specific test execution context
 
 ### 2. Class Documentation: [Test Class - Implicit]
 
-- **Role:** Organizes related bell notification test cases into a cohesive test suite with shared setup and teardown lifecycle management, providing isolated test execution context for notification feature validation.
+- **Role:** Container class organizing related bell notification test cases with shared setup configuration and state management across test method executions.
 
-- **Purpose:** Encapsulates bell notification test scenarios to ensure proper initialization of test prerequisites, maintain test isolation, and provide consistent application state across multiple test method executions within the notification testing domain.
+- **Purpose:** Groups functionally related notification tests requiring common initialization procedures, provides isolated test execution context, and manages shared test fixtures for bell notification validation workflows.
 
-#### class_setup
+#### Fixture: class_setup
 
-- **Scope:** Class-level fixture
+- **Scope:** Class-level fixture (pytest class scope)
 
-- **Purpose:** Initializes the test environment and application state required for all bell notification test cases, establishing necessary preconditions including application launch, user authentication, navigation to notification contexts, and baseline notification state preparation.
+- **Purpose:** Initializes the test environment and application state required for all bell notification test cases within the class, establishing baseline conditions and preparing notification system for validation.
 
-- **Annotation or Markers:** 
-  - @pytest.fixture(scope="class") - Indicates class-level fixture with shared lifecycle
-  - Implicit autouse behavior if configured in test class
+- **Annotation or Markers:** `@pytest.fixture(scope="class")` - Executes once per test class before any test methods run
 
 - **Dependencies:** 
-  - Application launcher utility for Windows HPX application initialization
-  - Authentication service or page object for user login operations
-  - Navigation framework for reaching notification-enabled screens
-  - Notification service mock or test data generator for creating test notifications
-  - Driver management utilities for browser or application window control
+  - Application launcher/driver initialization framework
+  - Notification system initialization utilities
+  - Test data preparation services
+  - UI state verification components
 
 - **Parameter:** 
-  - `request` (implicit pytest fixture parameter): Provides access to test context, class scope, and fixture metadata
-  - Potential class-level configuration parameters passed through pytest mechanisms
+  - `request` - Pytest fixture request object providing access to test context, class instance, and fixture metadata
 
 - **Set-up Action:** 
-  1. Initialize application driver instance for Windows platform
-  2. Launch HPX application with test configuration parameters
-  3. Execute user authentication workflow with test credentials
-  4. Navigate to main dashboard or notification-enabled screen
-  5. Clear existing notification state to establish clean baseline
-  6. Generate or inject test notification data for subsequent test execution
-  7. Verify notification bell icon visibility and initial state
-  8. Store shared test context objects in class-level attributes
-  9. Configure logging and screenshot capture mechanisms
-  10. Establish timeout and wait condition parameters for notification interactions
+  1. Initializes application driver instance for UI automation
+  2. Launches the application under test
+  3. Navigates to bell notification feature area
+  4. Prepares notification test data (creates sample notifications in various states)
+  5. Verifies notification system is ready for test execution
+  6. Establishes baseline notification counts and states
+  7. Configures test class instance variables for shared state access
 
 - **State Management:** 
-  - Stores application driver instance as class attribute for test method access
-  - Maintains reference to notification page object for interaction methods
-  - Tracks initial notification count and state for validation purposes
-  - Preserves authentication session tokens or cookies for test duration
-  - Initializes test data repository with notification content references
+  - Stores driver instance reference in class scope for test method access
+  - Initializes notification baseline counts (unread/read)
+  - Caches notification system UI element references
+  - Tracks application launch state
+  - Maintains test data identifiers for cleanup operations
 
 #### Method Level: test_01_verify_close_button_functionality_in_bell_notification_flyout_C60339090
 
-- **Scope:** Instance Method
+- **Scope:** Instance Method (Test Case)
 
-- **Purpose:** Validates that the close button within the bell notification flyout panel functions correctly, dismissing the flyout and returning the UI to its previous state without affecting notification content or read/unread status.
+- **Purpose:** Validates that the close button within the bell notification flyout correctly dismisses the flyout panel and returns the UI to its previous state without affecting notification data or counts.
 
 - **Annotation or Markers:** 
-  - @pytest.mark.regression - Indicates inclusion in regression test suite
-  - @pytest.mark.ui - Categorizes as UI interaction test
+  - `@pytest.mark.regression` - Marks test for regression suite execution
+  - `@pytest.mark.ui` - Categorizes as UI interaction test
   - Test case identifier: C60339090
 
 - **Dependencies:** 
-  - Bell notification page object with flyout interaction methods
-  - UI element locator strategies for close button identification
-  - Wait condition utilities for flyout visibility state transitions
-  - Assertion libraries for state verification
-  - Screenshot capture utility for failure documentation
+  - Bell notification page object for flyout interaction
+  - UI element locator services
+  - Click action automation utilities
+  - Flyout visibility state verification methods
+  - Screenshot capture utilities for failure diagnostics
 
 - **Module Configurations:** 
-  - Flyout animation timeout thresholds
-  - Element visibility wait durations
-  - Retry attempt limits for flaky UI interactions
+  - Flyout close button element identifier
+  - Expected flyout dismissal timeout threshold
+  - UI state verification polling intervals
 
 - **Input Parameters:** 
-  - `self`: Instance reference providing access to class-level fixtures and shared state
+  - `self` - Test class instance providing access to shared fixtures and driver
 
 - **Return Parameter:** 
   - None (pytest test method with assertion-based validation)
 
 - **Functional Flow:** 
-  1. Verify initial application state with notification bell icon visible
-  2. Click on bell notification icon to trigger flyout panel display
-  3. Wait for flyout panel animation completion and full visibility
-  4. Assert flyout panel is displayed with expected notification content
-  5. Locate close button element within flyout panel using CSS or XPath selector
-  6. Verify close button is visible, enabled, and clickable
-  7. Execute click action on close button element
-  8. Wait for flyout panel dismissal animation to complete
-  9. Assert flyout panel is no longer visible in DOM or has hidden state
-  10. Verify notification bell icon returns to original state
-  11. Confirm notification count badge remains unchanged
-  12. Re-open flyout to verify notifications persist unchanged
+  1. Verify bell notification icon is visible in application header
+  2. Click bell notification icon to open flyout panel
+  3. Wait for flyout animation completion and full visibility
+  4. Verify flyout panel displays with expected content structure
+  5. Locate close button element within flyout header
+  6. Verify close button is enabled and clickable
+  7. Execute click action on close button
+  8. Wait for flyout dismissal animation
+  9. Verify flyout panel is no longer visible in DOM or is hidden
+  10. Verify application returns to previous UI state
+  11. Verify bell notification icon remains visible and accessible
+  12. Verify notification counts remain unchanged after flyout closure
 
 - **Assertions:** 
-  - Flyout panel becomes visible after bell icon click
-  - Close button element exists and is interactable
+  - Bell notification icon is displayed before interaction
+  - Flyout panel becomes visible after icon click
+  - Close button element exists within flyout
+  - Close button is in enabled state
   - Flyout panel is dismissed after close button click
-  - Notification content remains unchanged after flyout closure
-  - Bell icon state returns to pre-interaction appearance
-  - No error messages or unexpected UI states occur
+  - Flyout is not visible in UI after dismissal
+  - Notification counts are preserved post-closure
+  - No error messages or unexpected UI states appear
 
 - **Boundary Conditions:** 
-  - Flyout must be fully rendered before close button interaction
-  - Animation timing must complete within configured timeout thresholds
-  - Close button must be within visible viewport area
-  - Multiple rapid clicks on close button should not cause UI errors
+  - Flyout animation completion timeout (maximum wait threshold)
+  - Element visibility state transitions
+  - Click action execution timing
+  - DOM element removal vs. visibility toggle handling
 
 - **Exception Handling:** 
-  - Timeout exceptions caught if flyout fails to appear within wait duration
-  - Element not found exceptions handled with descriptive failure messages
-  - Stale element reference exceptions managed with retry logic
-  - Screenshot captured on assertion failures for debugging
+  - Implicit pytest assertion failures trigger test failure with stack trace
+  - Element not found exceptions captured with diagnostic screenshots
+  - Timeout exceptions during wait operations logged with current UI state
+  - Unexpected UI state changes trigger test failure with state snapshot
 
 #### Method Level: test_02_verify_users_can_view_unread_messages_C60339083
 
-- **Scope:** Instance Method
+- **Scope:** Instance Method (Test Case)
 
-- **Purpose:** Confirms that users can successfully view all unread notification messages within the bell notification flyout, verifying proper categorization, display formatting, and accessibility of unread message content.
+- **Purpose:** Validates that users can successfully access and view unread notification messages within the bell notification flyout, verifying message display, content accuracy, and unread state indicators.
 
 - **Annotation or Markers:** 
-  - @pytest.mark.regression - Regression test suite inclusion
-  - @pytest.mark.notifications - Notification feature category
+  - `@pytest.mark.regression` - Regression test suite inclusion
+  - `@pytest.mark.notifications` - Notification feature category
   - Test case identifier: C60339083
 
 - **Dependencies:** 
-  - Notification page object with unread message retrieval methods
-  - Test data repository containing expected unread notification content
-  - Element collection utilities for iterating notification items
-  - Text extraction utilities for notification content validation
-  - Visual indicator verification methods for unread status markers
+  - Bell notification page object with message list access methods
+  - Notification message element locators
+  - Unread message state verification utilities
+  - Message content extraction methods
+  - Test data service for expected message content
 
 - **Module Configurations:** 
-  - Expected unread notification count from test data setup
-  - Unread indicator CSS class or attribute identifiers
-  - Notification content text matching patterns
+  - Unread section identifier within flyout
+  - Message list element selectors
+  - Unread indicator visual markers (badges, styling)
+  - Expected message count thresholds
 
 - **Input Parameters:** 
-  - `self`: Instance reference to access shared test fixtures and state
+  - `self` - Test class instance with shared fixture access
 
 - **Return Parameter:** 
   - None (assertion-based test validation)
 
 - **Functional Flow:** 
   1. Open bell notification flyout by clicking notification icon
-  2. Wait for flyout panel to fully render with notification list
-  3. Locate "Unread" section or tab within notification flyout
-  4. Verify "Unread" section is visible and accessible
-  5. Retrieve collection of all notification items within unread section
-  6. Assert notification count matches expected unread message quantity
-  7. Iterate through each unread notification item element
-  8. For each notification, verify unread visual indicator is present (dot, bold text, background color)
-  9. Extract notification title, message content, and timestamp from each item
-  10. Compare extracted content against expected test data notifications
-  11. Verify notification items are displayed in correct chronological order
-  12. Confirm all unread notifications are fully visible without scrolling requirements
-  13. Validate notification item click interaction opens detail view or marks as read
+  2. Wait for flyout content to fully load
+  3. Locate unread messages section within flyout
+  4. Verify unread section header is displayed
+  5. Retrieve count of unread messages from UI indicator
+  6. Verify unread count matches expected test data count
+  7. Iterate through each unread message element
+  8. For each unread message, verify unread indicator is present
+  9. Extract message title, timestamp, and content preview
+  10. Validate message content matches expected test data
+  11. Verify message ordering (most recent first)
+  12. Verify unread visual styling is applied (bold text, highlight)
+  13. Verify all expected unread messages are displayed
 
 - **Assertions:** 
-  - Unread section exists and is displayed in flyout
-  - Notification count in unread section matches expected test data
-  - Each unread notification displays proper visual unread indicator
-  - Notification content matches injected test data
-  - Notifications appear in expected chronological order (newest first or oldest first)
-  - All unread notifications are accessible and interactable
+  - Unread messages section is visible in flyout
+  - Unread count indicator displays correct number
+  - Each unread message has visible unread marker
+  - Message content matches expected test data
+  - Message timestamps are in descending order
+  - Unread styling is consistently applied
+  - No read messages appear in unread section
+  - All test data unread messages are present
 
 - **Boundary Conditions:** 
-  - Minimum of 1 unread notification must exist from setup
-  - Maximum notification display limit not exceeded
-  - Notification list scrolling behavior if count exceeds visible area
-  - Empty state handling if no unread notifications exist (negative test consideration)
+  - Zero unread messages scenario handling
+  - Maximum unread message display limit
+  - Message content truncation for long text
+  - Timestamp format and timezone handling
+  - Message list scrolling for overflow content
 
 - **Exception Handling:** 
-  - Element not found exceptions if unread section missing
-  - Index out of range exceptions if notification count mismatch
-  - Timeout exceptions for slow notification list rendering
-  - Assertion errors with detailed mismatch information for content validation failures
+  - Assertion failures for count mismatches logged with actual vs. expected
+  - Missing message elements trigger detailed diagnostic output
+  - Content validation failures capture actual message data
+  - Timeout exceptions during message loading captured with partial state
 
 #### Method Level: test_03_verify_users_can_view_messages_under_read_section_C60339084
 
-- **Scope:** Instance Method
+- **Scope:** Instance Method (Test Case)
 
-- **Purpose:** Validates that users can access and view notification messages that have been marked as read, ensuring proper categorization into the read section, correct display formatting without unread indicators, and persistent storage of read notification history.
+- **Purpose:** Validates that previously read notification messages are correctly categorized and displayed in the read messages section with appropriate visual indicators and content accessibility.
 
 - **Annotation or Markers:** 
-  - @pytest.mark.regression - Regression test coverage
-  - @pytest.mark.notifications - Notification feature domain
+  - `@pytest.mark.regression` - Regression suite test
+  - `@pytest.mark.notifications` - Notification feature validation
   - Test case identifier: C60339084
 
 - **Dependencies:** 
-  - Notification page object with read section navigation methods
-  - Notification state management utilities for marking messages as read
-  - Element locator strategies for read section identification
-  - Content extraction utilities for read notification validation
-  - Test data containing expected read notification content
+  - Bell notification page object with read section access
+  - Message state transition utilities
+  - Read message element locators
+  - Message interaction simulation methods
+  - Visual state verification utilities
 
 - **Module Configurations:** 
-  - Read section identifier (tab name, CSS class, data attribute)
-  - Expected read notification count from test setup
-  - Visual styling differences between read and unread notifications
+  - Read section identifier within flyout
+  - Read message styling specifications
+  - Section toggle/expansion controls
+  - Message history retention limits
 
 - **Input Parameters:** 
-  - `self`: Instance reference for accessing class fixtures and shared state
+  - `self` - Test class instance providing fixture access
 
 - **Return Parameter:** 
-  - None (assertion-driven test method)
+  - None (assertion-based validation)
 
 - **Functional Flow:** 
-  1. Ensure at least one notification has been marked as read during setup or previous test
-  2. Open bell notification flyout panel
-  3. Wait for complete flyout rendering with notification sections
-  4. Locate and click on "Read" section tab or navigation element
-  5. Verify read section becomes active and displays read notifications
-  6. Retrieve collection of all notification items within read section
-  7. Assert notification count matches expected read message quantity
-  8. Iterate through each read notification item
-  9. Verify absence of unread visual indicators (no dot, normal font weight, standard background)
-  10. Extract notification title, content, and timestamp from each read item
-  11. Compare extracted data against expected read notification test data
-  12. Verify read notifications maintain chronological ordering
-  13. Confirm read notifications display complete content without truncation
-  14. Validate that clicking read notification opens detail view without state change
-  15. Verify read section persists notifications across flyout close/reopen cycles
+  1. Ensure test data includes messages in read state
+  2. Open bell notification flyout
+  3. Wait for complete flyout rendering
+  4. Locate read messages section within flyout
+  5. Verify read section header is displayed
+  6. Check if read section requires expansion (collapsed by default)
+  7. If collapsed, click to expand read messages section
+  8. Wait for section expansion animation
+  9. Retrieve count of read messages from UI
+  10. Verify read count matches expected test data
+  11. Iterate through each read message element
+  12. For each read message, verify unread indicator is absent
+  13. Verify read message styling (normal weight, muted colors)
+  14. Extract and validate message content against test data
+  15. Verify message ordering within read section
+  16. Verify read messages do not appear in unread section
+  17. Verify section toggle functionality (collapse/expand)
 
 - **Assertions:** 
-  - Read section tab or navigation element exists and is clickable
-  - Read section displays after navigation action
-  - Notification count in read section matches expected value
-  - Read notifications lack unread visual indicators
-  - Notification content matches expected read message data
-  - Read notifications maintain proper chronological order
-  - Read section content persists across flyout interactions
+  - Read messages section exists in flyout
+  - Read section can be accessed (expanded if needed)
+  - Read message count is accurate
+  - No unread indicators on read messages
+  - Read styling is correctly applied
+  - Message content is preserved after read state transition
+  - Messages are properly segregated between read/unread sections
+  - Section expansion/collapse functions correctly
+  - All expected read messages are present
 
 - **Boundary Conditions:** 
-  - At least one read notification must exist for validation
-  - Read section may be empty if no notifications have been read
-  - Maximum read notification history retention limit
-  - Scrolling behavior for large read notification lists
-  - Read notification archival or deletion policies
+  - Empty read section handling
+  - Maximum read message history limit
+  - Section expansion state persistence
+  - Message transition from unread to read during test execution
+  - Scroll behavior for large read message lists
 
 - **Exception Handling:** 
-  - Element not found exceptions if read section unavailable
-  - Empty collection handling if no read notifications exist
-  - Timeout exceptions for slow section rendering
-  - Content mismatch exceptions with detailed failure reporting
-  - Stale element references during iteration handled with refresh logic
+  - Section not found exceptions logged with flyout structure
+  - Expansion failures captured with interaction diagnostics
+  - Count mismatch failures include actual message list
+  - Content validation errors preserve message data for analysis
+  - State verification failures trigger UI snapshot capture
 
 #### Method Level: test_04_verify_notifications_after_relaunching_app_C66254937
 
-- **Scope:** Instance Method
+- **Scope:** Instance Method (Test Case)
 
-- **Purpose:** Verifies notification persistence and state retention across application lifecycle events, specifically validating that notification content, read/unread status, and notification count remain consistent after completely closing and relaunching the application.
+- **Purpose:** Validates notification persistence and state preservation across application termination and relaunch cycles, ensuring notification data integrity and correct state restoration.
 
 - **Annotation or Markers:** 
-  - @pytest.mark.regression - Regression test inclusion
-  - @pytest.mark.persistence - Data persistence validation category
-  - @pytest.mark.lifecycle - Application lifecycle testing
+  - `@pytest.mark.regression` - Regression test inclusion
+  - `@pytest.mark.persistence` - Data persistence validation
+  - `@pytest.mark.lifecycle` - Application lifecycle test
   - Test case identifier: C66254937
 
 - **Dependencies:** 
-  - Application lifecycle management utilities for close and relaunch operations
-  - Notification state capture utilities for pre-relaunch snapshot
-  - Driver management for application termination and restart
-  - Authentication service for post-relaunch login
-  - Notification comparison utilities for state validation
-  - Local storage or backend API verification tools
+  - Application lifecycle management utilities (close/launch)
+  - Notification state persistence layer
+  - Driver session management
+  - Notification data verification methods
+  - State comparison utilities
 
 - **Module Configurations:** 
-  - Application restart timeout thresholds
-  - Authentication credential configuration
-  - Notification persistence storage mechanism (local storage, database, API)
-  - Expected notification retention duration
+  - Application relaunch timeout thresholds
+  - Notification persistence storage mechanism
+  - State restoration verification criteria
+  - Session cleanup procedures
 
 - **Input Parameters:** 
-  - `self`: Instance reference providing access to test fixtures and application driver
+  - `self` - Test class instance with driver and state access
 
 - **Return Parameter:** 
-  - None (assertion-based validation method)
+  - None (assertion-based validation)
 
 - **Functional Flow:** 
-  1. Open bell notification flyout in initial application session
-  2. Capture complete notification state including count, content, and read/unread status
-  3. Store notification data snapshot in test context for comparison
-  4. Record specific notification identifiers, titles, and timestamps
-  5. Close notification flyout panel
-  6. Execute complete application shutdown procedure
-  7. Verify application process termination
-  8. Wait for configured delay to ensure clean shutdown
-  9. Relaunch application using application launcher utility
-  10. Wait for application initialization and main window display
-  11. Execute user authentication workflow with same test credentials
-  12. Navigate to notification-enabled screen or dashboard
-  13. Open bell notification flyout in new application session
-  14. Retrieve current notification state including count and content
-  15. Compare post-relaunch notification count with pre-shutdown snapshot
-  16. Iterate through notifications and verify content matches original state
-  17. Validate read/unread status preservation for each notification
-  18. Confirm notification timestamps remain unchanged
-  19. Verify notification order consistency across relaunch
+  1. Open bell notification flyout before relaunch
+  2. Capture baseline notification state (counts, messages, read/unread status)
+  3. Record specific message identifiers and content
+  4. Store unread and read message counts
+  5. Close bell notification flyout
+  6. Terminate application gracefully
+  7. Wait for complete application shutdown
+  8. Verify application process termination
+  9. Relaunch application with same user context
+  10. Wait for application initialization completion
+  11. Verify application reaches ready state
+  12. Navigate to bell notification feature
+  13. Open bell notification flyout
+  14. Wait for notification data loading
+  15. Retrieve post-relaunch notification state
+  16. Compare unread message count (pre vs. post)
+  17. Compare read message count (pre vs. post)
+  18. Verify specific message identifiers are preserved
+  19. Verify message content integrity
+  20. Verify read/unread state preservation for each message
+  21. Verify message ordering is maintained
 
 - **Assertions:** 
-  - Application successfully closes and relaunches without errors
-  - Notification count remains identical after relaunch
-  - All notification content persists unchanged
-  - Read/unread status for each notification is preserved
-  - Notification timestamps match original values
-  - Notification ordering remains consistent
-  - No duplicate notifications appear after relaunch
-  - No notifications are lost during application lifecycle
+  - Application terminates successfully
+  - Application relaunches without errors
+  - Notification system initializes after relaunch
+  - Unread message count is preserved
+  - Read message count is preserved
+  - Individual message identifiers match pre-relaunch state
+  - Message content is unchanged
+  - Read/unread states are correctly restored
+  - Message ordering is maintained
+  - No duplicate or missing messages after relaunch
+  - Notification timestamps are preserved
 
 - **Boundary Conditions:** 
-  - Minimum notification count of 1 required for meaningful validation
-  - Application must fully terminate (not just minimize or background)
-  - Relaunch must occur within notification retention window
-  - Network connectivity requirements for cloud-synced notifications
-  - Local storage integrity across application sessions
+  - Application crash vs. graceful shutdown handling
+  - Relaunch timeout limits
+  - Data synchronization delays after relaunch
+  - Network-dependent notification loading
+  - Cache invalidation scenarios
+  - First-launch vs. subsequent-launch behavior
 
 - **Exception Handling:** 
-  - Application launch failures caught with retry logic
-  - Authentication failures handled with credential verification
-  - Timeout exceptions for slow application startup
-  - Notification state mismatch exceptions with detailed diff reporting
-  - Data corruption detection with fallback validation strategies
-  - Screenshot capture at pre-shutdown and post-relaunch states for comparison
+  - Application termination failures logged with process state
+  - Relaunch timeout exceptions captured with system diagnostics
+  - State comparison failures include detailed diff output
+  - Data loading timeouts trigger retry logic with failure threshold
+  - Missing data after relaunch triggers persistence layer diagnostics
+  - Count mismatch exceptions include pre/post state snapshots
 
 ---
 
@@ -2758,452 +2726,468 @@ This test module validates the bell notification system functionality within the
 
 [MODULE_PURPOSE_START]
 
-This test module validates advanced bell notification features including UI blur effects, notification priority categorization (urgent, important, good-to-know), and support link functionality within the HPX rebranding framework for Windows applications. It systematically tests notification severity indicators, user interaction with priority-based notifications, and integration with support resources through automated pytest-driven test cases.
+This test module validates advanced bell notification features including UI blur effects on device detail screens, support link functionality across different notification severity levels (urgent, important, good-to-know), and notification categorization behaviors. It extends the bell notification test coverage by focusing on notification priority handling, contextual support access, and visual presentation effects within the HPX rebranding framework for Windows applications.
 
 [MODULE_PURPOSE_END]
 
 ### 1. File Header (Module-Level Documentation)
 
-- **Primary Responsibility:** Automated validation of advanced bell notification features including device details screen blur effects during notification display, priority-level notification categorization (urgent, important, informational), support link functionality within notification items, and notification severity visual indicators within the HPX Windows application framework.
+- **Primary Responsibility:** Automated test suite for advanced bell notification features including screen blur effects, severity-based notification handling, support link validation, and notification priority categorization across urgent, important, and informational message types.
 
 - **Dependencies:** 
-  - pytest framework for test orchestration and fixture management
-  - Bell notification page objects with priority-specific interaction methods
-  - Device details screen page objects for blur effect validation
-  - Support link navigation utilities and verification methods
-  - Visual validation utilities for UI effect verification
-  - Test data generators for priority-categorized notification content
-  - Screenshot comparison tools for blur effect validation
+  - `pytest` - Test framework for fixture and test execution management
+  - Bell notification page objects with severity-specific element locators
+  - Device details screen page objects
+  - UI blur effect verification utilities
+  - Support link interaction and validation components
+  - Notification severity classification utilities
+  - BaseFlow framework components for extended test functionality
 
 - **Module Configuration:** 
-  - Test execution markers for priority-based test categorization
-  - Class-level fixture scope for shared test environment setup
-  - Test case identifiers embedded in function names (C60336359, C60369962, C60370064, C60370065, C60370067)
-  - Priority level configuration constants (urgent, important, good-to-know)
-  - Support URL validation patterns
+  - Test case identifiers (C60336359, C60369962, C60370064, C60370065, C60370067)
+  - Notification severity level definitions (urgent, important, good-to-know)
+  - Support link URL validation patterns
+  - UI blur effect detection thresholds
+  - Class-scoped fixture configuration
 
 ### 2. Class Documentation: [Test Class - Implicit]
 
-- **Role:** Organizes advanced bell notification test scenarios into a structured test suite with shared initialization logic, focusing on priority-based notification handling, visual effects validation, and support integration testing.
+- **Role:** Organizes advanced bell notification test cases with shared initialization and state management for severity-based notification validation and UI effect verification.
 
-- **Purpose:** Encapsulates complex notification feature tests requiring specialized setup for priority-level notifications, device screen state management, and support link verification, ensuring consistent test environment across multiple advanced notification validation scenarios.
+- **Purpose:** Groups notification tests requiring common setup for severity classification, support link validation, and visual effect verification, providing isolated execution context for advanced notification feature testing.
 
-#### class_setup
+#### Fixture: class_setup
 
-- **Scope:** Class-level fixture
+- **Scope:** Class-level fixture (pytest class scope)
 
-- **Purpose:** Establishes comprehensive test environment for advanced notification feature testing, including application initialization, device details screen navigation, priority-level notification data injection, and baseline UI state configuration for blur effect and support link validation.
+- **Purpose:** Initializes test environment with notification test data across multiple severity levels, prepares device details screen context, and establishes baseline state for advanced notification feature validation.
 
-- **Annotation or Markers:** 
-  - @pytest.fixture(scope="class") - Class-level fixture with shared lifecycle
-  - Potential autouse=True configuration for automatic execution
+- **Annotation or Markers:** `@pytest.fixture(scope="class")` - Single execution per test class lifecycle
 
 - **Dependencies:** 
-  - Application launcher for Windows HPX application initialization
-  - Authentication service for user login operations
-  - Device management utilities for device details screen navigation
-  - Notification service API or mock for priority-level notification injection
-  - UI state management utilities for screen configuration
-  - Visual baseline capture tools for blur effect comparison
+  - Application driver initialization framework
+  - Notification test data generator with severity parameters
+  - Device details screen navigation utilities
+  - Support link configuration services
+  - UI state preparation components
 
 - **Parameter:** 
-  - `request` (implicit pytest fixture): Provides test context and class scope metadata
-  - Potential configuration parameters for notification priority levels
+  - `request` - Pytest fixture request object for test context access
 
 - **Set-up Action:** 
-  1. Initialize application driver with Windows platform configuration
-  2. Launch HPX application with test environment settings
-  3. Execute user authentication with test credentials
-  4. Navigate to device management or device list screen
-  5. Select specific test device to access device details screen
-  6. Capture baseline screenshot of device details screen without notifications
-  7. Inject urgent priority test notifications via API or notification service
-  8. Inject important priority test notifications with support links
-  9. Inject informational (good-to-know) priority test notifications
-  10. Configure notification display settings for priority indicators
-  11. Store device details page object reference in class attributes
-  12. Store notification page object with priority-specific methods
-  13. Initialize support link validation utilities
-  14. Configure visual comparison thresholds for blur detection
+  1. Initialize application driver for UI automation
+  2. Launch application under test
+  3. Navigate to device details screen
+  4. Generate notification test data with varied severity levels (urgent, important, good-to-know)
+  5. Create notifications with support link associations
+  6. Prepare notifications with info and warning sub-categories
+  7. Verify notification system initialization
+  8. Cache device details screen element references
+  9. Store notification identifiers for test validation
+  10. Configure support link validation endpoints
 
 - **State Management:** 
-  - Stores application driver instance as class attribute
-  - Maintains device details page object reference for blur validation
-  - Tracks notification page object for priority-based interactions
-  - Preserves baseline screenshot for blur effect comparison
-  - Stores injected notification identifiers for validation
-  - Maintains priority-level notification count expectations
+  - Stores driver instance in class scope
+  - Maintains notification ID mappings by severity level
+  - Caches device details screen UI element references
+  - Tracks support link URLs for validation
+  - Stores baseline UI state for blur effect comparison
+  - Maintains notification count baselines per severity category
 
 #### Method Level: test_01_verify_bell_notifications_device_details_screen_blur_displayed_C60336359
 
-- **Scope:** Instance Method
+- **Scope:** Instance Method (Test Case)
 
-- **Purpose:** Validates that opening the bell notification flyout while on the device details screen applies a visual blur effect to the background device details content, ensuring proper UI layering and focus management during notification interaction.
+- **Purpose:** Validates that opening the bell notification flyout from the device details screen correctly applies a blur visual effect to the background content, ensuring proper UI layering and focus management.
 
 - **Annotation or Markers:** 
-  - @pytest.mark.regression - Regression test suite inclusion
-  - @pytest.mark.ui_effects - Visual effects validation category
+  - `@pytest.mark.regression` - Regression suite inclusion
+  - `@pytest.mark.ui` - UI visual effect validation
+  - `@pytest.mark.visual` - Visual presentation test
   - Test case identifier: C60336359
 
 - **Dependencies:** 
-  - Device details page object with blur state verification methods
-  - Notification flyout interaction utilities
-  - Visual comparison libraries for blur detection
-  - Screenshot capture and comparison tools
-  - CSS property inspection utilities for blur filter validation
+  - Device details screen page object
+  - Bell notification flyout interaction methods
+  - UI blur effect detection utilities
+  - Visual state comparison services
+  - Screenshot capture for visual validation
 
 - **Module Configurations:** 
-  - Expected blur filter CSS property values
-  - Blur effect animation timeout duration
-  - Visual comparison tolerance thresholds
-  - Screenshot capture resolution settings
+  - Blur effect CSS property identifiers
+  - Expected blur intensity values
+  - Background element selectors for blur verification
+  - Flyout overlay z-index specifications
 
 - **Input Parameters:** 
-  - `self`: Instance reference for accessing class fixtures and shared state
+  - `self` - Test class instance with fixture access
 
 - **Return Parameter:** 
-  - None (assertion-based test validation)
+  - None (assertion-based validation)
 
 - **Functional Flow:** 
-  1. Verify device details screen is currently displayed and active
-  2. Capture baseline screenshot of device details screen without blur
-  3. Verify device details content is clearly visible and not blurred
-  4. Click bell notification icon to open notification flyout
-  5. Wait for flyout animation and blur effect application
-  6. Capture screenshot of device details screen with notification flyout open
-  7. Inspect CSS blur filter property on device details container element
-  8. Assert blur filter is applied with expected pixel value (e.g., blur(5px))
-  9. Perform visual comparison between baseline and blurred screenshots
-  10. Verify blur effect is visually detectable through image analysis
-  11. Confirm device details content remains in DOM but with reduced visual clarity
-  12. Close notification flyout
-  13. Wait for blur effect removal animation
-  14. Verify device details screen returns to original clear state
-  15. Confirm blur filter CSS property is removed or set to none
+  1. Verify device details screen is displayed
+  2. Capture baseline visual state of device details content
+  3. Identify background elements expected to receive blur effect
+  4. Click bell notification icon to open flyout
+  5. Wait for flyout opening animation completion
+  6. Verify flyout is fully visible and overlaying content
+  7. Inspect CSS properties of background elements
+  8. Verify blur filter is applied to device details content
+  9. Validate blur intensity matches expected specification
+  10. Verify background content is still visible but blurred
+  11. Close notification flyout
+  12. Verify blur effect is removed from background
+  13. Verify device details content returns to sharp focus
 
 - **Assertions:** 
-  - Device details screen is displayed before notification interaction
-  - Blur filter CSS property is applied when flyout opens
-  - Blur filter value matches expected configuration (e.g., blur(5px))
-  - Visual comparison detects blur effect in screenshot analysis
-  - Device details content remains accessible in DOM during blur
-  - Blur effect is removed when flyout closes
-  - Device details screen returns to original clear state
+  - Device details screen is active before flyout open
+  - Flyout opens successfully over device details
+  - Blur CSS filter is applied to background elements
+  - Blur intensity value matches specification
+  - Background content remains visible (not hidden)
+  - Flyout content is sharp and unblurred
+  - Blur effect is removed after flyout closure
+  - No residual blur effects persist after closure
 
 - **Boundary Conditions:** 
-  - Blur effect must apply within animation timeout threshold
-  - Blur filter must be compatible with browser rendering engine
-  - Device details content must be sufficiently complex to show blur effect
-  - Multiple rapid flyout open/close actions should handle blur state correctly
+  - Blur effect application timing during animation
+  - Browser/platform-specific blur rendering differences
+  - Blur intensity measurement precision
+  - Multiple overlapping UI layers handling
+  - Animation completion detection thresholds
 
 - **Exception Handling:** 
-  - Timeout exceptions if blur effect fails to apply within wait duration
-  - CSS property not found exceptions if blur filter not applied
-  - Visual comparison failures with detailed diff reporting
-  - Screenshot capture failures handled with retry logic
-  - Browser compatibility issues logged with fallback validation methods
+  - CSS property inspection failures logged with element state
+  - Blur detection failures capture visual screenshots
+  - Animation timing issues trigger extended wait with timeout
+  - Visual comparison failures include before/after snapshots
+  - Unexpected UI states captured with full DOM structure
 
 #### Method Level: BaseFlow.test_02_verify_support_on_urgent_info_warning_unread_notifications_C60369962
 
-- **Scope:** Instance Method (potentially inherited from BaseFlow class)
+- **Scope:** Instance Method (Test Case) - Extended from BaseFlow class
 
-- **Purpose:** Validates that urgent and informational/warning priority unread notifications display functional support links, verifying link visibility, clickability, and navigation to appropriate support resources for high-priority notification scenarios.
+- **Purpose:** Validates support link functionality and accessibility within urgent-level notifications that have info or warning sub-categories in unread state, ensuring users can access contextual help for critical notifications.
 
 - **Annotation or Markers:** 
-  - @pytest.mark.regression - Regression test coverage
-  - @pytest.mark.support_links - Support integration testing category
-  - @pytest.mark.priority_urgent - Urgent notification priority filter
+  - `@pytest.mark.regression` - Regression test
+  - `@pytest.mark.support` - Support link validation
+  - `@pytest.mark.urgent` - Urgent notification category
   - Test case identifier: C60369962
-  - Potential inheritance from BaseFlow class indicating shared test pattern
+  - Inherits markers from BaseFlow parent class
 
 - **Dependencies:** 
-  - Notification page object with priority filtering methods
-  - Support link element locators and interaction utilities
-  - URL navigation verification tools
-  - Browser window management for support page validation
-  - Test data containing urgent notifications with support links
+  - BaseFlow class methods and utilities
+  - Urgent notification element locators
+  - Support link interaction components
+  - Link validation utilities
+  - Notification severity classification methods
+  - Unread state verification utilities
 
 - **Module Configurations:** 
-  - Expected support URL patterns or domains
-  - Urgent notification priority identifier
-  - Support link text or icon identifiers
-  - Browser window handling strategy (new tab vs. same window)
+  - Urgent notification severity identifier
+  - Info/warning sub-category markers
+  - Support link element selectors within notifications
+  - Expected support URL patterns for urgent notifications
+  - Link target behavior specifications
 
 - **Input Parameters:** 
-  - `self`: Instance reference for test fixture access
+  - `self` - Test class instance with BaseFlow inheritance
 
 - **Return Parameter:** 
-  - None (assertion-driven validation)
+  - None (assertion-based validation)
 
 - **Functional Flow:** 
-  1. Open bell notification flyout panel
-  2. Navigate to unread notifications section
-  3. Filter or locate urgent priority notifications
-  4. Verify at least one urgent notification exists with support link
-  5. Identify urgent notification item with support link element
-  6. Verify support link is visible and displayed within notification
-  7. Extract support link text or icon for validation
-  8. Verify support link is enabled and clickable
-  9. Capture current browser window handle
-  10. Click support link within urgent notification
-  11. Wait for navigation or new window/tab opening
-  12. Switch to new window/tab if support opens in separate context
-  13. Verify support URL matches expected pattern or domain
-  14. Confirm support page loads successfully without errors
-  15. Validate support page content relevance to notification context
-  16. Close support window/tab and return to main application
-  17. Verify notification flyout remains open or returns to expected state
+  1. Open bell notification flyout
+  2. Navigate to unread messages section
+  3. Filter notifications by urgent severity level
+  4. Further filter by info or warning sub-category
+  5. Verify at least one matching notification exists
+  6. Select first urgent info/warning unread notification
+  7. Verify notification displays urgent visual indicators
+  8. Locate support link element within notification
+  9. Verify support link is visible and enabled
+  10. Extract support link URL
+  11. Validate URL format and domain
+  12. Click support link
+  13. Wait for support content loading (new tab/window or inline)
+  14. Verify support content is displayed
+  15. Validate support content relevance to notification context
+  16. Return to notification flyout
+  17. Verify notification state unchanged after support access
 
 - **Assertions:** 
-  - Urgent priority notifications exist in unread section
-  - Support link element is present within urgent notification
-  - Support link is visible and interactable
-  - Support link click triggers navigation or window opening
+  - Urgent info/warning notifications exist in unread state
+  - Urgent severity indicators are displayed
+  - Support link element is present in notification
+  - Support link is clickable and enabled
   - Support URL matches expected pattern
-  - Support page loads successfully
-  - Application state remains stable after support link interaction
+  - Support content loads successfully
+  - Support content is contextually relevant
+  - Notification remains in unread state after support access
+  - No navigation errors occur during support access
 
 - **Boundary Conditions:** 
-  - At least one urgent notification with support link must exist
-  - Support link must be within clickable area of notification
-  - Browser popup blocker must not prevent support window opening
-  - Network connectivity required for support page loading
-  - Support URL must be valid and accessible
+  - No urgent info/warning notifications available scenario
+  - Support link opening in new tab vs. inline display
+  - Support content loading timeout limits
+  - Network failures during support content fetch
+  - Multiple support links within single notification
 
 - **Exception Handling:** 
-  - Element not found exceptions if support link missing
-  - Window handle exceptions if new window fails to open
-  - Navigation timeout exceptions for slow support page loading
-  - URL validation failures with detailed mismatch reporting
-  - Browser popup blocker detection and handling
-  - Window switching failures with fallback strategies
+  - No matching notifications triggers test skip with reason
+  - Support link not found logged with notification structure
+  - URL validation failures capture actual URL value
+  - Support content loading timeouts trigger retry logic
+  - Navigation errors captured with browser console logs
+  - Content validation failures include actual vs. expected context
 
 #### Method Level: test_03_verify_support_on_urgent_unread_notifications_C60370064
 
-- **Scope:** Instance Method
+- **Scope:** Instance Method (Test Case)
 
-- **Purpose:** Specifically validates support link functionality within urgent priority unread notifications, ensuring that urgent-level notifications provide accessible support resources and that support links navigate to appropriate urgent-issue resolution pages.
+- **Purpose:** Validates support link presence, accessibility, and functionality specifically for urgent-level unread notifications without sub-category restrictions, ensuring comprehensive support access for all urgent messages.
 
 - **Annotation or Markers:** 
-  - @pytest.mark.regression - Regression test inclusion
-  - @pytest.mark.support_links - Support integration category
-  - @pytest.mark.priority_urgent - Urgent priority specific testing
+  - `@pytest.mark.regression` - Regression suite test
+  - `@pytest.mark.support` - Support functionality validation
+  - `@pytest.mark.urgent` - Urgent notification focus
   - Test case identifier: C60370064
 
 - **Dependencies:** 
-  - Notification page object with urgent priority filtering
-  - Support link interaction and validation utilities
-  - URL pattern matching libraries
-  - Browser navigation verification tools
-  - Test data with urgent notifications containing support links
+  - Bell notification page object with urgent notification methods
+  - Support link interaction utilities
+  - Urgent notification locator strategies
+  - Link validation and navigation components
+  - Unread state verification methods
 
 - **Module Configurations:** 
-  - Urgent priority notification identifier constants
-  - Expected urgent support URL patterns
-  - Support link element selectors
-  - Navigation timeout thresholds
+  - Urgent severity classification criteria
+  - Support link styling for urgent notifications
+  - Expected support resource URLs for urgent category
+  - Link interaction behavior specifications
 
 - **Input Parameters:** 
-  - `self`: Instance reference for class fixture access
+  - `self` - Test class instance with shared fixtures
 
 - **Return Parameter:** 
-  - None (assertion-based test method)
+  - None (assertion-based validation)
+
+- **Functional Flow:** 
+  1. Open bell notification flyout
+  2. Access unread notifications section
+  3. Filter notifications by urgent severity (all sub-categories)
+  4. Verify urgent unread notifications are present
+  5. Count total urgent unread notifications
+  6. Iterate through each urgent unread notification
+  7. For each notification, verify urgent visual styling
+  8. Locate support link within notification body
+  9. Verify support link visibility and enabled state
+  10. Extract and validate support link URL
+  11. Click support link for first urgent notification
+  12. Verify support resource loads correctly
+  13. Validate support content matches urgent context
+  14. Navigate back to notification flyout
+  15. Verify notification list state is preserved
+  16. Repeat validation for additional urgent notifications (sample)
+
+- **Assertions:** 
+  - At least one urgent unread notification exists
+  - All urgent notifications display severity indicators
+  - Support links are present in all urgent notifications
+  - Support links are consistently styled
+  - All support URLs are valid and accessible
+  - Support content loads without errors
+  - Support content is contextually appropriate for urgent severity
+  - Notification states are preserved during support access
+  - No broken links or 404 errors occur
+
+- **Boundary Conditions:** 
+  - Zero urgent unread notifications scenario
+  - Large number of urgent notifications (iteration limits)
+  - Support link URL variations across notifications
+  - Concurrent support link access handling
+  - Support content availability during off-hours
+
+- **Exception Handling:** 
+  - Empty urgent notification list triggers test skip
+  - Missing support links logged per notification with ID
+  - URL validation failures capture notification context
+  - Support loading failures trigger retry with exponential backoff
+  - Content validation errors include notification-support mapping
+  - Iteration errors preserve partial validation results
+
+#### Method Level: test_04_verify_support_on_important_unread_notifications_C60370065
+
+- **Scope:** Instance Method (Test Case)
+
+- **Purpose:** Validates support link functionality for important-level unread notifications, ensuring users can access appropriate support resources for medium-priority messages requiring attention.
+
+- **Annotation or Markers:** 
+  - `@pytest.mark.regression` - Regression test suite
+  - `@pytest.mark.support` - Support link validation
+  - `@pytest.mark.important` - Important notification category
+  - Test case identifier: C60370065
+
+- **Dependencies:** 
+  - Important notification element locators
+  - Support link interaction framework
+  - Notification severity classification utilities
+  - Link validation and navigation services
+  - Unread state management methods
+
+- **Module Configurations:** 
+  - Important severity level identifier
+  - Important notification visual styling specifications
+  - Support link element selectors for important category
+  - Expected support URL patterns for important notifications
+
+- **Input Parameters:** 
+  - `self` - Test class instance providing fixture access
+
+- **Return Parameter:** 
+  - None (assertion-based validation)
+
+- **Functional Flow:** 
+  1. Open bell notification flyout
+  2. Navigate to unread messages section
+  3. Apply filter for important severity level
+  4. Verify important unread notifications are displayed
+  5. Validate important severity visual indicators
+  6. Select first important unread notification
+  7. Verify notification content structure
+  8. Locate support link element within notification
+  9. Verify support link is visible and interactive
+  10. Extract support link URL attribute
+  11. Validate URL format and accessibility
+  12. Execute click action on support link
+  13. Wait for support resource navigation/loading
+  14. Verify support page or content displays
+  15. Validate support content relevance to important severity
+  16. Check for appropriate support options (FAQs, contact, documentation)
+  17. Return to notification flyout context
+  18. Verify notification remains in unread state
+  19. Verify flyout state is preserved after support interaction
+
+- **Assertions:** 
+  - Important unread notifications exist in flyout
+  - Important severity styling is correctly applied
+  - Support link is present in important notifications
+  - Support link is enabled and clickable
+  - Support URL is valid and follows expected pattern
+  - Support resource loads successfully
+  - Support content is appropriate for important severity level
+  - Support content differs from urgent support (lower priority)
+  - Notification state is unchanged after support access
+  - No errors occur during support interaction
+
+- **Boundary Conditions:** 
+  - No important unread notifications available
+  - Support link behavior differences from urgent category
+  - Support content loading performance expectations
+  - Support resource availability validation
+  - Multiple important notifications with varied support links
+
+- **Exception Handling:** 
+  - Missing important notifications trigger test skip with logging
+  - Support link not found exceptions include notification details
+  - URL validation failures capture actual vs. expected patterns
+  - Support loading timeouts logged with network diagnostics
+  - Content relevance validation failures include content snapshot
+  - Navigation errors captured with browser state and console logs
+
+#### Method Level: test_05_verify_bell_good_to_know_notifications_C60370067
+
+- **Scope:** Instance Method (Test Case)
+
+- **Purpose:** Validates the display, categorization, and support functionality of good-to-know (informational) notifications, ensuring low-priority informational messages are properly presented with appropriate support access.
+
+- **Annotation or Markers:** 
+  - `@pytest.mark.regression` - Regression test inclusion
+  - `@pytest.mark.notifications` - Notification feature test
+  - `@pytest.mark.informational` - Informational notification category
+  - Test case identifier: C60370067
+
+- **Dependencies:** 
+  - Good-to-know notification element locators
+  - Informational notification styling verification utilities
+  - Support link interaction components
+  - Notification categorization methods
+  - Visual presentation validation services
+
+- **Module Configurations:** 
+  - Good-to-know severity level identifier
+  - Informational notification visual styling (muted colors, lower prominence)
+  - Support link presentation for informational category
+  - Expected support URL patterns for good-to-know notifications
+  - Notification ordering rules (lower priority placement)
+
+- **Input Parameters:** 
+  - `self` - Test class instance with shared fixture access
+
+- **Return Parameter:** 
+  - None (assertion-based validation)
 
 - **Functional Flow:** 
   1. Open bell notification flyout
   2. Navigate to unread notifications section
-  3. Apply urgent priority filter to notification list
-  4. Verify urgent notifications are displayed
-  5. Assert at least one urgent notification contains support link
-  6. Select first urgent notification with support link
-  7. Verify urgent priority visual indicator (color, icon, badge)
-  8. Locate support link element within urgent notification
-  9. Verify support link text indicates urgent support context
-  10. Record current application state and window handle
-  11. Click support link in urgent notification
-  12. Wait for support page navigation or new window
-  13. Switch to support page context if opened in new window
-  14. Verify support URL contains urgent or high-priority indicators
-  15. Validate support page displays urgent issue resolution content
-  16. Confirm support page provides contact options for urgent issues
-  17. Return to main application window
-  18. Verify notification state unchanged after support interaction
+  3. Scroll to locate good-to-know notifications (typically lower in list)
+  4. Filter or identify notifications with good-to-know severity
+  5. Verify good-to-know notifications are displayed
+  6. Validate informational visual styling (muted appearance)
+  7. Verify good-to-know notifications appear below urgent/important
+  8. Select first good-to-know notification
+  9. Verify notification content structure and formatting
+  10. Check for support link presence within notification
+  11. Verify support link styling matches informational category
+  12. Extract support link URL
+  13. Validate URL format and domain
+  14. Click support link
+  15. Wait for support content loading
+  16. Verify support content is informational/educational
+  17. Validate support content is less urgent than important/urgent support
+  18. Return to notification flyout
+  19. Verify good-to-know notification state preservation
+  20. Verify notification ordering remains consistent
 
 - **Assertions:** 
-  - Urgent priority notifications exist in unread section
-  - Urgent notifications display priority visual indicators
-  - Support link is present in urgent notification
-  - Support link text indicates urgent support context
-  - Support link navigates to urgent-specific support page
-  - Support URL matches urgent priority pattern
-  - Support page content is relevant to urgent issues
-  - Application remains stable after support link interaction
+  - Good-to-know notifications are present in flyout
+  - Informational styling is correctly applied (muted colors)
+  - Good-to-know notifications appear after higher priority messages
+  - Notification content is informational in nature
+  - Support link is present (if applicable to informational messages)
+  - Support link styling matches informational category
+  - Support URL is valid and accessible
+  - Support content is educational/informational
+  - Support content priority matches notification severity
+  - Notification ordering by priority is maintained
+  - No visual prominence issues (good-to-know should not dominate)
 
 - **Boundary Conditions:** 
-  - Minimum one urgent notification with support link required
-  - Urgent priority must be clearly distinguishable from other priorities
-  - Support link must be accessible within notification layout
-  - Urgent support URL must differ from general support URLs
-  - Support page must load within timeout threshold
+  - No good-to-know notifications available scenario
+  - Good-to-know notifications mixed with higher priority messages
+  - Support link optional vs. required for informational messages
+  - Large number of good-to-know notifications (list overflow)
+  - Visual distinction clarity between severity levels
 
 - **Exception Handling:** 
-  - No urgent notifications found exception with test skip or failure
-  - Support link not found exception with detailed notification inspection
-  - Navigation failures caught with retry logic
-  - URL pattern mismatch exceptions with actual vs. expected reporting
-  - Support page load timeout exceptions
-  - Window management exceptions during context switching
-
-#### Method Level: test_04_verify_support_on_important_unread_notifications_C60370065
-
-- **Scope:** Instance Method
-
-- **Purpose:** Validates support link functionality within important priority unread notifications, ensuring that important-level notifications provide appropriate support resources and that support links navigate to relevant issue resolution pages for important but non-urgent matters.
-
-- **Annotation or Markers:** 
-  - @pytest.mark.regression - Regression test coverage
-  - @pytest.mark.support_links - Support integration testing
-  - @pytest.mark.priority_important - Important priority specific testing
-  - Test case identifier: C60370065
-
-- **Dependencies:** 
-  - Notification page object with important priority filtering methods
-  - Support link element locators and interaction utilities
-  - URL validation and navigation verification tools
-  - Browser window management utilities
-  - Test data containing important priority notifications with support links
-
-- **Module Configurations:** 
-  - Important priority notification identifier constants
-  - Expected important support URL patterns
-  - Support link element CSS selectors or XPath
-  - Navigation and page load timeout configurations
-
-- **Input Parameters:** 
-  - `self`: Instance reference for accessing test fixtures
-
-- **Return Parameter:** 
-  - None (assertion-driven test validation)
-
-- **Functional Flow:** 
-  1. Open bell notification flyout panel
-  2. Navigate to unread notifications section
-  3. Apply important priority filter to notification list
-  4. Verify important priority notifications are displayed
-  5. Assert at least one important notification contains support link
-  6. Select first important notification with support link
-  7. Verify important priority visual indicator (distinct from urgent)
-  8. Locate support link element within important notification
-  9. Verify support link text indicates standard support context
-  10. Capture current browser window handle
-  11. Click support link in important notification
-  12. Wait for support page navigation or new window opening
-  13. Switch to support page window if opened separately
-  14. Verify support URL matches important priority pattern
-  15. Validate support page displays relevant issue resolution content
-  16. Confirm support page provides standard contact options
-  17. Close support window and return to main application
-  18. Verify notification flyout state remains consistent
-
-- **Assertions:** 
-  - Important priority notifications exist in unread section
-  - Important notifications display distinct priority visual indicators
-  - Support link is present within important notification
-  - Support link is visible and clickable
-  - Support link navigates to appropriate support page
-  - Support URL matches expected important priority pattern
-  - Support page content is relevant to important issues
-  - Application state remains stable after support interaction
-
-- **Boundary Conditions:** 
-  - At least one important notification with support link must exist
-  - Important priority must be visually distinct from urgent and informational
-  - Support link must be accessible within notification item layout
-  - Important support URL may differ from urgent support URLs
-  - Support page must load successfully within timeout
-
-- **Exception Handling:** 
-  - No important notifications exception with test failure or skip
-  - Support link element not found exception with notification dump
-  - Navigation timeout exceptions for slow support page loading
-  - URL validation failures with detailed pattern mismatch reporting
-  - Window handle exceptions during context switching
-  - Support page load failures with retry and fallback validation
-
-#### Method Level: test_05_verify_bell_good_to_know_notifications_C60370067
-
-- **Scope:** Instance Method
-
-- **Purpose:** Validates the display, content, and interaction behavior of good-to-know (informational) priority notifications, ensuring that low-priority informational messages are properly categorized, displayed with appropriate visual indicators, and provide relevant content without support link requirements.
-
-- **Annotation or Markers:** 
-  - @pytest.mark.regression - Regression test inclusion
-  - @pytest.mark.priority_informational - Informational priority category
-  - Test case identifier: C60370067
-
-- **Dependencies:** 
-  - Notification page object with informational priority filtering
-  - Visual indicator verification utilities
-  - Content extraction and validation tools
-  - Test data containing good-to-know priority notifications
-
-- **Module Configurations:** 
-  - Good-to-know priority identifier constants
-  - Expected informational visual indicator styling
-  - Informational notification content patterns
-  - Priority level hierarchy configuration
-
-- **Input Parameters:** 
-  - `self`: Instance reference for test fixture access
-
-- **Return Parameter:** 
-  - None (assertion-based validation method)
-
-- **Functional Flow:** 
-  1. Open bell notification flyout panel
-  2. Navigate to unread or all notifications section
-  3. Apply good-to-know priority filter to notification list
-  4. Verify good-to-know notifications are displayed
-  5. Assert at least one good-to-know notification exists
-  6. Select first good-to-know notification item
-  7. Verify good-to-know priority visual indicator (color, icon, styling)
-  8. Confirm visual indicator differs from urgent and important priorities
-  9. Extract notification title and content text
-  10. Validate notification content matches expected informational pattern
-  11. Verify notification does not display urgent or important styling
-  12. Confirm support link is optional or absent for informational notifications
-  13. Click on good-to-know notification to expand or view details
-  14. Verify notification detail view displays complete informational content
-  15. Confirm notification can be marked as read without additional actions
-  16. Verify good-to-know notifications do not trigger intrusive alerts
-  17. Validate good-to-know notifications appear in correct priority order
-
-- **Assertions:** 
-  - Good-to-know priority notifications exist in notification list
-  - Good-to-know notifications display distinct informational visual indicators
-  - Visual indicators differ from urgent and important priorities
-  - Notification content matches expected informational message patterns
-  - Good-to-know notifications do not display urgent styling
-  - Support links are optional for informational notifications
-  - Notifications can be interacted with and marked as read
-  - Good-to-know notifications appear in appropriate priority order
-
-- **Boundary Conditions:** 
-  - At least one good-to-know notification must exist for validation
-  - Good-to-know priority must be lowest in priority hierarchy
-  - Visual indicators must be clearly distinguishable from higher priorities
-  - Informational content should not contain urgent language
-  - Good-to-know notifications may not require immediate user action
-
-- **Exception Handling:** 
-  - No good-to-know notifications exception with test skip or failure
-  - Visual indicator not found exception with styling inspection
-  - Content validation failures with detailed mismatch reporting
-  - Priority order validation exceptions with notification list dump
-  - Interaction failures with retry logic for flaky UI elements
+  - Missing good-to-know notifications logged with available severity distribution
+  - Styling validation failures capture actual CSS properties
+  - Ordering validation failures include full notification list with priorities
+  - Support link optional handling (test adapts if not present)
+  - Support content validation failures include content type analysis
+  - Visual prominence issues captured with screenshot comparison
+  - Scroll failures during good-to-know location logged with list state
 
 ---
 
 ## Missing Artifacts
 
-None - All specified primary target files were successfully documented with complete function inventory and structural breakdown.
+**Status:** None
+
+All primary target files specified in the scope were successfully parsed and documented:
+1. `test_suite_07_bell_notifcations.py` - Complete documentation generated (5 functions)
+2. `test_suite_08_bell_notifcations.py` - Complete documentation generated (6 functions)
+
+**Total Functions Documented:** 11 of 11 (100% coverage)
