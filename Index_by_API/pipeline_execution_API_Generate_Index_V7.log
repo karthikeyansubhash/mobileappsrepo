@@ -1,0 +1,24 @@
+2026-06-10 07:27:13 ----------------------------------------
+2026-06-10 07:27:13 Starting Indexing Automation (Remote Dev Environment)
+2026-06-10 07:27:13 ----------------------------------------
+2026-06-10 07:27:13 
+Triggering Indexer via POST request to https://aava-dev.avateam.io/api/index...
+2026-06-10 07:27:17 SUCCESS: Indexer successfully triggered.
+2026-06-10 07:27:17 
+Polling indexer progress at https://aava-dev.avateam.io/api/index/progress?owner=NavneetBN47&repo=MobileApps&branch=feature_framework3...
+2026-06-10 07:27:18 Status: COMPLETED | Step: 9/9 (Complete) | Progress: 100%
+2026-06-10 07:27:18 
+SUCCESS: Indexer is done!
+2026-06-10 07:27:18 
+Starting post-processing (Shards parsing & Tree building)...
+2026-06-10 07:27:18 
+Fetching shards list from GitHub: https://api.github.com/repos/NavneetBN47/MobileApps/contents/.code_index/shards?ref=feature_framework3
+2026-06-10 07:27:19 WARNING: Shards directory '.code_index/shards' does not exist or is empty on GitHub. Proceeding with empty trees.
+2026-06-10 07:27:19 Found 0 shard files on GitHub branch 'feature_framework3'.
+2026-06-10 07:27:19 [BLUE] Flushing current Directory Tree & Context Tree state to GitHub (Safety Save)...
+2026-06-10 07:27:20 Uploading Index_by_API/directory_tree.json to GitHub branch 'feature_framework3'...
+2026-06-10 07:27:22 SUCCESS: Successfully uploaded Index_by_API/directory_tree.json to GitHub.
+2026-06-10 07:27:22 SUCCESS: Saved and uploaded directory_tree.json in Index_by_API
+2026-06-10 07:27:22 Segmented context_tree into 0 parts.
+2026-06-10 07:27:22 SUCCESS: Saved and uploaded context_tree segments in Index_by_API/context_tree
+2026-06-10 07:27:22 ----------------------------------------
