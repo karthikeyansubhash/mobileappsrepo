@@ -45,3 +45,4 @@ class Test_Suite_02_Bell_Notifications(object):
         self.bell_icon.click_notifications_panel_close_btn()
         assert self.devicesMFE.verify_sign_in_button_show_up(), "sign-in button invisible"
         assert self.device_card.verify_bell_icon_present(), "bell icon invisible"
+        assert self.device_card.verify_bell_icon_not_present(), "bell icon invisible"
