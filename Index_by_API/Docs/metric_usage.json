@@ -1,0 +1,29 @@
+{
+    "summary": {
+        "total_tokens_consumed": 53021,
+        "total_cost_incurred_usd": 1.0078,
+        "total_time_spent_seconds": 643.96
+    },
+    "details": {
+        "6a477d42-97f2-495b-a3b5-b0a775aa29f8": {
+            "tokens": 16570,
+            "cost": 0.38516,
+            "time": 198.4916296005249
+        },
+        "1dfbd459-c340-4a1b-b554-da0ccca1085a": {
+            "tokens": 0,
+            "cost": 0.0,
+            "time": 199.09106183052063
+        },
+        "e553214e-f635-43dc-a907-df855dd790b2": {
+            "tokens": 13144,
+            "cost": 0.3087,
+            "time": 156.25081610679626
+        },
+        "9ec14a72-e29b-487d-83ef-bcc5b20d02c7": {
+            "tokens": 23307,
+            "cost": 0.31393,
+            "time": 90.12189030647278
+        }
+    }
+}
