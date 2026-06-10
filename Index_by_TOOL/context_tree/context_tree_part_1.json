@@ -1,0 +1,18 @@
+{
+    "root": {
+        "associated_context": {
+            "raw_code": [
+                {
+                    "file_identity": "__init__.py",
+                    "source_system_path": "__init__.py",
+                    "kb_id": "11676",
+                    "kb_name": "root_batch1_rc_20260610075744kb"
+                }
+            ],
+            "code_doc": [],
+            "metrics": {}
+        },
+        "file_purposes": {},
+        "generated_doc_filepath": null
+    }
+}
