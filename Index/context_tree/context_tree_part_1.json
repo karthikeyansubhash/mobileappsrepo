@@ -177,8 +177,10 @@
                                 {
                                     "file_identity": "test_suite_01_bell_notifications.py",
                                     "source_system_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_01_bell_notifications.py",
-                                    "kb_id": "11589",
-                                    "kb_name": "bell_notifications_batch1_rc_20260609211012kb"
+                                    "kb_id": "11623",
+                                    "kb_name": "retrofit_test_suite_01_bell_notifications_py_1781056844_kb",
+                                    "old_kb_id": "11589",
+                                    "old_kb_name": "bell_notifications_batch1_rc_20260609211012kb"
                                 },
                                 {
                                     "file_identity": "test_suite_02_bell_notifications.py",
@@ -187,10 +189,7 @@
                                     "kb_name": "bell_notifications_batch2_rc_20260609211023kb"
                                 }
                             ],
-                            "code_doc": [{
-                                    "kb_id": "",
-                                    "kb_name": ""
-                                }]
+                            "code_doc": []
                         },
                         "file_purposes": {
                             "test_suite_01_bell_notifications.py": "This module implements a pytest-based automated test suite for validating bell notification icon functionality within the HP Smart Desktop application's global header navigation. It verifies UI element visibility, clickability, and notification panel behavior for unauthenticated user states using Windows desktop automation framework integration.",
