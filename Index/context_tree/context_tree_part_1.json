@@ -177,8 +177,10 @@
                                 {
                                     "file_identity": "test_suite_01_bell_notifications.py",
                                     "source_system_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_01_bell_notifications.py",
-                                    "kb_id": "11589",
-                                    "kb_name": "bell_notifications_batch1_rc_20260609211012kb"
+                                    "kb_id": "11623",
+                                    "kb_name": "retrofit_test_suite_01_bell_notifications_py_1781056844_kb",
+                                    "old_kb_id": "11589",
+                                    "old_kb_name": "bell_notifications_batch1_rc_20260609211012kb"
                                 },
                                 {
                                     "file_identity": "test_suite_02_bell_notifications.py",
