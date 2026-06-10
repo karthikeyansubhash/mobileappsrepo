@@ -1,44 +1,4 @@
 {
-    "Index": {
-        "context_tree": {
-            "context_tree_part_1.json": "file"
-        },
-        "dependency_tree.json": "file",
-        "directory_tree.json": "file",
-        "libs": {
-            "flows": {
-                "flows_index.json": "file",
-                "windows": {
-                    "hpx_rebranding": {
-                        "hpx_rebranding_index.json": "file"
-                    }
-                }
-            },
-            "libs_index.json": "file"
-        },
-        "root": {
-            "root_index.json": "file"
-        },
-        "tests": {
-            "tests_index.json": "file",
-            "windows": {
-                "hpx_rebranding": {
-                    "Framework": {
-                        "Framework_index.json": "file",
-                        "accessibility": {
-                            "accessibility_index.json": "file"
-                        },
-                        "add_device": {
-                            "add_device_index.json": "file"
-                        },
-                        "bell_notifications": {
-                            "bell_notifications_index.json": "file"
-                        }
-                    }
-                }
-            }
-        }
-    },
     "README.md": "file",
     "__init__.py": "file",
     "pull_request_template.md": "file",
