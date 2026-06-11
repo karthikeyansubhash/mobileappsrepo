@@ -3805,8 +3805,8 @@
             "hpx_rebranding": {
                 "Framework": {
                     "add_device": {
-                        "generated_doc_filepath": "",
-                        "purpose": "",
+                        "generated_doc_filepath": "Index_by_API/Docs/tests/windows/hpx_rebranding/Framework/add_device/add_device.md",
+                        "purpose": "MODULE SUMMARY DETAILS:\nThis test suite module validates the complete functional behavior and UI interaction patterns of the \"Add Device\" feature within the HP Experience (HPX) rebranding framework for Windows applications. It systematically verifies button clickability, sidebar navigation flows, help link redirections, back/close button operations, serial number input validation, and content verification across multiple device addition workflows. The module leverages pytest fixtures for class-level setup and executes comprehensive UI automation tests against the add device interface components.\n\nMODULE SUMMARY DETAILS:\nThis test module validates the device addition functionality within the HP Smart application framework, specifically testing the ability to add printer devices using both product number and serial number identification methods. The module implements automated UI-driven test cases that verify the complete workflow of device discovery, selection, and successful addition to the user's device list through the HP Smart Windows application interface. It serves as a regression test suite ensuring the core device onboarding experience functions correctly across different device identification pathways.",
                         "associated_knowledge_bases": {
                             "raw_code": [
                                 {
@@ -4056,11 +4056,12 @@
                             ],
                             "code_doc": [
                                 {
-                                    "kb_id": "11813",
-                                    "kb_name": "add_devicedoc20260611175457kb"
+                                    "kb_id": "11815",
+                                    "kb_name": "add_devicedoc20260611183230kb"
                                 }
                             ]
-                        }
+                        },
+                        "processing_status": "SUCCESS"
                     },
                     "bell_notifications": {
                         "generated_doc_filepath": "",
