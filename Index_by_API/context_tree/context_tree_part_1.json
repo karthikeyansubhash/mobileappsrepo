@@ -4584,106 +4584,12 @@
                                                 "chunkType": "function",
                                                 "isTestFile": true
                                             }
-                                        ],
-                                        "old_chunks": [
-                                            {
-                                                "endLine": 20,
-                                                "indexedAt": "2026-06-09T15:47:18.989185031Z",
-                                                "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py",
-                                                "startLine": 10,
-                                                "blobSha": "2c11c15d083bf013a3809de848e8de6585a3e043",
-                                                "name": "class_setup",
-                                                "language": "python",
-                                                "id": "7de50fe0bc92746c3ac7fe49d51f6fa0e190cfa9a35b40171b8d1c21f794e2e5",
-                                                "chunkType": "function",
-                                                "isTestFile": true
-                                            },
-                                            {
-                                                "endLine": 27,
-                                                "indexedAt": "2026-06-09T15:47:18.989185031Z",
-                                                "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py",
-                                                "startLine": 22,
-                                                "blobSha": "2c11c15d083bf013a3809de848e8de6585a3e043",
-                                                "name": "test_01_verify_add_device_button_clickable_and_opens_sidebar_page_C55687256",
-                                                "language": "python",
-                                                "id": "b66315b84edde45b94b40fc069c4cdcbabace58c9faca12aabb966796633974f",
-                                                "chunkType": "function",
-                                                "isTestFile": true
-                                            },
-                                            {
-                                                "endLine": 40,
-                                                "indexedAt": "2026-06-09T15:47:18.989185031Z",
-                                                "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py",
-                                                "startLine": 29,
-                                                "blobSha": "2c11c15d083bf013a3809de848e8de6585a3e043",
-                                                "name": "test_02_verify_navigation_of_need_help_finding_serial_number_link_C61716550",
-                                                "language": "python",
-                                                "id": "9b67acf591133bca1801a6a80f716a4b92715a7c9b46d1b96097d684e4162fa4",
-                                                "chunkType": "function",
-                                                "isTestFile": true
-                                            },
-                                            {
-                                                "endLine": 53,
-                                                "indexedAt": "2026-06-09T15:47:18.989185031Z",
-                                                "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py",
-                                                "startLine": 42,
-                                                "blobSha": "2c11c15d083bf013a3809de848e8de6585a3e043",
-                                                "name": "test_03_verify_the_back_button_for_the_add_device_C61716558",
-                                                "language": "python",
-                                                "id": "0fd032f7484b1fb343603d73dde52ffc40f69208020a8459a34ce8dbd00dba66",
-                                                "chunkType": "function",
-                                                "isTestFile": true
-                                            },
-                                            {
-                                                "endLine": 63,
-                                                "indexedAt": "2026-06-09T15:47:18.989185031Z",
-                                                "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py",
-                                                "startLine": 55,
-                                                "blobSha": "2c11c15d083bf013a3809de848e8de6585a3e043",
-                                                "name": "test_04_verify_the_close_button_for_the_add_device_C61716559",
-                                                "language": "python",
-                                                "id": "eb88f2854b4177da88e6b64b5010ede6dd0ddc695f61065ee9f72b55260ce811",
-                                                "chunkType": "function",
-                                                "isTestFile": true
-                                            },
-                                            {
-                                                "endLine": 76,
-                                                "indexedAt": "2026-06-09T15:47:18.989185031Z",
-                                                "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py",
-                                                "startLine": 65,
-                                                "blobSha": "2c11c15d083bf013a3809de848e8de6585a3e043",
-                                                "name": "test_05_verify_entered_serial_number_is_accepted_and_displayed_correctly_C63813594",
-                                                "language": "python",
-                                                "id": "c6c269eb832e069cee810382ac96596fe510eff33a792f0d45d586127e7e526a",
-                                                "chunkType": "function",
-                                                "isTestFile": true
-                                            },
-                                            {
-                                                "endLine": 84,
-                                                "indexedAt": "2026-06-09T15:47:18.989185031Z",
-                                                "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py",
-                                                "startLine": 78,
-                                                "blobSha": "2c11c15d083bf013a3809de848e8de6585a3e043",
-                                                "name": "test_06_verify_the_content_in_add_a_printer_C63813978",
-                                                "language": "python",
-                                                "id": "3831874b0aadf1039581b5f6fe3dd7bca85c1fa53602e716af9b4bc73227e288",
-                                                "chunkType": "function",
-                                                "isTestFile": true
-                                            },
-                                            {
-                                                "endLine": 92,
-                                                "indexedAt": "2026-06-09T15:47:18.989185031Z",
-                                                "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py",
-                                                "startLine": 86,
-                                                "blobSha": "2c11c15d083bf013a3809de848e8de6585a3e043",
-                                                "name": "test_07_verify_the_content_in_missing_a_device_C63815104",
-                                                "language": "python",
-                                                "id": "9d2eaae8d494de7f72ea563483500e839dd26804739b3a06e0977ace5ca3da1d",
-                                                "chunkType": "function",
-                                                "isTestFile": true
-                                            }
                                         ]
-                                    }
+                                    },
+                                    "old_kb_id": "",
+                                    "old_kb_name": "",
+                                    "kb_id": "11814",
+                                    "kb_name": "retrofit_test_suite_01_add_device_py_1781219717_kb"
                                 },
                                 {
                                     "file_identity": "test_suite_02_add_device.py",
