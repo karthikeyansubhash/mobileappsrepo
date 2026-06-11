@@ -45,6 +45,7 @@ class Test_Suite_02_Add_Device(object):
         assert entered_value == "9U886PA#ACJ", f"Product number not displayed correctly, found: {entered_value}"  
         self.add_device.click_add_device_hyperlink()
         assert self.add_device.verify_newly_added_devicename(), "Newly added device name is not displayed"
+        assert self.add_device.verify_newly_added_devicename(), "Newly added device name is not displayed"
  
     @pytest.mark.regression
     def test_02_verify_device_addition_via_serial_number_C55687266(self):
