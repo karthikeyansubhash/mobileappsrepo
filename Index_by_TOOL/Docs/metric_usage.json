@@ -1,0 +1,25 @@
+{
+    "summary": {
+        "total_tokens_consumed": 83814,
+        "total_cost_incurred_usd": 0.5513,
+        "total_time_spent_seconds": 294.89
+    },
+    "details": {
+        "bell_notifications_batch1_rc_20260609211012kb": {
+            "trace_id": "0f6db2dc-3221-4bcf-89cc-e3a48ef94b78",
+            "total_tokens": 20786,
+            "input_tokens": 14922,
+            "output_tokens": 5864,
+            "total_cost_usd": 0.16257,
+            "time_taken_seconds": 170.85
+        },
+        "bell_notifications_batch2_rc_20260609211023kb": {
+            "trace_id": "30e8e8bb-c888-4c66-ac0c-a70ce542f225",
+            "total_tokens": 63028,
+            "input_tokens": 29142,
+            "output_tokens": 4184,
+            "total_cost_usd": 0.38876,
+            "time_taken_seconds": 124.04
+        }
+    }
+}
