@@ -189,15 +189,15 @@
                             ],
                             "code_doc": [
                                 {
-                                    "kb_id": "99999",
-                                    "kb_name": "dummy_bell_notifications_kb"
+                                    "kb_id": "11794",
+                                    "kb_name": "bell_notificationscodedoc20260611132811kb"
                                 }
                             ],
                             "metrics": {}
                         },
                         "file_purposes": {
-                            "test_suite_01_bell_notifications.py": "This module implements a pytest-based automated test suite for validating bell notification icon functionality within the HP Smart Desktop application's global header navigation. It verifies UI element visibility, clickability, and notification panel behavior for unauthenticated user states using Windows desktop automation framework integration.",
-                            "test_suite_02_bell_notifications.py": "This module implements automated regression test cases for the Bell Notifications feature within the HP Experience (HPX) Windows desktop application. It validates the visibility, interaction, and navigation behavior of the notification bell icon and its associated panel in both signed-out and signed-in user states. The test suite leverages the pytest framework with class-based test organization and utilizes page object models for UI interaction abstraction."
+                            "test_suite_01_bell_notifications.py": "This module implements an automated regression test suite for validating the bell notification icon functionality within the HPX Desktop application's global header navigation. It systematically verifies the visibility, clickability, and state behavior of the bell icon component across authenticated and unauthenticated user contexts, ensuring proper rendering of the notifications side panel and its associated UI elements.",
+                            "test_suite_02_bell_notifications.py": "This module implements automated regression test cases for the HPX Desktop application's bell notification icon functionality, specifically validating the visibility, interaction behavior, and navigation panel controls associated with the notification center UI component. The test suite verifies that unauthenticated users can access the notification panel, view appropriate sign-in prompts, and interact with close/back navigation controls within the notification side panel interface."
                         },
                         "generated_doc_filepath": "tests/windows/hpx_rebranding/Framework/bell_notifications/bell_notifications.md"
                     }
