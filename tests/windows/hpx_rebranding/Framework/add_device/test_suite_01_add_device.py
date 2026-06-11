@@ -24,6 +24,7 @@ class Test_Suite_01_Add_Device(object):
         assert self.profile.verify_add_device_button(), "add device button is not found"
         self.profile.click_add_device_button()
         assert self.add_device.verify_add_device_page(), "add device page is not found"
+        assert self.add_device.verify_add_device_button(), "add device button is not found"
 
     @pytest.mark.regression
     def test_02_verify_navigation_of_need_help_finding_serial_number_link_C61716550(self):
