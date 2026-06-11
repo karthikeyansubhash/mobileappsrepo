@@ -4056,8 +4056,8 @@
                             ],
                             "code_doc": [
                                 {
-                                    "kb_id": "",
-                                    "kb_name": ""
+                                    "kb_id": "12345",
+                                    "kb_name": "abcdefgh"
                                 }
                             ]
                         }
