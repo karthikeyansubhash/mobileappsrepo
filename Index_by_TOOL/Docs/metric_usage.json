@@ -1,25 +1,25 @@
 {
     "summary": {
-        "total_tokens_consumed": 83814,
-        "total_cost_incurred_usd": 0.5513,
-        "total_time_spent_seconds": 294.89
+        "total_tokens_consumed": 66135,
+        "total_cost_incurred_usd": 0.4241,
+        "total_time_spent_seconds": 218.59
     },
     "details": {
         "bell_notifications_batch1_rc_20260609211012kb": {
-            "trace_id": "0f6db2dc-3221-4bcf-89cc-e3a48ef94b78",
-            "total_tokens": 20786,
-            "input_tokens": 14922,
-            "output_tokens": 5864,
-            "total_cost_usd": 0.16257,
-            "time_taken_seconds": 170.85
+            "trace_id": "0be81880-d95a-44b4-be05-819e56c9bccb",
+            "total_tokens": 19631,
+            "input_tokens": 14892,
+            "output_tokens": 4739,
+            "total_cost_usd": 0.145545,
+            "time_taken_seconds": 108.77
         },
         "bell_notifications_batch2_rc_20260609211023kb": {
-            "trace_id": "30e8e8bb-c888-4c66-ac0c-a70ce542f225",
-            "total_tokens": 63028,
-            "input_tokens": 29142,
-            "output_tokens": 4184,
-            "total_cost_usd": 0.38876,
-            "time_taken_seconds": 124.04
+            "trace_id": "049ec826-003a-4cf3-8915-10af12cfbe15",
+            "total_tokens": 46504,
+            "input_tokens": 41896,
+            "output_tokens": 4608,
+            "total_cost_usd": 0.2786,
+            "time_taken_seconds": 109.82
         }
     }
 }
