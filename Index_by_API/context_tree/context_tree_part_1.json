@@ -3805,8 +3805,8 @@
             "hpx_rebranding": {
                 "Framework": {
                     "add_device": {
-                        "generated_doc_filepath": "",
-                        "purpose": "",
+                        "generated_doc_filepath": "Index_by_API/Docs/tests/windows/hpx_rebranding/Framework/add_device/add_device.md",
+                        "purpose": "MODULE SUMMARY DETAILS:\nThis test suite module validates the complete functional behavior and UI interaction patterns of the \"Add Device\" feature within the HP Experience (HPX) rebranding framework for Windows applications. It systematically verifies button clickability, sidebar navigation flows, help link redirections, serial number input validation, content verification, and close/back button functionality through automated UI testing. The module leverages pytest fixtures for test environment setup and executes comprehensive assertion-based validation against expected UI states and navigation outcomes.\n\nMODULE SUMMARY DETAILS:\nThis test module validates the device addition functionality within the HP Smart application framework, specifically testing the ability to add printer devices through multiple identification methods (product number and serial number). The module implements automated UI-driven test cases that verify end-to-end device registration workflows, including navigation through the add device interface, input validation, and successful device enrollment confirmation within the HPX rebranding test suite.",
                         "associated_knowledge_bases": {
                             "raw_code": [
                                 {
@@ -3958,11 +3958,12 @@
                             ],
                             "code_doc": [
                                 {
-                                    "kb_id": "",
-                                    "kb_name": ""
+                                    "kb_id": "11883",
+                                    "kb_name": "add_devicedoc20260612125110kb"
                                 }
                             ]
-                        }
+                        },
+                        "processing_status": "SUCCESS"
                     },
                     "add_device_list": {
                         "generated_doc_filepath": "",
