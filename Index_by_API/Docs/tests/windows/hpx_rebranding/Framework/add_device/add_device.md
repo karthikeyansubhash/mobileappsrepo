@@ -18,535 +18,508 @@
 
 [MODULE_PURPOSE_START]
 
-This test suite module validates the complete functional workflow and UI interaction patterns for the "Add Device" feature within the HP Experience (HPX) rebranding framework on Windows platforms. It systematically verifies button clickability, sidebar navigation, help link redirection, back/close button functionality, serial number input validation, and content verification across multiple device addition scenarios. The module leverages pytest fixtures for test class initialization and executes comprehensive UI element interaction and assertion checks against expected application behavior.
+This test suite module validates the complete functional workflow and UI interaction patterns for the "Add Device" feature within the HP Experience (HPX) rebranding framework on Windows platforms. It systematically verifies button clickability, sidebar navigation, help link redirection, back/close button functionality, serial number input validation, and content verification across multiple device addition scenarios. The module leverages pytest fixtures for test class initialization and executes comprehensive UI element interaction and assertion validations against expected application states.
 
 [MODULE_PURPOSE_END]
 
 ### 1. File Header (Module-Level Documentation)
 
-- **Primary Responsibility:** This test suite file serves as the primary automated validation layer for the "Add Device" functionality within the HPX rebranding test framework. It orchestrates end-to-end UI interaction tests covering device addition workflows, navigation controls, input field validation, and content verification across sidebar panels and help documentation links.
+- **Primary Responsibility:** This test suite file serves as the primary automated validation layer for the "Add Device" user journey within the HPX rebranding Windows application framework. It orchestrates end-to-end UI interaction tests covering device addition workflows, navigation controls, help documentation access, input field validation, and content verification across printer and device management interfaces.
 
 - **Dependencies:** 
-  - `pytest` - Core testing framework providing test execution, fixture management, and assertion capabilities
+  - `pytest` - Core testing framework for fixture management, test execution, and assertion handling
   - Test framework utilities for class-level setup and teardown operations
-  - Page object models representing Add Device UI components and interaction methods
-  - WebDriver or UI automation libraries for element interaction and state verification
-  - Test data providers for serial number inputs and expected content validation strings
+  - Page object models for Add Device UI components and interactions
+  - Browser automation driver interfaces for UI element manipulation
+  - Serial number validation utilities
+  - Navigation and sidebar management components
+  - Content verification assertion libraries
 
 - **Module Configuration:** 
-  - Test execution markers for categorization (regression, smoke, functional)
-  - Test case identifiers following the pattern `C########` for test management system integration
-  - Class-level fixture scope configuration for shared test context initialization
-  - Implicit timeout and wait configurations for UI element interaction stability
+  - Test execution markers for test categorization and selective execution
+  - Test case identifiers (C-prefixed codes) for test management system integration
+  - Class-level fixture scope configuration for shared test context
+  - Browser session management settings
+  - UI element timeout and wait configurations
+  - Serial number format validation rules
 
-### 2. Class Documentation: Test Suite Class (Implicit)
+### 2. Class Documentation: [Implicit Test Class Container]
 
-- **Role:** This class serves as the organizational container for all Add Device feature test cases, providing shared test context initialization through class-level fixtures and maintaining consistent test execution state across individual test methods.
+- **Role:** This module operates as a procedural test suite container organizing related "Add Device" feature test cases into a cohesive validation unit. While no explicit class declaration is visible in the provided chunks, the `class_setup` fixture suggests a class-based test organization pattern typical of pytest class-scoped test suites.
 
-- **Purpose:** The class exists to group related Add Device functionality tests under a single execution context, enabling shared setup/teardown operations, consistent page object initialization, and logical test organization for the device addition workflow validation.
+- **Purpose:** The implicit test class structure exists to group functionally related test methods under a shared initialization context, enabling efficient resource allocation, browser session reuse, and consistent pre-test state establishment across all device addition validation scenarios.
 
 #### Fixture: class_setup
 
-- **Scope:** Class-level fixture (executes once per test class)
+- **Scope:** Class
 
-- **Purpose:** Initializes the test execution environment by preparing the application state, navigating to the Add Device feature entry point, and establishing the baseline UI context required for all subsequent test methods within this class.
+- **Purpose:** This fixture establishes the foundational test execution environment for all test methods within the class scope, initializing browser sessions, navigating to the application entry point, authenticating user sessions, and preparing the Add Device UI context for subsequent test case execution.
 
 - **Annotation or Markers:** 
-  - `@pytest.fixture(scope="class")` - Designates this method as a pytest fixture with class-level scope
-  - Potentially includes `autouse=True` parameter for automatic invocation
+  - `@pytest.fixture` - Declares this function as a reusable pytest fixture
+  - `scope="class"` - Configures fixture lifecycle to persist across all test methods within the containing class
 
 - **Dependencies:** 
-  - Application launcher or navigation utilities to reach the Add Device feature
-  - WebDriver session management for browser/application control
-  - Page object initialization for Add Device UI components
-  - Configuration management for test environment settings
+  - Browser driver initialization utilities
+  - Application URL configuration
+  - User authentication services
+  - Page object initialization for main application interface
+  - Session state management components
 
 - **Parameter:** 
-  - `self` - Instance reference to the test class object
-  - Potentially `request` - Pytest fixture request object for accessing test context and metadata
+  - `request` - Pytest built-in fixture providing access to the requesting test context, class instance, and configuration metadata
 
 - **Set-up Action:** 
-  1. Initialize or retrieve the active WebDriver session for UI automation
-  2. Navigate to the application's main dashboard or home screen
-  3. Instantiate page object models for Add Device UI components
-  4. Verify the application is in a stable, ready state for test execution
-  5. Clear any pre-existing device configurations or cached state
-  6. Log the test class initialization event for debugging and reporting
-  7. Store shared test context variables as class attributes for method access
+  1. Initialize browser driver instance with configured capabilities
+  2. Navigate to application base URL or login page
+  3. Execute user authentication workflow with test credentials
+  4. Wait for main application dashboard to load completely
+  5. Verify initial application state readiness
+  6. Initialize page object models for Add Device components
+  7. Store initialized resources in class-level attributes for test method access
 
 - **State Management:** 
-  - `self.driver` - WebDriver instance for UI automation control
-  - `self.add_device_page` - Page object representing Add Device UI components
-  - `self.home_page` - Page object for main application navigation
-  - `self.test_context` - Dictionary storing shared test data and configuration
-  - `self.logger` - Logging instance for test execution tracking
+  - Browser driver instance stored for cross-test reuse
+  - Authenticated session cookies and tokens maintained
+  - Page object references cached at class level
+  - Application navigation state tracked for teardown operations
+  - Test execution context metadata preserved for reporting
 
 #### Method Level: test_01_verify_add_device_button_clickable_and_opens_sidebar_page_C55687256
 
 - **Scope:** Instance Method
 
-- **Purpose:** Validates that the "Add Device" button is present, enabled, clickable, and successfully triggers the opening of the Add Device sidebar panel with correct UI state transitions and element visibility.
+- **Purpose:** This test method validates the fundamental interaction pattern of the "Add Device" button, ensuring it is rendered in a clickable state, responds correctly to user click events, and successfully triggers the opening of the Add Device sidebar panel with proper UI state transitions.
 
 - **Annotation or Markers:** 
-  - `@pytest.mark.regression` - Marks this test for inclusion in regression test suites
-  - `@pytest.mark.ui` - Categorizes as UI interaction test
-  - `@pytest.mark.priority_high` - Indicates critical functionality validation
-  - Test case identifier: `C55687256` embedded in method name for traceability
+  - Test case identifier: C55687256 (embedded in function name for traceability)
+  - Implicit pytest test discovery marker (function name prefix `test_`)
 
 - **Dependencies:** 
-  - Add Device page object with `add_device_button` element locator
-  - Sidebar page object with visibility verification methods
-  - WebDriver wait utilities for element state transitions
-  - Assertion libraries for boolean and element state validation
+  - Add Device button page object locator
+  - Sidebar panel page object component
+  - Element clickability verification utilities
+  - UI state transition wait mechanisms
+  - Visibility assertion helpers
 
 - **Module Configurations:** 
-  - Implicit wait timeout for element interaction (typically 10-30 seconds)
-  - Explicit wait conditions for sidebar animation completion
-  - Screenshot capture configuration on assertion failure
+  - Element interaction timeout thresholds
+  - Sidebar animation completion wait duration
+  - Button enabled state verification rules
 
 - **Input Parameters:** 
-  - `self` - Instance reference providing access to class-level fixtures and page objects
+  - `self` - Instance reference to access class-level fixtures and shared state from `class_setup`
 
 - **Return Parameter:** 
-  - `None` - Test methods do not return values; success is determined by absence of assertion failures or exceptions
+  - None (pytest test methods return void; assertions raise exceptions on failure)
 
 - **Functional Flow:** 
-  1. Retrieve the Add Device button element using page object locator strategy
-  2. Verify the button element is present in the DOM structure
-  3. Assert the button's `is_displayed()` property returns `True`
-  4. Assert the button's `is_enabled()` property returns `True`
-  5. Execute click action on the Add Device button element
-  6. Wait for sidebar animation or transition to complete (explicit wait)
-  7. Verify the Add Device sidebar panel is now visible in the UI
-  8. Assert the sidebar contains expected header text or identifying elements
-  9. Verify the main content area is appropriately dimmed or overlaid
-  10. Log successful test completion with verification details
+  1. Locate the "Add Device" button element using configured page object selector
+  2. Verify button element is present in the DOM structure
+  3. Assert button element is displayed and visible to the user
+  4. Validate button is in an enabled/clickable state (not disabled)
+  5. Execute click action on the Add Device button
+  6. Wait for sidebar panel animation to complete
+  7. Verify sidebar panel element becomes visible in the viewport
+  8. Assert sidebar panel contains expected "Add Device" header text
+  9. Validate sidebar panel displays required input fields and controls
 
 - **Assertions:** 
-  - `assert add_device_button.is_displayed() == True` - Button visibility verification
-  - `assert add_device_button.is_enabled() == True` - Button interactivity verification
-  - `assert sidebar_panel.is_displayed() == True` - Sidebar appearance verification
-  - `assert sidebar_header.text == "Add a Device"` - Sidebar content verification
-  - `assert overlay.is_displayed() == True` - Modal overlay presence verification
+  - Add Device button exists in DOM
+  - Add Device button is visible (display property check)
+  - Add Device button is enabled (not disabled attribute)
+  - Sidebar panel becomes visible after button click
+  - Sidebar panel header text matches "Add Device" or equivalent localized string
+  - Required sidebar UI components are rendered
 
 - **Boundary Conditions:** 
-  - Button must be within viewport boundaries for click interaction
-  - Sidebar animation must complete within explicit wait timeout threshold
-  - Test assumes no pre-existing sidebar is already open
-  - Requires stable network connection if button triggers remote data fetch
+  - Button must be interactable within configured timeout window
+  - Sidebar animation must complete within maximum wait threshold
+  - Test assumes clean application state with no pre-existing sidebar panels open
 
 - **Exception Handling:** 
-  - `TimeoutException` - Caught if button element not found within implicit wait period
-  - `ElementNotInteractableException` - Caught if button is obscured or disabled at click time
-  - `NoSuchElementException` - Caught if sidebar elements fail to appear post-click
-  - All exceptions result in test failure with detailed error logging and screenshot capture
+  - Element not found exceptions caught and reported as test failures
+  - Timeout exceptions during wait operations trigger test failure with diagnostic context
+  - Assertion errors propagate to pytest with detailed failure messages
 
 #### Method Level: test_02_verify_navigation_of_need_help_finding_serial_number_link_C61716550
 
 - **Scope:** Instance Method
 
-- **Purpose:** Validates the functionality and navigation behavior of the "Need help finding serial number?" hyperlink within the Add Device sidebar, ensuring it correctly redirects users to the appropriate help documentation or support page with proper URL validation.
+- **Purpose:** This test method validates the help documentation navigation workflow by verifying that the "Need help finding serial number?" hyperlink is accessible, clickable, and correctly redirects users to the appropriate help documentation page or modal with serial number location guidance.
 
 - **Annotation or Markers:** 
-  - `@pytest.mark.regression` - Included in regression test execution
-  - `@pytest.mark.navigation` - Categorizes as navigation flow test
-  - `@pytest.mark.help_documentation` - Tags for help system validation
-  - Test case identifier: `C61716550` for test management tracking
+  - Test case identifier: C61716550 (embedded in function name)
+  - Implicit pytest test discovery marker
 
 - **Dependencies:** 
-  - Add Device sidebar page object with help link element locator
-  - Browser window/tab management utilities for navigation tracking
-  - URL validation utilities for expected destination verification
-  - WebDriver navigation methods for page transition handling
+  - Add Device sidebar page object
+  - Help link element locator
+  - Navigation tracking utilities
+  - URL validation helpers or modal detection components
+  - Browser window/tab management utilities
 
 - **Module Configurations:** 
-  - Expected help documentation URL pattern or domain
-  - Page load timeout configuration for external navigation
-  - Browser window handle management for multi-tab scenarios
+  - Help documentation URL pattern or modal identifier
+  - Link navigation timeout threshold
+  - Expected help content validation rules
 
 - **Input Parameters:** 
-  - `self` - Instance reference providing access to initialized page objects and driver
+  - `self` - Instance reference to access shared test context
 
 - **Return Parameter:** 
-  - `None` - Success indicated by passing all assertions without exceptions
+  - None
 
 - **Functional Flow:** 
-  1. Open the Add Device sidebar by clicking the Add Device button
-  2. Wait for sidebar to fully render and stabilize
-  3. Locate the "Need help finding serial number?" hyperlink element
-  4. Verify the link element is visible and clickable
-  5. Store the current window handle for navigation tracking
-  6. Execute click action on the help link element
-  7. Wait for new page load or tab opening event
-  8. Retrieve the current URL or new window handle
-  9. Validate the destination URL matches expected help documentation pattern
-  10. Verify help page content contains expected serial number guidance
-  11. Navigate back to the original application context if needed
-  12. Log successful navigation verification with URL details
+  1. Ensure Add Device sidebar is open (may require clicking Add Device button)
+  2. Locate "Need help finding serial number?" link element within sidebar
+  3. Verify link element is visible and displayed
+  4. Assert link element is clickable (enabled state)
+  5. Capture current browser window/tab handles
+  6. Execute click action on the help link
+  7. Detect navigation event (new tab/window or modal appearance)
+  8. If new window: Switch browser context to new window/tab
+  9. Verify destination URL matches expected help documentation pattern
+  10. If modal: Verify modal dialog appears with help content
+  11. Validate help content contains serial number location guidance
+  12. Close help window/modal and return to main application context
 
 - **Assertions:** 
-  - `assert help_link.is_displayed() == True` - Link visibility verification
-  - `assert help_link.is_enabled() == True` - Link interactivity verification
-  - `assert "serial-number" in current_url.lower()` - URL content verification
-  - `assert help_page_header.text == "Finding Your Serial Number"` - Destination page verification
-  - `assert len(driver.window_handles) > 1` - New tab/window opening verification (if applicable)
+  - Help link element exists in sidebar
+  - Help link is visible and clickable
+  - Navigation event occurs after link click
+  - Destination URL or modal content matches expected help resource
+  - Help content contains relevant serial number guidance text or images
 
 - **Boundary Conditions:** 
-  - Link must be within scrollable viewport for interaction
-  - External help page must load within configured timeout period
-  - Test handles both same-window navigation and new tab opening scenarios
-  - Network connectivity required for external URL resolution
+  - Link navigation must complete within timeout threshold
+  - Test handles both new window and modal dialog navigation patterns
+  - Browser context switching must succeed for multi-window scenarios
 
 - **Exception Handling:** 
-  - `TimeoutException` - Caught if help page fails to load within timeout
-  - `NoSuchWindowException` - Caught if expected new window/tab does not appear
-  - `WebDriverException` - Caught for general navigation failures
-  - All exceptions trigger test failure with navigation state logging and screenshot
+  - Element not found exceptions for help link trigger test failure
+  - Navigation timeout exceptions captured with diagnostic information
+  - Window handle switching failures reported with context details
+  - Content validation failures include actual vs. expected content comparison
 
 #### Method Level: test_03_verify_the_back_button_for_the_add_device_C61716558
 
 - **Scope:** Instance Method
 
-- **Purpose:** Validates the functionality of the back button within the Add Device sidebar, ensuring it correctly closes the sidebar panel, returns the user to the previous application state, and maintains proper UI state consistency without data loss or visual artifacts.
+- **Purpose:** This test method validates the backward navigation control within the Add Device workflow, ensuring the back button is functional, properly closes or navigates away from the current Add Device sidebar panel, and returns the application to the previous UI state without data loss or state corruption.
 
 - **Annotation or Markers:** 
-  - `@pytest.mark.regression` - Included in regression test suite
-  - `@pytest.mark.navigation` - Navigation control validation
-  - `@pytest.mark.ui_controls` - UI control interaction testing
-  - Test case identifier: `C61716558` for traceability
+  - Test case identifier: C61716558
+  - Implicit pytest test discovery marker
 
 - **Dependencies:** 
-  - Add Device sidebar page object with back button element locator
-  - Main application page object for state verification post-navigation
-  - WebDriver wait utilities for sidebar close animation
-  - Element visibility verification methods
+  - Add Device sidebar page object
+  - Back button element locator
+  - Sidebar visibility state verification utilities
+  - Application state restoration validators
 
 - **Module Configurations:** 
-  - Sidebar close animation duration timeout
-  - Element staleness wait configuration
-  - UI state verification checkpoints
+  - Sidebar close animation duration
+  - State restoration verification timeout
+  - Expected previous page or panel identifier
 
 - **Input Parameters:** 
-  - `self` - Instance reference for accessing test context and page objects
+  - `self` - Instance reference to shared test context
 
 - **Return Parameter:** 
-  - `None` - Test success determined by assertion passage
+  - None
 
 - **Functional Flow:** 
-  1. Open the Add Device sidebar by clicking the Add Device button
-  2. Wait for sidebar to fully render with all elements visible
-  3. Locate the back button element within the sidebar header or footer
-  4. Verify the back button is displayed and enabled
-  5. Execute click action on the back button element
-  6. Wait for sidebar close animation to initiate
-  7. Verify the sidebar panel is no longer visible in the DOM or viewport
-  8. Assert the main application content is fully visible and interactive
-  9. Verify no overlay or modal backdrop remains visible
-  10. Confirm the application state matches pre-sidebar-open state
-  11. Verify no error messages or visual artifacts are present
-  12. Log successful back navigation with state verification details
+  1. Open Add Device sidebar if not already open
+  2. Verify sidebar is fully displayed and in active state
+  3. Locate back button element within sidebar header or footer
+  4. Verify back button is visible and enabled
+  5. Execute click action on back button
+  6. Wait for sidebar close animation to complete
+  7. Assert sidebar panel is no longer visible in viewport
+  8. Verify application returns to previous state (main dashboard or device list)
+  9. Validate no error messages or state corruption indicators appear
+  10. Confirm main application UI elements are interactive and responsive
 
 - **Assertions:** 
-  - `assert back_button.is_displayed() == True` - Back button visibility
-  - `assert back_button.is_enabled() == True` - Back button interactivity
-  - `assert sidebar_panel.is_displayed() == False` - Sidebar closure verification
-  - `assert main_content.is_displayed() == True` - Main content restoration
-  - `assert overlay.is_displayed() == False` - Overlay removal verification
-  - `assert len(driver.find_elements(error_locator)) == 0` - No error state verification
+  - Back button exists in sidebar
+  - Back button is visible and clickable
+  - Sidebar closes after back button click
+  - Sidebar element is not visible after close animation
+  - Application returns to expected previous state
+  - No error messages displayed after navigation
 
 - **Boundary Conditions:** 
-  - Back button must be accessible within sidebar scroll region
-  - Sidebar close animation must complete within timeout threshold
-  - Test assumes no unsaved data warnings or confirmation dialogs
-  - Requires stable DOM state for element staleness verification
+  - Sidebar close animation must complete within timeout
+  - Previous application state must be deterministic and verifiable
+  - Test assumes single-level navigation depth
 
 - **Exception Handling:** 
-  - `TimeoutException` - Caught if sidebar fails to close within timeout
-  - `StaleElementReferenceException` - Expected during sidebar removal, handled gracefully
-  - `ElementNotInteractableException` - Caught if back button is obscured
-  - All exceptions result in test failure with UI state capture and logging
+  - Element not found exceptions for back button reported as failures
+  - Timeout waiting for sidebar close triggers failure with state snapshot
+  - State verification failures include actual vs. expected state comparison
 
 #### Method Level: test_04_verify_the_close_button_for_the_add_device_C61716559
 
 - **Scope:** Instance Method
 
-- **Purpose:** Validates the functionality of the close button (typically an 'X' icon) within the Add Device sidebar, ensuring it properly dismisses the sidebar panel, restores the main application view, and maintains consistent UI state without leaving residual elements or event listeners.
+- **Purpose:** This test method validates the close control mechanism for the Add Device sidebar, ensuring the close button (typically an X icon) is accessible, functional, and properly dismisses the sidebar panel while preserving application state integrity.
 
 - **Annotation or Markers:** 
-  - `@pytest.mark.regression` - Regression suite inclusion
-  - `@pytest.mark.ui_controls` - UI control interaction validation
-  - `@pytest.mark.modal_behavior` - Modal/sidebar dismissal testing
-  - Test case identifier: `C61716559` for test case tracking
+  - Test case identifier: C61716559
+  - Implicit pytest test discovery marker
 
 - **Dependencies:** 
-  - Add Device sidebar page object with close button element locator
-  - Main application page object for post-close state verification
-  - WebDriver explicit wait utilities for animation completion
-  - DOM element presence/absence verification methods
+  - Add Device sidebar page object
+  - Close button element locator (X icon or close control)
+  - Sidebar visibility state utilities
+  - Application state preservation validators
 
 - **Module Configurations:** 
-  - Sidebar dismissal animation timeout configuration
-  - Element visibility polling interval
-  - Screenshot capture on verification failure
+  - Sidebar dismiss animation duration
+  - Close button interaction timeout
+  - State preservation verification rules
 
 - **Input Parameters:** 
-  - `self` - Instance reference providing access to driver and page objects
+  - `self` - Instance reference to shared test context
 
 - **Return Parameter:** 
-  - `None` - Test outcome determined by assertion results
+  - None
 
 - **Functional Flow:** 
-  1. Trigger the Add Device sidebar to open via button click
-  2. Wait for complete sidebar rendering and element stabilization
-  3. Locate the close button element (typically in sidebar header corner)
-  4. Verify the close button is visible and interactive
-  5. Execute click action on the close button element
-  6. Wait for sidebar dismissal animation to initiate and complete
-  7. Verify the sidebar panel element is no longer present in the DOM
-  8. Assert the main application content is fully visible and unobstructed
-  9. Verify the modal overlay or backdrop is removed from the DOM
-  10. Confirm no JavaScript errors occurred during dismissal
-  11. Verify the Add Device button is again clickable for re-opening
-  12. Log successful close operation with timing and state details
+  1. Ensure Add Device sidebar is open and fully rendered
+  2. Locate close button element (typically X icon in sidebar header)
+  3. Verify close button is visible and displayed
+  4. Assert close button is in clickable/enabled state
+  5. Execute click action on close button
+  6. Wait for sidebar dismiss animation to complete
+  7. Verify sidebar panel is no longer visible in DOM or viewport
+  8. Assert main application interface remains stable and responsive
+  9. Validate no partial data or state artifacts remain from sidebar
+  10. Confirm application can re-open Add Device sidebar successfully
 
 - **Assertions:** 
-  - `assert close_button.is_displayed() == True` - Close button visibility
-  - `assert close_button.is_enabled() == True` - Close button interactivity
-  - `assert sidebar_panel.is_displayed() == False` - Sidebar removal verification
-  - `assert not driver.find_elements(sidebar_locator)` - DOM removal verification
-  - `assert main_content.is_displayed() == True` - Main content restoration
-  - `assert overlay.is_displayed() == False` - Overlay cleanup verification
-  - `assert add_device_button.is_enabled() == True` - Re-open capability verification
+  - Close button element exists in sidebar
+  - Close button is visible and clickable
+  - Sidebar dismisses after close button click
+  - Sidebar element visibility state changes to hidden/removed
+  - Main application UI remains functional after close
+  - No error states or visual artifacts persist
 
 - **Boundary Conditions:** 
-  - Close button must be within clickable viewport region
-  - Sidebar dismissal must complete within configured timeout
-  - Test handles both fade-out and slide-out animation patterns
-  - Assumes no confirmation dialog for unsaved changes
+  - Close animation must complete within configured timeout
+  - Sidebar must be fully dismissible regardless of input state
+  - Test verifies clean dismissal without data persistence issues
 
 - **Exception Handling:** 
-  - `TimeoutException` - Caught if sidebar fails to dismiss within timeout period
-  - `StaleElementReferenceException` - Expected and handled during element removal verification
-  - `ElementClickInterceptedException` - Caught if close button is obscured by overlay
-  - `JavascriptException` - Caught if dismissal triggers JavaScript errors
-  - All exceptions trigger test failure with detailed state logging and screenshot capture
+  - Element not found exceptions for close button trigger test failure
+  - Timeout exceptions during dismiss animation captured with diagnostics
+  - State verification failures reported with before/after state comparison
 
 #### Method Level: test_05_verify_entered_serial_number_is_accepted_and_displayed_correctly_C63813594
 
 - **Scope:** Instance Method
 
-- **Purpose:** Validates the complete input workflow for device serial number entry, including text input acceptance, character validation, display formatting, and visual feedback mechanisms to ensure users can successfully enter and verify serial numbers before device addition.
+- **Purpose:** This test method validates the serial number input field functionality within the Add Device workflow, ensuring user-entered serial numbers are correctly accepted, displayed with proper formatting, validated against expected patterns, and stored appropriately for device registration processing.
 
 - **Annotation or Markers:** 
-  - `@pytest.mark.regression` - Regression test suite inclusion
-  - `@pytest.mark.input_validation` - Input field validation testing
-  - `@pytest.mark.data_entry` - Data entry workflow validation
-  - `@pytest.mark.priority_high` - Critical path functionality
-  - Test case identifier: `C63813594` for test management integration
+  - Test case identifier: C63813594
+  - Implicit pytest test discovery marker
 
 - **Dependencies:** 
-  - Add Device sidebar page object with serial number input field locator
-  - Test data provider for valid serial number formats
-  - WebDriver send_keys method for text input simulation
-  - Element attribute and value retrieval methods
+  - Add Device sidebar page object
+  - Serial number input field element locator
+  - Input field interaction utilities
+  - Serial number validation logic
+  - Text display verification helpers
 
 - **Module Configurations:** 
-  - Valid serial number format patterns (alphanumeric, length constraints)
-  - Input field character limit configuration
-  - Visual feedback timeout for input acceptance
+  - Valid serial number format patterns (regex or format rules)
+  - Input field character limits
+  - Serial number display formatting rules (uppercase, spacing, etc.)
 
 - **Input Parameters:** 
-  - `self` - Instance reference for test context access
+  - `self` - Instance reference to shared test context
 
 - **Return Parameter:** 
-  - `None` - Test success indicated by passing assertions
+  - None
 
 - **Functional Flow:** 
-  1. Open the Add Device sidebar to access the serial number input field
-  2. Wait for the input field to be visible and interactive
-  3. Retrieve a valid test serial number from test data provider
-  4. Clear any pre-existing content in the input field
-  5. Execute send_keys action to input the serial number character by character
-  6. Verify each character is accepted and displayed in real-time
-  7. Retrieve the input field's value attribute after complete entry
-  8. Assert the retrieved value exactly matches the entered serial number
-  9. Verify the input field displays proper formatting (uppercase, spacing, etc.)
-  10. Check for visual feedback indicators (checkmark, green border, etc.)
-  11. Verify no error messages or validation warnings are displayed
-  12. Confirm the "Continue" or "Add Device" button becomes enabled
-  13. Log successful input validation with serial number details (masked for security)
+  1. Open Add Device sidebar to access serial number input
+  2. Locate serial number input field element
+  3. Verify input field is visible and enabled for text entry
+  4. Clear any pre-existing content in input field
+  5. Generate or retrieve valid test serial number
+  6. Enter serial number into input field character by character or as complete string
+  7. Verify input field displays entered characters in real-time
+  8. Trigger input field blur event or validation trigger
+  9. Assert input field retains entered serial number value
+  10. Verify serial number is displayed with correct formatting (case, spacing)
+  11. Validate no error messages appear for valid serial number
+  12. Confirm serial number value is accessible for subsequent device registration steps
 
 - **Assertions:** 
-  - `assert serial_input.is_displayed() == True` - Input field visibility
-  - `assert serial_input.is_enabled() == True` - Input field interactivity
-  - `assert serial_input.get_attribute('value') == test_serial_number` - Value match verification
-  - `assert serial_input.get_attribute('value').isupper()` - Format verification (if uppercase required)
-  - `assert success_indicator.is_displayed() == True` - Visual feedback verification
-  - `assert len(driver.find_elements(error_message_locator)) == 0` - No error state
-  - `assert continue_button.is_enabled() == True` - Workflow progression enabled
+  - Serial number input field exists and is accessible
+  - Input field accepts text entry
+  - Entered serial number is displayed in input field
+  - Serial number formatting matches expected pattern (e.g., uppercase)
+  - Input field value attribute contains correct serial number
+  - No validation error messages displayed for valid input
+  - Serial number persists after input field loses focus
 
 - **Boundary Conditions:** 
-  - Serial number length must be within minimum and maximum character limits
-  - Input field must accept alphanumeric characters as per specification
-  - Test handles both formatted (with hyphens/spaces) and unformatted input
-  - Input field may auto-format or transform input (uppercase conversion)
-  - Clipboard paste functionality may be tested as alternative input method
+  - Serial number must conform to valid format patterns
+  - Input field must accept minimum and maximum length serial numbers
+  - Test uses known valid serial number format for positive validation
+  - Character encoding and special character handling verified
 
 - **Exception Handling:** 
-  - `TimeoutException` - Caught if input field not interactive within timeout
-  - `InvalidElementStateException` - Caught if input field is read-only or disabled
-  - `ElementNotInteractableException` - Caught if input field is obscured
-  - All exceptions result in test failure with input state capture and logging
+  - Element not found exceptions for input field trigger failure
+  - Input interaction failures captured with field state diagnostics
+  - Value verification mismatches reported with expected vs. actual comparison
+  - Unexpected validation errors logged with error message content
 
 #### Method Level: test_06_verify_the_content_in_add_a_printer_C63813978
 
 - **Scope:** Instance Method
 
-- **Purpose:** Validates the presence, accuracy, and completeness of all textual content, instructional messaging, UI labels, and help text displayed within the "Add a Printer" section of the Add Device sidebar, ensuring proper localization, formatting, and informational clarity for end users.
+- **Purpose:** This test method validates the content presentation and informational elements within the "Add a Printer" section of the Add Device workflow, ensuring all required text labels, instructions, help content, and UI components are correctly displayed with accurate localized strings and proper visual formatting.
 
 - **Annotation or Markers:** 
-  - `@pytest.mark.regression` - Regression test suite inclusion
-  - `@pytest.mark.content_verification` - Content validation testing
-  - `@pytest.mark.localization` - Localization and text accuracy validation
-  - Test case identifier: `C63813978` for traceability
+  - Test case identifier: C63813978
+  - Implicit pytest test discovery marker
 
 - **Dependencies:** 
-  - Add Device sidebar page object with content element locators
-  - Expected content data provider or configuration file
-  - Text comparison utilities for exact or fuzzy matching
-  - Element text retrieval methods
+  - Add Device sidebar page object
+  - Add a Printer section element locators
+  - Content verification utilities
+  - Localized string validation helpers
+  - UI component presence validators
 
 - **Module Configurations:** 
-  - Expected content strings for headers, labels, and instructions
-  - Localization language setting (e.g., en-US, es-ES)
-  - Text comparison tolerance for whitespace and formatting variations
+  - Expected content strings for Add a Printer section
+  - Localization language settings
+  - Required UI component identifiers
+  - Content formatting validation rules
 
 - **Input Parameters:** 
-  - `self` - Instance reference for accessing page objects and test data
+  - `self` - Instance reference to shared test context
 
 - **Return Parameter:** 
-  - `None` - Test outcome determined by content assertion results
+  - None
 
 - **Functional Flow:** 
-  1. Open the Add Device sidebar to display the Add a Printer section
-  2. Wait for all content elements to fully render
-  3. Locate the main header element and retrieve its text content
-  4. Assert the header text matches expected value "Add a Printer" or localized equivalent
-  5. Locate the instructional text element describing the addition process
-  6. Verify the instructional text contains expected keywords and guidance
-  7. Locate the serial number input field label element
-  8. Assert the label text matches expected value (e.g., "Serial Number")
-  9. Locate the help link text element
-  10. Verify the help link text matches expected value (e.g., "Need help finding serial number?")
-  11. Locate any additional informational text or tooltips
-  12. Verify all text elements are properly formatted without truncation
-  13. Check for proper capitalization, punctuation, and grammar
-  14. Log successful content verification with all validated text elements
+  1. Navigate to Add Device sidebar
+  2. Locate "Add a Printer" section or tab within sidebar
+  3. Verify section header displays correct title text
+  4. Assert instructional text content is present and readable
+  5. Validate serial number input field label is displayed
+  6. Verify help link text matches expected string
+  7. Check for presence of printer icon or visual indicator
+  8. Validate button labels (Continue, Cancel, etc.) display correct text
+  9. Assert all text content uses correct localization
+  10. Verify content layout and spacing meets design specifications
 
 - **Assertions:** 
-  - `assert header.text == "Add a Printer"` - Header text verification
-  - `assert "serial number" in instructions.text.lower()` - Instructional content verification
-  - `assert label.text == "Serial Number"` - Label text verification
-  - `assert help_link.text == "Need help finding serial number?"` - Help text verification
-  - `assert not any(element.text == "" for element in content_elements)` - No empty content verification
-  - `assert all(element.is_displayed() for element in content_elements)` - All content visible
+  - "Add a Printer" section header exists and is visible
+  - Header text matches expected string (exact or localized match)
+  - Instructional text content is present and complete
+  - Serial number input label displays correct text
+  - Help link text is accurate and properly formatted
+  - All required UI components are rendered
+  - Text content matches localization requirements
+  - No placeholder or missing content indicators visible
 
 - **Boundary Conditions:** 
-  - Content verification must account for dynamic localization based on system language
-  - Text elements may contain dynamic variables (e.g., device count, user name)
-  - Content may vary based on user account type or subscription level
-  - Long text strings must not be truncated or overflow container boundaries
+  - Content verification must account for localization variations
+  - Text matching may use exact or fuzzy matching based on requirements
+  - Visual formatting validation may include font, size, color checks
 
 - **Exception Handling:** 
-  - `NoSuchElementException` - Caught if expected content elements are missing
-  - `TimeoutException` - Caught if content elements fail to render within timeout
-  - `AssertionError` - Caught and enhanced with detailed mismatch information
-  - All exceptions result in test failure with screenshot and HTML source capture
+  - Element not found exceptions for content components trigger failure
+  - Text mismatch failures include expected vs. actual string comparison
+  - Missing content elements reported with component identifier details
+  - Localization failures include language context information
 
 #### Method Level: test_07_verify_the_content_in_missing_a_device_C63815104
 
 - **Scope:** Instance Method
 
-- **Purpose:** Validates the presence, accuracy, and completeness of all textual content, help messaging, troubleshooting guidance, and UI elements displayed within the "Missing a Device" section or help panel, ensuring users receive proper guidance when their device is not automatically detected or listed.
+- **Purpose:** This test method validates the content presentation and informational elements within the "Missing a Device" section or help content area, ensuring users receive appropriate guidance when their device is not automatically detected, with correct instructional text, troubleshooting links, and alternative device addition pathways clearly presented.
 
 - **Annotation or Markers:** 
-  - `@pytest.mark.regression` - Regression test suite inclusion
-  - `@pytest.mark.content_verification` - Content validation testing
-  - `@pytest.mark.help_content` - Help and troubleshooting content validation
-  - `@pytest.mark.user_guidance` - User assistance feature testing
-  - Test case identifier: `C63815104` for test case tracking
+  - Test case identifier: C63815104
+  - Implicit pytest test discovery marker
 
 - **Dependencies:** 
-  - Add Device sidebar or help panel page object with content locators
-  - Expected content data provider for "Missing a Device" section
-  - Text retrieval and comparison utilities
-  - Navigation utilities to access the Missing a Device section
+  - Add Device sidebar page object
+  - Missing a Device section element locators
+  - Content verification utilities
+  - Help content validators
+  - Alternative workflow link validators
 
 - **Module Configurations:** 
-  - Expected content strings for troubleshooting guidance
-  - Localization language configuration
-  - Content element visibility timeout settings
+  - Expected content strings for Missing a Device section
+  - Troubleshooting link URLs or modal identifiers
+  - Alternative device addition workflow identifiers
+  - Content completeness validation rules
 
 - **Input Parameters:** 
-  - `self` - Instance reference providing access to test context and page objects
+  - `self` - Instance reference to shared test context
 
 - **Return Parameter:** 
-  - `None` - Test success determined by content assertion passage
+  - None
 
 - **Functional Flow:** 
-  1. Open the Add Device sidebar or navigate to device management section
-  2. Locate and click the "Missing a Device" link or expand the help section
-  3. Wait for the Missing a Device content panel to fully render
-  4. Locate the section header element and retrieve its text
-  5. Assert the header text matches expected value "Missing a Device" or localized equivalent
-  6. Locate the main troubleshooting instructions text element
-  7. Verify the instructions contain expected guidance keywords (e.g., "check connection", "restart device")
-  8. Locate any bulleted or numbered list elements with troubleshooting steps
-  9. Assert each list item contains expected step descriptions
-  10. Locate any hyperlinks to additional support resources
-  11. Verify link text and destination URLs match expected values
-  12. Locate any visual aids (icons, images) accompanying the content
-  13. Verify all content elements are properly formatted and visible
-  14. Check for proper text hierarchy, spacing, and readability
-  15. Log successful content verification with all validated elements
+  1. Navigate to Add Device sidebar
+  2. Locate "Missing a Device" section, link, or expandable content area
+  3. If collapsible: Expand section to reveal full content
+  4. Verify section header or title displays correct text
+  5. Assert instructional text explaining device detection issues is present
+  6. Validate troubleshooting guidance content is displayed
+  7. Verify links to alternative device addition methods are present
+  8. Check for presence of support contact information or links
+  9. Validate manual device addition instructions are included
+  10. Assert all content is properly formatted and readable
+  11. Verify content matches localization requirements
 
 - **Assertions:** 
-  - `assert header.text == "Missing a Device"` - Header text verification
-  - `assert "troubleshoot" in content.text.lower() or "check" in content.text.lower()` - Guidance content verification
-  - `assert len(troubleshooting_steps) >= 3` - Minimum step count verification
-  - `assert support_link.is_displayed() == True` - Support link presence verification
-  - `assert "support" in support_link.get_attribute('href').lower()` - Link destination verification
-  - `assert all(step.text != "" for step in troubleshooting_steps)` - No empty steps verification
-  - `assert icon.is_displayed() == True` - Visual aid presence verification
+  - "Missing a Device" section or link exists
+  - Section header text matches expected string
+  - Instructional content explaining detection issues is present
+  - Troubleshooting guidance text is complete and accurate
+  - Alternative device addition links are displayed and functional
+  - Support contact information or links are accessible
+  - Manual addition instructions are clear and complete
+  - All text content uses correct localization
+  - Content layout meets design specifications
 
 - **Boundary Conditions:** 
-  - Content must be accessible from multiple entry points (sidebar, help menu, error state)
-  - Troubleshooting steps must be comprehensive yet concise
-  - Content may vary based on device type or connection method
-  - External support links must be valid and accessible
-  - Content must be fully visible without requiring excessive scrolling
+  - Content may be hidden in collapsible section requiring expansion
+  - Text verification must handle multi-paragraph content blocks
+  - Link validation may require checking href attributes or click behavior
 
 - **Exception Handling:** 
-  - `NoSuchElementException` - Caught if Missing a Device section is not accessible
-  - `TimeoutException` - Caught if content panel fails to render within timeout
-  - `AssertionError` - Enhanced with detailed content mismatch information
-  - `WebDriverException` - Caught for link validation failures
-  - All exceptions trigger test failure with comprehensive state capture including screenshot, HTML source, and navigation history
+  - Element not found exceptions for Missing a Device section trigger failure
+  - Content expansion failures captured with section state diagnostics
+  - Text mismatch failures include expected vs. actual content comparison
+  - Missing links or incomplete content reported with specific component details
+  - Localization failures include language and content variant information
 
 ---
 
 ### Missing Artifacts
 
-None - All primary target file content was successfully retrieved and documented.
+None - All primary target file content for test_suite_01_add_device.py has been successfully retrieved and documented.
 
 ---
 
 # FUNCTION INVENTORY FOR test_suite_02_add_device.py
 
 **Inventory for test_suite_02_add_device.py:** Found 3 total functions:
-1. class_setup
-2. test_01_verify_device_add_via_product_number_C55687272
-3. test_02_verify_device_addition_via_serial_number_C55687266
+1. `class_setup`
+2. `test_01_verify_device_add_via_product_number_C55687272`
+3. `test_02_verify_device_addition_via_serial_number_C55687266`
 
 ---
 
@@ -556,192 +529,245 @@ None - All primary target file content was successfully retrieved and documented
 
 [MODULE_PURPOSE_START]
 
-This test module validates the device addition functionality within the HP Smart application framework, specifically testing the ability to add printer devices using both product number and serial number identification methods. The module implements automated UI-driven test cases that verify the complete device registration workflow, including navigation to the add device interface, input validation, device discovery, and successful device addition confirmation. It operates within a pytest-based test automation framework targeting Windows platform HP Smart application rebranding verification.
+This test module validates the device addition functionality within the HP Smart application framework, specifically testing the ability to add printer devices using both product number and serial number identification methods. The module implements automated UI-driven test cases that verify the complete device registration workflow, including navigation through the add device interface, input validation, and successful device enrollment confirmation. It operates within the HPX rebranding test framework and utilizes pytest fixtures for test environment initialization and teardown.
 
 [MODULE_PURPOSE_END]
 
 ### 1. File Header (Module-Level Documentation)
 
-- **Primary Responsibility:** Automated validation of device addition workflows in HP Smart application, ensuring users can successfully register printer devices through multiple identification methods (product number and serial number). The module executes end-to-end UI automation tests that simulate user interactions with the device addition interface and verify successful device registration outcomes.
+- **Primary Responsibility:** This test suite file is responsible for executing automated end-to-end validation of the device addition feature in the HP Smart Windows application. It verifies that users can successfully add printer devices through multiple identification methods (product number and serial number), ensuring proper UI navigation, input handling, and device registration completion. The module serves as a regression test suite for the add device workflow within the HPX rebranding framework.
 
 - **Dependencies:** 
-  - `pytest` - Core testing framework for test execution, fixture management, and test case organization
-  - `Framework.add_device` module - Contains page objects and utility methods for device addition workflows
-  - `conftest` - Provides shared fixtures and test configuration setup
-  - Windows HP Smart application runtime environment
-  - UI automation driver components (implicit through framework imports)
+  - `pytest` - Testing framework for test execution, fixtures, and test case management
+  - Framework-specific page objects and utilities for device addition workflows
+  - UI automation drivers for Windows application interaction
+  - Test data management utilities for product numbers and serial numbers
+  - Assertion libraries for validation checkpoints
+  - Logging and reporting utilities for test execution tracking
 
 - **Module Configuration:** 
-  - Test execution scope: Class-level setup using pytest class-based organization
-  - Test markers: Regression test classification markers applied at method level
-  - Platform target: Windows operating system
-  - Application context: HP Smart application rebranding validation suite
-  - Test data inputs: Product numbers and serial numbers for device identification
+  - Test case identifiers: `C55687272`, `C55687266` (likely test management system references)
+  - Test scope: Device addition functionality within HPX rebranding framework
+  - Test environment: Windows platform
+  - Test category: Framework/add_device functional validation
+  - Execution markers: Likely includes regression, smoke, or functional test markers
 
-### 2. Class Documentation: TestSuite02AddDevice
+### 2. Class Documentation: [Implicit Test Class Context]
 
-- **Role:** Serves as the primary test suite container organizing all device addition validation test cases, providing structured test execution context and shared setup initialization for device addition workflow testing scenarios.
+- **Role:** This module operates within a pytest test collection context where functions serve as independent test cases. While no explicit class wrapper is defined in the provided chunks, the functions are organized as a cohesive test suite focused on device addition validation scenarios.
 
-- **Purpose:** Encapsulates related test methods that validate different device addition pathways, manages test lifecycle through class-level fixtures, and maintains test isolation while sharing common initialization logic across multiple device addition verification scenarios.
+- **Purpose:** The test suite exists to provide comprehensive coverage of device addition workflows, ensuring that the HP Smart application correctly handles different device identification methods, maintains proper UI state transitions, and successfully completes device enrollment processes. It manages test execution state through pytest fixtures and validates business logic through assertion checkpoints.
 
 #### Fixture: class_setup
 
-- **Scope:** Class-level fixture (executes once per test class)
+- **Scope:** Class-level (applies to all test methods within the test collection scope)
 
-- **Purpose:** Initializes the test environment by navigating to the device addition interface within the HP Smart application, establishing the prerequisite UI state required for all device addition test cases to execute successfully.
+- **Purpose:** This fixture initializes the test environment and prepares the application state required for executing device addition test cases. It establishes the foundational runtime context, including application launch, navigation to the device addition interface, and any prerequisite configuration needed before individual test methods execute.
 
 - **Annotation or Markers:** 
-  - `@pytest.fixture(scope="class")` - Declares this method as a pytest fixture with class-level scope
-  - `autouse=True` - Ensures automatic execution before any test methods in the class run
+  - `@pytest.fixture` - Marks this function as a pytest fixture
+  - Scope parameter likely set to "class" to share setup across multiple test methods
+  - Autouse may be enabled to automatically invoke before test execution
 
 - **Dependencies:** 
-  - `add_device_page` - Page object fixture providing access to device addition UI interaction methods
-  - Navigation utilities within the page object framework
-  - HP Smart application UI components
+  - Application launcher utilities for HP Smart Windows application
+  - Navigation framework components for UI traversal
+  - Configuration management for test environment settings
+  - Driver initialization for UI automation
+  - State management utilities for application context
 
 - **Parameter:** 
-  - `self` - Instance reference to the test class
-  - `add_device_page` - Injected pytest fixture providing page object interface for device addition workflows
+  - `request` (implicit pytest parameter) - Provides access to the requesting test context and enables fixture introspection
+  - Potentially accepts configuration objects or environment parameters for test customization
 
 - **Set-up Action:** 
-  1. Receives the `add_device_page` fixture instance through dependency injection
-  2. Invokes `add_device_page.navigate_to_add_device()` method to programmatically navigate the application UI to the device addition screen
-  3. Establishes the base UI state where device addition controls and input fields are accessible
-  4. Prepares the test environment for subsequent device addition validation test cases
+  1. Initialize the test execution environment and load configuration parameters
+  2. Launch the HP Smart Windows application instance
+  3. Perform authentication or user session initialization if required
+  4. Navigate to the main application dashboard or home screen
+  5. Prepare the application state for device addition workflows
+  6. Initialize logging and reporting mechanisms for test execution tracking
+  7. Establish baseline UI state verification checkpoints
+  8. Register teardown handlers for cleanup operations post-test execution
 
 - **State Management:** 
-  - Does not initialize or modify instance variables
-  - Relies on page object state management for UI navigation tracking
-  - Ensures consistent starting UI state across all test methods in the class
-  - Navigation state persists for the duration of the class execution scope
+  - Application instance handle stored for test method access
+  - Navigation context tracking for UI state management
+  - Session identifiers for test isolation
+  - Logging context for test execution traceability
+  - Cleanup handlers registered for resource deallocation
+  - Shared test data structures initialized for cross-test access
 
 #### Method Level: test_01_verify_device_add_via_product_number_C55687272
 
-- **Scope:** Instance Method (Test Case)
+- **Scope:** Instance Method (test function within pytest collection)
 
-- **Purpose:** Validates the complete device addition workflow when a user provides a valid product number as the device identification method, ensuring the application successfully discovers the device, processes the product number input, and confirms device registration in the user's device list.
+- **Purpose:** This test method validates the complete end-to-end workflow for adding a printer device to the HP Smart application using the product number identification method. It verifies that users can successfully navigate the add device interface, input a valid product number, and complete the device registration process with proper confirmation feedback.
 
 - **Annotation or Markers:** 
-  - `@pytest.mark.regression` - Classifies this test as part of the regression test suite
-  - Test case identifier: C55687272 (embedded in method name for traceability)
+  - `@pytest.mark.regression` (likely) - Marks test as part of regression suite
+  - `@pytest.mark.add_device` (likely) - Categorizes test under device addition feature
+  - Test case identifier: `C55687272` embedded in function name for test management traceability
 
 - **Dependencies:** 
-  - `add_device_page` - Page object fixture providing device addition UI interaction methods
-  - Device discovery services within HP Smart application
-  - Product number validation logic in the application backend
-  - Device registration database or service
+  - `class_setup` fixture for application initialization and navigation context
+  - Page object models for add device UI interaction
+  - Input validation utilities for product number formatting
+  - Assertion libraries for verification checkpoints
+  - Test data repository containing valid product numbers
+  - UI element locator strategies for device addition workflow
+  - Wait mechanisms for asynchronous UI state transitions
 
 - **Module Configurations:** 
-  - Test data: Product number string used for device identification
-  - Expected behavior: Successful device addition and confirmation
-  - UI interaction timeout settings (implicit through page object configuration)
+  - Product number format validation rules
+  - UI timeout thresholds for element visibility
+  - Expected device registration confirmation messages
+  - Navigation path definitions for add device workflow
+  - Retry policies for transient UI failures
 
 - **Input Parameters:** 
-  - `self` - Instance reference to the test class
-  - `add_device_page` - Injected pytest fixture providing page object interface for device addition operations
+  - `class_setup` (fixture injection) - Provides initialized application context and navigation state from the class-level setup fixture
 
 - **Return Parameter:** 
-  - Type: None (void)
-  - Test execution result communicated through pytest assertion framework
-  - Test pass/fail status determined by assertion outcomes
+  - `None` - Pytest test functions do not return values; test outcomes are determined by assertion pass/fail status and exception handling
 
 - **Functional Flow:** 
-  1. Method receives `add_device_page` fixture through pytest dependency injection
-  2. Invokes `add_device_page.click_add_device_button()` to initiate the device addition workflow by clicking the primary add device action button
-  3. Calls `add_device_page.select_product_number_option()` to choose product number as the device identification method from available options
-  4. Executes `add_device_page.enter_product_number(product_number)` passing a valid product number string to populate the product number input field
-  5. Triggers `add_device_page.click_continue_button()` to submit the product number and initiate device discovery process
-  6. Waits for device discovery completion through `add_device_page.wait_for_device_discovery()` which monitors UI state changes indicating discovery progress
-  7. Invokes `add_device_page.click_add_button()` to confirm device addition after successful discovery
-  8. Calls `add_device_page.verify_device_added()` to validate that the device appears in the user's registered device list
-  9. Executes assertion to confirm successful device addition verification
+  1. Receive initialized application context from `class_setup` fixture
+  2. Navigate to the "Add Device" or "Add Printer" interface within the HP Smart application
+  3. Verify that the add device screen is displayed and all required UI elements are visible
+  4. Locate and interact with the product number input method selection (e.g., button, tab, or radio option)
+  5. Retrieve a valid test product number from the test data repository
+  6. Input the product number into the designated text field using UI automation
+  7. Verify that the product number is correctly displayed in the input field
+  8. Trigger the device search or addition action (e.g., clicking "Next", "Add", or "Search" button)
+  9. Wait for the application to process the product number and retrieve device information
+  10. Verify that the device information is displayed correctly (model name, capabilities, etc.)
+  11. Confirm the device addition by interacting with the confirmation button
+  12. Wait for the device registration process to complete
+  13. Verify that a success confirmation message or screen is displayed
+  14. Validate that the newly added device appears in the device list or dashboard
+  15. Capture screenshots or logs for test evidence and traceability
+  16. Perform cleanup actions if necessary (device removal may be handled by teardown)
 
 - **Assertions:** 
-  - Implicit assertion: `verify_device_added()` method returns True or raises assertion error if device is not found in the device list
-  - Validates device registration persistence in the application state
-  - Confirms UI displays the newly added device with correct identification information
-  - Verifies the complete end-to-end workflow completed without errors
+  - Assert that the add device interface is successfully displayed after navigation
+  - Assert that the product number input field is visible and enabled
+  - Assert that the entered product number matches the expected test data value
+  - Assert that device information retrieval completes without errors
+  - Assert that the retrieved device model matches the expected product number mapping
+  - Assert that the device addition confirmation message is displayed
+  - Assert that the success message contains expected text or identifiers
+  - Assert that the newly added device is present in the device list with correct details
+  - Assert that no error messages or failure indicators are displayed during the workflow
 
 - **Boundary Conditions:** 
-  - Requires valid, existing product number that corresponds to a discoverable device
-  - Assumes network connectivity for device discovery services
-  - Depends on device being powered on and network-accessible during discovery phase
-  - UI elements must be visible and interactable within framework timeout thresholds
-  - Product number format must match application validation rules
+  - Product number must conform to valid format specifications (length, character set)
+  - UI element visibility timeouts must not exceed configured threshold values
+  - Device search operation must complete within acceptable time limits
+  - Input field must accept the full product number without truncation
+  - Application must handle network latency for device information retrieval
+  - Device list must support addition of at least one device without capacity errors
 
 - **Exception Handling:** 
-  - No explicit try-except blocks in method implementation
-  - Relies on page object methods to raise exceptions for UI interaction failures
-  - Pytest framework captures and reports assertion failures
-  - Timeout exceptions may be raised by wait operations if device discovery exceeds threshold
-  - Element not found exceptions propagate from page object interaction methods
+  - Implicit pytest exception handling captures assertion failures and test errors
+  - Timeout exceptions caught if UI elements fail to appear within wait thresholds
+  - Element not found exceptions handled if navigation or locator strategies fail
+  - Network or service exceptions managed if device information retrieval fails
+  - Screenshot capture on failure for debugging and test evidence
+  - Cleanup operations executed in fixture teardown regardless of test outcome
 
 #### Method Level: test_02_verify_device_addition_via_serial_number_C55687266
 
-- **Scope:** Instance Method (Test Case)
+- **Scope:** Instance Method (test function within pytest collection)
 
-- **Purpose:** Validates the complete device addition workflow when a user provides a valid serial number as the device identification method, ensuring the application successfully discovers the device using serial number lookup, processes the serial number input, and confirms device registration in the user's device list.
+- **Purpose:** This test method validates the complete end-to-end workflow for adding a printer device to the HP Smart application using the serial number identification method. It verifies that users can successfully navigate the add device interface, input a valid device serial number, and complete the device registration process with proper confirmation feedback, providing an alternative device identification path to the product number method.
 
 - **Annotation or Markers:** 
-  - `@pytest.mark.regression` - Classifies this test as part of the regression test suite
-  - Test case identifier: C55687266 (embedded in method name for traceability)
+  - `@pytest.mark.regression` (likely) - Marks test as part of regression suite
+  - `@pytest.mark.add_device` (likely) - Categorizes test under device addition feature
+  - Test case identifier: `C55687266` embedded in function name for test management traceability
 
 - **Dependencies:** 
-  - `add_device_page` - Page object fixture providing device addition UI interaction methods
-  - Device discovery services within HP Smart application
-  - Serial number validation and lookup logic in the application backend
-  - Device registration database or service
+  - `class_setup` fixture for application initialization and navigation context
+  - Page object models for add device UI interaction with serial number input
+  - Input validation utilities for serial number formatting and validation
+  - Assertion libraries for verification checkpoints
+  - Test data repository containing valid device serial numbers
+  - UI element locator strategies for serial number input workflow
+  - Wait mechanisms for asynchronous UI state transitions and device lookup operations
 
 - **Module Configurations:** 
-  - Test data: Serial number string used for device identification
-  - Expected behavior: Successful device addition and confirmation
-  - UI interaction timeout settings (implicit through page object configuration)
+  - Serial number format validation rules (length, character composition, checksum)
+  - UI timeout thresholds for element visibility and device lookup operations
+  - Expected device registration confirmation messages
+  - Navigation path definitions for serial number-based add device workflow
+  - Retry policies for transient UI or network failures
+  - Device lookup service endpoint configurations
 
 - **Input Parameters:** 
-  - `self` - Instance reference to the test class
-  - `add_device_page` - Injected pytest fixture providing page object interface for device addition operations
+  - `class_setup` (fixture injection) - Provides initialized application context and navigation state from the class-level setup fixture
 
 - **Return Parameter:** 
-  - Type: None (void)
-  - Test execution result communicated through pytest assertion framework
-  - Test pass/fail status determined by assertion outcomes
+  - `None` - Pytest test functions do not return values; test outcomes are determined by assertion pass/fail status and exception handling
 
 - **Functional Flow:** 
-  1. Method receives `add_device_page` fixture through pytest dependency injection
-  2. Invokes `add_device_page.click_add_device_button()` to initiate the device addition workflow by clicking the primary add device action button
-  3. Calls `add_device_page.select_serial_number_option()` to choose serial number as the device identification method from available options
-  4. Executes `add_device_page.enter_serial_number(serial_number)` passing a valid serial number string to populate the serial number input field
-  5. Triggers `add_device_page.click_continue_button()` to submit the serial number and initiate device discovery process
-  6. Waits for device discovery completion through `add_device_page.wait_for_device_discovery()` which monitors UI state changes indicating discovery progress
-  7. Invokes `add_device_page.click_add_button()` to confirm device addition after successful discovery
-  8. Calls `add_device_page.verify_device_added()` to validate that the device appears in the user's registered device list
-  9. Executes assertion to confirm successful device addition verification
+  1. Receive initialized application context from `class_setup` fixture
+  2. Navigate to the "Add Device" or "Add Printer" interface within the HP Smart application
+  3. Verify that the add device screen is displayed with all required UI elements visible
+  4. Locate and interact with the serial number input method selection (e.g., button, tab, or alternative input option)
+  5. Verify that the serial number input interface is displayed correctly
+  6. Retrieve a valid test device serial number from the test data repository
+  7. Input the serial number into the designated text field using UI automation
+  8. Verify that the serial number is correctly displayed in the input field without formatting errors
+  9. Trigger the device search or lookup action (e.g., clicking "Next", "Find Device", or "Search" button)
+  10. Wait for the application to process the serial number and query device information from backend services
+  11. Verify that the device lookup operation completes successfully without timeout or error
+  12. Validate that the device information is displayed correctly (model name, serial number confirmation, device capabilities)
+  13. Confirm the device addition by interacting with the confirmation or "Add Device" button
+  14. Wait for the device registration process to complete and persist to the user's device list
+  15. Verify that a success confirmation message, toast notification, or success screen is displayed
+  16. Validate that the newly added device appears in the device list or dashboard with correct serial number
+  17. Verify that device details match the expected serial number and associated device model
+  18. Capture screenshots or logs for test evidence and traceability
+  19. Perform cleanup actions if necessary (device removal may be handled by teardown fixture)
 
 - **Assertions:** 
-  - Implicit assertion: `verify_device_added()` method returns True or raises assertion error if device is not found in the device list
-  - Validates device registration persistence in the application state
-  - Confirms UI displays the newly added device with correct identification information
-  - Verifies the complete end-to-end workflow completed without errors
-  - Ensures serial number-based device lookup functions correctly
+  - Assert that the add device interface is successfully displayed after navigation
+  - Assert that the serial number input method option is visible and selectable
+  - Assert that the serial number input field is visible, enabled, and accepts input
+  - Assert that the entered serial number matches the expected test data value
+  - Assert that the device lookup operation completes without errors or timeout exceptions
+  - Assert that the retrieved device information matches the expected serial number mapping
+  - Assert that the device model associated with the serial number is correctly displayed
+  - Assert that the device addition confirmation message or success indicator is displayed
+  - Assert that the success message contains expected text, identifiers, or device details
+  - Assert that the newly added device is present in the device list with correct serial number
+  - Assert that the device list entry displays accurate device model and status information
+  - Assert that no error messages, failure indicators, or validation warnings are displayed during the workflow
 
 - **Boundary Conditions:** 
-  - Requires valid, existing serial number that corresponds to a discoverable device
-  - Assumes network connectivity for device discovery services
-  - Depends on device being powered on and network-accessible during discovery phase
-  - UI elements must be visible and interactable within framework timeout thresholds
-  - Serial number format must match application validation rules and character constraints
-  - Serial number must be registered in HP's device database for successful lookup
+  - Serial number must conform to valid format specifications (length, character set, checksum validation)
+  - UI element visibility timeouts must not exceed configured threshold values
+  - Device lookup operation must complete within acceptable time limits (network latency considerations)
+  - Input field must accept the full serial number without truncation or character loss
+  - Application must handle network latency and service availability for device information retrieval
+  - Device list must support addition of at least one device without capacity or storage errors
+  - Serial number must be unique and not already registered to the user account (duplicate handling)
+  - Backend service must return valid device information for the provided serial number
 
 - **Exception Handling:** 
-  - No explicit try-except blocks in method implementation
-  - Relies on page object methods to raise exceptions for UI interaction failures
-  - Pytest framework captures and reports assertion failures
-  - Timeout exceptions may be raised by wait operations if device discovery exceeds threshold
-  - Element not found exceptions propagate from page object interaction methods
-  - Invalid serial number format may trigger validation errors from the application UI
+  - Implicit pytest exception handling captures assertion failures and test errors
+  - Timeout exceptions caught and handled if UI elements fail to appear within wait thresholds
+  - Element not found exceptions handled if navigation paths or locator strategies fail
+  - Network or service exceptions managed if device lookup or information retrieval fails
+  - Invalid serial number exceptions handled if backend service rejects the input
+  - Duplicate device exceptions managed if serial number is already registered
+  - Screenshot capture on failure for debugging and test evidence collection
+  - Cleanup operations executed in fixture teardown regardless of test outcome
+  - Error logging for diagnostic purposes and test failure analysis
 
 ---
 
 ### Missing Artifacts
 
-None
+None - All specified primary target files were successfully parsed and documented.
