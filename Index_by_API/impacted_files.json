@@ -1,5 +1,0 @@
-[
-    "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py",
-    "tests/windows/hpx_rebranding/Framework/add_device/test_suite_02_add_device.py",
-    "tests/windows/hpx_rebranding/Framework/add_device_list/test_suite_01_add_device_list.py"
-]
