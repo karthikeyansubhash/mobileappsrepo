@@ -1,21 +1,21 @@
 {
     "summary": {
-        "total_tokens_consumed": 0,
-        "total_cost_incurred_usd": 0.0,
-        "total_time_spent_seconds": 0.0
+        "total_tokens_consumed": 11441,
+        "total_cost_incurred_usd": 0.2402,
+        "total_time_spent_seconds": 99.74
     },
     "details": {
-        "577a5b15-4599-49ef-9299-d08d0882684b": {
+        "7c61fae1-f247-46a9-8821-711673892167": {
+            "tokens": 11441,
+            "cost": 0.240245,
+            "time": 99.743
+        },
+        "8c86abaa-c233-4f6f-92fe-96af324211d5": {
             "tokens": 0,
             "cost": 0.0,
             "time": 0.0
         },
-        "9949f520-88dc-4fb6-857f-9ddd08c5f2db": {
-            "tokens": 0,
-            "cost": 0.0,
-            "time": 0.0
-        },
-        "1543f620-a2ce-4a86-bb64-7bb18efa291c": {
+        "5d263eb9-aeb9-4fc2-b377-5caed18dabff": {
             "tokens": 0,
             "cost": 0.0,
             "time": 0.0
