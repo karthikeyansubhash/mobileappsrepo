@@ -46,6 +46,7 @@ class Test_Suite_01_Add_Device_List(object):
         self.add_device.click_add_device_hyperlink()
         assert self.add_device.verify_newly_added_devicename(), "Newly added device name is not displayed"
         assert self.add_device.verify_newly_added_devicename(), "Newly added device name is not displayed"
+        assert self.add_device.verify_newly_added_devicename(), "Newly added device name is not displayed"
  
     @pytest.mark.regression
     def test_02_verify_device_list_addition_via_serial_number_C55687277(self):
