@@ -3805,8 +3805,8 @@
             "hpx_rebranding": {
                 "Framework": {
                     "add_device": {
-                        "generated_doc_filepath": "",
-                        "purpose": "",
+                        "generated_doc_filepath": "Index_by_API/Docs/tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.md",
+                        "purpose": "MODULE SUMMARY DETAILS:\nThis test suite module implements comprehensive automated UI validation for the HP Experience (HPX) application's \"Add Device\" workflow on Windows platforms. It systematically verifies user interaction patterns, navigation flows, UI component responsiveness, and data entry validation for device registration functionality. The module executes regression testing against the rebranded HPX Framework to ensure device addition features maintain functional integrity across UI updates. No functional changes were introduced in the latest code update (re-indexing event only).",
                         "associated_knowledge_bases": {
                             "raw_code": [
                                 {
@@ -4056,11 +4056,12 @@
                             ],
                             "code_doc": [
                                 {
-                                    "kb_id": "11817",
-                                    "kb_name": "add_devicedoc20260611191754kb"
+                                    "kb_id": "11850",
+                                    "kb_name": "test_suite_01_adoc20260612000445kb"
                                 }
                             ]
-                        }
+                        },
+                        "processing_status": "SUCCESS"
                     },
                     "bell_notifications": {
                         "generated_doc_filepath": "",
