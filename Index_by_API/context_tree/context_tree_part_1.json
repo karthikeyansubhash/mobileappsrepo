@@ -3966,8 +3966,8 @@
                         "processing_status": "SUCCESS"
                     },
                     "add_device_list": {
-                        "generated_doc_filepath": "",
-                        "purpose": "",
+                        "generated_doc_filepath": "Index_by_API/Docs/tests/windows/hpx_rebranding/Framework/add_device_list/add_device_list.md",
+                        "purpose": "MODULE SUMMARY DETAILS:\nThis test module validates the device list addition functionality within the HP Experience (HPX) rebranding framework for Windows platforms. It systematically verifies that devices can be successfully added to the device list using two distinct identification methods: product number and serial number. The module executes automated UI-driven test scenarios to ensure proper device registration, list population, and data persistence within the application's device management interface.",
                         "associated_knowledge_bases": {
                             "raw_code": [
                                 {
@@ -4016,11 +4016,12 @@
                             ],
                             "code_doc": [
                                 {
-                                    "kb_id": "",
-                                    "kb_name": ""
+                                    "kb_id": "11862",
+                                    "kb_name": "add_device_listdoc20260612023935kb"
                                 }
                             ]
-                        }
+                        },
+                        "processing_status": "SUCCESS"
                     },
                     "bell_notifications": {
                         "generated_doc_filepath": "",
