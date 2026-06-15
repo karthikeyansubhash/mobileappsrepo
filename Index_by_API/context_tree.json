@@ -102,17 +102,6 @@
                 ]
             },
             "windows": {
-                "generated_doc_filepath": "",
-                "purpose": "",
-                "associated_knowledge_bases": {
-                    "raw_code": [],
-                    "code_doc": [
-                        {
-                            "kb_id": "",
-                            "kb_name": ""
-                        }
-                    ]
-                },
                 "hpx_rebranding": {
                     "generated_doc_filepath": "",
                     "purpose": "",
@@ -4117,53 +4106,9 @@
         }
     },
     "tests": {
-        "generated_doc_filepath": "",
-        "purpose": "",
-        "associated_knowledge_bases": {
-            "raw_code": [],
-            "code_doc": [
-                {
-                    "kb_id": "",
-                    "kb_name": ""
-                }
-            ]
-        },
         "windows": {
-            "generated_doc_filepath": "",
-            "purpose": "",
-            "associated_knowledge_bases": {
-                "raw_code": [],
-                "code_doc": [
-                    {
-                        "kb_id": "",
-                        "kb_name": ""
-                    }
-                ]
-            },
             "hpx_rebranding": {
-                "generated_doc_filepath": "",
-                "purpose": "",
-                "associated_knowledge_bases": {
-                    "raw_code": [],
-                    "code_doc": [
-                        {
-                            "kb_id": "",
-                            "kb_name": ""
-                        }
-                    ]
-                },
                 "Framework": {
-                    "generated_doc_filepath": "",
-                    "purpose": "",
-                    "associated_knowledge_bases": {
-                        "raw_code": [],
-                        "code_doc": [
-                            {
-                                "kb_id": "",
-                                "kb_name": ""
-                            }
-                        ]
-                    },
                     "add_device": {
                         "generated_doc_filepath": "",
                         "purpose": "",
