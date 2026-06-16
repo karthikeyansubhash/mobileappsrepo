@@ -3,6 +3,39 @@
         "windows": {
             "hpx_rebranding": {
                 "Framework": {
+                    "add_device": {
+                        "generated_doc_filepath": "",
+                        "purpose": "",
+                        "associated_knowledge_bases": {
+                            "raw_code": [
+                                {
+                                    "file_identity": "sample_code.py",
+                                    "tests/windows/hpx_rebranding/Framework/add_device/sample_code.py": {
+                                        "chunks": [
+                                            {
+                                                "endLine": 2,
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/add_device/sample_code.py",
+                                                "startLine": 1,
+                                                "blobSha": "8b137891791fe96927ad78e64b0aad7bded08bdc",
+                                                "name": "",
+                                                "language": "python",
+                                                "id": "d899733d06044782d1f22164ec9b8687ee4443784ef3e7e8939658d395c8c62c",
+                                                "chunkType": "fallback",
+                                                "isTestFile": false
+                                            }
+                                        ]
+                                    }
+                                }
+                            ],
+                            "code_doc": [
+                                {
+                                    "kb_id": "",
+                                    "kb_name": ""
+                                }
+                            ]
+                        }
+                    },
                     "bell_notifications": {
                         "generated_doc_filepath": "",
                         "purpose": "",
@@ -14,7 +47,7 @@
                                         "chunks": [
                                             {
                                                 "endLine": 21,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_01_bell_notifications.py",
                                                 "startLine": 11,
                                                 "blobSha": "6137f764ef4908a99bfbbf4783d722c3d2a2b919",
@@ -26,7 +59,7 @@
                                             },
                                             {
                                                 "endLine": 27,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_01_bell_notifications.py",
                                                 "startLine": 23,
                                                 "blobSha": "6137f764ef4908a99bfbbf4783d722c3d2a2b919",
@@ -38,7 +71,7 @@
                                             },
                                             {
                                                 "endLine": 36,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_01_bell_notifications.py",
                                                 "startLine": 29,
                                                 "blobSha": "6137f764ef4908a99bfbbf4783d722c3d2a2b919",
@@ -50,7 +83,7 @@
                                             },
                                             {
                                                 "endLine": 47,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_01_bell_notifications.py",
                                                 "startLine": 38,
                                                 "blobSha": "6137f764ef4908a99bfbbf4783d722c3d2a2b919",
@@ -62,7 +95,7 @@
                                             },
                                             {
                                                 "endLine": 59,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_01_bell_notifications.py",
                                                 "startLine": 49,
                                                 "blobSha": "6137f764ef4908a99bfbbf4783d722c3d2a2b919",
@@ -74,7 +107,7 @@
                                             },
                                             {
                                                 "endLine": 71,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_01_bell_notifications.py",
                                                 "startLine": 61,
                                                 "blobSha": "6137f764ef4908a99bfbbf4783d722c3d2a2b919",
@@ -93,7 +126,7 @@
                                         "chunks": [
                                             {
                                                 "endLine": 27,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_02_bell_notifications.py",
                                                 "startLine": 13,
                                                 "blobSha": "07e6c2c7630bf904ae5f5ade639a4e4ebd63296b",
@@ -105,7 +138,7 @@
                                             },
                                             {
                                                 "endLine": 36,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_02_bell_notifications.py",
                                                 "startLine": 29,
                                                 "blobSha": "07e6c2c7630bf904ae5f5ade639a4e4ebd63296b",
@@ -117,7 +150,7 @@
                                             },
                                             {
                                                 "endLine": 48,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_02_bell_notifications.py",
                                                 "startLine": 38,
                                                 "blobSha": "07e6c2c7630bf904ae5f5ade639a4e4ebd63296b",
@@ -136,7 +169,7 @@
                                         "chunks": [
                                             {
                                                 "endLine": 29,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_03_bell_notifications.py",
                                                 "startLine": 14,
                                                 "blobSha": "300fb32df8f61babae43fad95c8b122c6e80f4d4",
@@ -148,7 +181,7 @@
                                             },
                                             {
                                                 "endLine": 42,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_03_bell_notifications.py",
                                                 "startLine": 33,
                                                 "blobSha": "300fb32df8f61babae43fad95c8b122c6e80f4d4",
@@ -160,7 +193,7 @@
                                             },
                                             {
                                                 "endLine": 54,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_03_bell_notifications.py",
                                                 "startLine": 46,
                                                 "blobSha": "300fb32df8f61babae43fad95c8b122c6e80f4d4",
@@ -172,7 +205,7 @@
                                             },
                                             {
                                                 "endLine": 66,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_03_bell_notifications.py",
                                                 "startLine": 58,
                                                 "blobSha": "300fb32df8f61babae43fad95c8b122c6e80f4d4",
@@ -184,7 +217,7 @@
                                             },
                                             {
                                                 "endLine": 79,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_03_bell_notifications.py",
                                                 "startLine": 70,
                                                 "blobSha": "300fb32df8f61babae43fad95c8b122c6e80f4d4",
@@ -196,7 +229,7 @@
                                             },
                                             {
                                                 "endLine": 90,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_03_bell_notifications.py",
                                                 "startLine": 83,
                                                 "blobSha": "300fb32df8f61babae43fad95c8b122c6e80f4d4",
@@ -208,7 +241,7 @@
                                             },
                                             {
                                                 "endLine": 102,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_03_bell_notifications.py",
                                                 "startLine": 94,
                                                 "blobSha": "300fb32df8f61babae43fad95c8b122c6e80f4d4",
@@ -220,7 +253,7 @@
                                             },
                                             {
                                                 "endLine": 112,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_03_bell_notifications.py",
                                                 "startLine": 106,
                                                 "blobSha": "300fb32df8f61babae43fad95c8b122c6e80f4d4",
@@ -239,7 +272,7 @@
                                         "chunks": [
                                             {
                                                 "endLine": 31,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_04_bell_notifications.py",
                                                 "startLine": 15,
                                                 "blobSha": "83674258b322a6e9be430458e16b21149b6bd712",
@@ -251,7 +284,7 @@
                                             },
                                             {
                                                 "endLine": 55,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_04_bell_notifications.py",
                                                 "startLine": 35,
                                                 "blobSha": "83674258b322a6e9be430458e16b21149b6bd712",
@@ -263,7 +296,7 @@
                                             },
                                             {
                                                 "endLine": 78,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_04_bell_notifications.py",
                                                 "startLine": 59,
                                                 "blobSha": "83674258b322a6e9be430458e16b21149b6bd712",
@@ -275,7 +308,7 @@
                                             },
                                             {
                                                 "endLine": 90,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_04_bell_notifications.py",
                                                 "startLine": 82,
                                                 "blobSha": "83674258b322a6e9be430458e16b21149b6bd712",
@@ -287,7 +320,7 @@
                                             },
                                             {
                                                 "endLine": 103,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_04_bell_notifications.py",
                                                 "startLine": 94,
                                                 "blobSha": "83674258b322a6e9be430458e16b21149b6bd712",
@@ -299,7 +332,7 @@
                                             },
                                             {
                                                 "endLine": 120,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_04_bell_notifications.py",
                                                 "startLine": 107,
                                                 "blobSha": "83674258b322a6e9be430458e16b21149b6bd712",
@@ -311,7 +344,7 @@
                                             },
                                             {
                                                 "endLine": 133,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_04_bell_notifications.py",
                                                 "startLine": 124,
                                                 "blobSha": "83674258b322a6e9be430458e16b21149b6bd712",
@@ -323,7 +356,7 @@
                                             },
                                             {
                                                 "endLine": 150,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_04_bell_notifications.py",
                                                 "startLine": 137,
                                                 "blobSha": "83674258b322a6e9be430458e16b21149b6bd712",
@@ -342,7 +375,7 @@
                                         "chunks": [
                                             {
                                                 "endLine": 30,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_05_bell_notifications.py",
                                                 "startLine": 14,
                                                 "blobSha": "da825691abdfa30973324eb731573b1b5727abf2",
@@ -354,7 +387,7 @@
                                             },
                                             {
                                                 "endLine": 49,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_05_bell_notifications.py",
                                                 "startLine": 34,
                                                 "blobSha": "da825691abdfa30973324eb731573b1b5727abf2",
@@ -366,7 +399,7 @@
                                             },
                                             {
                                                 "endLine": 100,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_05_bell_notifications.py",
                                                 "startLine": 53,
                                                 "blobSha": "da825691abdfa30973324eb731573b1b5727abf2",
@@ -378,7 +411,7 @@
                                             },
                                             {
                                                 "endLine": 128,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_05_bell_notifications.py",
                                                 "startLine": 104,
                                                 "blobSha": "da825691abdfa30973324eb731573b1b5727abf2",
@@ -390,7 +423,7 @@
                                             },
                                             {
                                                 "endLine": 176,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_05_bell_notifications.py",
                                                 "startLine": 132,
                                                 "blobSha": "da825691abdfa30973324eb731573b1b5727abf2",
@@ -409,7 +442,7 @@
                                         "chunks": [
                                             {
                                                 "endLine": 29,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_06_bell_notifcations.py",
                                                 "startLine": 14,
                                                 "blobSha": "8f1b9acb72c9eab8e28861f2122431f363f46b7e",
@@ -421,7 +454,7 @@
                                             },
                                             {
                                                 "endLine": 42,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_06_bell_notifcations.py",
                                                 "startLine": 33,
                                                 "blobSha": "8f1b9acb72c9eab8e28861f2122431f363f46b7e",
@@ -433,7 +466,7 @@
                                             },
                                             {
                                                 "endLine": 62,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_06_bell_notifcations.py",
                                                 "startLine": 46,
                                                 "blobSha": "8f1b9acb72c9eab8e28861f2122431f363f46b7e",
@@ -445,7 +478,7 @@
                                             },
                                             {
                                                 "endLine": 95,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_06_bell_notifcations.py",
                                                 "startLine": 66,
                                                 "blobSha": "8f1b9acb72c9eab8e28861f2122431f363f46b7e",
@@ -457,7 +490,7 @@
                                             },
                                             {
                                                 "endLine": 123,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_06_bell_notifcations.py",
                                                 "startLine": 99,
                                                 "blobSha": "8f1b9acb72c9eab8e28861f2122431f363f46b7e",
@@ -476,7 +509,7 @@
                                         "chunks": [
                                             {
                                                 "endLine": 29,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_07_bell_notifcations.py",
                                                 "startLine": 14,
                                                 "blobSha": "426860980a2a171839ef28e3c8ae4730d8ea2d8c",
@@ -488,7 +521,7 @@
                                             },
                                             {
                                                 "endLine": 43,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_07_bell_notifcations.py",
                                                 "startLine": 31,
                                                 "blobSha": "426860980a2a171839ef28e3c8ae4730d8ea2d8c",
@@ -500,7 +533,7 @@
                                             },
                                             {
                                                 "endLine": 58,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_07_bell_notifcations.py",
                                                 "startLine": 45,
                                                 "blobSha": "426860980a2a171839ef28e3c8ae4730d8ea2d8c",
@@ -512,7 +545,7 @@
                                             },
                                             {
                                                 "endLine": 77,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_07_bell_notifcations.py",
                                                 "startLine": 60,
                                                 "blobSha": "426860980a2a171839ef28e3c8ae4730d8ea2d8c",
@@ -524,7 +557,7 @@
                                             },
                                             {
                                                 "endLine": 94,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_07_bell_notifcations.py",
                                                 "startLine": 79,
                                                 "blobSha": "426860980a2a171839ef28e3c8ae4730d8ea2d8c",
@@ -543,7 +576,7 @@
                                         "chunks": [
                                             {
                                                 "endLine": 28,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_08_bell_notifcations.py",
                                                 "startLine": 14,
                                                 "blobSha": "ef5d62f30c9aabab3cb34d40b8158aa8a97842ca",
@@ -555,7 +588,7 @@
                                             },
                                             {
                                                 "endLine": 36,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_08_bell_notifcations.py",
                                                 "startLine": 30,
                                                 "blobSha": "ef5d62f30c9aabab3cb34d40b8158aa8a97842ca",
@@ -567,7 +600,7 @@
                                             },
                                             {
                                                 "endLine": 48,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_08_bell_notifcations.py",
                                                 "startLine": 38,
                                                 "blobSha": "ef5d62f30c9aabab3cb34d40b8158aa8a97842ca",
@@ -579,7 +612,7 @@
                                             },
                                             {
                                                 "endLine": 60,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_08_bell_notifcations.py",
                                                 "startLine": 50,
                                                 "blobSha": "ef5d62f30c9aabab3cb34d40b8158aa8a97842ca",
@@ -591,7 +624,7 @@
                                             },
                                             {
                                                 "endLine": 73,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_08_bell_notifcations.py",
                                                 "startLine": 62,
                                                 "blobSha": "ef5d62f30c9aabab3cb34d40b8158aa8a97842ca",
@@ -603,7 +636,7 @@
                                             },
                                             {
                                                 "endLine": 86,
-                                                "indexedAt": "2026-06-16T08:58:43.221876875Z",
+                                                "indexedAt": "2026-06-16T09:34:46.394539215Z",
                                                 "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_08_bell_notifcations.py",
                                                 "startLine": 75,
                                                 "blobSha": "ef5d62f30c9aabab3cb34d40b8158aa8a97842ca",
