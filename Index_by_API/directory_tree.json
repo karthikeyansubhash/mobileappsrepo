@@ -20,7 +20,8 @@
                 "Framework": {
                     "add_device": {
                         "test_suite_01_add_device.py": "file",
-                        "test_suite_02_add_device.py": "file"
+                        "test_suite_02_add_device.py": "file",
+                        "test_suite_03_add_device.py": "file"
                     },
                     "add_device_list": {
                         "test_suite_01_add_device_list.py": "file"
