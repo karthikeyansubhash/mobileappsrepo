@@ -8,113 +8,192 @@ Inventory for test_suite_01_add_device.py: Found 8 total functions: [class_setup
 
 [MODULE_PURPOSE_START]
 
-This module implements a suite of automated UI test cases for the "Add Device" workflow within the HPX rebranding Windows application. It validates the interactive behavior, navigation, and content correctness of the Add Device sidebar, including button states, navigation links, serial number entry, and content display. The test suite leverages a test framework (likely pytest) to ensure UI elements and flows conform to expected business logic and user experience requirements.
+This module implements a suite of automated UI test cases for the "Add Device" workflow within the HPX Rebranding Windows application framework. It validates the interactive behavior, navigation, and content rendering of the Add Device sidebar, including button states, serial number entry, and contextual help links. The test suite ensures that all user-facing controls and flows in the Add Device feature conform to expected functional and UI requirements.
 
 [MODULE_PURPOSE_END]
 
 ### 1. File Header (Module-Level Documentation)
 
 - **Primary Responsibility:**  
-  Implements regression and functional UI tests for the Add Device sidebar in the HPX rebranding Windows application. Ensures all interactive elements, navigation links, and content blocks behave as specified in product requirements.
+  Implements regression and functional UI tests for the Add Device sidebar in the HPX Rebranding Windows application. Each test validates a discrete user interaction or content state, ensuring the Add Device workflow is robust, accessible, and error-free.
 
 - **Dependencies:**  
-  - Test framework (e.g., pytest) for test discovery and execution  
-  - Application-specific page objects and UI automation libraries  
-  - Possible use of fixtures, driver/session management, and utility modules for setup/teardown
+  - Likely imports: `pytest`, Selenium/Appium page objects, HPX test framework utilities, and possibly custom fixtures for driver/session management.
+  - External file import boundaries: Page object models for Add Device, sidebar, and navigation components.
 
 - **Module Configuration:**  
-  - No explicit global variables or configuration keys defined in the function inventory  
-  - Relies on test framework configuration and possible environment variables for test execution context
+  - No explicit global variables or configuration keys are defined in the function inventory.
+  - Test execution may rely on pytest markers, fixtures, and environment variables for driver/session setup.
 
 ---
 
-### 2. Class Documentation: (No explicit class; all functions are at module scope)
+### 2. Class Documentation: (No explicit class; module-level test functions and fixtures)
 
-*(Note: All functions in this file are implemented at the module level, following the test framework's convention for test discovery. No explicit class is defined.)*
+- **Role:**  
+  This file does not define a class; all test logic is implemented as module-level functions and fixtures, following pytest conventions.
+
+- **Purpose:**  
+  Provides isolated, stateless test cases for each Add Device UI feature, ensuring each function can be executed independently within the pytest framework.
 
 ---
 
-#### Fixture / Constructor / Initializer Name
+#### Fixture / Constructor / Initializer Name: class_setup
 
-##### class_setup
+- **Scope:**  
+  Module-level or class-level fixture (depending on pytest usage).
 
-- **Scope:** Module-level fixture (likely used as a setup function for the test suite)
-- **Purpose:** Prepares the test environment before executing the test cases, such as initializing drivers, page objects, or resetting application state.
-- **Annotation or Markers:** May be decorated with `@pytest.fixture`, `@pytest.mark.usefixtures`, or similar (exact decorators not specified in inventory).
-- **Dependencies:** Test framework fixture system, application driver/session, page object instantiation.
-- **Parameter:** Typically accepts `self`, `request`, or context objects depending on the test framework; actual parameters not specified.
+- **Purpose:**  
+  Initializes the test environment for the Add Device test suite. Prepares the application state, launches the target UI, and ensures all dependencies (e.g., drivers, page objects) are ready for test execution.
+
+- **Annotation or Markers:**  
+  - Likely decorated with `@pytest.fixture(scope="class")` or similar.
+  - May use `autouse=True` to ensure automatic invocation.
+
+- **Dependencies:**  
+  - Test driver/session manager.
+  - Page object models for Add Device and related UI components.
+
+- **Parameter:**  
+  - Accepts pytest fixture parameters (e.g., `self`, `request`, or driver/session objects).
+
 - **Set-up Action:**  
-  1. Initializes the test environment (e.g., launches application, sets up driver/session).  
-  2. Prepares any required page objects or UI state for subsequent test execution.
+  - Launches the application or navigates to the Add Device entry point.
+  - Instantiates page objects.
+  - Performs any required login or pre-test state setup.
+
 - **State Management:**  
-  - May set up instance or module-level variables for driver, session, or page object references.  
-  - Ensures a clean state for each test run.
+  - Initializes instance or module-level variables for driver, page objects, or test context.
+  - May register teardown/cleanup hooks.
 
 ---
 
 #### Method Level: class_setup
 
-- **Scope:** Global Function (Fixture/Initializer)
-- **Purpose:** Initializes the test environment and prepares the application state for the Add Device test suite.
-- **Annotation or Markers:** Possible use of `@pytest.fixture` or similar test framework setup marker.
-- **Dependencies:** Application driver/session, page objects, test framework fixture system.
-- **Module Configurations:** None explicitly defined; relies on test framework configuration.
-- **Input Parameters:** Not specified; typically none or test context.
-- **Return Parameter:** None.
+- **Scope:**  
+  Fixture Function (pytest fixture, possibly class-scoped).
+
+- **Purpose:**  
+  Prepares the test environment for all Add Device test cases, ensuring the application is in a known state before tests run.
+
+- **Annotation or Markers:**  
+  - `@pytest.fixture(scope="class")` (assumed).
+  - May include `autouse=True`.
+
+- **Dependencies:**  
+  - Test driver/session.
+  - Add Device page object.
+
+- **Module Configurations:**  
+  - None explicitly defined.
+
+- **Input Parameters:**  
+  - Typically `self` or `request` (if used as a class fixture).
+
+- **Return Parameter:**  
+  - None (pytest fixture for setup only).
+
 - **Functional Flow:**  
-  1. Launches or resets the application under test.  
-  2. Instantiates required page objects or UI automation handles.  
-  3. Prepares the Add Device sidebar or navigates to the initial test state.
-- **Assertions:** None; setup only.
-- **Boundary Conditions:** Ensures application is in a known state before tests run.
-- **Exception Handling:** May include try-except for setup failures, but not specified.
+  1. Launches or attaches to the application under test.
+  2. Navigates to the Add Device UI.
+  3. Instantiates required page objects.
+  4. Prepares any shared state for test cases.
+
+- **Assertions:**  
+  - None (setup only).
+
+- **Boundary Conditions:**  
+  - Ensures application is in a clean state before test execution.
+
+- **Exception Handling:**  
+  - May include try-except for setup failures, with error logging or test abort.
 
 ---
 
 #### Method Level: test_01_verify_add_device_button_clickable_and_opens_sidebar_page_C55687256
 
-- **Scope:** Global Function (Test Case)
-- **Purpose:** Verifies that the "Add Device" button is clickable and that clicking it opens the Add Device sidebar page.
-- **Annotation or Markers:** Likely decorated with `@pytest.mark.regression` or similar.
-- **Dependencies:** Page object for Add Device button, sidebar UI elements, driver/session.
-- **Module Configurations:** None.
-- **Input Parameters:** None.
-- **Return Parameter:** None.
+- **Scope:**  
+  Test Function (pytest test case).
+
+- **Purpose:**  
+  Verifies that the "Add Device" button is clickable and, upon interaction, opens the Add Device sidebar page as expected.
+
+- **Annotation or Markers:**  
+  - `@pytest.mark.regression` or similar (assumed).
+  - Test case ID: C55687256.
+
+- **Dependencies:**  
+  - Add Device page object.
+  - Driver/session fixture.
+
+- **Module Configurations:**  
+  - None.
+
+- **Input Parameters:**  
+  - None (pytest will inject fixtures if needed).
+
+- **Return Parameter:**  
+  - None (pytest test case).
+
 - **Functional Flow:**  
-  1. Locates the "Add Device" button on the main UI.  
-  2. Asserts the button is enabled/clickable.  
-  3. Clicks the button.  
-  4. Verifies the Add Device sidebar page is displayed.
+  1. Locates the "Add Device" button in the UI.
+  2. Asserts the button is visible and enabled.
+  3. Clicks the button.
+  4. Waits for the Add Device sidebar to appear.
+  5. Verifies the sidebar page is displayed.
+
 - **Assertions:**  
-  - Button is present and enabled.  
-  - Sidebar page is visible after click.
+  - Button is clickable.
+  - Sidebar page is opened.
+
 - **Boundary Conditions:**  
-  - Button must be visible and interactable.  
-  - Sidebar must load within UI response time.
+  - Button must be present and enabled.
+  - Sidebar must load within a timeout.
+
 - **Exception Handling:**  
-  - May handle UI element not found or timeout exceptions.
+  - May catch UI interaction errors and fail the test with diagnostic output.
 
 ---
 
 #### Method Level: test_02_verify_navigation_of_need_help_finding_serial_number_link_C61716550
 
-- **Scope:** Global Function (Test Case)
-- **Purpose:** Validates that the "Need help finding serial number?" link navigates to the correct help or information page.
-- **Annotation or Markers:** Likely decorated with `@pytest.mark.regression`.
-- **Dependencies:** Page object for the help link, navigation handler, driver/session.
-- **Module Configurations:** None.
-- **Input Parameters:** None.
-- **Return Parameter:** None.
+- **Scope:**  
+  Test Function (pytest test case).
+
+- **Purpose:**  
+  Validates that the "Need help finding serial number?" link is present, clickable, and navigates to the correct help or information page.
+
+- **Annotation or Markers:**  
+  - `@pytest.mark.regression` or similar (assumed).
+  - Test case ID: C61716550.
+
+- **Dependencies:**  
+  - Add Device page object.
+  - Driver/session fixture.
+
+- **Module Configurations:**  
+  - None.
+
+- **Input Parameters:**  
+  - None.
+
+- **Return Parameter:**  
+  - None.
+
 - **Functional Flow:**  
-  1. Locates the "Need help finding serial number?" link in the Add Device sidebar.  
-  2. Clicks the link.  
-  3. Verifies navigation to the expected help or information page.
+  1. Locates the "Need help finding serial number?" link.
+  2. Asserts the link is visible and enabled.
+  3. Clicks the link.
+  4. Waits for navigation to the help page.
+  5. Verifies the correct help content is displayed.
+
 - **Assertions:**  
-  - Link is present and clickable.  
-  - Navigation occurs to the correct page.
+  - Link is present and clickable.
+  - Navigation occurs to the expected help page.
+
 - **Boundary Conditions:**  
-  - Link must be visible and enabled.  
-  - Navigation must complete successfully.
+  - Link must be present and enabled.
+  - Help page must load within a timeout.
+
 - **Exception Handling:**  
   - Handles navigation or element not found errors.
 
@@ -122,23 +201,44 @@ This module implements a suite of automated UI test cases for the "Add Device" w
 
 #### Method Level: test_03_verify_the_back_button_for_the_add_device_C61716558
 
-- **Scope:** Global Function (Test Case)
-- **Purpose:** Ensures the "Back" button in the Add Device sidebar functions correctly, returning the user to the previous page or state.
-- **Annotation or Markers:** Likely decorated with `@pytest.mark.regression`.
-- **Dependencies:** Page object for the Back button, navigation handler, driver/session.
-- **Module Configurations:** None.
-- **Input Parameters:** None.
-- **Return Parameter:** None.
+- **Scope:**  
+  Test Function (pytest test case).
+
+- **Purpose:**  
+  Ensures that the "Back" button in the Add Device sidebar functions correctly, returning the user to the previous page or state.
+
+- **Annotation or Markers:**  
+  - `@pytest.mark.regression` or similar (assumed).
+  - Test case ID: C61716558.
+
+- **Dependencies:**  
+  - Add Device page object.
+  - Driver/session fixture.
+
+- **Module Configurations:**  
+  - None.
+
+- **Input Parameters:**  
+  - None.
+
+- **Return Parameter:**  
+  - None.
+
 - **Functional Flow:**  
-  1. Locates the "Back" button in the Add Device sidebar.  
-  2. Clicks the button.  
-  3. Verifies the application navigates to the previous page or expected state.
+  1. Locates the "Back" button in the sidebar.
+  2. Asserts the button is visible and enabled.
+  3. Clicks the button.
+  4. Waits for navigation to the previous page.
+  5. Verifies the previous page or expected state is restored.
+
 - **Assertions:**  
-  - Back button is present and enabled.  
+  - Back button is present and functional.
   - Navigation occurs as expected.
+
 - **Boundary Conditions:**  
-  - Button must be visible and interactable.  
-  - Previous page/state must be accessible.
+  - Button must be present and enabled.
+  - Previous page must load within a timeout.
+
 - **Exception Handling:**  
   - Handles navigation or element not found errors.
 
@@ -146,70 +246,130 @@ This module implements a suite of automated UI test cases for the "Add Device" w
 
 #### Method Level: test_04_verify_the_close_button_for_the_add_device_C61716559
 
-- **Scope:** Global Function (Test Case)
-- **Purpose:** Verifies that the "Close" button in the Add Device sidebar closes the sidebar and returns the UI to its prior state.
-- **Annotation or Markers:** Likely decorated with `@pytest.mark.regression`.
-- **Dependencies:** Page object for the Close button, sidebar UI handler, driver/session.
-- **Module Configurations:** None.
-- **Input Parameters:** None.
-- **Return Parameter:** None.
+- **Scope:**  
+  Test Function (pytest test case).
+
+- **Purpose:**  
+  Checks that the "Close" button in the Add Device sidebar closes the sidebar and returns the UI to its prior state.
+
+- **Annotation or Markers:**  
+  - `@pytest.mark.regression` or similar (assumed).
+  - Test case ID: C61716559.
+
+- **Dependencies:**  
+  - Add Device page object.
+  - Driver/session fixture.
+
+- **Module Configurations:**  
+  - None.
+
+- **Input Parameters:**  
+  - None.
+
+- **Return Parameter:**  
+  - None.
+
 - **Functional Flow:**  
-  1. Locates the "Close" button in the Add Device sidebar.  
-  2. Clicks the button.  
-  3. Verifies the sidebar is closed and the main UI is restored.
+  1. Locates the "Close" button in the sidebar.
+  2. Asserts the button is visible and enabled.
+  3. Clicks the button.
+  4. Waits for the sidebar to close.
+  5. Verifies the main UI is restored.
+
 - **Assertions:**  
-  - Close button is present and enabled.  
-  - Sidebar is no longer visible after click.
+  - Close button is present and functional.
+  - Sidebar is closed.
+
 - **Boundary Conditions:**  
-  - Button must be visible and interactable.  
-  - Sidebar must close within UI response time.
+  - Button must be present and enabled.
+  - Sidebar must close within a timeout.
+
 - **Exception Handling:**  
-  - Handles UI element not found or timeout exceptions.
+  - Handles UI interaction errors.
 
 ---
 
 #### Method Level: test_05_verify_entered_serial_number_is_accepted_and_displayed_correctly_C63813594
 
-- **Scope:** Global Function (Test Case)
-- **Purpose:** Validates that entering a serial number in the Add Device sidebar is accepted and displayed correctly in the UI.
-- **Annotation or Markers:** Likely decorated with `@pytest.mark.regression`.
-- **Dependencies:** Page object for serial number input field, UI display handler, driver/session.
-- **Module Configurations:** None.
-- **Input Parameters:** None.
-- **Return Parameter:** None.
+- **Scope:**  
+  Test Function (pytest test case).
+
+- **Purpose:**  
+  Validates that entering a serial number into the Add Device form is accepted and the serial number is displayed correctly in the UI.
+
+- **Annotation or Markers:**  
+  - `@pytest.mark.regression` or similar (assumed).
+  - Test case ID: C63813594.
+
+- **Dependencies:**  
+  - Add Device page object.
+  - Driver/session fixture.
+
+- **Module Configurations:**  
+  - None.
+
+- **Input Parameters:**  
+  - None.
+
+- **Return Parameter:**  
+  - None.
+
 - **Functional Flow:**  
-  1. Locates the serial number input field in the Add Device sidebar.  
-  2. Enters a valid serial number.  
-  3. Submits or confirms the entry.  
-  4. Verifies the serial number is displayed as entered.
+  1. Locates the serial number input field.
+  2. Enters a valid serial number.
+  3. Submits or confirms the entry.
+  4. Waits for the UI to update.
+  5. Verifies the entered serial number is displayed as expected.
+
 - **Assertions:**  
-  - Input field accepts the serial number.  
-  - Displayed value matches the entered serial number.
+  - Serial number is accepted.
+  - Display matches the entered value.
+
 - **Boundary Conditions:**  
-  - Serial number must conform to expected format/length.  
-  - Input field must be enabled.
+  - Input field must accept the serial number format.
+  - UI must update within a timeout.
+
 - **Exception Handling:**  
-  - Handles invalid input or UI update failures.
+  - Handles input or UI update errors.
 
 ---
 
 #### Method Level: test_06_verify_the_content_in_add_a_printer_C63813978
 
-- **Scope:** Global Function (Test Case)
-- **Purpose:** Checks that the content displayed in the "Add a Printer" section of the sidebar matches expected text, layout, or UI elements.
-- **Annotation or Markers:** Likely decorated with `@pytest.mark.regression`.
-- **Dependencies:** Page object for Add a Printer section, UI content handler, driver/session.
-- **Module Configurations:** None.
-- **Input Parameters:** None.
-- **Return Parameter:** None.
+- **Scope:**  
+  Test Function (pytest test case).
+
+- **Purpose:**  
+  Verifies that the content displayed in the "Add a Printer" section of the Add Device sidebar matches expected text, layout, and UI elements.
+
+- **Annotation or Markers:**  
+  - `@pytest.mark.regression` or similar (assumed).
+  - Test case ID: C63813978.
+
+- **Dependencies:**  
+  - Add Device page object.
+  - Driver/session fixture.
+
+- **Module Configurations:**  
+  - None.
+
+- **Input Parameters:**  
+  - None.
+
+- **Return Parameter:**  
+  - None.
+
 - **Functional Flow:**  
-  1. Navigates to the "Add a Printer" section in the sidebar.  
-  2. Retrieves displayed content (text, images, etc.).  
-  3. Compares content to expected values.
+  1. Navigates to the "Add a Printer" section.
+  2. Locates and reads all relevant content elements.
+  3. Compares displayed content to expected values.
+
 - **Assertions:**  
-  - Content matches expected text and layout.
+  - All content matches expected text and layout.
+
 - **Boundary Conditions:**  
-  - Section must be visible and loaded.
+  - All UI elements must be present.
+
 - **Exception Handling:**  
   - Handles missing or mismatched content errors.
 
@@ -217,21 +377,40 @@ This module implements a suite of automated UI test cases for the "Add Device" w
 
 #### Method Level: test_07_verify_the_content_in_missing_a_device_C63815104
 
-- **Scope:** Global Function (Test Case)
-- **Purpose:** Ensures the "Missing a Device" section in the Add Device sidebar displays the correct content as per requirements.
-- **Annotation or Markers:** Likely decorated with `@pytest.mark.regression`.
-- **Dependencies:** Page object for Missing a Device section, UI content handler, driver/session.
-- **Module Configurations:** None.
-- **Input Parameters:** None.
-- **Return Parameter:** None.
+- **Scope:**  
+  Test Function (pytest test case).
+
+- **Purpose:**  
+  Ensures that the "Missing a Device" section in the Add Device sidebar displays the correct content, instructions, and UI elements.
+
+- **Annotation or Markers:**  
+  - `@pytest.mark.regression` or similar (assumed).
+  - Test case ID: C63815104.
+
+- **Dependencies:**  
+  - Add Device page object.
+  - Driver/session fixture.
+
+- **Module Configurations:**  
+  - None.
+
+- **Input Parameters:**  
+  - None.
+
+- **Return Parameter:**  
+  - None.
+
 - **Functional Flow:**  
-  1. Navigates to the "Missing a Device" section in the sidebar.  
-  2. Retrieves displayed content (text, images, etc.).  
-  3. Compares content to expected values.
+  1. Navigates to the "Missing a Device" section.
+  2. Locates and reads all relevant content elements.
+  3. Compares displayed content to expected values.
+
 - **Assertions:**  
-  - Content matches expected text and layout.
+  - All content matches expected text and layout.
+
 - **Boundary Conditions:**  
-  - Section must be visible and loaded.
+  - All UI elements must be present.
+
 - **Exception Handling:**  
   - Handles missing or mismatched content errors.
 
@@ -253,206 +432,202 @@ Inventory for test_suite_02_add_device.py: Found 3 total functions: [class_setup
 
 [MODULE_PURPOSE_START]
 
-This module implements automated test cases for verifying device addition workflows in a Windows-based HPX rebranding framework. It provides test fixtures and test methods to validate device onboarding via product number and serial number, ensuring correct integration with the add device UI and backend logic. The file leverages test setup routines and direct UI or API interactions to assert device registration correctness.
+This module implements automated test cases for verifying device addition workflows in a Windows-based HPX rebranding framework. It contains setup routines and two distinct test functions that validate device onboarding via product number and serial number, ensuring compliance with expected UI and backend integration flows. The file is structured for direct execution within a pytest-driven test harness and leverages framework fixtures for environment preparation.
 
 [MODULE_PURPOSE_END]
 
 ### 1. File Header (Module-Level Documentation)
 
 - **Primary Responsibility:**  
-  Implements and validates device addition test scenarios for the HPX rebranding Windows framework, focusing on product number and serial number onboarding paths. Provides test setup and teardown routines, and executes UI-driven or API-driven device registration flows.
+  Implements and validates device addition scenarios in the HPX rebranding test framework, focusing on product number and serial number onboarding paths. Provides setup and teardown routines to ensure isolated, repeatable test execution.
 
 - **Dependencies:**  
   - pytest (for test discovery, fixtures, and execution)
-  - HPX rebranding framework modules (page objects, device management utilities)
-  - External test data sources (product numbers, serial numbers)
-  - Possible use of Selenium/Appium or similar UI automation libraries
+  - Framework-specific page objects and utilities (imported but not explicitly listed in the provided chunk)
+  - Possible use of Windows automation libraries and internal test harnesses
 
 - **Module Configuration:**  
-  - Test-level configuration via pytest markers or fixtures
-  - No explicit global variables; relies on test framework configuration and injected fixtures
+  - No explicit global variables or configuration keys are defined in the provided chunk.
+  - Relies on pytest fixture injection and possible environment variables set by the test runner.
 
 ---
 
 ### 2. Class Documentation: (No explicit class; all functions are at module scope)
 
-*(Note: All functions in this file are defined at the module level, not within a class.)*
+*(Note: All functions in this file are defined at the module level; no class encapsulation is present.)*
 
 ---
 
-#### Fixture / Constructor / Initializer Name: class_setup
+#### Fixture / Constructor / Initializer Name
 
-- **Scope:** Module-level (pytest fixture, likely autouse or used as a setup for all tests in this file)
+##### class_setup
+
+- **Scope:**  
+  Module-level (pytest fixture, likely with class or module scope depending on decorator usage)
 
 - **Purpose:**  
-  Initializes the test environment before executing device addition test cases. Prepares the necessary runtime context, such as launching the application, initializing page objects, or configuring test data.
+  Prepares the test environment for device addition test cases. Ensures all necessary preconditions, such as driver initialization, mock state, and UI context, are established before test execution.
 
 - **Annotation or Markers:**  
-  - @pytest.fixture (or similar test setup decorator)
-  - May include scope or autouse parameters
+  - Decorated as a pytest fixture (likely with `@pytest.fixture(scope="class")` or similar, based on naming convention)
+  - May include additional markers for setup/teardown sequencing
 
 - **Dependencies:**  
-  - Test framework (pytest)
-  - Application driver/session manager
-  - Page object initializers or test data loaders
+  - Test framework's driver or session manager
+  - Page objects or utility classes required for device addition
+  - Mocking libraries or state initializers
 
 - **Parameter:**  
-  - Accepts pytest fixture parameters (e.g., request, driver, config), if any
+  - Accepts pytest fixture parameters (e.g., `request`, `driver`, or other injected dependencies; exact parameters not listed in the chunk)
 
 - **Set-up Action:**  
-  1. Launches or attaches to the application under test.
-  2. Initializes page objects or UI automation handles.
-  3. Loads or prepares test data (product numbers, serial numbers).
-  4. Ensures the application is in a clean state for test execution.
+  1. Initializes driver/session for UI automation.
+  2. Prepares application state (e.g., logs in, navigates to device addition page).
+  3. Sets up any required mocks or test data.
+  4. Registers teardown hooks if necessary.
 
 - **State Management:**  
-  - Sets up instance or module-level variables for device addition tests.
-  - Tracks application session or driver handles.
-  - May register cleanup actions for teardown.
+  - Initializes or resets instance/module variables for driver, session, or test context.
+  - Tracks any temporary state required for test isolation.
 
 ---
 
 #### Method Level: class_setup
 
-- **Scope:** Global Function (pytest fixture)
+- **Scope:**  
+  Global Function (pytest fixture)
 
 - **Purpose:**  
-  Prepares the test execution environment for all device addition test cases in this module.
+  Establishes the baseline environment for all device addition tests, ensuring consistent preconditions and resource allocation.
 
 - **Annotation or Markers:**  
-  - @pytest.fixture (or equivalent test setup decorator)
+  - `@pytest.fixture` (scope likely "class" or "module")
 
 - **Dependencies:**  
-  - pytest
-  - Application driver/session
-  - Page objects
+  - Driver/session manager
+  - Page objects for navigation and device addition
 
 - **Module Configurations:**  
-  - May use pytest fixture configuration (scope, autouse)
+  - None explicitly set within the function; relies on pytest and framework defaults.
 
 - **Input Parameters:**  
-  - request (pytest fixture context)
-  - driver (application automation handle)
-  - config (test configuration), if present
+  - Typically accepts `request` and possibly other fixtures (not explicitly listed).
 
 - **Return Parameter:**  
-  - None (side-effect fixture, sets up environment)
+  - None (pytest fixture for setup only)
 
 - **Functional Flow:**  
-  1. Receives test context and driver handles.
-  2. Launches or resets the application under test.
-  3. Initializes page objects for device addition.
-  4. Loads or prepares test data.
-  5. Ensures the environment is ready for test execution.
+  1. Receives fixture parameters from pytest.
+  2. Initializes driver/session.
+  3. Navigates to the device addition context.
+  4. Prepares any required test data or mocks.
+  5. Registers teardown if needed.
 
 - **Assertions:**  
-  - None (setup only; may raise if setup fails)
+  - None (setup only)
 
 - **Boundary Conditions:**  
-  - Ensures application is not already running or in a conflicting state.
-  - Handles missing or invalid test data.
+  - Ensures environment is clean and isolated for each test run.
 
 - **Exception Handling:**  
-  - May raise exceptions if setup fails (e.g., application launch error, missing dependencies).
+  - May include try-except for setup failures; ensures teardown on error.
 
 ---
 
 #### Method Level: test_01_verify_device_add_via_product_number_C55687272
 
-- **Scope:** Global Function (pytest test method)
+- **Scope:**  
+  Global Function (pytest test function)
 
 - **Purpose:**  
-  Validates that a device can be successfully added via its product number using the application's add device workflow.
+  Validates that a device can be successfully added using its product number. Simulates user interaction with the UI to input a product number and verifies the device is registered in the system.
 
 - **Annotation or Markers:**  
-  - @pytest.mark (e.g., regression, smoke, or test case ID marker)
-  - Test case identifier: C55687272
+  - `@pytest.mark` (likely regression, functional, or scenario marker)
+  - Test case ID: C55687272
 
 - **Dependencies:**  
-  - Application driver/session
-  - Device addition page object
-  - Test data for valid product numbers
+  - Device addition page object or utility
+  - Driver/session fixture
+  - class_setup fixture for environment preparation
 
 - **Module Configurations:**  
-  - May use test-level configuration for product number input
+  - None explicitly set; uses test data for product number
 
 - **Input Parameters:**  
-  - None (uses setup fixture and internal test data)
+  - None (pytest injects fixtures as needed)
 
 - **Return Parameter:**  
-  - None (pytest test; asserts within method)
+  - None (pytest test function; asserts within)
 
 - **Functional Flow:**  
-  1. Navigates to the add device screen.
-  2. Inputs a valid product number into the UI.
-  3. Submits the device addition request.
-  4. Waits for confirmation or success message.
-  5. Verifies that the device appears in the device list or confirmation UI.
+  1. Ensures environment is prepared via `class_setup`.
+  2. Navigates to device addition UI.
+  3. Inputs a valid product number.
+  4. Submits the device addition form.
+  5. Waits for confirmation or success indicator.
+  6. Verifies device appears in the registered device list.
 
 - **Assertions:**  
-  - Checks for successful device addition confirmation.
-  - Verifies device presence in the device list.
-  - May assert on UI messages or backend state.
+  - Device is successfully added and visible in the UI.
+  - Success message or confirmation dialog is present.
 
 - **Boundary Conditions:**  
-  - Handles invalid or missing product numbers.
-  - Ensures only one device is added per test run.
+  - Validates with a known-good product number.
+  - May check for duplicate prevention or error handling if product number is reused.
 
 - **Exception Handling:**  
-  - Catches UI interaction errors (e.g., element not found, timeout).
-  - Raises test failure if device is not added as expected.
+  - Catches UI interaction errors, form submission failures, or assertion mismatches.
 
 ---
 
 #### Method Level: test_02_verify_device_addition_via_serial_number_C55687266
 
-- **Scope:** Global Function (pytest test method)
+- **Scope:**  
+  Global Function (pytest test function)
 
 - **Purpose:**  
-  Validates that a device can be successfully added via its serial number using the application's add device workflow.
+  Verifies that a device can be added using its serial number. Simulates the end-to-end workflow for serial number-based onboarding and checks for correct system registration.
 
 - **Annotation or Markers:**  
-  - @pytest.mark (e.g., regression, smoke, or test case ID marker)
-  - Test case identifier: C55687266
+  - `@pytest.mark` (likely regression, functional, or scenario marker)
+  - Test case ID: C55687266
 
 - **Dependencies:**  
-  - Application driver/session
-  - Device addition page object
-  - Test data for valid serial numbers
+  - Device addition page object or utility
+  - Driver/session fixture
+  - class_setup fixture for environment preparation
 
 - **Module Configurations:**  
-  - May use test-level configuration for serial number input
+  - None explicitly set; uses test data for serial number
 
 - **Input Parameters:**  
-  - None (uses setup fixture and internal test data)
+  - None (pytest injects fixtures as needed)
 
 - **Return Parameter:**  
-  - None (pytest test; asserts within method)
+  - None (pytest test function; asserts within)
 
 - **Functional Flow:**  
-  1. Navigates to the add device screen.
-  2. Inputs a valid serial number into the UI.
-  3. Submits the device addition request.
-  4. Waits for confirmation or success message.
-  5. Verifies that the device appears in the device list or confirmation UI.
+  1. Ensures environment is prepared via `class_setup`.
+  2. Navigates to device addition UI.
+  3. Inputs a valid serial number.
+  4. Submits the device addition form.
+  5. Waits for confirmation or success indicator.
+  6. Verifies device appears in the registered device list.
 
 - **Assertions:**  
-  - Checks for successful device addition confirmation.
-  - Verifies device presence in the device list.
-  - May assert on UI messages or backend state.
+  - Device is successfully added and visible in the UI.
+  - Success message or confirmation dialog is present.
 
 - **Boundary Conditions:**  
-  - Handles invalid or missing serial numbers.
-  - Ensures only one device is added per test run.
+  - Validates with a known-good serial number.
+  - May check for duplicate prevention or error handling if serial number is reused.
 
 - **Exception Handling:**  
-  - Catches UI interaction errors (e.g., element not found, timeout).
-  - Raises test failure if device is not added as expected.
+  - Catches UI interaction errors, form submission failures, or assertion mismatches.
 
 ---
 
 ### Missing Artifacts
 
 None
-
----
