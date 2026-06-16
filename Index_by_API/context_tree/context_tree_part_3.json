@@ -135,7 +135,60 @@
                                 {
                                     "file_identity": "test_suite_02_add_device.py",
                                     "tests/windows/hpx_rebranding/Framework/add_device/test_suite_02_add_device.py": {
-                                        "chunks": []
+                                        "chunks": [
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_02_add_device.py",
+                                                "chunkType": "class",
+                                                "name": "Test_Suite_02_Add_Device",
+                                                "startLine": 12,
+                                                "endLine": 70,
+                                                "language": "python",
+                                                "contentPreview": "class Test_Suite_02_Add_Device(object):\n    @pytest.fixture(scope=\"class\", autouse=True)\n    def class_setup(cls, request, windows_test_setup, utility_web_session):\n        cls = cls.__class__\n        request.cls.driver = windows_test_setup\n        request.cls.web_driver = utility_web_session\n        request.cls.fc = FlowContainer(request.cls.driver)\n        request.cls.fc.kill_hpx_process()\n        cls.profile= request.cls.fc.fd[\"profile\"]\n        cls.add_device= request.cls.fc.fd[\"add_device\"]\n        request.cls.devicesMFE = cls.fc.fd[\"devicesMFE\"]\n        request.cls.fc.web_password_credential_delete()\n        hpid_credentials = saf_misc.load_json(ma_misc.get_abs_path(HPX_ACCOUNT.account_details_path))[\"hpid\"]\n        cls.user_name, cls.password = hpid_credentials[\"username\"], hpid_credentials[\"password\"]\n        cls.profile.minimize_chrome()\n\n    @pytest.mark.regression\n    def test_01_verify_device_add_via_product_number_C55687272(self):\n        self.devicesMFE.click_home_loggedin()\n        self.fc.sign_in(self.user_name, self.password, self.web_driver, user_icon_click=False)\n        logged_in = self.profile.verify_top_profile_icon_signed_in()\n        assert logged_in, \"User not signed in/After signing in the 'Sign In' button failed to disappear after 20 seconds\"\n        self.profile.verify_add_device_button()\n        self.profile.click_add_device_button()\n        assert self.add_device.verify_add_device_page(), \"Add device page is not displayed\"\n        assert self.add_device.verify_search_by_serial_number_btn(), \"search by serial number button not found\"\n        self.add_device.click_search_by_serial_number_btn()\n        self.add_device.input_enter_serial_number(\"8CC5281Y49\")\n        entered_value = self.add_device.get_entered_serial_number()\n        assert entered_value == \"8CC5281Y49\", f\"Serial number not displayed correctly, found: {entered_value}\"  \n        assert self.add_device.verify_product_number_textbox(), \"Product number textbox not found\"  \n     ...",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_02_add_device.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_02_Add_Device.class_setup",
+                                                "startLine": 14,
+                                                "endLine": 27,
+                                                "language": "python",
+                                                "contentPreview": "    def class_setup(cls, request, windows_test_setup, utility_web_session):\n        cls = cls.__class__\n        request.cls.driver = windows_test_setup\n        request.cls.web_driver = utility_web_session\n        request.cls.fc = FlowContainer(request.cls.driver)\n        request.cls.fc.kill_hpx_process()\n        cls.profile= request.cls.fc.fd[\"profile\"]\n        cls.add_device= request.cls.fc.fd[\"add_device\"]\n        request.cls.devicesMFE = cls.fc.fd[\"devicesMFE\"]\n        request.cls.fc.web_password_credential_delete()\n        hpid_credentials = saf_misc.load_json(ma_misc.get_abs_path(HPX_ACCOUNT.account_details_path))[\"hpid\"]\n        cls.user_name, cls.password = hpid_credentials[\"username\"], hpid_credentials[\"password\"]\n        cls.profile.minimize_chrome()\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_02_add_device.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_02_Add_Device.test_01_verify_device_add_via_product_number_C55687272",
+                                                "startLine": 29,
+                                                "endLine": 48,
+                                                "language": "python",
+                                                "contentPreview": "    def test_01_verify_device_add_via_product_number_C55687272(self):\n        self.devicesMFE.click_home_loggedin()\n        self.fc.sign_in(self.user_name, self.password, self.web_driver, user_icon_click=False)\n        logged_in = self.profile.verify_top_profile_icon_signed_in()\n        assert logged_in, \"User not signed in/After signing in the 'Sign In' button failed to disappear after 20 seconds\"\n        self.profile.verify_add_device_button()\n        self.profile.click_add_device_button()\n        assert self.add_device.verify_add_device_page(), \"Add device page is not displayed\"\n        assert self.add_device.verify_search_by_serial_number_btn(), \"search by serial number button not found\"\n        self.add_device.click_search_by_serial_number_btn()\n        self.add_device.input_enter_serial_number(\"8CC5281Y49\")\n        entered_value = self.add_device.get_entered_serial_number()\n        assert entered_value == \"8CC5281Y49\", f\"Serial number not displayed correctly, found: {entered_value}\"  \n        assert self.add_device.verify_product_number_textbox(), \"Product number textbox not found\"  \n        self.add_device.input_enter_product_number(\"9U886PA#ACJ\")\n        entered_value = self.add_device.get_entered_product_number()\n        assert entered_value == \"9U886PA#ACJ\", f\"Product number not displayed correctly, found: {entered_value}\"  \n        self.add_device.click_add_device_hyperlink()\n        assert self.add_device.verify_newly_added_devicename(), \"Newly added device name is not displayed\"\n ",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_02_add_device.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_02_Add_Device.test_02_verify_device_addition_via_serial_number_C55687266",
+                                                "startLine": 50,
+                                                "endLine": 70,
+                                                "language": "python",
+                                                "contentPreview": "    def test_02_verify_device_addition_via_serial_number_C55687266(self):\n        self.devicesMFE.click_home_loggedin()\n        self.fc.sign_in(self.user_name, self.password, self.web_driver)\n        logged_in = self.profile.verify_top_profile_icon_signed_in()\n        assert logged_in, \"User not signed in/After signing in the 'Sign In' button failed to disappear after 20 seconds\"\n        self.profile.verify_add_device_button()\n        self.profile.click_add_device_button()\n        assert self.add_device.verify_add_device_page(), \"Add device page is not displayed\"\n        assert self.add_device.verify_search_by_serial_number_btn(), \"search by serial number button not found\"\n        self.add_device.click_search_by_serial_number_btn()\n        self.add_device.input_enter_serial_number(\"8CC5281Y49\")\n        entered_value = self.add_device.get_entered_serial_number()\n        assert entered_value == \"8CC5281Y49\", f\"Serial number not displayed correctly, found: {entered_value}\"  \n        self.add_device.click_add_device_hyperlink()\n        assert self.add_device.verify_newly_added_devicename(), \"Newly added device name is not displayed\"\n \n \n\n \n\n   ",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            }
+                                        ]
                                     }
                                 }
                             ],
@@ -155,49 +208,759 @@
                                 {
                                     "file_identity": "test_suite_01_bell_notifications.py",
                                     "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_01_bell_notifications.py": {
-                                        "chunks": []
+                                        "chunks": [
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_01_bell_notifications.py",
+                                                "chunkType": "class",
+                                                "name": "Test_Suite_01_Bell_Notifications",
+                                                "startLine": 9,
+                                                "endLine": 71,
+                                                "language": "python",
+                                                "contentPreview": "class Test_Suite_01_Bell_Notifications(object):\n    @pytest.fixture(scope=\"class\", autouse=True)\n    def class_setup(cls, request, windows_test_setup):\n        cls = cls.__class__\n        request.cls.driver = windows_test_setup\n        request.cls.fc = FlowContainer(request.cls.driver)\n        request.cls.fc.kill_hpx_process()\n        request.cls.fc.kill_chrome_process()\n        cls.profile = request.cls.fc.fd[\"profile\"]\n        cls.devicesMFE = request.cls.fc.fd[\"devicesMFE\"]\n        cls.device_card = request.cls.fc.fd[\"device_card\"]\n        cls.bell_icon = request.cls.fc.fd[\"bell_icon\"]\n\n    @pytest.mark.regression\n    def test_01_verify_global_header_navigation_C60336078(self):\n        assert self.devicesMFE.verify_profile_icon_show_up(), \"profile icon invisible\"\n        assert self.devicesMFE.verify_sign_in_button_show_up(), \"sign-in button invisible\"\n        assert self.devicesMFE.verify_bell_icon_show_up(), \"bell icon invisible\"\n\n    @pytest.mark.regression\n    def test_02_verify_global_header_navigation_includes_bellicon_C53303694(self):\n        assert self.devicesMFE.verify_profile_icon_show_up(), \"profile icon invisible\"\n        assert self.devicesMFE.verify_sign_in_button_show_up(), \"sign-in button invisible\"\n        assert self.devicesMFE.verify_bell_icon_show_up(), \"bell icon invisible\"\n        assert self.device_card.verify_pc_devices_back_button(), \"device back button invisible\"\n        self.device_card.click_pc_devices_back_button()\n        assert self.devicesMFE.verify_bell_icon_show_up(), \"bell icon invisible\"\n\n    @pytest.mark.regression\n    def test_03_verify_bellicon_can_be_clicked_C53303695(self):\n        assert self.devicesMFE.verify_profile_icon_show_up(), \"profile icon invisible\"\n        assert self.devicesMFE.verify_sign_in_button_show_up(), \"sign-in button invisible\"\n        assert self.devicesMFE.verify_bell_icon_show_up(), \"bell icon invisible\"\n        assert self.device_card.verify_pc_devices_back_button(), \"device back button invisible\"...",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_01_bell_notifications.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_01_Bell_Notifications.class_setup",
+                                                "startLine": 11,
+                                                "endLine": 21,
+                                                "language": "python",
+                                                "contentPreview": "    def class_setup(cls, request, windows_test_setup):\n        cls = cls.__class__\n        request.cls.driver = windows_test_setup\n        request.cls.fc = FlowContainer(request.cls.driver)\n        request.cls.fc.kill_hpx_process()\n        request.cls.fc.kill_chrome_process()\n        cls.profile = request.cls.fc.fd[\"profile\"]\n        cls.devicesMFE = request.cls.fc.fd[\"devicesMFE\"]\n        cls.device_card = request.cls.fc.fd[\"device_card\"]\n        cls.bell_icon = request.cls.fc.fd[\"bell_icon\"]\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_01_bell_notifications.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_01_Bell_Notifications.test_01_verify_global_header_navigation_C60336078",
+                                                "startLine": 23,
+                                                "endLine": 27,
+                                                "language": "python",
+                                                "contentPreview": "    def test_01_verify_global_header_navigation_C60336078(self):\n        assert self.devicesMFE.verify_profile_icon_show_up(), \"profile icon invisible\"\n        assert self.devicesMFE.verify_sign_in_button_show_up(), \"sign-in button invisible\"\n        assert self.devicesMFE.verify_bell_icon_show_up(), \"bell icon invisible\"\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_01_bell_notifications.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_01_Bell_Notifications.test_02_verify_global_header_navigation_includes_bellicon_C53303694",
+                                                "startLine": 29,
+                                                "endLine": 36,
+                                                "language": "python",
+                                                "contentPreview": "    def test_02_verify_global_header_navigation_includes_bellicon_C53303694(self):\n        assert self.devicesMFE.verify_profile_icon_show_up(), \"profile icon invisible\"\n        assert self.devicesMFE.verify_sign_in_button_show_up(), \"sign-in button invisible\"\n        assert self.devicesMFE.verify_bell_icon_show_up(), \"bell icon invisible\"\n        assert self.device_card.verify_pc_devices_back_button(), \"device back button invisible\"\n        self.device_card.click_pc_devices_back_button()\n        assert self.devicesMFE.verify_bell_icon_show_up(), \"bell icon invisible\"\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_01_bell_notifications.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_01_Bell_Notifications.test_03_verify_bellicon_can_be_clicked_C53303695",
+                                                "startLine": 38,
+                                                "endLine": 47,
+                                                "language": "python",
+                                                "contentPreview": "    def test_03_verify_bellicon_can_be_clicked_C53303695(self):\n        assert self.devicesMFE.verify_profile_icon_show_up(), \"profile icon invisible\"\n        assert self.devicesMFE.verify_sign_in_button_show_up(), \"sign-in button invisible\"\n        assert self.devicesMFE.verify_bell_icon_show_up(), \"bell icon invisible\"\n        assert self.device_card.verify_pc_devices_back_button(), \"device back button invisible\"\n        self.device_card.click_pc_devices_back_button()\n        assert self.devicesMFE.verify_bell_icon_show_up(), \"bell icon invisible\"\n        self.device_card.click_bell_icon()\n        assert self.profile.verify_avatar_close_btn(), \"avatar close button invisible\"\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_01_bell_notifications.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_01_Bell_Notifications.test_04_verify_notifications_sidepanel_opened_upon_clicking_bellicon_C53303696",
+                                                "startLine": 49,
+                                                "endLine": 59,
+                                                "language": "python",
+                                                "contentPreview": "    def test_04_verify_notifications_sidepanel_opened_upon_clicking_bellicon_C53303696(self):\n        assert self.devicesMFE.verify_profile_icon_show_up(), \"profile icon invisible\"\n        assert self.devicesMFE.verify_sign_in_button_show_up(), \"sign-in button invisible\"\n        assert self.devicesMFE.verify_bell_icon_show_up(), \"bell icon invisible\"\n        assert self.device_card.verify_pc_devices_back_button(), \"device back button invisible\"\n        self.device_card.click_pc_devices_back_button()\n        assert self.devicesMFE.verify_bell_icon_show_up(), \"bell icon invisible\"\n        self.device_card.click_bell_icon()\n        assert self.profile.verify_avatar_close_btn(), \"avatar close button invisible\"\n        assert self.bell_icon.verify_notifications_title(), \"notification title invisible\"\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_01_bell_notifications.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_01_Bell_Notifications.test_05_verify_empty_bell_state_when_user_not_logged_in_C53303697",
+                                                "startLine": 61,
+                                                "endLine": 71,
+                                                "language": "python",
+                                                "contentPreview": "    def test_05_verify_empty_bell_state_when_user_not_logged_in_C53303697(self):\n        assert self.devicesMFE.verify_profile_icon_show_up(), \"profile icon invisible\"\n        assert self.devicesMFE.verify_sign_in_button_show_up(), \"sign-in button invisible\"\n        assert self.devicesMFE.verify_bell_icon_show_up(), \"bell icon invisible\"\n        self.device_card.click_bell_icon()\n        assert self.bell_icon.verify_notifications_title(), \"notification title invisible\"\n        assert self.bell_icon.verify_notifications_panel_sign_in_btn(), \"sign-in button in notification panel invisible\"\n        assert self.profile.verify_avatar_close_btn(), \"avatar close button invisible\"\n        self.profile.click_close_avatar_btn()\n\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            }
+                                        ]
                                     }
                                 },
                                 {
                                     "file_identity": "test_suite_02_bell_notifications.py",
                                     "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_02_bell_notifications.py": {
-                                        "chunks": []
+                                        "chunks": [
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_02_bell_notifications.py",
+                                                "chunkType": "class",
+                                                "name": "Test_Suite_02_Bell_Notifications",
+                                                "startLine": 11,
+                                                "endLine": 48,
+                                                "language": "python",
+                                                "contentPreview": "class Test_Suite_02_Bell_Notifications(object):\n    @pytest.fixture(scope=\"class\", autouse=True)\n    def class_setup(cls, request, windows_test_setup, utility_web_session):\n        cls = cls.__class__\n        request.cls.driver = windows_test_setup\n        request.cls.web_driver = utility_web_session\n        request.cls.fc = FlowContainer(request.cls.driver)\n        request.cls.fc.kill_hpx_process()\n        cls.profile = request.cls.fc.fd[\"profile\"]\n        cls.devicesMFE = request.cls.fc.fd[\"devicesMFE\"]\n        cls.device_card = request.cls.fc.fd[\"device_card\"]\n        cls.bell_icon = request.cls.fc.fd[\"bell_icon\"]\n        request.cls.fc.web_password_credential_delete()\n        hpid_credentials = saf_misc.load_json(ma_misc.get_abs_path(HPX_ACCOUNT.account_details_path))[\"hpid\"]\n        cls.user_name, cls.password = hpid_credentials[\"username\"], hpid_credentials[\"password\"]\n        cls.profile.minimize_chrome()\n\n    @pytest.mark.regression\n    def test_01_verify_back_button_visible_on_navigation_side_panel_C42631068(self):\n        assert self.devicesMFE.verify_sign_in_button_show_up(), \"sign-in button invisible\"\n        assert self.device_card.verify_bell_icon_present(), \"bell icon invisible\"\n        self.device_card.click_bell_icon()\n        assert self.bell_icon.verify_notifications_title(), \"notification title invisible\"\n        assert self.bell_icon.verify_notifications_panel_sign_in_btn(), \"sign-in button in notification panel invisible\"\n        assert self.profile.verify_avatar_close_btn(), \"avatar close button invisible\"\n\n    @pytest.mark.regression\n    def test_02_verify_back_button_named_as_close_can_be_clicked_C42631069(self):\n        assert self.device_card.verify_bell_icon_present(), \"bell icon invisible\"\n        self.device_card.click_bell_icon()\n        assert self.bell_icon.verify_notifications_title(), \"notification title invisible\"\n        assert self.bell_icon.verify_notifications_panel_sign_in_btn(), \"sign-in button in notification panel invisibl...",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_02_bell_notifications.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_02_Bell_Notifications.class_setup",
+                                                "startLine": 13,
+                                                "endLine": 27,
+                                                "language": "python",
+                                                "contentPreview": "    def class_setup(cls, request, windows_test_setup, utility_web_session):\n        cls = cls.__class__\n        request.cls.driver = windows_test_setup\n        request.cls.web_driver = utility_web_session\n        request.cls.fc = FlowContainer(request.cls.driver)\n        request.cls.fc.kill_hpx_process()\n        cls.profile = request.cls.fc.fd[\"profile\"]\n        cls.devicesMFE = request.cls.fc.fd[\"devicesMFE\"]\n        cls.device_card = request.cls.fc.fd[\"device_card\"]\n        cls.bell_icon = request.cls.fc.fd[\"bell_icon\"]\n        request.cls.fc.web_password_credential_delete()\n        hpid_credentials = saf_misc.load_json(ma_misc.get_abs_path(HPX_ACCOUNT.account_details_path))[\"hpid\"]\n        cls.user_name, cls.password = hpid_credentials[\"username\"], hpid_credentials[\"password\"]\n        cls.profile.minimize_chrome()\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_02_bell_notifications.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_02_Bell_Notifications.test_01_verify_back_button_visible_on_navigation_side_panel_C42631068",
+                                                "startLine": 29,
+                                                "endLine": 36,
+                                                "language": "python",
+                                                "contentPreview": "    def test_01_verify_back_button_visible_on_navigation_side_panel_C42631068(self):\n        assert self.devicesMFE.verify_sign_in_button_show_up(), \"sign-in button invisible\"\n        assert self.device_card.verify_bell_icon_present(), \"bell icon invisible\"\n        self.device_card.click_bell_icon()\n        assert self.bell_icon.verify_notifications_title(), \"notification title invisible\"\n        assert self.bell_icon.verify_notifications_panel_sign_in_btn(), \"sign-in button in notification panel invisible\"\n        assert self.profile.verify_avatar_close_btn(), \"avatar close button invisible\"\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_02_bell_notifications.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_02_Bell_Notifications.test_02_verify_back_button_named_as_close_can_be_clicked_C42631069",
+                                                "startLine": 38,
+                                                "endLine": 48,
+                                                "language": "python",
+                                                "contentPreview": "    def test_02_verify_back_button_named_as_close_can_be_clicked_C42631069(self):\n        assert self.device_card.verify_bell_icon_present(), \"bell icon invisible\"\n        self.device_card.click_bell_icon()\n        assert self.bell_icon.verify_notifications_title(), \"notification title invisible\"\n        assert self.bell_icon.verify_notifications_panel_sign_in_btn(), \"sign-in button in notification panel invisible\"\n        close_btn_text = self.bell_icon.verify_notifications_panel_close_btn()\n        assert close_btn_text == \"Close\", \"Text on Close button is not matching or its incorrect\"\n        self.bell_icon.click_notifications_panel_close_btn()\n        assert self.devicesMFE.verify_sign_in_button_show_up(), \"sign-in button invisible\"\n        assert self.device_card.verify_bell_icon_present(), \"bell icon invisible\"\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            }
+                                        ]
                                     }
                                 },
                                 {
                                     "file_identity": "test_suite_03_bell_notifications.py",
                                     "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_03_bell_notifications.py": {
-                                        "chunks": []
+                                        "chunks": [
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_03_bell_notifications.py",
+                                                "chunkType": "class",
+                                                "name": "Test_Suite_03_Bell_Notifications",
+                                                "startLine": 12,
+                                                "endLine": 112,
+                                                "language": "python",
+                                                "contentPreview": "class Test_Suite_03_Bell_Notifications(object):\n    @pytest.fixture(scope=\"class\", autouse=True)\n    def class_setup(cls, request, windows_test_setup, utility_web_session):\n        cls = cls.__class__\n        request.cls.driver = windows_test_setup\n        request.cls.web_driver = utility_web_session\n        request.cls.fc = FlowContainer(request.cls.driver)\n        request.cls.fc.kill_hpx_process()\n        cls.devicesMFE = request.cls.fc.fd[\"devicesMFE\"]\n        cls.css = request.cls.fc.fd[\"css\"]\n        cls.device_card = request.cls.fc.fd[\"device_card\"]\n        cls.bell_icon = request.cls.fc.fd[\"bell_icon\"]\n        cls.profile = request.cls.fc.fd[\"profile\"]\n        cls.devices_details_pc_mfe = request.cls.fc.fd[\"devices_details_pc_mfe\"]\n        request.cls.fc.web_password_credential_delete()\n        cls.user_name = saf_misc.load_json(ma_misc.get_abs_path(HPX_ACCOUNT.account_details_path))[\"hpid\"][\"username\"]\n        cls.password = saf_misc.load_json(ma_misc.get_abs_path(HPX_ACCOUNT.account_details_path))[\"hpid\"][\"password\"]\n\n    @pytest.mark.regression\n    @pytest.mark.skip_in_prod\n    @pytest.mark.skip_in_stg\n    def test_01_verify_the_color_of_the_urgent_messages_C60336080(self):\n        self.fc.sign_in(self.user_name, self.password, self.web_driver)\n        assert self.devicesMFE.verify_bell_icon_show_up(), \"bell icon invisible\"\n        self.device_card.click_bell_icon()\n        self.bell_icon.click_notification_account()\n        notification_type = self.bell_icon.verify_urgent_unread_notifs()\n        assert notification_type == \"urgent notification\", \"urgent unread msgs not found\"\n        self.bell_icon.click_urgent_unread_notifs()\n        assert self.bell_icon.verify_urgent_msg_icon(), \"urgent msg icon invisible\"\n\n    @pytest.mark.regression\n    @pytest.mark.skip_in_prod\n    @pytest.mark.skip_in_stg\n    def test_02_verify_the_color_of_the_warning_messages_C60336081(self):\n        self.fc.sign_in(self.user_name, self.password, self.web_driver)\n        assert s...",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_03_bell_notifications.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_03_Bell_Notifications.class_setup",
+                                                "startLine": 14,
+                                                "endLine": 29,
+                                                "language": "python",
+                                                "contentPreview": "    def class_setup(cls, request, windows_test_setup, utility_web_session):\n        cls = cls.__class__\n        request.cls.driver = windows_test_setup\n        request.cls.web_driver = utility_web_session\n        request.cls.fc = FlowContainer(request.cls.driver)\n        request.cls.fc.kill_hpx_process()\n        cls.devicesMFE = request.cls.fc.fd[\"devicesMFE\"]\n        cls.css = request.cls.fc.fd[\"css\"]\n        cls.device_card = request.cls.fc.fd[\"device_card\"]\n        cls.bell_icon = request.cls.fc.fd[\"bell_icon\"]\n        cls.profile = request.cls.fc.fd[\"profile\"]\n        cls.devices_details_pc_mfe = request.cls.fc.fd[\"devices_details_pc_mfe\"]\n        request.cls.fc.web_password_credential_delete()\n        cls.user_name = saf_misc.load_json(ma_misc.get_abs_path(HPX_ACCOUNT.account_details_path))[\"hpid\"][\"username\"]\n        cls.password = saf_misc.load_json(ma_misc.get_abs_path(HPX_ACCOUNT.account_details_path))[\"hpid\"][\"password\"]\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_03_bell_notifications.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_03_Bell_Notifications.test_01_verify_the_color_of_the_urgent_messages_C60336080",
+                                                "startLine": 33,
+                                                "endLine": 42,
+                                                "language": "python",
+                                                "contentPreview": "    def test_01_verify_the_color_of_the_urgent_messages_C60336080(self):\n        self.fc.sign_in(self.user_name, self.password, self.web_driver)\n        assert self.devicesMFE.verify_bell_icon_show_up(), \"bell icon invisible\"\n        self.device_card.click_bell_icon()\n        self.bell_icon.click_notification_account()\n        notification_type = self.bell_icon.verify_urgent_unread_notifs()\n        assert notification_type == \"urgent notification\", \"urgent unread msgs not found\"\n        self.bell_icon.click_urgent_unread_notifs()\n        assert self.bell_icon.verify_urgent_msg_icon(), \"urgent msg icon invisible\"\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_03_bell_notifications.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_03_Bell_Notifications.test_02_verify_the_color_of_the_warning_messages_C60336081",
+                                                "startLine": 46,
+                                                "endLine": 54,
+                                                "language": "python",
+                                                "contentPreview": "    def test_02_verify_the_color_of_the_warning_messages_C60336081(self):\n        self.fc.sign_in(self.user_name, self.password, self.web_driver)\n        assert self.devicesMFE.verify_bell_icon_show_up(), \"bell icon invisible\"\n        self.device_card.click_bell_icon()\n        self.bell_icon.click_notification_account()\n        assert self.bell_icon.verify_warning_unread_notifs(), \"warning unread msgs not found\"\n        self.bell_icon.click_warning_unread_notifs()\n        assert self.bell_icon.verify_warning_msg_icon(), \"warning msg icon invisible\"\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_03_bell_notifications.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_03_Bell_Notifications.test_03_verify_the_color_of_the_informative_messages_C60336082",
+                                                "startLine": 58,
+                                                "endLine": 66,
+                                                "language": "python",
+                                                "contentPreview": "    def test_03_verify_the_color_of_the_informative_messages_C60336082(self):\n        self.fc.sign_in(self.user_name, self.password, self.web_driver)\n        assert self.devicesMFE.verify_bell_icon_show_up(), \"bell icon invisible\"\n        self.device_card.click_bell_icon()\n        self.bell_icon.click_notification_account()\n        assert self.bell_icon.verify_informative_unread_notifs(), \"informative unread msgs not found\"\n        self.bell_icon.click_informative_unread_notifs()\n        assert self.bell_icon.verify_info_msg_icon(), \"informative msg icon invisible\"\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_03_bell_notifications.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_03_Bell_Notifications.test_04_notifications_panel_opens_on_bell_click_C67874087",
+                                                "startLine": 70,
+                                                "endLine": 79,
+                                                "language": "python",
+                                                "contentPreview": "    def test_04_notifications_panel_opens_on_bell_click_C67874087(self):\n        self.fc.sign_in(self.user_name, self.password, self.web_driver)\n        assert self.device_card.verify_pc_devices_back_button(), \"device back button not found\"\n        assert self.profile.verify_devicepage_avatar_btn(), \"avatar button is not found\"\n        assert self.devicesMFE.verify_bell_icon_show_up(), \"bell icon is not found\"\n        assert self.device_card.verify_homepage_plus_button(), \"homepage plus button is not found\"\n        assert self.profile.verify_navbar_sign_in_button(), \"sign-in button is not found\"\n        self.device_card.click_bell_icon()\n        self.bell_icon.verify_notifications_sidebar_ui()\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_03_bell_notifications.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_03_Bell_Notifications.test_05_no_notifications_when_logged_out_C60336139",
+                                                "startLine": 83,
+                                                "endLine": 90,
+                                                "language": "python",
+                                                "contentPreview": "    def test_05_no_notifications_when_logged_out_C60336139(self):\n        assert self.css.verify_sign_in_button_show_up(), \"sign-in button invisible\"\n        assert self.devicesMFE.verify_bell_icon_show_up(), \"bell icon invisible\"\n        self.device_card.click_bell_icon()\n        assert self.bell_icon.verify_sign_in_to_view_msgs(), \"sign in or create an account to view all of your messages is invisible\"\n        notifs_title_name = self.bell_icon.verify_notifications_sidebar_ui()\n        assert notifs_title_name == \"Notifications\", \"notifications title name mismatch\"\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_03_bell_notifications.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_03_Bell_Notifications.test_06_only_account_messages_displayed_C58684361",
+                                                "startLine": 94,
+                                                "endLine": 102,
+                                                "language": "python",
+                                                "contentPreview": "    def test_06_only_account_messages_displayed_C58684361(self):\n        self.fc.sign_in(self.user_name, self.password, self.web_driver)\n        assert self.devices_details_pc_mfe.verify_pc_device_name_show_up(), \"PC name on homepage not loaded/visible\"\n        assert self.device_card.verify_bell_icon_present(), \"bell icon invisible\"\n        self.device_card.click_bell_icon()\n        self.bell_icon.click_notification_account()\n        account_title = self.bell_icon.verify_account_category()\n        assert account_title == \"Account\", \"account title name mismatch\"\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_03_bell_notifications.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_03_Bell_Notifications.test_07_sort_order_of_messages_C58684367",
+                                                "startLine": 106,
+                                                "endLine": 112,
+                                                "language": "python",
+                                                "contentPreview": "    def test_07_sort_order_of_messages_C58684367(self):\n        self.fc.sign_in(self.user_name, self.password, self.web_driver)\n        self.device_card.click_bell_icon()\n        self.bell_icon.click_notification_account()\n        assert self.bell_icon.verify_unread_text(), \"unread messages category not found\"\n        assert self.bell_icon.verify_read_text(), \"read messages category not found\"\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            }
+                                        ]
                                     }
                                 },
                                 {
                                     "file_identity": "test_suite_04_bell_notifications.py",
                                     "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_04_bell_notifications.py": {
-                                        "chunks": []
+                                        "chunks": [
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_04_bell_notifications.py",
+                                                "chunkType": "class",
+                                                "name": "Test_Suite_04_Bell_Notifications",
+                                                "startLine": 13,
+                                                "endLine": 150,
+                                                "language": "python",
+                                                "contentPreview": "class Test_Suite_04_Bell_Notifications(object):\n    @pytest.fixture(scope=\"class\", autouse=True)\n    def class_setup(cls, request, windows_test_setup, utility_web_session):\n        cls = cls.__class__\n        request.cls.driver = windows_test_setup\n        request.cls.web_driver = utility_web_session\n        request.cls.fc = FlowContainer(request.cls.driver)\n        request.cls.fc.kill_hpx_process()\n        cls.devicesMFE = request.cls.fc.fd[\"devicesMFE\"]\n        cls.css = request.cls.fc.fd[\"css\"]\n        cls.device_card = request.cls.fc.fd[\"device_card\"]\n        cls.bell_icon = request.cls.fc.fd[\"bell_icon\"]\n        cls.profile = request.cls.fc.fd[\"profile\"]\n        cls.devices_details_pc_mfe = request.cls.fc.fd[\"devices_details_pc_mfe\"]\n        cls.hpx_settings = request.cls.fc.fd[\"hpx_settings\"]\n        request.cls.fc.web_password_credential_delete()\n        cls.user_name = saf_misc.load_json(ma_misc.get_abs_path(HPX_ACCOUNT.account_details_path))[\"hpid\"][\"username\"]\n        cls.password = saf_misc.load_json(ma_misc.get_abs_path(HPX_ACCOUNT.account_details_path))[\"hpid\"][\"password\"]\n\n    @pytest.mark.regression\n    @pytest.mark.skip_in_prod\n    @pytest.mark.skip_in_stg\n    def test_01_verify_bell_notifications_displayed_when_logged_in_C60339087(self):\n        self.fc.sign_in(self.user_name, self.password, self.web_driver)\n        assert self.devicesMFE.verify_bell_icon_show_up(), \"bell icon is not present\"\n        self.device_card.click_bell_icon()\n        self.bell_icon.click_notification_account()\n\n        notification_type = self.bell_icon.verify_urgent_unread_notifs()\n        assert notification_type == \"urgent notification\", \"urgent unread msgs not found\"\n        urgent_notifs_name = self.bell_icon.verify_unread_urgent_notifs_name()\n        logging.info(f\"Notification Name: {urgent_notifs_name}\")\n\n        notification_type = self.bell_icon.verify_informative_unread_notifs()\n        assert notification_type == \"informative notification\", \"informative unread m...",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_04_bell_notifications.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_04_Bell_Notifications.class_setup",
+                                                "startLine": 15,
+                                                "endLine": 31,
+                                                "language": "python",
+                                                "contentPreview": "    def class_setup(cls, request, windows_test_setup, utility_web_session):\n        cls = cls.__class__\n        request.cls.driver = windows_test_setup\n        request.cls.web_driver = utility_web_session\n        request.cls.fc = FlowContainer(request.cls.driver)\n        request.cls.fc.kill_hpx_process()\n        cls.devicesMFE = request.cls.fc.fd[\"devicesMFE\"]\n        cls.css = request.cls.fc.fd[\"css\"]\n        cls.device_card = request.cls.fc.fd[\"device_card\"]\n        cls.bell_icon = request.cls.fc.fd[\"bell_icon\"]\n        cls.profile = request.cls.fc.fd[\"profile\"]\n        cls.devices_details_pc_mfe = request.cls.fc.fd[\"devices_details_pc_mfe\"]\n        cls.hpx_settings = request.cls.fc.fd[\"hpx_settings\"]\n        request.cls.fc.web_password_credential_delete()\n        cls.user_name = saf_misc.load_json(ma_misc.get_abs_path(HPX_ACCOUNT.account_details_path))[\"hpid\"][\"username\"]\n        cls.password = saf_misc.load_json(ma_misc.get_abs_path(HPX_ACCOUNT.account_details_path))[\"hpid\"][\"password\"]\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_04_bell_notifications.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_04_Bell_Notifications.test_01_verify_bell_notifications_displayed_when_logged_in_C60339087",
+                                                "startLine": 35,
+                                                "endLine": 55,
+                                                "language": "python",
+                                                "contentPreview": "    def test_01_verify_bell_notifications_displayed_when_logged_in_C60339087(self):\n        self.fc.sign_in(self.user_name, self.password, self.web_driver)\n        assert self.devicesMFE.verify_bell_icon_show_up(), \"bell icon is not present\"\n        self.device_card.click_bell_icon()\n        self.bell_icon.click_notification_account()\n\n        notification_type = self.bell_icon.verify_urgent_unread_notifs()\n        assert notification_type == \"urgent notification\", \"urgent unread msgs not found\"\n        urgent_notifs_name = self.bell_icon.verify_unread_urgent_notifs_name()\n        logging.info(f\"Notification Name: {urgent_notifs_name}\")\n\n        notification_type = self.bell_icon.verify_informative_unread_notifs()\n        assert notification_type == \"informative notification\", \"informative unread msgs not found\"\n        informative_notifs_name = self.bell_icon.verify_unread_informative_notifs_name()\n        logging.info(f\"Notification Name: {informative_notifs_name}\")\n\n        notification_type = self.bell_icon.verify_warning_unread_notifs()\n        assert notification_type == \"warning notification\", \"warning unread msgs not found\"\n        warning_notifs_name = self.bell_icon.verify_unread_warning_notifs_name()\n        logging.info(f\"Notification Name: {warning_notifs_name}\")\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_04_bell_notifications.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_04_Bell_Notifications.test_02_verify_transition_from_empty_bell_to_notification_bell_on_login_C60339089",
+                                                "startLine": 59,
+                                                "endLine": 78,
+                                                "language": "python",
+                                                "contentPreview": "    def test_02_verify_transition_from_empty_bell_to_notification_bell_on_login_C60339089(self):\n        assert self.devicesMFE.verify_bell_icon_show_up(), \"bell icon not visible\"\n        self.device_card.click_bell_icon()\n        assert self.bell_icon.verify_notifications_panel_sign_in_btn(), \"sign-in button in notification panel is not present\"\n        self.bell_icon.click_notifications_panel_close_btn()\n        assert self.devices_details_pc_mfe.verify_back_devices_button_on_pc_devices_page_show_up(), \"Device details page not loaded\"\n        assert self.css.verify_sign_in_button_show_up(), \"sign-in button invisible\"\n        self.css.click_sign_in_button()\n        self.fc.sign_in(self.user_name, self.password, self.web_driver, user_icon_click=False)\n        logged_in = self.profile.verify_top_profile_icon_signed_in()\n        assert logged_in, \"User not signed in/After signing in the 'Sign In' button failed to disappear after 20 seconds\"\n        self.device_card.click_bell_icon()\n        self.bell_icon.click_notification_account()\n        notification_type = self.bell_icon.verify_urgent_unread_notifs()\n        assert notification_type == \"urgent notification\", \"urgent unread msgs not found\"\n        notification_type = self.bell_icon.verify_informative_unread_notifs()\n        assert notification_type == \"informative notification\", \"informative unread msgs not found\"\n        notification_type = self.bell_icon.verify_warning_unread_notifs()\n        assert notification_type == \"warning notification\", \"warning unread msgs not found\"\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_04_bell_notifications.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_04_Bell_Notifications.test_03_verify_login_using_sign_in_option_in_bell_flyout_C60372196",
+                                                "startLine": 82,
+                                                "endLine": 90,
+                                                "language": "python",
+                                                "contentPreview": "    def test_03_verify_login_using_sign_in_option_in_bell_flyout_C60372196(self):\n        assert self.devicesMFE.verify_bell_icon_show_up(), \"bell icon not visible\"\n        self.device_card.click_bell_icon()\n        assert self.bell_icon.verify_notifications_panel_sign_in_btn(), \"sign-in button in notification panel is not present\"\n        self.bell_icon.click_notifications_panel_sign_in_btn()\n        self.fc.sign_in(self.user_name, self.password, self.web_driver, user_icon_click=False)\n        user_initials = self.profile.get_user_initials_after_signin()\n        assert user_initials in (\"RG\", \"RP\"), \"User not signed in/credentials not matching\"\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_04_bell_notifications.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_04_Bell_Notifications.test_04_verify_delete_option_for_urgent_unread_msg_is_disabled_C60336470",
+                                                "startLine": 94,
+                                                "endLine": 103,
+                                                "language": "python",
+                                                "contentPreview": "    def test_04_verify_delete_option_for_urgent_unread_msg_is_disabled_C60336470(self):\n        self.fc.sign_in(self.user_name, self.password, self.web_driver)\n        assert self.devicesMFE.verify_bell_icon_show_up(), \"bell icon not visible\"\n        self.device_card.click_bell_icon()\n        self.bell_icon.click_notification_account()\n        assert self.bell_icon.verify_unread_text(), \"unread messages category not found\"\n        assert self.bell_icon.verify_urgent_unread_notifs(), \"urgent unread notifications is not present\"\n        self.bell_icon.click_urgent_unread_notification_ellipsis()\n        assert self.bell_icon.verify_delete_disabled_urgent_unread_notifs(), \"delete option is enabled\"\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_04_bell_notifications.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_04_Bell_Notifications.test_05_verify_delete_option_for_warning_unread_msg_is_enabled_C60336471",
+                                                "startLine": 107,
+                                                "endLine": 120,
+                                                "language": "python",
+                                                "contentPreview": "    def test_05_verify_delete_option_for_warning_unread_msg_is_enabled_C60336471(self):\n        self.fc.sign_in(self.user_name, self.password, self.web_driver)\n        assert self.devicesMFE.verify_bell_icon_show_up(), \"bell icon not visible\"\n        self.device_card.click_bell_icon()\n        self.bell_icon.click_notification_account()\n        assert self.bell_icon.verify_unread_text(), \"unread messages category not found\"\n        notification_type = self.bell_icon.verify_warning_unread_notifs()\n        assert notification_type == \"warning notification\", \"warning unread msgs not found\"\n        warning_notifs_name = self.bell_icon.verify_unread_warning_notifs_name()\n        logging.info(f\"Notification Name: {warning_notifs_name}\")\n        self.bell_icon.click_warning_unread_notifs_ellipsis()\n        self.bell_icon.click_delete_warning_unread_notifs()\n        assert not self.bell_icon.verify_warning_unread_notifs(), \"Warning notification still present\"\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_04_bell_notifications.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_04_Bell_Notifications.test_06_verify_delete_option_for_informative_unread_msg_is_enabled_C60336472",
+                                                "startLine": 124,
+                                                "endLine": 133,
+                                                "language": "python",
+                                                "contentPreview": "    def test_06_verify_delete_option_for_informative_unread_msg_is_enabled_C60336472(self):\n        self.fc.sign_in(self.user_name, self.password, self.web_driver)\n        self.device_card.click_bell_icon()\n        self.bell_icon.click_notification_account()\n        assert self.bell_icon.verify_unread_text(), \"unread messages category not found\"\n        assert self.bell_icon.verify_informative_unread_notifs(), \"informative unread notifications is not present\"\n        self.bell_icon.click_informative_unread_notifs_ellipsis()\n        self.bell_icon.click_delete_informative_unread_notifs()\n        assert not self.bell_icon.verify_informative_unread_notifs(), \"informative notification still present\"\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_04_bell_notifications.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_04_Bell_Notifications.test_07_verify_user_can_navigate_back_to_navigation_side_panel_C60370254",
+                                                "startLine": 137,
+                                                "endLine": 150,
+                                                "language": "python",
+                                                "contentPreview": "    def test_07_verify_user_can_navigate_back_to_navigation_side_panel_C60370254(self):\n        self.fc.sign_in(self.user_name, self.password, self.web_driver)\n        self.device_card.click_bell_icon()\n        self.bell_icon.click_notification_account()\n        assert self.bell_icon.verify_unread_text(), \"unread messages category not found\"\n        assert self.bell_icon.verify_informative_unread_notifs(), \"informative unread notifications is not present\"\n        informative_notifs_name = self.bell_icon.verify_unread_informative_notifs_name()\n        logging.info(f\"Notification Name: {informative_notifs_name}\")\n        self.bell_icon.click_informative_unread_notifs()\n        detailed_notifs_back_btn_text = self.bell_icon.verify_detailed_notification_back_btn()\n        assert detailed_notifs_back_btn_text == \"Account\", \"Back button not present OR text incorrect on detailed notification page\"\n        self.bell_icon.click_detailed_notification_back_btn()\n        assert self.bell_icon.verify_notification_side_panel(), \"notifications side panel invisible\"\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            }
+                                        ]
                                     }
                                 },
                                 {
                                     "file_identity": "test_suite_05_bell_notifications.py",
                                     "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_05_bell_notifications.py": {
-                                        "chunks": []
+                                        "chunks": [
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_05_bell_notifications.py",
+                                                "chunkType": "class",
+                                                "name": "Test_Suite_05_Bell_Notifications",
+                                                "startLine": 12,
+                                                "endLine": 176,
+                                                "language": "python",
+                                                "contentPreview": "class Test_Suite_05_Bell_Notifications(object):\n    @pytest.fixture(scope=\"class\", autouse=True)\n    def class_setup(cls, request, windows_test_setup, utility_web_session):\n        cls = cls.__class__\n        request.cls.driver = windows_test_setup\n        request.cls.web_driver = utility_web_session\n        request.cls.fc = FlowContainer(request.cls.driver)\n        request.cls.fc.kill_hpx_process()\n        cls.profile = request.cls.fc.fd[\"profile\"]\n        cls.css = request.cls.fc.fd[\"css\"]\n        cls.device_card = request.cls.fc.fd[\"device_card\"]\n        cls.bell_icon = request.cls.fc.fd[\"bell_icon\"]\n        cls.hpx_settings = request.cls.fc.fd[\"hpx_settings\"]\n        cls.devices_details_pc_mfe = request.cls.fc.fd[\"devices_details_pc_mfe\"]\n        request.cls.fc.web_password_credential_delete()\n        hpid_credentials = saf_misc.load_json(ma_misc.get_abs_path(HPX_ACCOUNT.account_details_path))[\"hpid\"]\n        cls.user_name, cls.password = hpid_credentials[\"username\"], hpid_credentials[\"password\"]\n        cls.profile.minimize_chrome()\n\n    @pytest.mark.regression\n    @pytest.mark.skip_in_prod\n    @pytest.mark.skip_in_stg\n    def test_01_verify_notification_tile_ellipsis_clickable_C60339095(self):\n        logged_in = self.profile.verify_top_profile_icon_signed_in()\n        if not logged_in:\n            self.css.click_sign_in_button()\n            self.fc.sign_in(self.user_name, self.password, self.web_driver)\n        assert self.profile.verify_top_profile_icon_signed_in(), \"Profile icon isn't showing initials after sign-in\"\n        assert self.device_card.verify_bell_icon_present(), \"bell icon invisible\"\n        self.device_card.click_bell_icon()\n        assert self.bell_icon.verify_notifications_title(), \"notification title invisible\"\n        self.bell_icon.click_notification_account()\n        assert self.bell_icon.verify_notification_tile_ellipsis(), \"notification tile ellipsis invisible\"\n        self.bell_icon.click_notification_tile_ellipsis()\n        assert se...",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_05_bell_notifications.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_05_Bell_Notifications.class_setup",
+                                                "startLine": 14,
+                                                "endLine": 30,
+                                                "language": "python",
+                                                "contentPreview": "    def class_setup(cls, request, windows_test_setup, utility_web_session):\n        cls = cls.__class__\n        request.cls.driver = windows_test_setup\n        request.cls.web_driver = utility_web_session\n        request.cls.fc = FlowContainer(request.cls.driver)\n        request.cls.fc.kill_hpx_process()\n        cls.profile = request.cls.fc.fd[\"profile\"]\n        cls.css = request.cls.fc.fd[\"css\"]\n        cls.device_card = request.cls.fc.fd[\"device_card\"]\n        cls.bell_icon = request.cls.fc.fd[\"bell_icon\"]\n        cls.hpx_settings = request.cls.fc.fd[\"hpx_settings\"]\n        cls.devices_details_pc_mfe = request.cls.fc.fd[\"devices_details_pc_mfe\"]\n        request.cls.fc.web_password_credential_delete()\n        hpid_credentials = saf_misc.load_json(ma_misc.get_abs_path(HPX_ACCOUNT.account_details_path))[\"hpid\"]\n        cls.user_name, cls.password = hpid_credentials[\"username\"], hpid_credentials[\"password\"]\n        cls.profile.minimize_chrome()\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_05_bell_notifications.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_05_Bell_Notifications.test_01_verify_notification_tile_ellipsis_clickable_C60339095",
+                                                "startLine": 34,
+                                                "endLine": 49,
+                                                "language": "python",
+                                                "contentPreview": "    def test_01_verify_notification_tile_ellipsis_clickable_C60339095(self):\n        logged_in = self.profile.verify_top_profile_icon_signed_in()\n        if not logged_in:\n            self.css.click_sign_in_button()\n            self.fc.sign_in(self.user_name, self.password, self.web_driver)\n        assert self.profile.verify_top_profile_icon_signed_in(), \"Profile icon isn't showing initials after sign-in\"\n        assert self.device_card.verify_bell_icon_present(), \"bell icon invisible\"\n        self.device_card.click_bell_icon()\n        assert self.bell_icon.verify_notifications_title(), \"notification title invisible\"\n        self.bell_icon.click_notification_account()\n        assert self.bell_icon.verify_notification_tile_ellipsis(), \"notification tile ellipsis invisible\"\n        self.bell_icon.click_notification_tile_ellipsis()\n        assert self.bell_icon.verify_notification_dropdown_revealed(), \"notification drop down invisible\"\n        assert self.bell_icon.verify_dropdown_mark_as_read_option_present(), \"mark as read option not visible in dropdown\"\n        assert self.bell_icon.verify_dropdown_delete_option_present(), \"delete option not found in dropdown\"\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_05_bell_notifications.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_05_Bell_Notifications.test_02_verify_mark_as_read_option_enabled_for_all_notification_types_C60339094",
+                                                "startLine": 53,
+                                                "endLine": 100,
+                                                "language": "python",
+                                                "contentPreview": "    def test_02_verify_mark_as_read_option_enabled_for_all_notification_types_C60339094(self):\n        self.fc.sign_in(self.user_name, self.password, self.web_driver)\n        self.profile.verify_top_profile_icon_signed_in()\n        assert self.device_card.verify_bell_icon_present(), \"bell icon invisible\"\n        self.device_card.click_bell_icon()\n        assert self.bell_icon.verify_notifications_title(), \"notification title invisible\"\n        self.bell_icon.click_notification_account()\n\n        urgent_unread_notifs_name = self.bell_icon.verify_unread_urgent_notifs_name()\n        logging.info(f\"Notification Name: {urgent_unread_notifs_name}\")\n        assert self.bell_icon.verify_urgent_unread_notification_ellipsis(), \"urgent unread notification ellipsis invisible\"\n        self.bell_icon.click_urgent_unread_notification_ellipsis()\n        self.bell_icon.verify_notifs_and_mark_as_read()\n        self.bell_icon.swipe_till_read_notifs()\n        self.hpx_settings.minimize_and_click_hp_from_taskbar()\n        assert self.bell_icon.verify_urgent_notifications(), \"urgent notifications not found\"\n        read_urgent_notifs_name = self.bell_icon.get_urgent_notifications_name()\n        logging.info(f\"read urgent notifs name: {read_urgent_notifs_name}\")\n        assert urgent_unread_notifs_name == read_urgent_notifs_name, \"urgent msg did not get marked as read after opening the notification\"\n        self.bell_icon.swipe_to_top_notifs_section()\n        self.hpx_settings.minimize_and_click_hp_from_taskbar()\n\n        unread_informative_notifs_name = self.bell_icon.verify_unread_informative_notifs_name()\n        logging.info(f\"informative unread notifs name: {unread_informative_notifs_name}\")\n        assert self.bell_icon.verify_informative_unread_notification_ellipsis(), \"informative unread notification ellipsis invisible\"\n        self.bell_icon.click_informative_unread_notification_ellipsis()\n        self.bell_icon.verify_notifs_and_mark_as_read()\n        self.bell_icon.swipe_till_r...",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_05_bell_notifications.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_05_Bell_Notifications.test_03_verify_unread_read_notifications_C53303701",
+                                                "startLine": 104,
+                                                "endLine": 128,
+                                                "language": "python",
+                                                "contentPreview": "    def test_03_verify_unread_read_notifications_C53303701(self):\n        self.fc.sign_in(self.user_name, self.password, self.web_driver)\n        assert self.profile.verify_top_profile_icon_signed_in(), \"Profile icon isn't showing initials after sign-in\"\n        assert self.device_card.verify_bell_icon_present(), \"bell icon invisible\"\n        self.device_card.click_bell_icon()\n        assert self.bell_icon.verify_notifications_title(), \"notification title invisible\"\n        self.bell_icon.click_notification_account()\n        assert self.bell_icon.verify_unread_text(), \"unread notifications category invisible\"\n\n        notification_type = self.bell_icon.verify_informative_unread_notifs()\n        assert notification_type == \"informative notification\", \"informative unread msgs not found\"\n\n        notification_type = self.bell_icon.verify_warning_unread_notifs()\n        assert notification_type == \"warning notification\", \"warning unread msgs not found\"\n\n        notification_type = self.bell_icon.verify_urgent_unread_notifs()\n        assert notification_type == \"urgent notification\", \"urgent unread msgs not found\"\n\n        self.driver.swipe(\"read_text\")\n        self.hpx_settings.minimize_and_click_hp_from_taskbar()\n        assert self.bell_icon.verify_read_text(), \"read notifications category invisible\"\n        assert self.bell_icon.verify_informative_notifications(), \"informative read notifications invisible\"\n        assert self.bell_icon.verify_warning_notifications(), \"warning read notifications invisible\"\n        assert self.bell_icon.verify_urgent_notifications(), \"urgent read notifications invisible\"\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_05_bell_notifications.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_05_Bell_Notifications.test_04_verify_elements_in_notifs_title_C60339091",
+                                                "startLine": 132,
+                                                "endLine": 176,
+                                                "language": "python",
+                                                "contentPreview": "    def test_04_verify_elements_in_notifs_title_C60339091(self):\n        logged_in = self.profile.verify_top_profile_icon_signed_in()\n        if not logged_in:\n            self.css.click_sign_in_button()\n            self.fc.sign_in(self.user_name, self.password, self.web_driver, user_icon_click=False)\n        assert self.profile.verify_top_profile_icon_signed_in(), \"Profile icon isn't showing initials after sign-in\"\n        assert self.device_card.verify_bell_icon_present(), \"bell icon invisible\"\n        self.device_card.click_bell_icon()\n        assert self.bell_icon.verify_notifications_title(), \"notification title invisible\"\n        self.bell_icon.click_notification_account()\n        assert self.bell_icon.verify_unread_text(), \"unread notifications category invisible\"\n\n        self.driver.swipe(\"read_text\")\n        self.hpx_settings.minimize_and_click_hp_from_taskbar()\n        assert self.bell_icon.verify_notification_tile_ellipsis(), \"notification ellipsis not found\"\n\n        assert self.bell_icon.verify_urgent_notifications(), \"urgent notifications not found\"\n        read_urgent_notifs_name = self.bell_icon.get_urgent_notifications_name()\n        logging.info(f\"read urgent notifs name: {read_urgent_notifs_name}\")\n        self.bell_icon.click_urgent_read_notifs()\n        detailed_read_notifs_name = self.bell_icon.get_detailed_notification_title()\n        logging.info(f\"detailed read notifs name: {detailed_read_notifs_name}\")\n        assert read_urgent_notifs_name == detailed_read_notifs_name, \"urgent notif name mismatch between list view and detailed view\"\n\n        assert self.bell_icon.verify_urgent_msg_icon(), \"urgent msg icon invisible\"\n        description = self.bell_icon.get_notif_description()\n        logging.info(f\"Message detailed view: {description}\")\n        assert self.bell_icon.verify_time_stamp(), \"message time stamp not present\"\n        timestamp = self.bell_icon.get_time_stamp()\n        logging.info(f\"Timestamp: {timestamp}\")\n        assert 'ago' ...",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            }
+                                        ]
                                     }
                                 },
                                 {
                                     "file_identity": "test_suite_06_bell_notifcations.py",
                                     "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_06_bell_notifcations.py": {
-                                        "chunks": []
+                                        "chunks": [
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_06_bell_notifcations.py",
+                                                "chunkType": "class",
+                                                "name": "Test_Suite_06_Bell_Notifications",
+                                                "startLine": 12,
+                                                "endLine": 123,
+                                                "language": "python",
+                                                "contentPreview": "class Test_Suite_06_Bell_Notifications(object):\n    @pytest.fixture(scope=\"class\", autouse=True)\n    def class_setup(cls, request, windows_test_setup, utility_web_session):\n        cls = cls.__class__\n        request.cls.driver = windows_test_setup\n        request.cls.web_driver = utility_web_session\n        request.cls.fc = FlowContainer(request.cls.driver)\n        request.cls.fc.kill_hpx_process()\n        cls.devicesMFE = request.cls.fc.fd[\"devicesMFE\"]\n        cls.css = request.cls.fc.fd[\"css\"]\n        cls.device_card = request.cls.fc.fd[\"device_card\"]\n        cls.bell_icon = request.cls.fc.fd[\"bell_icon\"]\n        cls.profile = request.cls.fc.fd[\"profile\"]\n        request.cls.fc.web_password_credential_delete()\n        cls.user_name = saf_misc.load_json(ma_misc.get_abs_path(HPX_ACCOUNT.account_details_path))[\"hpid\"][\"username\"]\n        cls.password = saf_misc.load_json(ma_misc.get_abs_path(HPX_ACCOUNT.account_details_path))[\"hpid\"][\"password\"]\n\n\n    @pytest.mark.regression\n    @pytest.mark.skip_in_prod\n    @pytest.mark.skip_in_stg\n    def test_01_open_detailed_view_from_message_C58684404(self):\n        self.fc.sign_in(self.user_name, self.password, self.web_driver)\n        self.device_card.click_bell_icon()\n        self.bell_icon.click_notification_account()\n        self.driver.swipe(\"read_text\", direction=\"down\")\n        assert self.bell_icon.verify_urgent_notifications(), \"urgent notifications not found\"\n        self.bell_icon.click_urgent_read_notifs()\n        description = self.bell_icon.get_notif_description()\n        logging.info(f\"Message detailed view: {description}\")\n\n    @pytest.mark.regression\n    @pytest.mark.skip_in_prod\n    @pytest.mark.skip_in_stg\n    def test_02_mark_message_as_read_by_opening_C58684406(self):\n        self.fc.sign_in(self.user_name, self.password, self.web_driver)\n        self.device_card.click_bell_icon()\n        self.bell_icon.click_notification_account()\n        assert self.bell_icon.verify_unread_text(), \"unread messages categ...",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_06_bell_notifcations.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_06_Bell_Notifications.class_setup",
+                                                "startLine": 14,
+                                                "endLine": 29,
+                                                "language": "python",
+                                                "contentPreview": "    def class_setup(cls, request, windows_test_setup, utility_web_session):\n        cls = cls.__class__\n        request.cls.driver = windows_test_setup\n        request.cls.web_driver = utility_web_session\n        request.cls.fc = FlowContainer(request.cls.driver)\n        request.cls.fc.kill_hpx_process()\n        cls.devicesMFE = request.cls.fc.fd[\"devicesMFE\"]\n        cls.css = request.cls.fc.fd[\"css\"]\n        cls.device_card = request.cls.fc.fd[\"device_card\"]\n        cls.bell_icon = request.cls.fc.fd[\"bell_icon\"]\n        cls.profile = request.cls.fc.fd[\"profile\"]\n        request.cls.fc.web_password_credential_delete()\n        cls.user_name = saf_misc.load_json(ma_misc.get_abs_path(HPX_ACCOUNT.account_details_path))[\"hpid\"][\"username\"]\n        cls.password = saf_misc.load_json(ma_misc.get_abs_path(HPX_ACCOUNT.account_details_path))[\"hpid\"][\"password\"]\n\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_06_bell_notifcations.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_06_Bell_Notifications.test_01_open_detailed_view_from_message_C58684404",
+                                                "startLine": 33,
+                                                "endLine": 42,
+                                                "language": "python",
+                                                "contentPreview": "    def test_01_open_detailed_view_from_message_C58684404(self):\n        self.fc.sign_in(self.user_name, self.password, self.web_driver)\n        self.device_card.click_bell_icon()\n        self.bell_icon.click_notification_account()\n        self.driver.swipe(\"read_text\", direction=\"down\")\n        assert self.bell_icon.verify_urgent_notifications(), \"urgent notifications not found\"\n        self.bell_icon.click_urgent_read_notifs()\n        description = self.bell_icon.get_notif_description()\n        logging.info(f\"Message detailed view: {description}\")\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_06_bell_notifcations.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_06_Bell_Notifications.test_02_mark_message_as_read_by_opening_C58684406",
+                                                "startLine": 46,
+                                                "endLine": 62,
+                                                "language": "python",
+                                                "contentPreview": "    def test_02_mark_message_as_read_by_opening_C58684406(self):\n        self.fc.sign_in(self.user_name, self.password, self.web_driver)\n        self.device_card.click_bell_icon()\n        self.bell_icon.click_notification_account()\n        assert self.bell_icon.verify_unread_text(), \"unread messages category not found\"\n        self.bell_icon.verify_informative_unread_notifs(), \"info unread msgs not found\"\n        unread_informative_notifs_name = self.bell_icon.verify_unread_informative_notifs_name()\n        logging.info(f\"informative unread notifs name: {unread_informative_notifs_name}\")\n        self.bell_icon.click_informative_unread_notifs()\n        description = self.bell_icon.get_notif_description()\n        logging.info(f\"msg description: {description}\")\n        self.bell_icon.click_detailed_notification_back_btn()\n        assert self.bell_icon.verify_informative_notifications(), \"informative notifications not found\"\n        read_informative_notifs_name = self.bell_icon.get_informative_notifications_name()\n        logging.info(f\"read informative notifs name: {read_informative_notifs_name}\")\n        assert unread_informative_notifs_name == read_informative_notifs_name, \"informative msg did not get marked as read after opening the notification\"\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_06_bell_notifcations.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_06_Bell_Notifications.test_03_verify_unread_notifs_description_C60336160",
+                                                "startLine": 66,
+                                                "endLine": 95,
+                                                "language": "python",
+                                                "contentPreview": "    def test_03_verify_unread_notifs_description_C60336160(self):\n        self.fc.sign_in(self.user_name, self.password, self.web_driver)\n        self.device_card.click_bell_icon()\n        self.bell_icon.click_notification_account()\n        assert self.bell_icon.verify_unread_text(), \"unread messages category not found\"\n\n        informative_notifs_name = self.bell_icon.verify_unread_informative_notifs_name()\n        logging.info(f\"Notification Name: {informative_notifs_name}\")\n        assert self.bell_icon.verify_informative_unread_notifs(), \"informative unread notifications is not present\"\n        self.bell_icon.click_informative_unread_notifs()\n        description = self.bell_icon.get_notif_description()\n        logging.info(f\"Informative unread notification description: {description}\")\n        self.bell_icon.click_detailed_notification_back_btn()\n\n        urgent_notifs_name = self.bell_icon.verify_unread_urgent_notifs_name()\n        logging.info(f\"Notification Name: {urgent_notifs_name}\")\n        assert self.bell_icon.verify_urgent_unread_notifs(), \"urgent unread msgs not found\"\n        self.bell_icon.click_urgent_unread_notifs()\n        description = self.bell_icon.get_notif_description()\n        logging.info(f\"Urgent unread notification description: {description}\")\n        self.bell_icon.click_detailed_notification_back_btn()\n\n        assert self.bell_icon.verify_warning_unread_notifs(), \"warning unread notifications is not present\"\n        warning_notifs_name = self.bell_icon.verify_unread_warning_notifs_name()\n        logging.info(f\"Notification Name: {warning_notifs_name}\")\n        assert self.bell_icon.verify_warning_unread_notifs(), \"warning unread msgs not found\"\n        self.bell_icon.click_warning_unread_notifs()\n        description = self.bell_icon.get_notif_description()\n        logging.info(f\"Warning unread notification description: {description}\")\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_06_bell_notifcations.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_06_Bell_Notifications.test_04_verify_read_notifs_description_C60336161",
+                                                "startLine": 99,
+                                                "endLine": 123,
+                                                "language": "python",
+                                                "contentPreview": "    def test_04_verify_read_notifs_description_C60336161(self):\n        self.fc.sign_in(self.user_name, self.password, self.web_driver)\n        self.devicesMFE.verify_bell_icon_show_up()\n        self.device_card.click_bell_icon()\n        self.bell_icon.click_notification_account()\n        self.driver.swipe(\"read_text\")\n        self.hpx_settings.minimize_and_click_hp_from_taskbar()\n\n        assert self.bell_icon.verify_informative_notifications(), \"informative read msgs not found\"\n        self.bell_icon.click_informative_read_notifs()\n        description = self.bell_icon.get_notif_description()\n        logging.info(f\"Informative read notification description: {description}\")\n\n        self.bell_icon.click_notifications_back_btn()\n        assert self.bell_icon.verify_urgent_notifications(), \"urgent read msgs not found\"\n        self.bell_icon.click_urgent_read_notifs()\n        description = self.bell_icon.get_notif_description()\n        logging.info(f\"Urgent read notification description: {description}\")\n\n        self.bell_icon.click_notifications_back_btn()\n        assert self.bell_icon.verify_warning_notifications(), \"warning read msgs not found\"\n        self.bell_icon.click_warning_read_notifs()\n        description = self.bell_icon.get_notif_description()\n        logging.info(f\"Warning read notification description: {description}\")\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            }
+                                        ]
                                     }
                                 },
                                 {
                                     "file_identity": "test_suite_07_bell_notifcations.py",
                                     "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_07_bell_notifcations.py": {
-                                        "chunks": []
+                                        "chunks": [
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_07_bell_notifcations.py",
+                                                "chunkType": "class",
+                                                "name": "Test_Suite_07_Bell_Notifications",
+                                                "startLine": 12,
+                                                "endLine": 94,
+                                                "language": "python",
+                                                "contentPreview": "class Test_Suite_07_Bell_Notifications(object):\n    @pytest.fixture(scope=\"class\", autouse=True)\n    def class_setup(cls, request, windows_test_setup, utility_web_session):\n        cls = cls.__class__\n        request.cls.driver = windows_test_setup\n        request.cls.web_driver = utility_web_session\n        request.cls.fc = FlowContainer(request.cls.driver)\n        request.cls.fc.kill_hpx_process()\n        cls.profile= request.cls.fc.fd[\"profile\"]\n        cls.device_card = request.cls.fc.fd[\"device_card\"]\n        cls.bell_icon = request.cls.fc.fd[\"bell_icon\"]\n        cls.devicesMFE = request.cls.fc.fd[\"devicesMFE\"]\n        cls.devices_details_pc_mfe = request.cls.fc.fd[\"devices_details_pc_mfe\"]\n        request.cls.fc.web_password_credential_delete()\n        hpid_credentials = saf_misc.load_json(ma_misc.get_abs_path(HPX_ACCOUNT.account_details_path))[\"hpid\"]\n        cls.user_name, cls.password = hpid_credentials[\"username\"], hpid_credentials[\"password\"]\n        cls.profile.minimize_chrome()\n\n    @pytest.mark.regression\n    def test_01_verify_close_button_functionality_in_bell_notification_flyout_C60339090(self):\n        assert self.devices_details_pc_mfe.verify_pc_device_name_show_up(), \"PC name not present on device details page\"\n        self.devicesMFE.click_home_loggedin()\n        self.fc.sign_in(self.user_name, self.password, self.web_driver, user_icon_click=False)\n        logged_in = self.profile.verify_top_profile_icon_signed_in()\n        assert logged_in, \"User not signed in/After signing in the 'Sign In' button failed to disappear after 20 seconds\"\n        assert self.devicesMFE.verify_bell_icon_show_up(), \"Bell icon not visible\"\n        self.device_card.click_bell_icon()\n        assert self.bell_icon.verify_account_category(), \"Account category not visible in bell notification flyout\"\n        self.bell_icon.verify_shortcuts_category()\n        assert self.bell_icon.verify_notifications_panel_close_btn(), \"Close button not visible in bell notification flyout\"...",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_07_bell_notifcations.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_07_Bell_Notifications.class_setup",
+                                                "startLine": 14,
+                                                "endLine": 29,
+                                                "language": "python",
+                                                "contentPreview": "    def class_setup(cls, request, windows_test_setup, utility_web_session):\n        cls = cls.__class__\n        request.cls.driver = windows_test_setup\n        request.cls.web_driver = utility_web_session\n        request.cls.fc = FlowContainer(request.cls.driver)\n        request.cls.fc.kill_hpx_process()\n        cls.profile= request.cls.fc.fd[\"profile\"]\n        cls.device_card = request.cls.fc.fd[\"device_card\"]\n        cls.bell_icon = request.cls.fc.fd[\"bell_icon\"]\n        cls.devicesMFE = request.cls.fc.fd[\"devicesMFE\"]\n        cls.devices_details_pc_mfe = request.cls.fc.fd[\"devices_details_pc_mfe\"]\n        request.cls.fc.web_password_credential_delete()\n        hpid_credentials = saf_misc.load_json(ma_misc.get_abs_path(HPX_ACCOUNT.account_details_path))[\"hpid\"]\n        cls.user_name, cls.password = hpid_credentials[\"username\"], hpid_credentials[\"password\"]\n        cls.profile.minimize_chrome()\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_07_bell_notifcations.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_07_Bell_Notifications.test_01_verify_close_button_functionality_in_bell_notification_flyout_C60339090",
+                                                "startLine": 31,
+                                                "endLine": 43,
+                                                "language": "python",
+                                                "contentPreview": "    def test_01_verify_close_button_functionality_in_bell_notification_flyout_C60339090(self):\n        assert self.devices_details_pc_mfe.verify_pc_device_name_show_up(), \"PC name not present on device details page\"\n        self.devicesMFE.click_home_loggedin()\n        self.fc.sign_in(self.user_name, self.password, self.web_driver, user_icon_click=False)\n        logged_in = self.profile.verify_top_profile_icon_signed_in()\n        assert logged_in, \"User not signed in/After signing in the 'Sign In' button failed to disappear after 20 seconds\"\n        assert self.devicesMFE.verify_bell_icon_show_up(), \"Bell icon not visible\"\n        self.device_card.click_bell_icon()\n        assert self.bell_icon.verify_account_category(), \"Account category not visible in bell notification flyout\"\n        self.bell_icon.verify_shortcuts_category()\n        assert self.bell_icon.verify_notifications_panel_close_btn(), \"Close button not visible in bell notification flyout\"\n        self.bell_icon.click_notifications_panel_close_btn()\n ",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_07_bell_notifcations.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_07_Bell_Notifications.test_02_verify_users_can_view_unread_messages_C60339083",
+                                                "startLine": 45,
+                                                "endLine": 58,
+                                                "language": "python",
+                                                "contentPreview": "    def test_02_verify_users_can_view_unread_messages_C60339083(self):\n        assert self.devices_details_pc_mfe.verify_pc_device_name_show_up(), \"PC name not present on device details page\"\n        self.devicesMFE.click_home_loggedin()\n        self.fc.sign_in(self.user_name, self.password, self.web_driver, user_icon_click=False)\n        logged_in = self.profile.verify_top_profile_icon_signed_in()\n        assert logged_in, \"User not signed in/After signing in the 'Sign In' button failed to disappear after 20 seconds\"\n        assert self.devicesMFE.verify_bell_icon_show_up(), \"Bell icon not visible\"\n        self.device_card.click_bell_icon()\n        self.bell_icon.click_notification_account()\n        assert self.bell_icon.verify_informative_unread_notifs(), \"informative unread notifications is not present\"\n        self.bell_icon.click_informative_read_notifs()\n        description = self.bell_icon.get_notif_description()\n        logging.info(f\"Message detailed view: {description}\")\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_07_bell_notifcations.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_07_Bell_Notifications.test_03_verify_users_can_view_messages_under_read_section_C60339084",
+                                                "startLine": 60,
+                                                "endLine": 77,
+                                                "language": "python",
+                                                "contentPreview": "    def test_03_verify_users_can_view_messages_under_read_section_C60339084(self):\n        assert self.devices_details_pc_mfe.verify_pc_device_name_show_up(), \"PC name not present on device details page\"\n        self.devicesMFE.click_home_loggedin()\n        self.fc.sign_in(self.user_name, self.password, self.web_driver, user_icon_click=False)\n        logged_in = self.profile.verify_top_profile_icon_signed_in()\n        assert logged_in, \"User not signed in/After signing in the 'Sign In' button failed to disappear after 20 seconds\"\n        assert self.devicesMFE.verify_bell_icon_show_up(), \"Bell icon not visible\"\n        self.device_card.click_bell_icon()\n        assert self.bell_icon.verify_account_category(), \"Account category not visible in bell notification flyout\"\n        self.bell_icon.verify_shortcuts_category()\n        self.bell_icon.click_notification_account()\n        self.driver.swipe(\"read_text\", direction=\"down\")\n        assert self.bell_icon.verify_informative_notifications(), \"Informative notifications not found\"\n        assert self.bell_icon.verify_informative_unread_notifs(), \"informative unread notifications is not present\"\n        self.bell_icon.click_informative_read_notifs()\n        description = self.bell_icon.get_notif_description()\n        logging.info(f\"Message detailed view: {description}\")\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_07_bell_notifcations.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_07_Bell_Notifications.test_04_verify_notifications_after_relaunching_app_C66254937",
+                                                "startLine": 79,
+                                                "endLine": 94,
+                                                "language": "python",
+                                                "contentPreview": "    def test_04_verify_notifications_after_relaunching_app_C66254937(self):\n        logged_in = self.profile.verify_top_profile_icon_signed_in()\n        assert logged_in, \"User not signed in/After signing in the 'Sign In' button failed to disappear after 20 seconds\"\n        assert self.devicesMFE.verify_bell_icon_show_up(), \"Bell icon not visible\"\n        self.device_card.click_bell_icon()\n        assert self.bell_icon.verify_account_category(), \"Account category not visible in bell notification flyout\"\n        self.bell_icon.verify_shortcuts_category()\n        self.bell_icon.click_notification_account()\n        assert self.bell_icon.verify_informative_unread_notifs(), \"informative unread notifications is not present\"\n        assert self.bell_icon.verify_informative_notifications(), \"Informative read notifications not found\"\n        self.fc.restart_myHP()\n        assert self.devicesMFE.verify_bell_icon_show_up(), \"Bell icon not visible after relaunching app\"\n        self.device_card.click_bell_icon()\n        self.bell_icon.click_notification_account()\n        assert self.bell_icon.verify_informative_unread_notifs(), \"informative unread notifications is not present after relaunching app\"\n        assert self.bell_icon.verify_informative_notifications(), \"Informative read notifications not found after relaunching app\"",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            }
+                                        ]
                                     }
                                 },
                                 {
                                     "file_identity": "test_suite_08_bell_notifcations.py",
                                     "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_08_bell_notifcations.py": {
-                                        "chunks": []
+                                        "chunks": [
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_08_bell_notifcations.py",
+                                                "chunkType": "class",
+                                                "name": "Test_Suite_08_Bell_Notifications",
+                                                "startLine": 12,
+                                                "endLine": 86,
+                                                "language": "python",
+                                                "contentPreview": "class Test_Suite_08_Bell_Notifications(object):\n    @pytest.fixture(scope=\"class\", autouse=True)\n    def class_setup(cls, request, windows_test_setup, utility_web_session):\n        cls = cls.__class__\n        request.cls.driver = windows_test_setup\n        request.cls.web_driver = utility_web_session\n        request.cls.fc = FlowContainer(request.cls.driver)\n        request.cls.fc.kill_hpx_process()\n        cls.devicesMFE = request.cls.fc.fd[\"devicesMFE\"]\n        cls.css = request.cls.fc.fd[\"css\"]\n        cls.device_card = request.cls.fc.fd[\"device_card\"]\n        cls.bell_icon = request.cls.fc.fd[\"bell_icon\"]\n        cls.profile = request.cls.fc.fd[\"profile\"]\n        request.cls.fc.web_password_credential_delete()\n        cls.user_name = saf_misc.load_json(ma_misc.get_abs_path(HPX_ACCOUNT.account_details_path))[\"hpid\"][\"username\"]\n        cls.password = saf_misc.load_json(ma_misc.get_abs_path(HPX_ACCOUNT.account_details_path))[\"hpid\"][\"password\"]\n\n    @pytest.mark.regression\n    def test_01_verify_bell_notifications_device_details_screen_blur_displayed_C60336359(self):\n        self.fc.sign_in(self.user_name, self.password, self.web_driver)\n        assert self.devicesMFE.verify_bell_icon_show_up(), \"bell icon is not present\"\n        self.device_card.click_bell_icon()\n        self.bell_icon.click_notification_account()\n        assert self.bell_icon.verify_background_blur(), \"background blur is not displayed on device details screen\"\n\n    @pytest.mark.regression\n    def test_02_verify_support_on_urgent_info_warning_unread_notifications_C60369962(self):\n        self.fc.sign_in(self.user_name, self.password, self.web_driver)\n        assert self.devicesMFE.verify_bell_icon_show_up(), \"bell icon is not present\"\n        self.device_card.click_bell_icon()\n        self.bell_icon.verify_account_category()\n        self.bell_icon.verify_shortcuts_category()\n        self.bell_icon.click_notification_account()\n        assert self.bell_icon.verify_urgent_unread_notifs(), \"urgent un...",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_08_bell_notifcations.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_08_Bell_Notifications.class_setup",
+                                                "startLine": 14,
+                                                "endLine": 28,
+                                                "language": "python",
+                                                "contentPreview": "    def class_setup(cls, request, windows_test_setup, utility_web_session):\n        cls = cls.__class__\n        request.cls.driver = windows_test_setup\n        request.cls.web_driver = utility_web_session\n        request.cls.fc = FlowContainer(request.cls.driver)\n        request.cls.fc.kill_hpx_process()\n        cls.devicesMFE = request.cls.fc.fd[\"devicesMFE\"]\n        cls.css = request.cls.fc.fd[\"css\"]\n        cls.device_card = request.cls.fc.fd[\"device_card\"]\n        cls.bell_icon = request.cls.fc.fd[\"bell_icon\"]\n        cls.profile = request.cls.fc.fd[\"profile\"]\n        request.cls.fc.web_password_credential_delete()\n        cls.user_name = saf_misc.load_json(ma_misc.get_abs_path(HPX_ACCOUNT.account_details_path))[\"hpid\"][\"username\"]\n        cls.password = saf_misc.load_json(ma_misc.get_abs_path(HPX_ACCOUNT.account_details_path))[\"hpid\"][\"password\"]\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_08_bell_notifcations.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_08_Bell_Notifications.test_01_verify_bell_notifications_device_details_screen_blur_displayed_C60336359",
+                                                "startLine": 30,
+                                                "endLine": 36,
+                                                "language": "python",
+                                                "contentPreview": "    def test_01_verify_bell_notifications_device_details_screen_blur_displayed_C60336359(self):\n        self.fc.sign_in(self.user_name, self.password, self.web_driver)\n        assert self.devicesMFE.verify_bell_icon_show_up(), \"bell icon is not present\"\n        self.device_card.click_bell_icon()\n        self.bell_icon.click_notification_account()\n        assert self.bell_icon.verify_background_blur(), \"background blur is not displayed on device details screen\"\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_08_bell_notifcations.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_08_Bell_Notifications.test_02_verify_support_on_urgent_info_warning_unread_notifications_C60369962",
+                                                "startLine": 38,
+                                                "endLine": 48,
+                                                "language": "python",
+                                                "contentPreview": "    def test_02_verify_support_on_urgent_info_warning_unread_notifications_C60369962(self):\n        self.fc.sign_in(self.user_name, self.password, self.web_driver)\n        assert self.devicesMFE.verify_bell_icon_show_up(), \"bell icon is not present\"\n        self.device_card.click_bell_icon()\n        self.bell_icon.verify_account_category()\n        self.bell_icon.verify_shortcuts_category()\n        self.bell_icon.click_notification_account()\n        assert self.bell_icon.verify_urgent_unread_notifs(), \"urgent unread msgs not found\"\n        assert self.bell_icon.verify_informative_unread_notifs(), \"informative unread msgs not found\"\n        assert self.bell_icon.verify_warning_unread_notifs(), \"warning unread msgs not found\"\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_08_bell_notifcations.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_08_Bell_Notifications.test_03_verify_support_on_urgent_unread_notifications_C60370064",
+                                                "startLine": 50,
+                                                "endLine": 60,
+                                                "language": "python",
+                                                "contentPreview": "    def test_03_verify_support_on_urgent_unread_notifications_C60370064(self):\n        self.fc.sign_in(self.user_name, self.password, self.web_driver)\n        assert self.devicesMFE.verify_bell_icon_show_up(), \"bell icon is not present\"\n        self.device_card.click_bell_icon()\n        self.bell_icon.verify_account_category()\n        self.bell_icon.click_notification_account()\n        assert self.bell_icon.verify_urgent_unread_notification_ellipsis(), \"urgent unread notification ellipsis not found\"\n        self.bell_icon.click_urgent_unread_notification_ellipsis()\n        assert self.bell_icon.verify_delete_disabled_urgent_unread_notifs(),\"delete disabled urgent unread notifs not found\"\n        self.bell_icon.verify_notifs_and_mark_as_read()\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_08_bell_notifcations.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_08_Bell_Notifications.test_04_verify_support_on_important_unread_notifications_C60370065",
+                                                "startLine": 62,
+                                                "endLine": 73,
+                                                "language": "python",
+                                                "contentPreview": "    def test_04_verify_support_on_important_unread_notifications_C60370065(self):\n        self.fc.sign_in(self.user_name, self.password, self.web_driver)\n        assert self.devicesMFE.verify_bell_icon_show_up(), \"bell icon is not present\"\n        self.device_card.click_bell_icon()\n        self.bell_icon.verify_account_category()\n        self.bell_icon.click_notification_account()\n        assert self.bell_icon.verify_informative_unread_notification_ellipsis(), \"informative unread notification ellipsis not found\"\n        self.bell_icon.click_informative_unread_notification_ellipsis()\n        assert self.bell_icon.verify_notification_dropdown_revealed(), \"notification drop down invisible\"\n        assert self.bell_icon.verify_dropdown_mark_as_read_option_present(), \"mark as read option not visible in dropdown\"\n        assert self.bell_icon.verify_dropdown_delete_option_present(), \"delete option not visible in dropdown\"\n        ",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_08_bell_notifcations.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_08_Bell_Notifications.test_05_verify_bell_good_to_know_notifications_C60370067",
+                                                "startLine": 75,
+                                                "endLine": 86,
+                                                "language": "python",
+                                                "contentPreview": "    def test_05_verify_bell_good_to_know_notifications_C60370067(self):\n        self.fc.sign_in(self.user_name, self.password, self.web_driver)\n        assert self.devicesMFE.verify_bell_icon_show_up(), \"bell icon is not present\"\n        self.device_card.click_bell_icon()\n        self.bell_icon.verify_account_category()\n        self.bell_icon.click_notification_account()\n        assert self.bell_icon.verify_warning_unread_notification_ellipsis(), \"warning unread notification ellipsis not found\"\n        self.bell_icon.click_warning_unread_notification_ellipsis()\n        assert self.bell_icon.verify_notification_dropdown_revealed(), \"notification drop down invisible\"\n        assert self.bell_icon.verify_dropdown_mark_as_read_option_present(), \"mark as read option not visible in dropdown\"\n        assert self.bell_icon.verify_dropdown_delete_option_present(), \"delete option not visible in dropdown\"\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            }
+                                        ]
                                     }
                                 }
                             ],
