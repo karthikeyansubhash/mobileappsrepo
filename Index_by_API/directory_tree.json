@@ -1,0 +1,13 @@
+{
+    "tests": {
+        "windows": {
+            "hpx_rebranding": {
+                "Framework": {
+                    "add_device": {
+                        "sample_code.py": "file"
+                    }
+                }
+            }
+        }
+    }
+}
