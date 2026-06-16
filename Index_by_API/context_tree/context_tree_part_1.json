@@ -58,7 +58,8 @@
                                     "kb_name": ""
                                 }
                             ]
-                        }
+                        },
+                        "processing_status": "FAILED_KB_CREATION"
                     },
                     "bell_notifications": {
                         "generated_doc_filepath": "",
