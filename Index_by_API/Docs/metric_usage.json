@@ -1,0 +1,19 @@
+{
+    "summary": {
+        "total_tokens_consumed": 0,
+        "total_cost_incurred_usd": 0.0,
+        "total_time_spent_seconds": 0.0
+    },
+    "details": {
+        "5f8e8d72-2452-4df9-b41f-d580ba62d27f": {
+            "tokens": 0,
+            "cost": 0.0,
+            "time": 0.0
+        },
+        "562a31be-5dce-4c7d-8ac1-601cc147a392": {
+            "tokens": 0,
+            "cost": 0.0,
+            "time": 0.0
+        }
+    }
+}
