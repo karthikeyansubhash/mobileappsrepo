@@ -1,0 +1,267 @@
+{
+    "tests": {
+        "windows": {
+            "hpx_rebranding": {
+                "Framework": {
+                    "add_device": {
+                        "generated_doc_filepath": "",
+                        "purpose": "",
+                        "associated_knowledge_bases": {
+                            "raw_code": [
+                                {
+                                    "file_identity": "test_suite_01_add_device.py",
+                                    "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py": {
+                                        "chunks": [
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py",
+                                                "chunkType": "class",
+                                                "name": "Test_Suite_01_Add_Device",
+                                                "startLine": 8,
+                                                "endLine": 93,
+                                                "language": "python",
+                                                "contentPreview": "class Test_Suite_01_Add_Device(object):\n    @pytest.fixture(scope=\"class\", autouse=True)\n    def class_setup(cls, request, windows_test_setup):\n        cls = cls.__class__\n        request.cls.driver = windows_test_setup\n        request.cls.fc = FlowContainer(request.cls.driver)\n        request.cls.fc.kill_hpx_process()\n        request.cls.fc.kill_chrome_process()\n        cls.profile= request.cls.fc.fd[\"profile\"]\n        cls.devices_details_pc_mfe = request.cls.fc.fd[\"devices_details_pc_mfe\"]\n        cls.devicesMFE = request.cls.fc.fd[\"devicesMFE\"]\n        cls.add_device= request.cls.fc.fd[\"add_device\"]\n\n    @pytest.mark.regression\n    def test_01_verify_add_device_button_clickable_and_opens_sidebar_page_C55687256(self):\n        assert self.devices_details_pc_mfe.verify_pc_device_name_show_up(), \"PC name on homepage not loaded/visible\"\n        assert self.profile.verify_add_device_button(), \"add device button is not found\"\n        self.profile.click_add_device_button()\n        assert self.add_device.verify_add_device_page(), \"add device page is not found\"\n        assert self.add_device.verify_add_device_page(), \"add device page is not found\"\n\n    @pytest.mark.regression\n    def test_02_verify_navigation_of_need_help_finding_serial_number_link_C61716550(self):\n        self.devices_details_pc_mfe.verify_pc_device_name_show_up()\n        self.profile.verify_add_device_button()\n        self.profile.click_add_device_button()\n        assert self.add_device.verify_add_device_page(), \"add device page is not found\"\n        assert self.add_device.verify_search_by_serial_number_btn(), \"search by serial number button not found\"\n        self.add_device.click_search_by_serial_number_btn()\n        assert self.add_device.verify_serial_number_textbox(), \"text input field \u201cSerial Number\u201d not visible\"\n        assert self.add_device.verify_need_help_finding_your_serial_number_link(), \"need help finding your serial number link not found\"\n        self.add_device.click_need_help_finding_you...",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_01_Add_Device.class_setup",
+                                                "startLine": 10,
+                                                "endLine": 20,
+                                                "language": "python",
+                                                "contentPreview": "    def class_setup(cls, request, windows_test_setup):\n        cls = cls.__class__\n        request.cls.driver = windows_test_setup\n        request.cls.fc = FlowContainer(request.cls.driver)\n        request.cls.fc.kill_hpx_process()\n        request.cls.fc.kill_chrome_process()\n        cls.profile= request.cls.fc.fd[\"profile\"]\n        cls.devices_details_pc_mfe = request.cls.fc.fd[\"devices_details_pc_mfe\"]\n        cls.devicesMFE = request.cls.fc.fd[\"devicesMFE\"]\n        cls.add_device= request.cls.fc.fd[\"add_device\"]\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_01_Add_Device.test_01_verify_add_device_button_clickable_and_opens_sidebar_page_C55687256",
+                                                "startLine": 22,
+                                                "endLine": 28,
+                                                "language": "python",
+                                                "contentPreview": "    def test_01_verify_add_device_button_clickable_and_opens_sidebar_page_C55687256(self):\n        assert self.devices_details_pc_mfe.verify_pc_device_name_show_up(), \"PC name on homepage not loaded/visible\"\n        assert self.profile.verify_add_device_button(), \"add device button is not found\"\n        self.profile.click_add_device_button()\n        assert self.add_device.verify_add_device_page(), \"add device page is not found\"\n        assert self.add_device.verify_add_device_page(), \"add device page is not found\"\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_01_Add_Device.test_02_verify_navigation_of_need_help_finding_serial_number_link_C61716550",
+                                                "startLine": 30,
+                                                "endLine": 41,
+                                                "language": "python",
+                                                "contentPreview": "    def test_02_verify_navigation_of_need_help_finding_serial_number_link_C61716550(self):\n        self.devices_details_pc_mfe.verify_pc_device_name_show_up()\n        self.profile.verify_add_device_button()\n        self.profile.click_add_device_button()\n        assert self.add_device.verify_add_device_page(), \"add device page is not found\"\n        assert self.add_device.verify_search_by_serial_number_btn(), \"search by serial number button not found\"\n        self.add_device.click_search_by_serial_number_btn()\n        assert self.add_device.verify_serial_number_textbox(), \"text input field \u201cSerial Number\u201d not visible\"\n        assert self.add_device.verify_need_help_finding_your_serial_number_link(), \"need help finding your serial number link not found\"\n        self.add_device.click_need_help_finding_your_serial_number_link()\n        self.devicesMFE.verify_browser_webview_pane()\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_01_Add_Device.test_03_verify_the_back_button_for_the_add_device_C61716558",
+                                                "startLine": 43,
+                                                "endLine": 54,
+                                                "language": "python",
+                                                "contentPreview": "    def test_03_verify_the_back_button_for_the_add_device_C61716558(self):\n        self.devices_details_pc_mfe.verify_pc_device_name_show_up()\n        self.profile.verify_add_device_button()\n        self.profile.click_add_device_button()\n        assert self.add_device.verify_add_device_page(), \"add device page is not found\"\n        assert self.add_device.verify_search_by_serial_number_btn(), \"search by serial number button not found\"\n        self.add_device.click_search_by_serial_number_btn()\n        assert self.add_device.verify_serial_number_textbox(), \"text input field \u201cSerial Number\u201d not visible\"\n        assert self.add_device.verify_add_a_device_back_btn(), \"Add a device back button not visible\"\n        self.add_device.click_add_a_device_back_btn()\n        assert self.add_device.verify_add_device_page(), \"add device page is not found\"\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_01_Add_Device.test_04_verify_the_close_button_for_the_add_device_C61716559",
+                                                "startLine": 56,
+                                                "endLine": 64,
+                                                "language": "python",
+                                                "contentPreview": "    def test_04_verify_the_close_button_for_the_add_device_C61716559(self):\n        self.devices_details_pc_mfe.verify_pc_device_name_show_up()\n        self.profile.verify_add_device_button()\n        self.profile.click_add_device_button()\n        assert self.add_device.verify_add_device_page(), \"add device page is not found\"\n        assert self.add_device.verify_close_button_on_add_device_page(), \"Close button not present on add device page\"\n        self.add_device.click_close_button_on_add_device_page()\n        assert self.devices_details_pc_mfe.verify_pc_device_name_show_up(), \"PC name on homepage not loaded/visible\"\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_01_Add_Device.test_05_verify_entered_serial_number_is_accepted_and_displayed_correctly_C63813594",
+                                                "startLine": 66,
+                                                "endLine": 77,
+                                                "language": "python",
+                                                "contentPreview": "    def test_05_verify_entered_serial_number_is_accepted_and_displayed_correctly_C63813594(self):\n        self.devices_details_pc_mfe.verify_pc_device_name_show_up()\n        self.profile.verify_add_device_button()\n        self.profile.click_add_device_button()\n        assert self.add_device.verify_add_device_page(), \"add device page is not found\"\n        assert self.add_device.verify_search_by_serial_number_btn(), \"search by serial number button not found\"\n        self.add_device.click_search_by_serial_number_btn()\n        assert self.add_device.verify_serial_number_textbox(), \"text input field \u201cSerial Number\u201d not visible\"\n        self.add_device.input_enter_serial_number(\"8CC5281Y49\")\n        entered_value = self.add_device.get_entered_serial_number()\n        assert entered_value == \"8CC5281Y49\", f\"Serial number not displayed correctly, found: {entered_value}\"\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_01_Add_Device.test_06_verify_the_content_in_add_a_printer_C63813978",
+                                                "startLine": 79,
+                                                "endLine": 85,
+                                                "language": "python",
+                                                "contentPreview": "    def test_06_verify_the_content_in_add_a_printer_C63813978(self):\n        self.devices_details_pc_mfe.verify_pc_device_name_show_up()\n        self.profile.verify_add_device_button()\n        self.profile.click_add_device_button()\n        assert self.add_device.verify_add_device_page(), \"add device page is not found\"\n        assert self.add_device.verify_add_printer_content(), \"content in add a printer is not matching\"\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_01_Add_Device.test_07_verify_the_content_in_missing_a_device_C63815104",
+                                                "startLine": 87,
+                                                "endLine": 93,
+                                                "language": "python",
+                                                "contentPreview": "    def test_07_verify_the_content_in_missing_a_device_C63815104(self):\n        self.devices_details_pc_mfe.verify_pc_device_name_show_up()\n        self.profile.verify_add_device_button()\n        self.profile.click_add_device_button()\n        assert self.add_device.verify_add_device_page(), \"add device page is not found\"\n        assert self.add_device.verify_missing_device_content(), \"content in missing device is not matching\"\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            }
+                                        ],
+                                        "old_chunks": [
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py",
+                                                "chunkType": "class",
+                                                "name": "Test_Suite_01_Add_Device",
+                                                "startLine": 8,
+                                                "endLine": 92,
+                                                "language": "python",
+                                                "contentPreview": "class Test_Suite_01_Add_Device(object):\n    @pytest.fixture(scope=\"class\", autouse=True)\n    def class_setup(cls, request, windows_test_setup):\n        cls = cls.__class__\n        request.cls.driver = windows_test_setup\n        request.cls.fc = FlowContainer(request.cls.driver)\n        request.cls.fc.kill_hpx_process()\n        request.cls.fc.kill_chrome_process()\n        cls.profile= request.cls.fc.fd[\"profile\"]\n        cls.devices_details_pc_mfe = request.cls.fc.fd[\"devices_details_pc_mfe\"]\n        cls.devicesMFE = request.cls.fc.fd[\"devicesMFE\"]\n        cls.add_device= request.cls.fc.fd[\"add_device\"]\n\n    @pytest.mark.regression\n    def test_01_verify_add_device_button_clickable_and_opens_sidebar_page_C55687256(self):\n        assert self.devices_details_pc_mfe.verify_pc_device_name_show_up(), \"PC name on homepage not loaded/visible\"\n        assert self.profile.verify_add_device_button(), \"add device button is not found\"\n        self.profile.click_add_device_button()\n        assert self.add_device.verify_add_device_page(), \"add device page is not found\"\n\n    @pytest.mark.regression\n    def test_02_verify_navigation_of_need_help_finding_serial_number_link_C61716550(self):\n        self.devices_details_pc_mfe.verify_pc_device_name_show_up()\n        self.profile.verify_add_device_button()\n        self.profile.click_add_device_button()\n        assert self.add_device.verify_add_device_page(), \"add device page is not found\"\n        assert self.add_device.verify_search_by_serial_number_btn(), \"search by serial number button not found\"\n        self.add_device.click_search_by_serial_number_btn()\n        assert self.add_device.verify_serial_number_textbox(), \"text input field \u201cSerial Number\u201d not visible\"\n        assert self.add_device.verify_need_help_finding_your_serial_number_link(), \"need help finding your serial number link not found\"\n        self.add_device.click_need_help_finding_your_serial_number_link()\n        self.devicesMFE.verify_browser_webview_pane()\n\n    @pytes...",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_01_Add_Device.class_setup",
+                                                "startLine": 10,
+                                                "endLine": 20,
+                                                "language": "python",
+                                                "contentPreview": "    def class_setup(cls, request, windows_test_setup):\n        cls = cls.__class__\n        request.cls.driver = windows_test_setup\n        request.cls.fc = FlowContainer(request.cls.driver)\n        request.cls.fc.kill_hpx_process()\n        request.cls.fc.kill_chrome_process()\n        cls.profile= request.cls.fc.fd[\"profile\"]\n        cls.devices_details_pc_mfe = request.cls.fc.fd[\"devices_details_pc_mfe\"]\n        cls.devicesMFE = request.cls.fc.fd[\"devicesMFE\"]\n        cls.add_device= request.cls.fc.fd[\"add_device\"]\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_01_Add_Device.test_01_verify_add_device_button_clickable_and_opens_sidebar_page_C55687256",
+                                                "startLine": 22,
+                                                "endLine": 27,
+                                                "language": "python",
+                                                "contentPreview": "    def test_01_verify_add_device_button_clickable_and_opens_sidebar_page_C55687256(self):\n        assert self.devices_details_pc_mfe.verify_pc_device_name_show_up(), \"PC name on homepage not loaded/visible\"\n        assert self.profile.verify_add_device_button(), \"add device button is not found\"\n        self.profile.click_add_device_button()\n        assert self.add_device.verify_add_device_page(), \"add device page is not found\"\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_01_Add_Device.test_02_verify_navigation_of_need_help_finding_serial_number_link_C61716550",
+                                                "startLine": 29,
+                                                "endLine": 40,
+                                                "language": "python",
+                                                "contentPreview": "    def test_02_verify_navigation_of_need_help_finding_serial_number_link_C61716550(self):\n        self.devices_details_pc_mfe.verify_pc_device_name_show_up()\n        self.profile.verify_add_device_button()\n        self.profile.click_add_device_button()\n        assert self.add_device.verify_add_device_page(), \"add device page is not found\"\n        assert self.add_device.verify_search_by_serial_number_btn(), \"search by serial number button not found\"\n        self.add_device.click_search_by_serial_number_btn()\n        assert self.add_device.verify_serial_number_textbox(), \"text input field \u201cSerial Number\u201d not visible\"\n        assert self.add_device.verify_need_help_finding_your_serial_number_link(), \"need help finding your serial number link not found\"\n        self.add_device.click_need_help_finding_your_serial_number_link()\n        self.devicesMFE.verify_browser_webview_pane()\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_01_Add_Device.test_03_verify_the_back_button_for_the_add_device_C61716558",
+                                                "startLine": 42,
+                                                "endLine": 53,
+                                                "language": "python",
+                                                "contentPreview": "    def test_03_verify_the_back_button_for_the_add_device_C61716558(self):\n        self.devices_details_pc_mfe.verify_pc_device_name_show_up()\n        self.profile.verify_add_device_button()\n        self.profile.click_add_device_button()\n        assert self.add_device.verify_add_device_page(), \"add device page is not found\"\n        assert self.add_device.verify_search_by_serial_number_btn(), \"search by serial number button not found\"\n        self.add_device.click_search_by_serial_number_btn()\n        assert self.add_device.verify_serial_number_textbox(), \"text input field \u201cSerial Number\u201d not visible\"\n        assert self.add_device.verify_add_a_device_back_btn(), \"Add a device back button not visible\"\n        self.add_device.click_add_a_device_back_btn()\n        assert self.add_device.verify_add_device_page(), \"add device page is not found\"\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_01_Add_Device.test_04_verify_the_close_button_for_the_add_device_C61716559",
+                                                "startLine": 55,
+                                                "endLine": 63,
+                                                "language": "python",
+                                                "contentPreview": "    def test_04_verify_the_close_button_for_the_add_device_C61716559(self):\n        self.devices_details_pc_mfe.verify_pc_device_name_show_up()\n        self.profile.verify_add_device_button()\n        self.profile.click_add_device_button()\n        assert self.add_device.verify_add_device_page(), \"add device page is not found\"\n        assert self.add_device.verify_close_button_on_add_device_page(), \"Close button not present on add device page\"\n        self.add_device.click_close_button_on_add_device_page()\n        assert self.devices_details_pc_mfe.verify_pc_device_name_show_up(), \"PC name on homepage not loaded/visible\"\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_01_Add_Device.test_05_verify_entered_serial_number_is_accepted_and_displayed_correctly_C63813594",
+                                                "startLine": 65,
+                                                "endLine": 76,
+                                                "language": "python",
+                                                "contentPreview": "    def test_05_verify_entered_serial_number_is_accepted_and_displayed_correctly_C63813594(self):\n        self.devices_details_pc_mfe.verify_pc_device_name_show_up()\n        self.profile.verify_add_device_button()\n        self.profile.click_add_device_button()\n        assert self.add_device.verify_add_device_page(), \"add device page is not found\"\n        assert self.add_device.verify_search_by_serial_number_btn(), \"search by serial number button not found\"\n        self.add_device.click_search_by_serial_number_btn()\n        assert self.add_device.verify_serial_number_textbox(), \"text input field \u201cSerial Number\u201d not visible\"\n        self.add_device.input_enter_serial_number(\"8CC5281Y49\")\n        entered_value = self.add_device.get_entered_serial_number()\n        assert entered_value == \"8CC5281Y49\", f\"Serial number not displayed correctly, found: {entered_value}\"\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_01_Add_Device.test_06_verify_the_content_in_add_a_printer_C63813978",
+                                                "startLine": 78,
+                                                "endLine": 84,
+                                                "language": "python",
+                                                "contentPreview": "    def test_06_verify_the_content_in_add_a_printer_C63813978(self):\n        self.devices_details_pc_mfe.verify_pc_device_name_show_up()\n        self.profile.verify_add_device_button()\n        self.profile.click_add_device_button()\n        assert self.add_device.verify_add_device_page(), \"add device page is not found\"\n        assert self.add_device.verify_add_printer_content(), \"content in add a printer is not matching\"\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            },
+                                            {
+                                                "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py",
+                                                "chunkType": "function",
+                                                "name": "Test_Suite_01_Add_Device.test_07_verify_the_content_in_missing_a_device_C63815104",
+                                                "startLine": 86,
+                                                "endLine": 92,
+                                                "language": "python",
+                                                "contentPreview": "    def test_07_verify_the_content_in_missing_a_device_C63815104(self):\n        self.devices_details_pc_mfe.verify_pc_device_name_show_up()\n        self.profile.verify_add_device_button()\n        self.profile.click_add_device_button()\n        assert self.add_device.verify_add_device_page(), \"add device page is not found\"\n        assert self.add_device.verify_missing_device_content(), \"content in missing device is not matching\"\n",
+                                                "similarity": 1.0,
+                                                "isTestFile": true,
+                                                "sourceLeg": "selector",
+                                                "metadata": {}
+                                            }
+                                        ]
+                                    }
+                                }
+                            ],
+                            "code_doc": [
+                                {
+                                    "kb_id": "12043",
+                                    "kb_name": "add_devicedoc20260616125948kb"
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
