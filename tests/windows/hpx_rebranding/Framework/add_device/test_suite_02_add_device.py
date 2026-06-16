@@ -62,6 +62,23 @@ class Test_Suite_02_Add_Device(object):
         assert entered_value == "8CC5281Y49", f"Serial number not displayed correctly, found: {entered_value}"  
         self.add_device.click_add_device_hyperlink()
         assert self.add_device.verify_newly_added_devicename(), "Newly added device name is not displayed"
+
+@pytest.mark.regression
+    def test_03_validate_device_updation_via_serial_number_C123456789(self):
+        self.devicesMFE.click_home_loggedin()
+        self.fc.sign_in(self.user_name, self.password, self.web_driver)
+        logged_in = self.profile.verify_top_profile_icon_signed_in()
+        assert logged_in, "User not signed in/After signing in the 'Sign In' button failed to disappear after 20 seconds"
+        self.profile.verify_add_device_button()
+        self.profile.click_add_device_button()
+        assert self.add_device.verify_add_device_page(), "Add device page is not displayed"
+        assert self.add_device.verify_search_by_serial_number_btn(), "search by serial number button not found"
+        self.add_device.click_search_by_serial_number_btn()
+        self.add_device.input_enter_serial_number("8CC5281Y49")
+        entered_value = self.add_device.get_entered_serial_number()
+        assert entered_value == "8CC5281Y49", f"Serial number not displayed correctly, found: {entered_value}"  
+        self.add_device.click_add_device_hyperlink()
+        assert self.add_device.verify_newly_added_devicename(), "testing is not displayed"
  
  
 
