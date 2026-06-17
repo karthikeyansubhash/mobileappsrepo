@@ -1,0 +1,38 @@
+{
+  "generated_doc_filepath": "",
+  "purpose": "",
+  "associated_knowledge_bases": {
+    "raw_code": [
+      {
+        "file_identity": ".gitignore",
+        ".gitignore": {
+          "chunks": []
+        }
+      },
+      {
+        "file_identity": "None",
+        "None": {
+          "chunks": []
+        }
+      },
+      {
+        "file_identity": "README.md",
+        "README.md": {
+          "chunks": []
+        }
+      },
+      {
+        "file_identity": "__init__.py",
+        "__init__.py": {
+          "chunks": []
+        }
+      }
+    ],
+    "code_doc": [
+      {
+        "kb_id": "",
+        "kb_name": ""
+      }
+    ]
+  }
+}
