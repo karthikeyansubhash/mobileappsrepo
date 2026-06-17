@@ -38,6 +38,7 @@ class Test_Suite_01_Add_Device(object):
         assert self.add_device.verify_need_help_finding_your_serial_number_link(), "need help finding your serial number link not found"
         self.add_device.click_need_help_finding_your_serial_number_link()
         self.devicesMFE.verify_browser_webview_pane()
+        self.devicesMFE.verify_browser_webview_pane()
 
     @pytest.mark.regression
     def test_03_verify_the_back_button_for_the_add_device_C61716558(self):
