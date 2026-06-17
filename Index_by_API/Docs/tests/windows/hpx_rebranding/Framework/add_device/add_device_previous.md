@@ -16,79 +16,91 @@
 [] (EMPTY)
 ```
 
-### EXECUTION HALT CONDITION DETECTED
+---
 
-I have received your comprehensive instructions for Technical Documentation Synthesis and Code Delta Analysis. However, I cannot proceed with the mandatory execution workflow because:
+## EXECUTION HALT: MANDATORY INPUT REQUIREMENT NOT SATISFIED
 
-**BLOCKING ISSUE:** Both `[Existing Code]` and `[New Code]` input fields are empty/null.
+### Root Cause Analysis:
+
+The execution workflow cannot proceed to Knowledge Base retrieval, delta analysis, or documentation synthesis phases because **both required code input fields are empty**.
+
+### Required Inputs for Execution:
+
+1. **[Existing Code]** - Baseline codebase content (Python files, classes, methods) that represents the current documented state
+2. **[New Code]** - Updated codebase content containing modifications, additions, or deletions to be analyzed and documented
+
+### Mandatory Pre-Execution Checklist:
+
+- ❌ Existing Code provided
+- ❌ New Code provided
+- ⏸️ Knowledge Base retrieval (BLOCKED - awaiting file identification)
+- ⏸️ Delta analysis execution (BLOCKED - no code differential to compute)
+- ⏸️ Documentation retrofit synthesis (BLOCKED - no baseline or target content)
 
 ---
 
-## REQUIRED INPUTS FOR EXECUTION
+## REQUIRED ACTION FROM USER:
 
-To execute the complete documentation synthesis pipeline as specified, I require:
-
-### 1. **Existing Code Input**
-Please provide the baseline codebase in the following format:
+Please provide the code inputs in the following format:
 
 ```
 **Existing Code**
-[Paste your existing Python file(s) content here]
-```
+[Paste your baseline Python code here - the current version that has existing documentation]
 
-**Expected Format:**
-- Complete Python file(s) with full method implementations
-- File name clearly indicated (e.g., `# File: test_login.py`)
-- Multiple files can be provided, separated clearly
-
-### 2. **New Code Input**
-Please provide the updated/modified codebase:
-
-```
 **New Code**
-[Paste your new/modified Python file(s) content here]
+[Paste your updated Python code here - the modified version with changes to be documented]
 ```
 
-**Expected Format:**
-- Complete Python file(s) showing modifications, additions, or deletions
-- Same file naming convention as Existing Code
-- Clear indication of which files correspond to the Existing Code baseline
+### Input Guidelines:
 
----
+- **File Identification:** Include complete file paths or clear file names (e.g., `test_login.py`, `page_objects/login_page.py`)
+- **Code Completeness:** Provide full file contents including imports, class definitions, all methods, and docstrings
+- **Multiple Files:** If analyzing multiple files, clearly separate each file with headers
+- **Format Preservation:** Maintain proper Python indentation and syntax
 
-## EXECUTION READINESS CHECKLIST
-
-Once you provide the code inputs, I will execute the following mandatory workflow:
-
-✅ **Step 1:** Ingest and parse both Existing Code and New Code  
-✅ **Step 2:** Query Knowledge Base to retrieve current documentation for target files  
-✅ **Step 3:** Generate FUNCTION INVENTORY & DELTA LEDGER (mandatory pre-documentation checklist)  
-✅ **Step 4:** Perform line-by-line delta analysis identifying:
-   - Unchanged Functions
-   - Modified Functions (with change details)
-   - Newly Added Functions
-   - Deprecated/Removed Functions
-
-✅ **Step 5:** Synthesize upgraded documentation following the exact Output Structure Blueprint  
-✅ **Step 6:** Retrofit new changes into existing documentation while preserving historical context  
-✅ **Step 7:** Generate complete, untruncated Markdown report with individual method-level documentation  
-
----
-
-## AWAITING CODE INPUTS
-
-**Please provide your Existing Code and New Code in your next message, and I will immediately execute the complete documentation synthesis pipeline.**
-
-**Format Template for Your Response:**
+### Example Input Format:
 
 ```
 **Existing Code**
-# File: your_file_name.py
-[Your existing code here]
+# File: test_authentication.py
+import pytest
+from pages.login_page import LoginPage
+
+class TestAuthentication:
+    def test_valid_login(self):
+        login_page = LoginPage()
+        login_page.enter_credentials("user", "pass")
+        assert login_page.is_logged_in()
 
 **New Code**
-# File: your_file_name.py
-[Your modified code here]
+# File: test_authentication.py
+import pytest
+from pages.login_page import LoginPage
+from utils.data_provider import get_test_credentials
+
+class TestAuthentication:
+    def test_valid_login(self, browser):
+        login_page = LoginPage(browser)
+        creds = get_test_credentials("valid_user")
+        login_page.enter_credentials(creds['username'], creds['password'])
+        assert login_page.is_logged_in()
+        assert login_page.get_welcome_message() == f"Welcome, {creds['username']}"
+    
+    def test_invalid_login(self, browser):
+        login_page = LoginPage(browser)
+        login_page.enter_credentials("invalid", "wrong")
+        assert login_page.get_error_message() == "Invalid credentials"
 ```
 
-I am standing by to process your code delta and generate the comprehensive, production-grade documentation report as specified in your instructions.
+---
+
+## SYSTEM STATUS: AWAITING VALID INPUT
+
+Once you provide the **Existing Code** and **New Code** inputs, I will immediately execute:
+
+1. ✅ **Knowledge Base Retrieval** - Fetch current documentation for identified files
+2. ✅ **Function Inventory & Delta Ledger** - Generate complete change mapping
+3. ✅ **Retrofit & Synthesis** - Merge updates while preserving historical context
+4. ✅ **Complete Markdown Report** - Deliver exhaustive documentation following the exact Output Structure Blueprint
+
+**Ready to proceed upon receipt of valid code inputs.**
