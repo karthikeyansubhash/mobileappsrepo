@@ -1,0 +1,17 @@
+{
+  "tests": {
+    "windows": {
+      "hpx_rebranding": {
+        "Framework": {
+          "add_device": {
+            "test_suite_01_add_device.py": {
+              "dependency_data": {
+                "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
