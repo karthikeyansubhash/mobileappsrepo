@@ -2,9 +2,9 @@
 
 ## 1. Executive System Topology
 
-- **Core Architecture:** Pytest-based automated regression test framework targeting the HP Experience (HPX) Windows desktop application's device addition workflow within the rebranding initiative.
-- **Execution Strata:** Test execution is partitioned across two isolated suites: unauthenticated UI validation flows and authenticated end-to-end device registration workflows.
-- **Operational Domain:** Serves as a quality gate for the `Framework/add_device` functional domain, validating device onboarding UI components, navigation patterns, and serial number/product number registration flows before Windows platform releases.
+- **Core Architecture:** Pytest-based automated regression test framework targeting the HP Experience (HPX) Windows desktop application's device addition workflow within the HPX rebranding initiative.
+- **Execution Strata:** Test validation boundaries are partitioned across three isolated test suites, separating guest user UI validation flows, authenticated device registration workflows, and serial/product number input validation scenarios.
+- **Operational Domain:** Serves as a quality gate for the `Framework/add_device` functional domain, enforcing UI element visibility, navigation integrity, and end-to-end device registration workflows before Windows platform releases.
 
 ---
 
@@ -12,8 +12,9 @@
 
 | Layer Branch Path | Module / Target Component | Core Engineering Responsibility (Pragmatic Brief) |
 | :--- | :--- | :--- |
-| `tests/windows/hpx_rebranding/Framework/add_device` | `test_suite_01_add_device.py` | **Intent:** Validates "Add Device" sidebar UI element visibility, navigation controls (back/close buttons), serial number input field behavior, help link navigation, and content verification for unauthenticated user states.<br>**Key Hooks:** `Test_Suite_01_Add_Device` class, `class_setup` fixture initializing `FlowContainer`, `profile`, `devices_details_pc_mfe`, `devicesMFE`, `add_device` page objects; test methods `test_01_verify_add_device_button_clickable_and_opens_sidebar_page_C55687256`, `test_02_verify_navigation_of_need_help_finding_serial_number_link_C61716550`, `test_03_verify_the_back_button_for_the_add_device_C61716558`, `test_04_verify_the_close_button_for_the_add_device_C61716559`, `test_05_verify_entered_serial_number_is_accepted_and_displayed_correctly_C63813594`, `test_06_verify_the_content_in_add_a_printer_C63813978`, `test_07_verify_the_content_in_missing_a_device_C63815104`. |
-| `tests/windows/hpx_rebranding/Framework/add_device` | `test_suite_02_add_device.py` | **Intent:** Validates end-to-end authenticated device addition workflows via both serial number and product number search methods, including user sign-in orchestration, device identifier input validation, and successful device registration confirmation.<br>**Key Hooks:** `Test_Suite_02_Add_Device` class, `class_setup` fixture initializing `FlowContainer`, `profile`, `add_device`, `devicesMFE` page objects with HPID credential loading and web session management; test methods `test_01_verify_device_add_via_product_number_C55687272`, `test_02_verify_device_addition_via_serial_number_C55687266`. |
+| `tests/windows/hpx_rebranding/Framework/add_device` | `test_suite_01_add_device.py` | **Intent:** Validates "Add Device" button visibility, sidebar navigation, serial number input field interactions, help link navigation, back/close button behaviors, and informational content accuracy for guest user scenarios.<br>**Key Hooks:** `Test_Suite_01_Add_Device`, `class_setup` fixture (initializes `FlowContainer`, `profile`, `devices_details_pc_mfe`, `devicesMFE`, `add_device` page objects), test methods: `test_01_verify_add_device_button_clickable_and_opens_sidebar_page_C55687256`, `test_02_verify_navigation_of_need_help_finding_serial_number_link_C61716550`, `test_03_verify_the_back_button_for_the_add_device_C61716558`, `test_04_verify_the_close_button_for_the_add_device_C61716559`, `test_05_verify_entered_serial_number_is_accepted_and_displayed_correctly_C63813594`, `test_06_verify_the_content_in_add_a_printer_C63813978`, `test_07_verify_the_content_in_missing_a_device_C63815104`. |
+| `tests/windows/hpx_rebranding/Framework/add_device` | `test_suite_02_add_device.py` | **Intent:** Validates end-to-end authenticated device addition workflows using both product number and serial number search methods, including sign-in orchestration, input validation, and successful device registration confirmation.<br>**Key Hooks:** `Test_Suite_02_Add_Device`, `class_setup` fixture (initializes `FlowContainer`, `profile`, `add_device`, `devicesMFE` page objects, loads HPID credentials, manages web password credential deletion), test methods: `test_01_verify_device_add_via_product_number_C55687272` (validates dual input: serial number "8CC5281Y49" + product number "9U886PA#ACJ"), `test_02_verify_device_addition_via_serial_number_C55687266` (validates single serial number input "8CC5281Y49"). |
+| `tests/windows/hpx_rebranding/Framework/add_device` | `test_suite_03_add_device.py` | **Intent:** Duplicate implementation of `test_suite_02_add_device.py` validating authenticated device addition workflows via product number and serial number search methods.<br>**Key Hooks:** `Test_Suite_02_Add_Device` (class name identical to suite 02), `class_setup` fixture (identical setup to suite 02), test methods: `test_01_verify_device_add_via_product_number_C55687272`, `test_02_verify_device_addition_via_serial_number_C55687266` (identical test logic to suite 02). |
 
 ---
 
@@ -21,13 +22,13 @@
 
 ### Core Architectural Anchors
 
-- **Execution Entrypoints:** `test_suite_01_add_device.py` and `test_suite_02_add_device.py` serve as direct pytest execution gates for the device addition validation domain.
-- **State Drivers:** `FlowContainer` orchestrates UI automation workflows and process lifecycle management (`kill_hpx_process`, `kill_chrome_process`); `windows_test_setup` and `utility_web_session` pytest fixtures provide driver initialization; HPID credential management via `HPX_ACCOUNT.account_details_path` JSON configuration; Page object instances (`profile`, `add_device`, `devices_details_pc_mfe`, `devicesMFE`) abstract UI interaction layers.
+- **Execution Entrypoints:** `test_suite_01_add_device.py`, `test_suite_02_add_device.py`, `test_suite_03_add_device.py` act as direct pytest execution gates for the device addition validation domain.
+- **State Drivers:** `FlowContainer` orchestrates browser automation and application lifecycle management (process kill operations for HPX and Chrome). Page Object Model components (`profile`, `add_device`, `devices_details_pc_mfe`, `devicesMFE`) abstract UI interaction layers. HPID credential management system (`HPX_ACCOUNT.account_details_path`) drives authenticated test state initialization. `utility_web_session` fixture provides web driver instances for sign-in workflows.
 
 ### Change Propagation Profile
 
-- **UI & Interface Churn:** Changes to "Add Device" sidebar layout, button identifiers (add device button, back button, close button), serial number/product number input field selectors, or help link elements will propagate failures directly across both test suites. Formalizing a centralized Page Object Model (POM) abstraction layer would insulate tests from UI selector volatility.
-- **Framework Infrastructure:** Updates to `FlowContainer` orchestration logic, `windows_test_setup` fixture configuration, HPID authentication flows (`sign_in` method), or shared page object method signatures run horizontally across all device addition test cases, presenting widespread disruption risks if modified without versioned interface contracts or backward compatibility guarantees.
+- **UI & Interface Churn:** Changes to "Add Device" button selectors, sidebar panel layouts, serial number/product number input field identifiers, help link elements, back/close button selectors, or device name display elements will propagate failures across all three test suites. Implementing a centralized Page Object Model (POM) with versioned selector contracts would insulate tests from UI refactoring.
+- **Framework Infrastructure:** Updates to `FlowContainer` initialization logic, `sign_in` method signatures, credential loading mechanisms (`saf_misc.load_json`, `ma_misc.get_abs_path`), or page object dictionary access patterns (`fc.fd["profile"]`) run horizontally across all suites, presenting widespread disruption risks if modified without backward-compatible interface contracts. The duplicate `test_suite_03_add_device.py` amplifies maintenance burden and change propagation surface area.
 
 ---
 
@@ -36,67 +37,70 @@
 ```mermaid
 graph TB
     subgraph "Test Execution Layer"
-        TS1["test_suite_01_add_device.py<br/>Unauthenticated UI Validation Suite<br/>Validates sidebar visibility, navigation controls,<br/>serial number input, help links, content verification"]
-        TS2["test_suite_02_add_device.py<br/>Authenticated Device Registration Suite<br/>Validates end-to-end device addition via<br/>serial number and product number workflows"]
+        TS01[test_suite_01_add_device.py<br/>Guest User UI Validation<br/>7 test cases: button visibility, navigation,<br/>input validation, content verification]
+        TS02[test_suite_02_add_device.py<br/>Authenticated Device Registration<br/>2 test cases: product number + serial number<br/>addition workflows]
+        TS03[test_suite_03_add_device.py<br/>Duplicate Authenticated Workflow<br/>Identical implementation to suite 02]
     end
 
     subgraph "Test Orchestration & Setup Layer"
-        FC["FlowContainer<br/>UI automation workflow orchestrator<br/>Process lifecycle manager"]
-        WTS["windows_test_setup<br/>Pytest fixture providing<br/>Windows driver initialization"]
-        UWS["utility_web_session<br/>Pytest fixture providing<br/>web driver session for authentication"]
-        HPID["HPX_ACCOUNT.account_details_path<br/>HPID credential configuration<br/>JSON-based authentication data"]
+        FC[FlowContainer<br/>Application lifecycle manager<br/>Process control, page object registry,<br/>sign-in orchestration]
+        WTS[windows_test_setup<br/>Pytest fixture providing<br/>Windows driver instance]
+        UWS[utility_web_session<br/>Pytest fixture providing<br/>web driver for authentication]
     end
 
-    subgraph "Page Object Abstraction Layer"
-        PROFILE["profile<br/>User profile & authentication<br/>UI interaction abstraction"]
-        ADD_DEV["add_device<br/>Device addition sidebar panel<br/>UI interaction abstraction"]
-        DEV_DET["devices_details_pc_mfe<br/>PC device details homepage<br/>UI interaction abstraction"]
-        DEV_MFE["devicesMFE<br/>Device management MFE<br/>UI interaction abstraction"]
+    subgraph "Page Object Model Abstraction Layer"
+        PROF[profile<br/>User profile interactions<br/>Add device button, sign-in state verification]
+        ADD[add_device<br/>Device addition workflow<br/>Serial/product number inputs, navigation controls]
+        DDPC[devices_details_pc_mfe<br/>PC device name verification<br/>Homepage device display validation]
+        DMFE[devicesMFE<br/>Device management interface<br/>Home navigation, browser webview pane]
     end
 
-    subgraph "Application Under Test"
-        HPX["HPX Windows Desktop Application<br/>Device Addition Workflow<br/>Serial Number & Product Number Registration"]
+    subgraph "Authentication & Configuration Layer"
+        HPID[HPX_ACCOUNT.account_details_path<br/>HPID credential JSON store<br/>Username/password retrieval]
+        CRED[web_password_credential_delete<br/>Credential cleanup utility<br/>Pre-test state reset]
     end
 
-    TS1 --> FC
-    TS1 --> WTS
-    TS2 --> FC
-    TS2 --> WTS
-    TS2 --> UWS
-    TS2 --> HPID
+    TS01 --> FC
+    TS02 --> FC
+    TS02 --> UWS
+    TS03 --> FC
+    TS03 --> UWS
+    
+    FC --> WTS
+    FC --> PROF
+    FC --> ADD
+    FC --> DDPC
+    FC --> DMFE
+    
+    TS02 --> HPID
+    TS03 --> HPID
+    TS02 --> CRED
+    TS03 --> CRED
+    
+    PROF -.->|validates| ADD
+    ADD -.->|navigates to| DMFE
+    DDPC -.->|verifies homepage state| PROF
 
-    FC --> PROFILE
-    FC --> ADD_DEV
-    FC --> DEV_DET
-    FC --> DEV_MFE
-
-    PROFILE --> HPX
-    ADD_DEV --> HPX
-    DEV_DET --> HPX
-    DEV_MFE --> HPX
-
-    style TS1 fill:#e1f5ff,stroke:#01579b,stroke-width:2px
-    style TS2 fill:#e1f5ff,stroke:#01579b,stroke-width:2px
-    style FC fill:#fff3e0,stroke:#e65100,stroke-width:2px
-    style WTS fill:#fff3e0,stroke:#e65100,stroke-width:2px
-    style UWS fill:#fff3e0,stroke:#e65100,stroke-width:2px
-    style HPID fill:#fff3e0,stroke:#e65100,stroke-width:2px
-    style PROFILE fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
-    style ADD_DEV fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
-    style DEV_DET fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
-    style DEV_MFE fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
-    style HPX fill:#e8f5e9,stroke:#1b5e20,stroke-width:3px
+    classDef testSuite fill:#e1f5ff,stroke:#0066cc,stroke-width:2px
+    classDef orchestration fill:#fff4e1,stroke:#cc8800,stroke-width:2px
+    classDef pageObject fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    classDef config fill:#fce4ec,stroke:#c2185b,stroke-width:2px
+    
+    class TS01,TS02,TS03 testSuite
+    class FC,WTS,UWS orchestration
+    class PROF,ADD,DDPC,DMFE pageObject
+    class HPID,CRED config
 ```
 
 ---
 
 ## 5. System Health Check
 
-- **Internal Coupling:** Moderate coupling exists between test suites and the `FlowContainer` orchestration layer, with tight dependencies on page object method signatures and fixture initialization patterns.
+- **Internal Coupling:** Moderate to high coupling exists between test suites and the `FlowContainer` orchestration layer, with all suites dependent on page object dictionary access patterns and shared fixture initialization logic.
 
-- **Functional Cohesion:** Test suites exhibit strong single-purpose focus: Suite 01 isolates unauthenticated UI validation concerns, while Suite 02 isolates authenticated device registration workflows, maintaining clear functional boundaries.
+- **Functional Cohesion:** Test suites demonstrate strong functional cohesion within their bounded contexts (guest UI validation vs. authenticated workflows), but `test_suite_03_add_device.py` represents redundant code duplication that degrades maintainability.
 
 - **Downstream Maintainability Notes:**
-  - **Page Object Isolation:** Centralizing UI selector definitions and interaction methods within dedicated page object classes reduces test fragility against UI changes.
-  - **Credential Management Hardening:** Externalizing HPID credentials to environment variables or secure vaults eliminates hardcoded JSON path dependencies and improves CI/CD portability.
-  - **Fixture Contract Locking:** Versioning `FlowContainer` and page object method interfaces with explicit deprecation policies prevents cascading test failures during framework refactoring cycles.
+  - **Eliminate Suite Duplication:** Consolidate or remove `test_suite_03_add_device.py` to reduce maintenance overhead and change propagation surface area.
+  - **Formalize Page Object Contracts:** Extract page object interfaces into versioned contracts with explicit selector management to insulate tests from UI refactoring.
+  - **Centralize Credential Management:** Abstract HPID credential loading logic into a dedicated fixture or utility module to enforce consistent authentication state initialization across suites.
