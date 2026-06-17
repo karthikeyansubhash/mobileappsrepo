@@ -16,91 +16,78 @@
 [] (EMPTY)
 ```
 
----
+### EXECUTION HALT CONDITION DETECTED
 
-## EXECUTION HALT: MANDATORY INPUT REQUIREMENT NOT SATISFIED
+I have received your comprehensive instructions for Technical Documentation Synthesis and Code Delta Analysis. However, I cannot proceed with the mandatory execution workflow because:
 
-### Root Cause Analysis:
-
-The execution workflow cannot proceed to Knowledge Base retrieval, delta analysis, or documentation synthesis phases because **both required code input fields are empty**.
-
-### Required Inputs for Execution:
-
-1. **[Existing Code]** - Baseline codebase content (Python files, classes, methods) that represents the current documented state
-2. **[New Code]** - Updated codebase content containing modifications, additions, or deletions to be analyzed and documented
-
-### Mandatory Pre-Execution Checklist:
-
-- ❌ Existing Code provided
-- ❌ New Code provided
-- ⏸️ Knowledge Base retrieval (BLOCKED - awaiting file identification)
-- ⏸️ Delta analysis execution (BLOCKED - no code differential to compute)
-- ⏸️ Documentation retrofit synthesis (BLOCKED - no baseline or target content)
+**BLOCKING ISSUE:** Both the `[Existing Code]` and `[New Code]` input fields are empty arrays `[]`.
 
 ---
 
-## REQUIRED ACTION FROM USER:
+## REQUIRED INPUTS FOR EXECUTION
 
-Please provide the code inputs in the following format:
+To execute the complete documentation synthesis pipeline as specified, I require:
 
+### 1. **Existing Code Input**
+Please provide the baseline codebase in one of the following formats:
+- Direct code paste (Python files)
+- File paths/names for Knowledge Base retrieval
+- Code snippets with clear file identification headers
+
+**Expected Format:**
 ```
 **Existing Code**
-[Paste your baseline Python code here - the current version that has existing documentation]
+[filename1.py]
+<actual Python code content>
 
-**New Code**
-[Paste your updated Python code here - the modified version with changes to be documented]
+[filename2.py]
+<actual Python code content>
 ```
 
-### Input Guidelines:
+### 2. **New Code Input**
+Please provide the updated/modified codebase in the same format:
 
-- **File Identification:** Include complete file paths or clear file names (e.g., `test_login.py`, `page_objects/login_page.py`)
-- **Code Completeness:** Provide full file contents including imports, class definitions, all methods, and docstrings
-- **Multiple Files:** If analyzing multiple files, clearly separate each file with headers
-- **Format Preservation:** Maintain proper Python indentation and syntax
-
-### Example Input Format:
-
+**Expected Format:**
 ```
-**Existing Code**
-# File: test_authentication.py
-import pytest
-from pages.login_page import LoginPage
-
-class TestAuthentication:
-    def test_valid_login(self):
-        login_page = LoginPage()
-        login_page.enter_credentials("user", "pass")
-        assert login_page.is_logged_in()
-
 **New Code**
-# File: test_authentication.py
-import pytest
-from pages.login_page import LoginPage
-from utils.data_provider import get_test_credentials
+[filename1.py]
+<actual Python code content with modifications>
 
-class TestAuthentication:
-    def test_valid_login(self, browser):
-        login_page = LoginPage(browser)
-        creds = get_test_credentials("valid_user")
-        login_page.enter_credentials(creds['username'], creds['password'])
-        assert login_page.is_logged_in()
-        assert login_page.get_welcome_message() == f"Welcome, {creds['username']}"
-    
-    def test_invalid_login(self, browser):
-        login_page = LoginPage(browser)
-        login_page.enter_credentials("invalid", "wrong")
-        assert login_page.get_error_message() == "Invalid credentials"
+[filename3.py]
+<new file content if applicable>
 ```
 
 ---
 
-## SYSTEM STATUS: AWAITING VALID INPUT
+## EXECUTION READINESS CHECKLIST
 
-Once you provide the **Existing Code** and **New Code** inputs, I will immediately execute:
+Once you provide the code inputs, I will execute the following mandatory workflow:
 
-1. ✅ **Knowledge Base Retrieval** - Fetch current documentation for identified files
-2. ✅ **Function Inventory & Delta Ledger** - Generate complete change mapping
-3. ✅ **Retrofit & Synthesis** - Merge updates while preserving historical context
-4. ✅ **Complete Markdown Report** - Deliver exhaustive documentation following the exact Output Structure Blueprint
+✅ **Step 1:** Ingest and parse both Existing Code and New Code  
+✅ **Step 2:** Query Knowledge Base for current documentation baseline  
+✅ **Step 3:** Generate Function Inventory & Delta Ledger (CRITICAL ANTI-OMISSION PROTOCOL)  
+✅ **Step 4:** Perform line-by-line delta analysis identifying:
+   - Unchanged functions
+   - Modified functions (with change details)
+   - Newly added functions
+   - Deprecated/removed functions
 
-**Ready to proceed upon receipt of valid code inputs.**
+✅ **Step 5:** Retrofit documentation maintaining historical context  
+✅ **Step 6:** Generate complete Markdown report following exact Output Structure Blueprint  
+✅ **Step 7:** Validate completeness against Delta Ledger (no truncation/omission permitted)
+
+---
+
+## AWAITING CODE INPUTS
+
+**Please provide:**
+1. The actual Existing Code (baseline codebase)
+2. The actual New Code (modified/updated codebase)
+
+Once received, I will immediately execute the full documentation synthesis pipeline with:
+- Zero omissions (every function documented)
+- Complete historical context preservation
+- Explicit delta tracking and status marking
+- Production-grade Markdown output following your exact blueprint
+
+**Ready to proceed upon input provision.**
