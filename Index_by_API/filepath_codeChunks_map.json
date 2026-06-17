@@ -4173,6 +4173,60 @@
             "metadata": {}
         }
     ],
+    "tests/windows/hpx_rebranding/Framework/add_device/test_suite_03_add_device.py": [
+        {
+            "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_03_add_device.py",
+            "chunkType": "class",
+            "name": "Test_Suite_02_Add_Device",
+            "startLine": 12,
+            "endLine": 70,
+            "language": "python",
+            "contentPreview": "class Test_Suite_02_Add_Device(object):\n    @pytest.fixture(scope=\"class\", autouse=True)\n    def class_setup(cls, request, windows_test_setup, utility_web_session):\n        cls = cls.__class__\n        request.cls.driver = windows_test_setup\n        request.cls.web_driver = utility_web_session\n        request.cls.fc = FlowContainer(request.cls.driver)\n        request.cls.fc.kill_hpx_process()\n        cls.profile= request.cls.fc.fd[\"profile\"]\n        cls.add_device= request.cls.fc.fd[\"add_device\"]\n        request.cls.devicesMFE = cls.fc.fd[\"devicesMFE\"]\n        request.cls.fc.web_password_credential_delete()\n        hpid_credentials = saf_misc.load_json(ma_misc.get_abs_path(HPX_ACCOUNT.account_details_path))[\"hpid\"]\n        cls.user_name, cls.password = hpid_credentials[\"username\"], hpid_credentials[\"password\"]\n        cls.profile.minimize_chrome()\n\n    @pytest.mark.regression\n    def test_01_verify_device_add_via_product_number_C55687272(self):\n        self.devicesMFE.click_home_loggedin()\n        self.fc.sign_in(self.user_name, self.password, self.web_driver, user_icon_click=False)\n        logged_in = self.profile.verify_top_profile_icon_signed_in()\n        assert logged_in, \"User not signed in/After signing in the 'Sign In' button failed to disappear after 20 seconds\"\n        self.profile.verify_add_device_button()\n        self.profile.click_add_device_button()\n        assert self.add_device.verify_add_device_page(), \"Add device page is not displayed\"\n        assert self.add_device.verify_search_by_serial_number_btn(), \"search by serial number button not found\"\n        self.add_device.click_search_by_serial_number_btn()\n        self.add_device.input_enter_serial_number(\"8CC5281Y49\")\n        entered_value = self.add_device.get_entered_serial_number()\n        assert entered_value == \"8CC5281Y49\", f\"Serial number not displayed correctly, found: {entered_value}\"  \n        assert self.add_device.verify_product_number_textbox(), \"Product number textbox not found\"  \n     ...",
+            "similarity": 1.0,
+            "isTestFile": true,
+            "sourceLeg": "selector",
+            "metadata": {}
+        },
+        {
+            "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_03_add_device.py",
+            "chunkType": "function",
+            "name": "Test_Suite_02_Add_Device.class_setup",
+            "startLine": 14,
+            "endLine": 27,
+            "language": "python",
+            "contentPreview": "    def class_setup(cls, request, windows_test_setup, utility_web_session):\n        cls = cls.__class__\n        request.cls.driver = windows_test_setup\n        request.cls.web_driver = utility_web_session\n        request.cls.fc = FlowContainer(request.cls.driver)\n        request.cls.fc.kill_hpx_process()\n        cls.profile= request.cls.fc.fd[\"profile\"]\n        cls.add_device= request.cls.fc.fd[\"add_device\"]\n        request.cls.devicesMFE = cls.fc.fd[\"devicesMFE\"]\n        request.cls.fc.web_password_credential_delete()\n        hpid_credentials = saf_misc.load_json(ma_misc.get_abs_path(HPX_ACCOUNT.account_details_path))[\"hpid\"]\n        cls.user_name, cls.password = hpid_credentials[\"username\"], hpid_credentials[\"password\"]\n        cls.profile.minimize_chrome()\n",
+            "similarity": 1.0,
+            "isTestFile": true,
+            "sourceLeg": "selector",
+            "metadata": {}
+        },
+        {
+            "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_03_add_device.py",
+            "chunkType": "function",
+            "name": "Test_Suite_02_Add_Device.test_01_verify_device_add_via_product_number_C55687272",
+            "startLine": 29,
+            "endLine": 48,
+            "language": "python",
+            "contentPreview": "    def test_01_verify_device_add_via_product_number_C55687272(self):\n        self.devicesMFE.click_home_loggedin()\n        self.fc.sign_in(self.user_name, self.password, self.web_driver, user_icon_click=False)\n        logged_in = self.profile.verify_top_profile_icon_signed_in()\n        assert logged_in, \"User not signed in/After signing in the 'Sign In' button failed to disappear after 20 seconds\"\n        self.profile.verify_add_device_button()\n        self.profile.click_add_device_button()\n        assert self.add_device.verify_add_device_page(), \"Add device page is not displayed\"\n        assert self.add_device.verify_search_by_serial_number_btn(), \"search by serial number button not found\"\n        self.add_device.click_search_by_serial_number_btn()\n        self.add_device.input_enter_serial_number(\"8CC5281Y49\")\n        entered_value = self.add_device.get_entered_serial_number()\n        assert entered_value == \"8CC5281Y49\", f\"Serial number not displayed correctly, found: {entered_value}\"  \n        assert self.add_device.verify_product_number_textbox(), \"Product number textbox not found\"  \n        self.add_device.input_enter_product_number(\"9U886PA#ACJ\")\n        entered_value = self.add_device.get_entered_product_number()\n        assert entered_value == \"9U886PA#ACJ\", f\"Product number not displayed correctly, found: {entered_value}\"  \n        self.add_device.click_add_device_hyperlink()\n        assert self.add_device.verify_newly_added_devicename(), \"Newly added device name is not displayed\"\n ",
+            "similarity": 1.0,
+            "isTestFile": true,
+            "sourceLeg": "selector",
+            "metadata": {}
+        },
+        {
+            "filePath": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_03_add_device.py",
+            "chunkType": "function",
+            "name": "Test_Suite_02_Add_Device.test_02_verify_device_addition_via_serial_number_C55687266",
+            "startLine": 50,
+            "endLine": 70,
+            "language": "python",
+            "contentPreview": "    def test_02_verify_device_addition_via_serial_number_C55687266(self):\n        self.devicesMFE.click_home_loggedin()\n        self.fc.sign_in(self.user_name, self.password, self.web_driver)\n        logged_in = self.profile.verify_top_profile_icon_signed_in()\n        assert logged_in, \"User not signed in/After signing in the 'Sign In' button failed to disappear after 20 seconds\"\n        self.profile.verify_add_device_button()\n        self.profile.click_add_device_button()\n        assert self.add_device.verify_add_device_page(), \"Add device page is not displayed\"\n        assert self.add_device.verify_search_by_serial_number_btn(), \"search by serial number button not found\"\n        self.add_device.click_search_by_serial_number_btn()\n        self.add_device.input_enter_serial_number(\"8CC5281Y49\")\n        entered_value = self.add_device.get_entered_serial_number()\n        assert entered_value == \"8CC5281Y49\", f\"Serial number not displayed correctly, found: {entered_value}\"  \n        self.add_device.click_add_device_hyperlink()\n        assert self.add_device.verify_newly_added_devicename(), \"Newly added device name is not displayed\"\n \n \n\n \n\n   ",
+            "similarity": 1.0,
+            "isTestFile": true,
+            "sourceLeg": "selector",
+            "metadata": {}
+        }
+    ],
     "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_01_bell_notifications.py": [
         {
             "filePath": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_01_bell_notifications.py",
