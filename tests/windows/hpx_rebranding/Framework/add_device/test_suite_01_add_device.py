@@ -89,3 +89,16 @@ class Test_Suite_01_Add_Device(object):
         self.profile.click_add_device_button()
         assert self.add_device.verify_add_device_page(), "add device page is not found"
         assert self.add_device.verify_missing_device_content(), "content in missing device is not matching"
+
+def navigate_to_add_device_page(self):
+    assert self.devices_details_pc_mfe.verify_pc_device_name_show_up(), \
+        "PC name on homepage not loaded/visible"
+
+    assert self.profile.verify_add_device_button(), \
+        "Add device button is not found"
+
+    self.profile.click_add_device_button()
+
+    assert self.add_device.verify_add_device_page(), \
+        "Add device page is not found"
+
